@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FIDO authentication on Mohit Kanwar&#39;s App</title>
+    <link>https://mohitkanwar.com/tags/fido-authentication/</link>
+    <description>Recent content in FIDO authentication on Mohit Kanwar&#39;s App</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2023 22:53:58 +0530</lastBuildDate>
+    <atom:link href="https://mohitkanwar.com/tags/fido-authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embracing Passwordless Authentication with FIDO</title>
+      <link>https://mohitkanwar.com/blogs/fido/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/blogs/fido/</guid>
+      <description>Sometime back, I created this post on linked-in on explainig how passwords are not a good fit for authentication. In continuation to that, I would like to talk about FIDO Alliance. In the ever-evolving landscape of cybersecurity, the traditional method of password-based authentication has long been at the forefront of both convenience and vulnerability.&#xA;Enter FIDO, an innovative and transformative technology that revolutionizes the way we verify identity and secure access to digital systems.</description>
+    </item>
+  </channel>
+</rss>

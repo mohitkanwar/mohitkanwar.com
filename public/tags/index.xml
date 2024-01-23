@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Mohit Kanwar&#39;s App</title>
+    <link>https://mohitkanwar.com/tags/</link>
+    <description>Recent content in Tags on Mohit Kanwar&#39;s App</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mohitkanwar.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>anti-pattern</title>
+      <link>https://mohitkanwar.com/tags/anti-pattern/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/anti-pattern/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>code maintainability</title>
+      <link>https://mohitkanwar.com/tags/code-maintainability/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-maintainability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>code readability</title>
+      <link>https://mohitkanwar.com/tags/code-readability/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-readability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>code scalability</title>
+      <link>https://mohitkanwar.com/tags/code-scalability/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-scalability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>code testability</title>
+      <link>https://mohitkanwar.com/tags/code-testability/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-testability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fluffy Services</title>
+      <link>https://mohitkanwar.com/tags/fluffy-services/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/fluffy-services/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>healthy codebase</title>
+      <link>https://mohitkanwar.com/tags/healthy-codebase/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/healthy-codebase/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kareena Kapoor Controllers</title>
+      <link>https://mohitkanwar.com/tags/kareena-kapoor-controllers/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/kareena-kapoor-controllers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>method size</title>
+      <link>https://mohitkanwar.com/tags/method-size/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/method-size/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>modular approach</title>
+      <link>https://mohitkanwar.com/tags/modular-approach/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/modular-approach/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Single Responsibility Principle</title>
+      <link>https://mohitkanwar.com/tags/single-responsibility-principle/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/single-responsibility-principle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>tight coupling</title>
+      <link>https://mohitkanwar.com/tags/tight-coupling/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/tight-coupling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cost of software</title>
+      <link>https://mohitkanwar.com/tags/cost-of-software/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/cost-of-software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Free Software</title>
+      <link>https://mohitkanwar.com/tags/free-software/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/free-software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Freemium model</title>
+      <link>https://mohitkanwar.com/tags/freemium-model/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/freemium-model/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Open Source</title>
+      <link>https://mohitkanwar.com/tags/open-source/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/open-source/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Development</title>
+      <link>https://mohitkanwar.com/tags/software-development/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/software-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Maintenance</title>
+      <link>https://mohitkanwar.com/tags/software-maintenance/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/software-maintenance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Benefits of incorporating gamification in education</title>
+      <link>https://mohitkanwar.com/tags/benefits-of-incorporating-gamification-in-education/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/benefits-of-incorporating-gamification-in-education/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Building an enriching user experience with gamification</title>
+      <link>https://mohitkanwar.com/tags/building-an-enriching-user-experience-with-gamification/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/building-an-enriching-user-experience-with-gamification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DuoLingo gamification features</title>
+      <link>https://mohitkanwar.com/tags/duolingo-gamification-features/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/duolingo-gamification-features/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Engaging with friends in language learning quests</title>
+      <link>https://mohitkanwar.com/tags/engaging-with-friends-in-language-learning-quests/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/engaging-with-friends-in-language-learning-quests/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Enhancing user experience through gamification</title>
+      <link>https://mohitkanwar.com/tags/enhancing-user-experience-through-gamification/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/enhancing-user-experience-through-gamification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gamification in education</title>
+      <link>https://mohitkanwar.com/tags/gamification-in-education/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/gamification-in-education/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gamification techniques for user engagement</title>
+      <link>https://mohitkanwar.com/tags/gamification-techniques-for-user-engagement/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/gamification-techniques-for-user-engagement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Language learning gamification</title>
+      <link>https://mohitkanwar.com/tags/language-learning-gamification/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/language-learning-gamification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Leaderboards and competition in language learning apps</title>
+      <link>https://mohitkanwar.com/tags/leaderboards-and-competition-in-language-learning-apps/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/leaderboards-and-competition-in-language-learning-apps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Motivation and progress tracking in language learning apps</title>
+      <link>https://mohitkanwar.com/tags/motivation-and-progress-tracking-in-language-learning-apps/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/motivation-and-progress-tracking-in-language-learning-apps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personalization and customization in gamified language learning</title>
+      <link>https://mohitkanwar.com/tags/personalization-and-customization-in-gamified-language-learning/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/personalization-and-customization-in-gamified-language-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rewards and achievements in language learning apps</title>
+      <link>https://mohitkanwar.com/tags/rewards-and-achievements-in-language-learning-apps/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/rewards-and-achievements-in-language-learning-apps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Social interaction and collaboration in language learning</title>
+      <link>https://mohitkanwar.com/tags/social-interaction-and-collaboration-in-language-learning/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/social-interaction-and-collaboration-in-language-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Streaks and daily goals in language learning</title>
+      <link>https://mohitkanwar.com/tags/streaks-and-daily-goals-in-language-learning/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/streaks-and-daily-goals-in-language-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>giftcity</title>
+      <link>https://mohitkanwar.com/tags/giftcity/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/giftcity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Continuous improvement</title>
+      <link>https://mohitkanwar.com/tags/continuous-improvement/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/continuous-improvement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Issue resolution</title>
+      <link>https://mohitkanwar.com/tags/issue-resolution/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/issue-resolution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log agents</title>
+      <link>https://mohitkanwar.com/tags/log-agents/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log analysis</title>
+      <link>https://mohitkanwar.com/tags/log-analysis/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log analytics</title>
+      <link>https://mohitkanwar.com/tags/log-analytics/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-analytics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log collection</title>
+      <link>https://mohitkanwar.com/tags/log-collection/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-collection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log data insights</title>
+      <link>https://mohitkanwar.com/tags/log-data-insights/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-data-insights/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log management</title>
+      <link>https://mohitkanwar.com/tags/log-management/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log monitoring</title>
+      <link>https://mohitkanwar.com/tags/log-monitoring/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log retention</title>
+      <link>https://mohitkanwar.com/tags/log-retention/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-retention/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log shippers</title>
+      <link>https://mohitkanwar.com/tags/log-shippers/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-shippers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log storage</title>
+      <link>https://mohitkanwar.com/tags/log-storage/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/log-storage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logging architecture</title>
+      <link>https://mohitkanwar.com/tags/logging-architecture/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/logging-architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance optimization</title>
+      <link>https://mohitkanwar.com/tags/performance-optimization/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/performance-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proactive monitoring</title>
+      <link>https://mohitkanwar.com/tags/proactive-monitoring/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/proactive-monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software development projects</title>
+      <link>https://mohitkanwar.com/tags/software-development-projects/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/software-development-projects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Structured logging</title>
+      <link>https://mohitkanwar.com/tags/structured-logging/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/structured-logging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System monitoring</title>
+      <link>https://mohitkanwar.com/tags/system-monitoring/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/system-monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshooting logs</title>
+      <link>https://mohitkanwar.com/tags/troubleshooting-logs/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/troubleshooting-logs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>User experience enhancement</title>
+      <link>https://mohitkanwar.com/tags/user-experience-enhancement/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/user-experience-enhancement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>global teams</title>
+      <link>https://mohitkanwar.com/tags/global-teams/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/global-teams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Biometric authentication</title>
+      <link>https://mohitkanwar.com/tags/biometric-authentication/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/biometric-authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Device based authentication</title>
+      <link>https://mohitkanwar.com/tags/device-based-authentication/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/device-based-authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FaceId authentication</title>
+      <link>https://mohitkanwar.com/tags/faceid-authentication/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/faceid-authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FIDO authentication</title>
+      <link>https://mohitkanwar.com/tags/fido-authentication/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/fido-authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fingerprint authentication</title>
+      <link>https://mohitkanwar.com/tags/fingerprint-authentication/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/fingerprint-authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Passwordless</title>
+      <link>https://mohitkanwar.com/tags/passwordless/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/passwordless/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Accessibility in API development</title>
+      <link>https://mohitkanwar.com/tags/accessibility-in-api-development/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/accessibility-in-api-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API design best practices</title>
+      <link>https://mohitkanwar.com/tags/api-design-best-practices/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/api-design-best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API design creativity</title>
+      <link>https://mohitkanwar.com/tags/api-design-creativity/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/api-design-creativity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API documentation importance</title>
+      <link>https://mohitkanwar.com/tags/api-documentation-importance/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/api-documentation-importance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API naming best practices</title>
+      <link>https://mohitkanwar.com/tags/api-naming-best-practices/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/api-naming-best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API simplicity and clarity</title>
+      <link>https://mohitkanwar.com/tags/api-simplicity-and-clarity/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/api-simplicity-and-clarity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code collaboration in API development</title>
+      <link>https://mohitkanwar.com/tags/code-collaboration-in-api-development/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-collaboration-in-api-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code elegance in APIs</title>
+      <link>https://mohitkanwar.com/tags/code-elegance-in-apis/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-elegance-in-apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code harmony in API design</title>
+      <link>https://mohitkanwar.com/tags/code-harmony-in-api-design/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/code-harmony-in-api-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collaborative API design</title>
+      <link>https://mohitkanwar.com/tags/collaborative-api-design/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/collaborative-api-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concealing implementation in APIs</title>
+      <link>https://mohitkanwar.com/tags/concealing-implementation-in-apis/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/concealing-implementation-in-apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crafting effective APIs</title>
+      <link>https://mohitkanwar.com/tags/crafting-effective-apis/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/crafting-effective-apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Creating a timeless API</title>
+      <link>https://mohitkanwar.com/tags/creating-a-timeless-api/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/creating-a-timeless-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cultural harmony in API conventions</title>
+      <link>https://mohitkanwar.com/tags/cultural-harmony-in-api-conventions/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/cultural-harmony-in-api-conventions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Good API design guidelines</title>
+      <link>https://mohitkanwar.com/tags/good-api-design-guidelines/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/good-api-design-guidelines/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Immutable APIs for stability</title>
+      <link>https://mohitkanwar.com/tags/immutable-apis-for-stability/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/immutable-apis-for-stability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Joshua Bloch API design principles</title>
+      <link>https://mohitkanwar.com/tags/joshua-bloch-api-design-principles/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/joshua-bloch-api-design-principles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Omission in API simplicity</title>
+      <link>https://mohitkanwar.com/tags/omission-in-api-simplicity/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/omission-in-api-simplicity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subclassing and inheritance in APIs</title>
+      <link>https://mohitkanwar.com/tags/subclassing-and-inheritance-in-apis/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/subclassing-and-inheritance-in-apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing developer-friendly APIs</title>
+      <link>https://mohitkanwar.com/tags/writing-developer-friendly-apis/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/tags/writing-developer-friendly-apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Financial Technologies</title>
+      <link>https://mohitkanwar.com/tags/financial-technologies/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/financial-technologies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FinTech</title>
+      <link>https://mohitkanwar.com/tags/fintech/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/fintech/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innovations</title>
+      <link>https://mohitkanwar.com/tags/innovations/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/innovations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>technologies</title>
+      <link>https://mohitkanwar.com/tags/technologies/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/technologies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://mohitkanwar.com/tags/artificial-intelligence/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ChatGPT</title>
+      <link>https://mohitkanwar.com/tags/chatgpt/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Language Models</title>
+      <link>https://mohitkanwar.com/tags/language-models/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/language-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://mohitkanwar.com/tags/llm/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Language learning milestones and achievements through gamification.</title>
+      <link>https://mohitkanwar.com/tags/language-learning-milestones-and-achievements-through-gamification./</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/tags/language-learning-milestones-and-achievements-through-gamification./</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

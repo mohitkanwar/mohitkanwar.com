@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mohit Kanwar&#39;s App</title>
+    <link>https://mohitkanwar.com/</link>
+    <description>Recent content on Mohit Kanwar&#39;s App</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mohitkanwar.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kareena Kapoor Controllers and the Fluffy Services</title>
+      <link>https://mohitkanwar.com/blogs/kareena-kapoor-controllers/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/kareena-kapoor-controllers/</guid>
+      <description>A microservice is a small, independent application that is designed to perform a specific business functionality. It is a software architectural style that structures an application as a collection of loosely coupled services, each running in its own process and communicating with each other through lightweight mechanisms, such as HTTP or messaging protocols.&#xA;Today, we are going to learn how to structure an individual microservice application, and break it down into different components.</description>
+    </item>
+    <item>
+      <title>Cost of developing a software</title>
+      <link>https://mohitkanwar.com/blogs/cost-of-software/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/blogs/cost-of-software/</guid>
+      <description>Trigger for this blog I was pair programming during an interview, where the candidate had shared his screen and I was working side by side with him, trying to understand the solution he was presenting.&#xA;Picture this: his computer screen flashed a message about his Windows license being expired. I couldn&amp;rsquo;t help but ask, and what I heard surprised me. He proudly admitted to using a &amp;ldquo;not-so-legal&amp;rdquo; version of Windows because he wanted to stick it to Microsoft for their high prices, especially when there&amp;rsquo;s a free alternative like Ubuntu available.</description>
+    </item>
+    <item>
+      <title>Gamification - Make it interesting</title>
+      <link>https://mohitkanwar.com/blogs/gamification/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/gamification/</guid>
+      <description>Learning by Gamification If you have ever taught a child who is just starting school, you may have noticed that concepts that seem simple to you can be quite complex for them. This is due to their limited understanding and lack of prior knowledge. Additionally, children often have short attention spans and can easily be distracted by their surroundings, making it even more challenging to teach them new concepts.&#xA;In order to better understand how to teach these concepts effectively, I reached out to a school teacher named Mrs.</description>
+    </item>
+    <item>
+      <title>GIFT City- India&#39;s Gateway to Global Business Excellence</title>
+      <link>https://mohitkanwar.com/blogs/gift-city/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/gift-city/</guid>
+      <description>Situated between Ahmedabad and Gandhinagar, along the Sabarmati river, GIFT City (Gujarat International Finance Tec-City) emerges as India&amp;rsquo;s beacon of global business excellence. The city&amp;rsquo;s futuristic infrastructure, coupled with its strategic location, sets the stage for a transformative business environment.&#xA;Within the boundaries of GIFT City, banks are pioneering the concept of IFSC Banking Units (IBUs). These units, akin to offshore branches within the IFSC zone, play a pivotal role in shaping India&#39;s global financial connectivity.</description>
+    </item>
+    <item>
+      <title>Understanding the logging architecture</title>
+      <link>https://mohitkanwar.com/blogs/logging-architecture/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/logging-architecture/</guid>
+      <description>In any software development project, logging plays a vital role in understanding and troubleshooting the behavior of applications. Imagine you are working on a web application that consists of multiple components, such as a frontend server, backend server, and a database. Each of these components generates logs that provide valuable insights into their operations. For example, the frontend server logs can reveal user interactions, while the backend server logs can show the processing of requests and responses.</description>
+    </item>
+    <item>
+      <title>The Art and Science of Prompt Engineering</title>
+      <link>https://mohitkanwar.com/blogs/prompt-engineering/</link>
+      <pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/prompt-engineering/</guid>
+      <description>content With the rise of conversational and generative AI systems like ChatGPT, Bard etc., the way of working is being disrupted. To not be afraid of AI snatching jobs, we must embrace AI and adpot it in our ways of working to deliver better and faster.&#xA;To use AI as an assistant and getting work done by it, we need to be able to communicate our needs to it. When we ask the AI to do something for us, the requests are known as prompts.</description>
+    </item>
+    <item>
+      <title>Embracing Global Diversity</title>
+      <link>https://mohitkanwar.com/blogs/working-with-global-teams/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/working-with-global-teams/</guid>
+      <description>Embracing Global Diversity: Insights from a World of Experiences At the onset of my career, the allure of working &amp;ldquo;On-Site&amp;rdquo; was a shared aspiration among my peers and me. The prospect of immersing ourselves in diverse cultures, collaborating closely with customers, and gaining insights into varied business operations was enticing. On-site assignments promised not just professional growth but also a glimpse into a world previously beyond our reach.&#xA;However, transitioning from core product development to customer-facing roles was a hurdle.</description>
+    </item>
+    <item>
+      <title>Embracing Passwordless Authentication with FIDO</title>
+      <link>https://mohitkanwar.com/blogs/fido/</link>
+      <pubDate>Wed, 15 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/blogs/fido/</guid>
+      <description>Sometime back, I created this post on linked-in on explainig how passwords are not a good fit for authentication. In continuation to that, I would like to talk about FIDO Alliance. In the ever-evolving landscape of cybersecurity, the traditional method of password-based authentication has long been at the forefront of both convenience and vulnerability.&#xA;Enter FIDO, an innovative and transformative technology that revolutionizes the way we verify identity and secure access to digital systems.</description>
+    </item>
+    <item>
+      <title>Unveiling the Art and Essentials of API Design</title>
+      <link>https://mohitkanwar.com/blogs/crafting-api-magic/</link>
+      <pubDate>Fri, 10 Nov 2023 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/blogs/crafting-api-magic/</guid>
+      <description>Unveiling the Elegance of API Design In the intricate world of software architecture, API design emerges as a symphony, a composition that can either elevate a system to greatness or introduce complexities that echo through time. Joshua Bloch&amp;rsquo;s insights, shared in the iconic talk &amp;lsquo;How to Design a Good API and Why it Matters,&amp;rsquo; in the year 2007, still serves as guiding principles for architects and developers seeking to sculpt APIs that stand the test of time.</description>
+    </item>
+    <item>
+      <title>The technology of modern banks</title>
+      <link>https://mohitkanwar.com/blogs/the-technology-of-modern-banks/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/the-technology-of-modern-banks/</guid>
+      <description>The Technology of Modern Banks: Innovations Shaping the Financial Landscape The banking industry, a traditionally conservative sector, has witnessed a radical transformation driven by technological advancements. In the digital age, modern banks have become more than just places to store money; they are dynamic hubs of financial innovation. In this article, we delve deep into the technologies that are reshaping the modern banking landscape.&#xA;The Digital Banking Revolution Online Banking: Where Convenience Meets Innovation The evolution of the internet has given rise to modern online banking, enabling customers to access their accounts through web and mobile applications.</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Large Language Models in the World of IT</title>
+      <link>https://mohitkanwar.com/blogs/large-language-models/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/large-language-models/</guid>
+      <description>Unlocking the Power of Large Language Models in the World of IT: Embracing ChatGPT As technology continues to evolve, the integration of artificial intelligence has become a game-changer in both the software and banking industries. One remarkable development in this AI landscape is the advent of Large Language Models (LLMs), which are transforming the way we interact with computers and data.&#xA;Introduction to Large Language Models A Large Language Model, or LLM, is more than just a fancy acronym.</description>
+    </item>
+    <item>
+      <title>Unveiling the Tech Ecosystem - A Techie&#39;s Take on Software Development</title>
+      <link>https://mohitkanwar.com/blogs/technologies/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/technologies/</guid>
+      <description>As a technology enthusiast, I&amp;rsquo;ve had the honor of witnessing the ever-evolving landscape of software development. In today&amp;rsquo;s world, software is the beating heart of virtually every industry. It&amp;rsquo;s what empowers businesses to connect with their audience, streamline operations, and explore new horizons. In this article, we&amp;rsquo;re going to dive into the core pillars of our technology stack, giving special attention to the web, mobile, services, and DevOps domains. Let&amp;rsquo;s journey through these technologies and explore how they&amp;rsquo;re shaping the present and future of software development.</description>
+    </item>
+    <item>
+      <title>Image Gallery</title>
+      <link>https://mohitkanwar.com/gallery/</link>
+      <pubDate>Sat, 25 Jun 2022 18:35:46 +0530</pubDate>
+      <guid>https://mohitkanwar.com/gallery/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

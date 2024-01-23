@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Development on Mohit Kanwar&#39;s App</title>
+    <link>https://mohitkanwar.com/tags/software-development/</link>
+    <description>Recent content in Software Development on Mohit Kanwar&#39;s App</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 22:53:58 +0530</lastBuildDate>
+    <atom:link href="https://mohitkanwar.com/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cost of developing a software</title>
+      <link>https://mohitkanwar.com/blogs/cost-of-software/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>https://mohitkanwar.com/blogs/cost-of-software/</guid>
+      <description>Trigger for this blog I was pair programming during an interview, where the candidate had shared his screen and I was working side by side with him, trying to understand the solution he was presenting.&#xA;Picture this: his computer screen flashed a message about his Windows license being expired. I couldn&amp;rsquo;t help but ask, and what I heard surprised me. He proudly admitted to using a &amp;ldquo;not-so-legal&amp;rdquo; version of Windows because he wanted to stick it to Microsoft for their high prices, especially when there&amp;rsquo;s a free alternative like Ubuntu available.</description>
+    </item>
+    <item>
+      <title>Unveiling the Tech Ecosystem - A Techie&#39;s Take on Software Development</title>
+      <link>https://mohitkanwar.com/blogs/technologies/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://mohitkanwar.com/blogs/technologies/</guid>
+      <description>As a technology enthusiast, I&amp;rsquo;ve had the honor of witnessing the ever-evolving landscape of software development. In today&amp;rsquo;s world, software is the beating heart of virtually every industry. It&amp;rsquo;s what empowers businesses to connect with their audience, streamline operations, and explore new horizons. In this article, we&amp;rsquo;re going to dive into the core pillars of our technology stack, giving special attention to the web, mobile, services, and DevOps domains. Let&amp;rsquo;s journey through these technologies and explore how they&amp;rsquo;re shaping the present and future of software development.</description>
+    </item>
+  </channel>
+</rss>
