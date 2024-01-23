@@ -1,4 +1,4 @@
-baseURL = "https://mohitkanwar.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Mohit Kanwar's App"
 theme = "hugo-profile"
