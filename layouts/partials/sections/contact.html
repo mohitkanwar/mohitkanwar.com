@@ -24,7 +24,7 @@
                     </div>
                     {{ else if .Site.Params.contact.email }}
                     <div class="text-center pt-3">
-                        <a href="mailto:{{ .Site.Params.contact.email }}" class="btn">
+                        <a href="{{ .Site.Params.contact.email }}" class="btn">
                             {{ .Site.Params.contact.btnName | default "Get in Touch" }}
                         </a>
                     </div>
