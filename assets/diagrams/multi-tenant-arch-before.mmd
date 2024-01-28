@@ -1,0 +1,90 @@
+
+graph LR
+    style Client_Apps fill:#FFD700,stroke:#000000,stroke-width:2px;
+    style platform fill:#90EE90,stroke:#000000,stroke-width:2px;
+    style Business_Services fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+    style Support_Services fill:#FFA07A,stroke:#000000,stroke-width:2px;
+    style Downstream_Services fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+    subgraph Client_Apps
+        style RETAIL fill:#FFD700,stroke:#000000,stroke-width:2px;
+        RETAIL[RETAIL Application]
+        style HNI fill:#FFD700,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5;
+        HNI[High Networth ?]
+    end
+    
+    subgraph platform
+        style GATEWAY fill:#90EE90,stroke:#000000,stroke-width:2px;
+        style DISCOVERY fill:#90EE90,stroke:#000000,stroke-width:2px;
+        style LOAD_BALANCE fill:#90EE90,stroke:#000000,stroke-width:2px;
+        style MORE_P fill:#90EE90,stroke:#000000,stroke-width:2px;
+
+        GATEWAY[API Gateway]
+        DISCOVERY[Service Discovery]
+        LOAD_BALANCE[Load Balancer]
+        MORE_P[...]
+    end
+    
+    subgraph Business_Services
+        style ONBOARDING fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+        style ACCOUNTS fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+        style TRANSACTIONS fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+        style STATEMENTS fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+        style MORE_BS fill:#ADD8E6,stroke:#000000,stroke-width:2px;
+        ONBOARDING[Onboarding Service]
+        ACCOUNTS[Accounts Service]
+        TRANSACTIONS[Transactions Service]
+        STATEMENTS[Statements Service]
+        MORE_BS[...]
+    end
+    
+    subgraph Support_Services
+        style NOTIFICATION fill:#FFA07A,stroke:#000000,stroke-width:2px;
+        style LOGGING fill:#FFA07A,stroke:#000000,stroke-width:2px;
+        style AUDITING fill:#FFA07A,stroke:#000000,stroke-width:2px;
+        style CACHING fill:#FFA07A,stroke:#000000,stroke-width:2px;
+        style MORE_SS fill:#FFA07A,stroke:#000000,stroke-width:2px;
+        NOTIFICATION[Notification Service]
+        LOGGING[Logging Service]
+        AUDITING[Auditing Service]
+        STATEMENTS[Statements Service]
+        CACHING[Caching Service]
+        MORE_SS[...]
+    end
+    
+    subgraph Downstream_Services
+        style CRM fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style CORE fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style REPORTING fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style DW fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style NOTIFICATION_ENGINE fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style EXT_TXNS fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        style MORE_DS fill:#FFC0CB,stroke:#000000,stroke-width:2px;
+        CRM[Customer Relation Management]
+        CORE[Core Banking]
+        REPORTING[Reporting Engine]
+        DW[Data Warehouse]
+        NOTIFICATION_ENGINE[SMS, EMAIL, Push notifications]
+        EXT_TXNS[External Transactions]
+        MORE_DS[...]
+    end
+    
+    RETAIL --> GATEWAY
+    GATEWAY --> DISCOVERY
+    GATEWAY --> LOAD_BALANCE
+    LOAD_BALANCE --> ONBOARDING
+    LOAD_BALANCE --> ACCOUNTS
+    LOAD_BALANCE --> TRANSACTIONS
+    LOAD_BALANCE --> STATEMENTS
+    LOAD_BALANCE --> NOTIFICATION
+    LOAD_BALANCE --> LOGGING
+    LOAD_BALANCE --> AUDITING
+    LOAD_BALANCE --> CACHING
+    NOTIFICATION --> NOTIFICATION_ENGINE
+    LOGGING --> DW
+    AUDITING --> REPORTING
+    ONBOARDING --> CORE
+    ACCOUNTS --> CORE
+    TRANSACTIONS --> CORE
+    STATEMENTS --> CORE
+    CACHING --> CRM
+    TRANSACTIONS --> EXT_TXNS
