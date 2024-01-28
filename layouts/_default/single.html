@@ -1,5 +1,13 @@
 {{ define "head" }}
+<meta property="og:title" content="{{.Title }}">
 <meta name="description" content="{{ .Params.description }}">
+<meta property="og:description" content="{{ .Params.description }}">
+<meta property="og:image" content="{{ .Params.image }}">
+{{ if .Params.tags }}
+<meta name="keywords" content=" {{ .Params.tags}}">
+{{ end }}
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mohit Kanwar">
 <link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
 
 <!-- fontawesome -->
