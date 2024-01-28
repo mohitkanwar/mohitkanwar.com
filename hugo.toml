@@ -1,10 +1,10 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Mohit Kanwar's App"
+title = "Mohit Kanwar's App : My thoughts on Life"
 theme = "hugo-profile"
 Paginate = 3
 enableRobotsTXT = true
-
+disqusShortname = "mohitkanwar-com"
 [markup.goldmark.renderer]
   unsafe = true
 [params]
