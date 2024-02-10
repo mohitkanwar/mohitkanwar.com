@@ -2,9 +2,9 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-author:
+author: "Mohit Kanwar"
 tags:
-image:
+image: /images/blogs/{{.Name}}/banner.png
 description:
 toc:
 ---
