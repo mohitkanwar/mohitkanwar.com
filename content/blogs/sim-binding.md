@@ -4,8 +4,11 @@ date: 2024-02-10T13:08:10+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
+    - Sim Binding
+    - Security
+    - Authentication
 image: /images/blogs/sim-binding/banner.png
-description:
+description: Learn about sim binding, a process that links the SIM card to a mobile application for enhanced security. Understand the compliance requirements, sim card validation, alternative solutions like Silent Network Authentication (SNA) and OTP-based authentication, and considerations for virtual sim cards and older sim cards.
 toc:
 ---
 

@@ -3,9 +3,12 @@ title: "Dev Experience"
 date: 2024-02-03T09:16:30+05:30
 draft: false
 author: "Mohit Kanwar"
-tags:
+tags: 
+    - Developer Experience
+    - Collaboration
+    - Quality
 image: /images/blogs/dev-experience/banner.png
-description:
+description: Improving experience of software developers leads to improved quality of the software products. In this blog, we discuss how can we improve the experience of our software developers.
 toc:
 ---
 

@@ -5,6 +5,10 @@ theme = "hugo-profile"
 Paginate = 3
 enableRobotsTXT = true
 disqusShortname = "mohitkanwar-com"
+
+[outputs]
+	home = ["HTML","RSS","JSON"]
+
 [markup.goldmark.renderer]
   unsafe = true
 [params]
@@ -18,7 +22,7 @@ disqusShortname = "mohitkanwar-com"
   # brandLogo = "/logo.png" # Logo for the brand | default is the favicon variable
   # showBrandLogo = false # Show brand logo in nav bar | default is true
   brandName = "Mohit Kanwar" # Brand name for the brand | default is the title variable
-  disableSearch = true
+  disableSearch = false
   # searchPlaceholder = "Search"
   [params.navbar.stickyNavBar]
     enable = true
@@ -297,3 +301,5 @@ disqusShortname = "mohitkanwar-com"
   article = "Jan 2, 2006"
   articleList = "Jan 2, 2006"
   articleRecent = "Jan 2, 2006"
+
+
