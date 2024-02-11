@@ -25,12 +25,12 @@ Sim binding is a process requirement by RBI to provide secure mobile application
 
 Sim binding involves linking the SIM card to the mobile application to enhance security. The compliance requirements include implementing alternatives to SMS-based OTP authentication mechanisms, re-authentication for unused devices or applications, not storing sensitive information on the device, and securing mobile applications from SQL injection vulnerabilities.
 
-## What is the compliance requirements
+## The compliance requirements
 Compliance regulations necessitate linking the application with physical elements that are inherently resistant to change. These physical elements can encompass the mobile device itself, a hard token, or even the SIM card. As a robust security measure, authentication must be based on multiple factors rather than relying solely on a single mechanism. By incorporating multiple factors into the authentication process, it becomes significantly more challenging to counterfeit, thereby reducing the occurrence of fraudulent activities. This multi-factor authentication approach not only bolsters security but also instills greater confidence in the integrity of the system.
 
-## What is the Sim card
+## Sim card
 A SIM card, or Subscriber Identification Module, is a small chip that is inserted into a mobile device to identify and authenticate the user on a cellular network. It contains unique information, such as the mobile number and network provider, and allows the device to connect to the network and make calls, send messages, and access mobile data. SIM cards are used in mobile phones, tablets, and other devices that require cellular connectivity. They play a crucial role in ensuring secure communication and authentication for mobile applications, including mobile banking and mobile payments.
-## How to bind sim card
+## Binding sim card
 Sim cards store Personally Identifiable Information (PII) and other sensitive data, making it crucial to protect their access. Due to the sensitivity of this information, different device operating systems adopt varying approaches to expose sim card details to app developers. 
 
 **iOS:** Apple's iOS operating system does not provide direct access to sim card details through its APIs. This limitation is implemented to prioritize user privacy and data security. App developers on iOS cannot retrieve sim card information programmatically, ensuring that sensitive data stored on the sim card remains protected.
