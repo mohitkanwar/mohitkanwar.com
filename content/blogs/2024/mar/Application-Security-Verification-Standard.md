@@ -23,7 +23,7 @@ image: /images/blogs/2024/mar/Application-Security-Verification-Standard/banner.
 description: Explore the power of OWASP's Application Security Verification Standards (ASVS) to fortify your software against cyber threats. Learn how to navigate key security categories like authentication, access control, and data protection, ensuring compliance with industry standards while enhancing user trust. Dive deep into ASVS levels and essential security considerations to build robust, secure applications that stand strong against evolving security challenges.
 ---
 # Application Security Verification Standards
-Ensuring the security of an application is a complex task. To simplify this process, OWASP (Open Web Application Security Project) has developed a standardized approach aimed at gauging and enhancing application security. Application Security Verification Standards a.k.a ASVS framework not only assists in evaluating the security posture of an application but also empowers development teams to build robust and secure software.
+Ensuring the security of an application is a complex task. To simplify this process, OWASP (Open Web Application Security Project) has developed <cite>a standardized approach[^1]</cite> aimed at gauging and enhancing application security. Application Security Verification Standards a.k.a ASVS framework not only assists in evaluating the security posture of an application but also empowers development teams to build robust and secure software.
 
 Consider a scenario where a fintech company is developing a new banking application. By incorporating OWASP's recommendations into their development process, they can systematically identify and address security weaknesses, safeguard sensitive financial information and bolster customer trust.
 
@@ -105,3 +105,5 @@ All APIs, whether REST, SOAP, GraphQL, or any other mechanism, must enforce auth
 
 ## V14 Configuration
 Configurations should be securely stored, especially as they may contain sensitive information such as licenses. Access to or modification of configurations should require the involvement of more than one individual for added security.
+
+[^1]: https://owasp.org/www-project-application-security-verification-standard/  
