@@ -4,8 +4,14 @@ date: 2024-04-06T19:35:14+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
+    - Mermaid.js
+    - Diagrams
+    - Sequence Diagram
+    - Visualization
+    - Beautiful
+    - Collaboration
 image: /images/blogs/2024/apr/sequence-diag-mermaid/banner.png
-description:
+description: Crafting software solutions with visual precision is key to effective communication within a team. Discover the power of mermaid.js, a seamless tool for creating sequence diagrams using a specific DSL in markdown format. Simplify your workflow, enhance collaboration, and boost efficiency as you delve into the world of sequence diagram creation with mermaid.js.
 toc:
 ---
 
@@ -611,4 +617,8 @@ Mermaid offers many more tools for representing the sequence diagram like if-els
 
 I feel much more productive while using mermaid over other tools because now I don't waste my time correcting the lines, adjusting the positions of the participants etc.
 
-Although mermaid has it's own limitations e.g. it comes with limited shapes, I hope to see more evolutions happening in mermaid js .
+Although mermaid has it's own limitations e.g. it comes with limited shapes, and colouring and styling options.
+
+ I hope to see more evolutions happening in mermaid js .
+ You can read more about Mermaid sequence diagram on the following link : https://mermaid.js.org/syntax/sequenceDiagram.html
+
