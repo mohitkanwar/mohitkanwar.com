@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Mohit Kanwar's App : My thoughts on Life"
 theme = "hugo-profile"
-Paginate = 5
+Paginate = 9
 enableRobotsTXT = true
 disqusShortname = "mohitkanwar-com"
 
@@ -42,12 +42,19 @@ disqusShortname = "mohitkanwar-com"
   url = "/blogs"
   weight = 1
 
+#[[Menus.main]]
+#  identifier = "anecdotes"
+#  name = "Anecdotes"
+#  title = "My Stories"
+#  url = "/anecdotes"
+#  weight = 2
+
 [[Menus.main]]
   identifier = "gallery"
   name = "Gallery"
   title = "Blog posts"
   url = "/gallery"
-  weight = 2
+  weight = 3
 
 # About
 [params.about]

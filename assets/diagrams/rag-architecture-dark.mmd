@@ -1,0 +1,17 @@
+---
+title: RAG architecture
+---
+%%{init: {'theme':'dark'}}%%
+flowchart LR
+    user[User] -->|Prompt| ui[User Interface] --> |Validate Prompt| promptValidation
+    subgraph rag [RAG]
+        promptValidation[Prompt Filter]-->|find relevant source|findingSource[Source Selector]
+        findingSource-->contextSource1[(Context Source 1)]
+        findingSource-->contextSource2[(Context Source 1)]
+        findingSource -->|Prepare relevant context for the prompt| Context
+    end
+
+    subgraph llm [LLM]
+        Context[Context]-->|Prompt + Context|LLM[Large Language Model]
+    end
+    LLM -->|Enriched Response| ui
