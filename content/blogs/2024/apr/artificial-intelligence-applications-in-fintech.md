@@ -29,7 +29,7 @@ The advent of smart devices has brought banks closer to their customers through 
 
 <picture>
      
-   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/conversational-banking.png" alt="Models in artificial intelligence" class="responsive-image">
+   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/conversational-banking.png" alt="Models in artificial intelligence" class="responsive-image" style="max-width: 50%;position: relative;left: 25%;">
 
 </picture>
 
@@ -37,7 +37,7 @@ For instance, a simple voice command such as "Pay the overdue credit charges" ca
 
 Conversational banking not only enhances convenience for the general population but also provides a significant benefit to differently abled individuals who may face challenges in using traditional banking methods. By enabling voice-activated interactions, banks are ensuring that their services are inclusive and accessible to all customers, regardless of their physical abilities.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PpSHoUfRsaA?si=dXs7sTdQ2OxXyTcF&amp;clip=UgkxvgIKR7f1i8Ra5zO_4uPFfEFJU9MMZG-P&amp;clipt=EMA-GODaAQ" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PpSHoUfRsaA?si=dXs7sTdQ2OxXyTcF&amp;clip=UgkxvgIKR7f1i8Ra5zO_4uPFfEFJU9MMZG-P&amp;clipt=EMA-GODaAQ" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 60%;position: relative;left: 25%;"></iframe>
 
 
 
@@ -51,7 +51,7 @@ Moreover, behavioral analysis offers the advantage of tailoring truely personali
 
 <picture>
      
-   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/behaviour.png" alt="Models in artificial intelligence" class="responsive-image">
+   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/behaviour.png" alt="Models in artificial intelligence" class="responsive-image" style="max-width: 50%;position: relative;left: 25%;">
 
 </picture>
 
@@ -66,6 +66,12 @@ One real-world example of AI-powered behavioral analysis is <cite>PayPal's utili
 ## Customer Assistance
 
 The customer support systems of banks and fintech companies often face challenges in providing efficient and personalized assistance to customers. Issues such as repetitive marketing calls and inadequate support when needed can lead to customer dissatisfaction. While the human agents handling customer queries strive to assist, the limitations of manual processes can hinder their effectiveness in delivering timely and relevant information.
+
+<picture>
+     
+   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/customer-assistance.png" alt="Models in artificial intelligence" class="responsive-image" style="max-width: 50%;position: relative;left: 25%;">
+
+</picture>
 
 AI emerges as a transformative solution to enhance customer assistance in the financial industry. By leveraging AI technologies, banks and fintechs can address these challenges and provide more effective support to their customers. AI-powered tools can streamline information retrieval, collate data efficiently, and present solutions in a clear and understandable manner, overcoming the complexities of financial processes and terminology.
 
@@ -88,6 +94,11 @@ Tax filing is a crucial obligation for every earner, and the complexity of tax l
 AI can play a significant role in tax assistance by automating various aspects of tax preparation and filing. By leveraging AI algorithms, users can receive guidance on filling out tax forms accurately, identifying potential deductions, and maximizing tax-saving opportunities. AI can analyze user data, income sources, and expenses to provide personalized tax recommendations tailored to each individual's financial situation.
 
 In countries like India where multiple tax regimes coexist, AI can offer valuable support in selecting the most beneficial tax scheme based on the user's profile and financial circumstances. By analyzing user data and tax laws, AI can generate recommendations on the optimal tax-saving strategies and schemes that align with the user's tax obligations and financial goals.
+<picture>
+     
+   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/tax-assistance.png" alt="Models in artificial intelligence" class="responsive-image" style="max-width: 50%;position: relative;left: 25%;">
+
+</picture>
 
 Moreover, AI-powered tax assistance tools can help users gather the required documents, minimize errors in tax filings, and set up reminders for important tax deadlines. By automating these processes, AI not only simplifies tax compliance but also enhances the overall tax-filing experience for users, ensuring accuracy and efficiency in meeting tax obligations.
 
@@ -99,5 +110,10 @@ Ensuring secure and accurate user verification is a critical aspect of applicati
 AI technology plays a pivotal role in enhancing identity verification processes by leveraging a multitude of parameters to establish and authenticate user identities. By mapping a user's photo with identity documents, analyzing facial features, calculating age, and cross-referencing various data points, AI enhances the security and accuracy of identity verification processes, thereby authorizing legitimate users to access banking applications securely.
 
 The incorporation of multiple parameters such as voice recognition, facial biometrics, geolocation data, address verification, document validity checks, age verification, device locations, and behavioral analysis strengthens the identity verification process. By utilizing these diverse parameters, AI can create a comprehensive digital fingerprint unique to each user, enhancing the robustness of identity verification and ensuring a high level of security.
+<picture>
+     
+   <img src="/images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/identity.png" alt="Models in artificial intelligence" class="responsive-image" style="max-width: 50%;position: relative;left: 25%;">
+
+</picture>
 
 The more parameters involved in the identity verification process, the higher the level of security and accuracy achieved. AI-driven identity verification not only enhances security measures but also streamlines the user authentication process, offering a seamless and reliable experience for users accessing banking applications and financial services.
