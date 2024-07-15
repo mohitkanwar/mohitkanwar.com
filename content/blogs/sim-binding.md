@@ -192,6 +192,36 @@ sequenceDiagram
 Sometimes the SNA approach is not feasible due to cost and approval timelines involved. An alternative that is not sim binding, but number binding approach can be used, if the business and compliance agree to it.
 
 In this approach, an OTP is either sent from the service, or from the device to service, and validations are performed on both the ends (mobile and service) to determine if the SMS has been sent from the same device. In this approach, we can determine if a number's sim is present in the device or not. While this is not fraud-proof, it reduces a lot of easily doable frauds, and increases the costs of the hackers.
+```mermaid
+sequenceDiagram
+    participant User
+    box FrontEnd
+        participant mobileApp
+    end
+    box Backend
+        participant Service
+    end
+    box SMS Service Provider
+        participant Twilio
+    end
+
+    User->>mobileApp: Takes an action to start the Number binding
+    mobileApp ->> Service : Request to start the Number binding
+    Service ->> Service : Generate request Id, Large random alphabets as SMS content
+    Service ->> mobileApp : RequestId, SMS content
+    mobileApp ->> Twilio : SMS content on registered number, from user's number (sim)
+
+    Twilio -->> Service: SMS Received
+    Service ->> Service : compare, validate and persist information
+    Service -->> mobileApp : is sim changed?
+    mobileApp ->> mobileApp : exit the app if sim changed
+    
+```
+
+This approach takes an alternative route for Sim binding, however since an SMS is sent everytime sim (or number) binding is tried this way, the user has to bear the costs for sending the SMS. This might not be a good user experience and hence tricks should be adapted to minimize the cost burden on the users.
+
+Also, since the SMS sending is done over a different channel, the developers need to adapt to techniques like implementing Callback services or polling (or Push notifications) to complete the cycle.
+
 ## Considerations
 - Virtual Sim cards
 With the availability of new types of devices supporting virtual sim cards, there can be a single sim linked with multiple devices. The complexities associated with this needs to be handled.
