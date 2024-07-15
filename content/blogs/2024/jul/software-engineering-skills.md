@@ -1,11 +1,16 @@
 ---
 title: "Software Engineering Skills"
 date: 2024-07-13T12:01:19+05:30
-draft: true
+draft: false
 author: "Mohit Kanwar"
 tags:
+  - Skills to be a better software developer
+  - Continuous Learning in Tech
+  - Collaboration
+  - Personal Growth
+  - Contributing back
 image: /images/blogs/2024/jul/software-engineering-skills/banner.png
-description:
+description: This blog explains that there are other areas of skill improvements that a software engineer requires apart from being an expert in coding.
 toc:
 ---
 
