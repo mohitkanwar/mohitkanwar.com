@@ -91,9 +91,9 @@ The ultimate challenge was balancing security with user convenience. We wanted a
 
 #### Non-Obtrusive Techniques:
 
-**Honeypot Fields**: Bots tend to fill all form fields, so we added invisible fields that only bots would touch.
-**Behavioral Analysis**: We tracked interactions like mouse movements and keystrokes to detect automated behavior.
-**Data** : Collecting a lot of meta data, and running analytical algorithms on them helped us capture and identify more details of the users.
+* **Honeypot Fields**: Bots tend to fill all form fields, so we added invisible fields that only bots would touch.
+* **Behavioral Analysis**: We tracked interactions like mouse movements and keystrokes to detect automated behavior.
+* **Data** : Collecting a lot of meta data, and running analytical algorithms on them helped us capture and identify more details of the users.
 
 #### Obtrusive Methods:
 
