@@ -6,8 +6,11 @@ author: "Mohit Kanwar"
 tags:
     - captcha
     - self-hosted
+    - Bot checks
+    - multi-lingual
+    - CTO
 image: /images/blogs/2024/nov/designing-a-captcha-service/banner.png
-description:
+description: Explore the journey of designing a self-hosted CAPTCHA service tailored for privacy and accessibility. Discover insights on balancing security and user experience, overcoming challenges, and best practices to keep bots at bay while enhancing UX
 toc:
 ---
 
