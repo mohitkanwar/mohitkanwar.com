@@ -41,7 +41,6 @@ disqusShortname = "mohitkanwar-com"
   title = "Blog posts"
   url = "/blogs"
   weight = 1
-
 #[[Menus.main]]
 #  identifier = "anecdotes"
 #  name = "Anecdotes"
@@ -50,11 +49,18 @@ disqusShortname = "mohitkanwar-com"
 #  weight = 2
 
 [[Menus.main]]
+  identifier = "solutions"
+  name = "Solutions"
+  title = "Solutions"
+  url = "/solutions"
+  weight = 3
+
+[[Menus.main]]
   identifier = "gallery"
   name = "Gallery"
   title = "Blog posts"
   url = "/gallery"
-  weight = 3
+  weight = 4
 
 # About
 [params.about]
