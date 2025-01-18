@@ -1,4 +1,8 @@
 {{ $image := .Get "image" }}
+{{ $class := .Get "class" }}
+{{ $style := .Get "style" }}
+
+
 
 {{ if .Page.Site.Params.darkMode }}
     {{ $dotIndex := findRE "\\.[^.]*$" $image }}
@@ -9,4 +13,4 @@
     {{ $image := $image }}
 {{ end }}
 
-<img src="{{ $image | absURL }}">
+<img src="{{ $image | absURL }}" class="{{$class}}" style="{{$style}}">

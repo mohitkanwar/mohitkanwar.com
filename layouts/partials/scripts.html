@@ -32,19 +32,27 @@
 {{- if (not .Site.Params.theme.disableThemeToggle) }}
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
+        
+        let prefTheme = 'light';
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
         } else {
             document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
+            prefTheme = 'dark';
         }
+        localStorage.setItem("pref-theme", prefTheme);
+    const themeChangedEvent = new CustomEvent('theme-changed-event', {
+      detail: { "theme": prefTheme },
+    });
+    document.dispatchEvent(themeChangedEvent); 
     })
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
+
+
 
 </script>
 {{- end }}

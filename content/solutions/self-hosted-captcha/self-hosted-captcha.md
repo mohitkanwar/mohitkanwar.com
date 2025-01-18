@@ -119,4 +119,19 @@ Non-Functional Requirements
 
 ### **Context diagram**
 
+{{< mk-img 
+    id="Context-diagram"
+    light="/images/solutions/self-hosted-captcha/c4/1.context-diagram-Context_diagram_for_Captcha_Service.png" 
+    dark="/images/solutions/self-hosted-captcha/c4/1.context-diagram-Context_diagram_for_Captcha_Service-dark.png" 
+    alt="Context Diagram for Captcha solution" 
+    title="Context Diagram for Captcha solution" 
+    class="responsive" 
+    style="max-width: 100%;" 
+    loading="lazy" 
+    width="600" 
+    height="400" 
+>}}
+
+
+
 

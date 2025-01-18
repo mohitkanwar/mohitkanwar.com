@@ -1,0 +1,47 @@
+<!-- Hugo Template -->
+{{ $id := .Get "id" }}
+{{ $lightimage := .Get "light" }}
+{{ $darkimage := .Get "dark" }}
+{{ $alt := .Get "alt" | default "Image description not provided" }}
+{{ $title := .Get "title" | default "Image title not provided" }}
+{{ $class := .Get "class" | default "" }}
+{{ $style := .Get "style" | default "" }}
+{{ $loading := .Get "loading" | default "lazy" }}
+{{ $width := .Get "width" | default "" }}
+{{ $height := .Get "height" | default "" }}
+
+<!-- Default Image -->
+<img 
+    id={{$id}}
+    src="{{ $lightimage | absURL }}" 
+    alt="{{ $alt }}" 
+    title="{{ $title }}" 
+    class="{{ $class }}" 
+    style="{{ $style }}" 
+    loading="{{ $loading }}" 
+    {{ with $width }}width="{{ . }}"{{ end }} 
+    {{ with $height }}height="{{ . }}"{{ end }}>
+
+<!-- JavaScript -->
+<script>
+   document.addEventListener('theme-changed-event', function (event) {
+    const image = document.getElementById("{{$id}}");
+    selectedTheme =  event.detail.theme;
+    if (selectedTheme==='dark') {
+      image.src = "{{ $darkimage | absURL }}";
+    } else {
+      image.src = "{{ $lightimage | absURL }}";
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const isDarkMode = document.body.className.includes("dark");
+    const image = document.getElementById("{{$id}}");
+
+    if (isDarkMode) {
+      image.src = "{{ $darkimage | absURL }}";
+    } else {
+      image.src = "{{ $lightimage | absURL }}";
+    }
+  });
+</script>
