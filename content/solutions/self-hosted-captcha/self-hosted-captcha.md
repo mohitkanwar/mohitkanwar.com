@@ -119,7 +119,7 @@ Non-Functional Requirements
 
 ---
 
-### **Context diagram**
+### **Context**
 
 {{< mk-img 
     id="Context-diagram"
@@ -133,6 +133,33 @@ Non-Functional Requirements
     width="600" 
     height="400" 
 >}}
+
+The captcha system is designed to differentiate the users between the humans and the automated robots.
+
+**Robot** : 
+A robot is an automated system that mimicks the behaviour of a human. It has not so good intentions. There are a few assumptions about this robot : 
+1. It is an automated script e.g. selenium or other tool
+2. It requires specific types of plugins
+3. It tries to fill up the form using some acquired information
+4. It tries to fill up as many details as possible
+5. It doesn't "See" the view the way humans do, instead views it as the html code.
+6. The mouse movement and typing speed of a robot is generally consistent
+
+**User** : A human user of the application, who has good intentions. 
+1. A user is prone to human errors.
+2. A user is less consistent in behaviour.
+3. A user is generally slower than a bot.
+4. A user views the application from eyes or screen-readers.
+
+**Admin** : A human with advanced authorization to manage and govern how the captcha functionality will behave.
+
+**Client Applications** : Client Applications or User Applications are the human facing applications that are prone to bot attacks. These services contain public information and we want to stop the navigation if a bot tries to access this application.
+
+**Admin Application** : This is a protected application, not accessible to common public. The admin users landup on this portal to manage the configurations for captcha.
+
+**Captcha Service** : This is the main microservice to manage the captcha behaviour.
+
+**Other Services** : Other microservices that may want to utilize captcha creation and validation.
 
 ### **Admin app Client Container**
 
