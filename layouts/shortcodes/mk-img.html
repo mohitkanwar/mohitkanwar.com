@@ -12,36 +12,139 @@
 
 <!-- Default Image -->
 <img 
-    id={{$id}}
+    id="{{ $id }}"
     src="{{ $lightimage | absURL }}" 
     alt="{{ $alt }}" 
     title="{{ $title }}" 
-    class="{{ $class }}" 
+    class="{{ $class }} zoomable" 
     style="{{ $style }}" 
     loading="{{ $loading }}" 
     {{ with $width }}width="{{ . }}"{{ end }} 
-    {{ with $height }}height="{{ . }}"{{ end }}>
+    {{ with $height }}height="{{ . }}"{{ end }} 
+    data-light="{{ $lightimage | absURL }}"
+    data-dark="{{ $darkimage | absURL }}">
+
+<!-- Overlay for Enlarged Image -->
+<div id="image-overlay" class="hidden">
+    <div id="overlay-content">
+        <img id="overlay-image" src="">
+        <button id="close-overlay">&times;</button>
+    </div>
+</div>
 
 <!-- JavaScript -->
 <script>
    document.addEventListener('theme-changed-event', function (event) {
-    const image = document.getElementById("{{$id}}");
-    selectedTheme =  event.detail.theme;
-    if (selectedTheme==='dark') {
-      image.src = "{{ $darkimage | absURL }}";
-    } else {
-      image.src = "{{ $lightimage | absURL }}";
-    }
-  });
+       const image = document.getElementById("{{ $id }}");
+       const selectedTheme = event.detail.theme;
+       image.src = selectedTheme === 'dark' ? image.dataset.dark : image.dataset.light;
+   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const isDarkMode = document.body.className.includes("dark");
-    const image = document.getElementById("{{$id}}");
+   document.addEventListener('DOMContentLoaded', function () {
+       const image = document.getElementById("{{ $id }}");
+       const isDarkMode = document.body.classList.contains("dark");
+       image.src = isDarkMode ? image.dataset.dark : image.dataset.light;
+   });
 
-    if (isDarkMode) {
-      image.src = "{{ $darkimage | absURL }}";
-    } else {
-      image.src = "{{ $lightimage | absURL }}";
-    }
-  });
+   // Image Zoom Functionality
+   document.addEventListener('DOMContentLoaded', function () {
+       const image = document.getElementById("{{ $id }}");
+       const overlay = document.getElementById("image-overlay");
+       const overlayImage = document.getElementById("overlay-image");
+       const closeButton = document.getElementById("close-overlay");
+
+       // Open Enlarged Image
+       image.addEventListener("click", function () {
+           overlayImage.src = image.src;
+           overlay.classList.remove("hidden");
+           document.body.style.overflow = "hidden"; // Prevent scrolling when image is open
+       });
+
+       // Close when clicking outside the image
+       overlay.addEventListener("click", function (event) {
+           if (event.target === overlay) {
+               closeOverlay();
+           }
+       });
+
+       // Close when clicking the close button
+       closeButton.addEventListener("click", function () {
+           closeOverlay();
+       });
+
+       // Close on Escape key press
+       document.addEventListener("keydown", function (event) {
+           if (event.key === "Escape") {
+               closeOverlay();
+           }
+       });
+
+       // Close function
+       function closeOverlay() {
+           overlay.classList.add("hidden");
+           document.body.style.overflow = "auto"; // Re-enable scrolling
+       }
+   });
 </script>
+
+<!-- CSS for Image Zoom -->
+<style>
+    /* Overlay background */
+    #image-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    /* Show overlay when active */
+    #image-overlay:not(.hidden) {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Enlarged image */
+    #overlay-content {
+        position: relative;
+    }
+
+    #overlay-image {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Close button */
+    #close-overlay {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        font-size: 24px;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background 0.3s ease-in-out;
+    }
+
+    #close-overlay:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    /* Initially hidden */
+    .hidden {
+        display: none;
+    }
+</style>
