@@ -10,6 +10,8 @@ tags:
   - Software Development
   - Software Maintenance
   - Freemium model
+
+imageBasePath: "/images/solutions/self-hosted-captcha"
 image: /images/solutions/self-hosted-captcha/coming-soon.gif
 description: "Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software."
 toc: 
@@ -132,6 +134,45 @@ Non-Functional Requirements
     height="400" 
 >}}
 
+### **Admin app Client Container**
+
+{{< mk-img 
+    id="Admin-container-diagram"
+    light="/images/solutions/self-hosted-captcha/c4/2.1.container-admin-application-Admin_Client_application_Container.png" 
+    dark="/images/solutions/self-hosted-captcha/c4/2.1.container-admin-application-Admin_Client_application_Container-dark.png" 
+    alt="Admin Client application Container" 
+    title="Admin Client application Container for Captcha solution" 
+    class="responsive" 
+    style="max-width: 100%;" 
+    loading="lazy" 
+    width="600" 
+    height="400" 
+>}}
 
 
+### **User app client application**
 
+{{< mk-img 
+    id="User-App-container-diagram"
+    light="/images/solutions/self-hosted-captcha/c4/2.2.container-client-application-User_Client_application_Container.png" 
+    dark="/images/solutions/self-hosted-captcha/c4/2.2.container-client-application-User_Client_application_Container-dark.png" 
+    alt="User Client application Container" 
+    title="User Client application Container for Captcha solution" 
+    class="responsive" 
+    style="max-width: 100%;" 
+    loading="lazy" 
+    width="600" 
+    height="400" 
+>}}
+
+### **Captcha Microservice**
+
+
+{{< mk-img 
+    id="captcha-ms-diagram"
+    light="/images/solutions/self-hosted-captcha/c4/2.3.container-captcha-service-Captcha_Service_Container.png" 
+    dark="/images/solutions/self-hosted-captcha/c4/2.3.container-captcha-service-Captcha_Service_Container-dark.png" 
+    alt="Captcha Microservice Container" 
+    title="Captcha Microservice Container" 
+    class="responsive" style="max-width: 100%;" loading="lazy" width="600" height="400" 
+>}}
