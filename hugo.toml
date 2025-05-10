@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Mohit Kanwar's App : My thoughts on Life"
 theme = "hugo-profile"
-Paginate = 9
+pagination.pagerSize = 9
 enableRobotsTXT = true
 disqusShortname = "mohitkanwar-com"
 
@@ -72,7 +72,7 @@ disqusShortname = "mohitkanwar-com"
   [params.about.skills]
     enable = true
     title = "Here are a few technologies I've been working with recently:"
-    items = ["Backbase", "Spring Cloud", "Angular", "React", "Node", "ReactNative", "Spring Boot", "Golang"]
+    items = ["Gen AI", "Backbase", "Spring Cloud", "Angular", "React", "Node", "ReactNative", "Golang", "Python", "AWS", "Azure"]
 
 # Experience
 [params.experience]

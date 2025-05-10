@@ -46,12 +46,15 @@
        image.src = isDarkMode ? image.dataset.dark : image.dataset.light;
    });
 
-   // Image Zoom Functionality
+   // Image Zoom Functionality with Dragging
    document.addEventListener('DOMContentLoaded', function () {
        const image = document.getElementById("{{ $id }}");
        const overlay = document.getElementById("image-overlay");
        const overlayImage = document.getElementById("overlay-image");
        const closeButton = document.getElementById("close-overlay");
+
+       let isDragging = false;
+       let offsetX, offsetY;
 
        // Open Enlarged Image
        image.addEventListener("click", function () {
@@ -84,10 +87,32 @@
            overlay.classList.add("hidden");
            document.body.style.overflow = "auto"; // Re-enable scrolling
        }
+
+       // Dragging functionality
+       overlayImage.addEventListener("mousedown", function (event) {
+           isDragging = true;
+           offsetX = event.clientX - overlayImage.getBoundingClientRect().left;
+           offsetY = event.clientY - overlayImage.getBoundingClientRect().top;
+           overlayImage.style.cursor = "grabbing";
+           event.preventDefault();
+       });
+
+       document.addEventListener("mousemove", function (event) {
+           if (isDragging) {
+               overlayImage.style.position = "absolute";
+               overlayImage.style.left = (event.clientX - offsetX) + "px";
+               overlayImage.style.top = (event.clientY - offsetY) + "px";
+           }
+       });
+
+       document.addEventListener("mouseup", function () {
+           isDragging = false;
+           overlayImage.style.cursor = "grab";
+       });
    });
 </script>
 
-<!-- CSS for Image Zoom -->
+<!-- CSS for Image Zoom & Close Button -->
 <style>
     /* Overlay background */
     #image-overlay {
@@ -112,35 +137,60 @@
         visibility: visible;
     }
 
-    /* Enlarged image */
+    /* Enlarged image container */
     #overlay-content {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    /* Smaller Enlarged Image */
     #overlay-image {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 70% !important;
+        max-height: 70% !important;
         border-radius: 8px;
         box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
         transition: transform 0.2s ease-in-out;
+        cursor: grab;
+        position: relative;
     }
 
-    /* Close button */
+    /* Close button inside image */
     #close-overlay {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.8);
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.9);
         border: none;
-        font-size: 24px;
-        padding: 5px 10px;
+        font-size: 28px;
+        font-weight: bold;
+        color: black;
+        padding: 5px 12px;
         cursor: pointer;
         border-radius: 50%;
         transition: background 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #close-overlay:hover {
         background: rgba(255, 255, 255, 1);
+    }
+
+    /* Ensure button stays inside the image */
+    #overlay-content {
+        position: relative;
+    }
+
+    #close-overlay {
+        right: -15px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        line-height: 20px;
+        text-align: center;
     }
 
     /* Initially hidden */
