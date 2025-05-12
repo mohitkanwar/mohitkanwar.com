@@ -2,652 +2,652 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/blogs/</loc>
+    <loc>/blogs/</loc>
     <lastmod>2025-01-06T21:48:45+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-01-06T21:48:45+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2025/jan/the-test-data-dilemma/</loc>
+    <loc>/blogs/2025/jan/the-test-data-dilemma/</loc>
     <lastmod>2025-01-06T21:48:45+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/bot-checks/</loc>
+    <loc>/tags/bot-checks/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/captcha/</loc>
+    <loc>/tags/captcha/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cto/</loc>
+    <loc>/tags/cto/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/nov/designing-a-captcha-service/</loc>
+    <loc>/blogs/2024/nov/designing-a-captcha-service/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/multi-lingual/</loc>
+    <loc>/tags/multi-lingual/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/self-hosted/</loc>
+    <loc>/tags/self-hosted/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/feba/</loc>
+    <loc>/tags/feba/</loc>
     <lastmod>2024-08-06T09:31:44+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/finacle/</loc>
+    <loc>/tags/finacle/</loc>
     <lastmod>2024-08-06T09:31:44+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/infosys/</loc>
+    <loc>/tags/infosys/</loc>
     <lastmod>2024-08-06T09:31:44+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/aug/my-learnings-from-finacle/</loc>
+    <loc>/blogs/2024/aug/my-learnings-from-finacle/</loc>
     <lastmod>2024-08-06T09:31:44+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/product-development/</loc>
+    <loc>/tags/product-development/</loc>
     <lastmod>2024-08-06T09:31:44+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/jul/authenticating-services-in-a-microservices-environment/</loc>
+    <loc>/blogs/2024/jul/authenticating-services-in-a-microservices-environment/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/authentication/</loc>
+    <loc>/tags/authentication/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code/</loc>
+    <loc>/tags/code/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/microservices/</loc>
+    <loc>/tags/microservices/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/needs-improvement/</loc>
+    <loc>/tags/needs-improvement/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/wip/</loc>
+    <loc>/tags/wip/</loc>
     <lastmod>2024-07-17T14:31:54+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/google-authenticator/</loc>
+    <loc>/tags/google-authenticator/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/microsoft-authenticator/</loc>
+    <loc>/tags/microsoft-authenticator/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/rfc-6238/</loc>
+    <loc>/tags/rfc-6238/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/security/</loc>
+    <loc>/categories/security/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/security/</loc>
+    <loc>/tags/security/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/technology/</loc>
+    <loc>/categories/technology/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/jul/time-based-otp/</loc>
+    <loc>/blogs/2024/jul/time-based-otp/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/totp/</loc>
+    <loc>/tags/totp/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/two-factor-authentication/</loc>
+    <loc>/tags/two-factor-authentication/</loc>
     <lastmod>2024-07-15T09:40:00+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/collaboration/</loc>
+    <loc>/tags/collaboration/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/continuous-learning-in-tech/</loc>
+    <loc>/tags/continuous-learning-in-tech/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/contributing-back/</loc>
+    <loc>/tags/contributing-back/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/personal-growth/</loc>
+    <loc>/tags/personal-growth/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/skills-to-be-a-better-software-developer/</loc>
+    <loc>/tags/skills-to-be-a-better-software-developer/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/jul/software-engineering-skills/</loc>
+    <loc>/blogs/2024/jul/software-engineering-skills/</loc>
     <lastmod>2024-07-13T12:01:19+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/may/apis-are-forever/</loc>
+    <loc>/blogs/2024/may/apis-are-forever/</loc>
     <lastmod>2024-05-26T11:45:06+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/architecture/</loc>
+    <loc>/tags/architecture/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/artificial-intelligence/</loc>
+    <loc>/tags/artificial-intelligence/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/attention-is-all-you-need/</loc>
+    <loc>/tags/attention-is-all-you-need/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/may/components-in-llm-architecture/</loc>
+    <loc>/blogs/2024/may/components-in-llm-architecture/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/large-language-model/</loc>
+    <loc>/tags/large-language-model/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/transformer/</loc>
+    <loc>/tags/transformer/</loc>
     <lastmod>2024-05-14T09:28:50+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/apr/artificial-intelligence-applications-in-fintech/</loc>
+    <loc>/blogs/2024/apr/artificial-intelligence-applications-in-fintech/</loc>
     <lastmod>2024-04-29T17:12:49+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/deep-learning/</loc>
+    <loc>/tags/deep-learning/</loc>
     <lastmod>2024-04-27T10:22:20+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/generative-ai/</loc>
+    <loc>/tags/generative-ai/</loc>
     <lastmod>2024-04-27T10:22:20+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/machine-learning/</loc>
+    <loc>/tags/machine-learning/</loc>
     <lastmod>2024-04-27T10:22:20+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/models/</loc>
+    <loc>/tags/models/</loc>
     <lastmod>2024-04-27T10:22:20+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/apr/models-in-artificial-intelligence/</loc>
+    <loc>/blogs/2024/apr/models-in-artificial-intelligence/</loc>
     <lastmod>2024-04-27T10:22:20+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/content-enrichment/</loc>
+    <loc>/tags/content-enrichment/</loc>
     <lastmod>2024-04-09T17:14:04+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/rag/</loc>
+    <loc>/tags/rag/</loc>
     <lastmod>2024-04-09T17:14:04+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/apr/retrieval-augmented-generation/</loc>
+    <loc>/blogs/2024/apr/retrieval-augmented-generation/</loc>
     <lastmod>2024-04-09T17:14:04+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/retrieval-augmented-generation/</loc>
+    <loc>/tags/retrieval-augmented-generation/</loc>
     <lastmod>2024-04-09T17:14:04+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/beautiful/</loc>
+    <loc>/tags/beautiful/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/diagrams/</loc>
+    <loc>/tags/diagrams/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/mermaid.js/</loc>
+    <loc>/tags/mermaid.js/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/sequence-diagram/</loc>
+    <loc>/tags/sequence-diagram/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/apr/sequence-diag-mermaid/</loc>
+    <loc>/blogs/2024/apr/sequence-diag-mermaid/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/visualization/</loc>
+    <loc>/tags/visualization/</loc>
     <lastmod>2024-04-06T19:35:14+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/mar/data-recon-aws/</loc>
+    <loc>/blogs/2024/mar/data-recon-aws/</loc>
     <lastmod>2024-03-30T18:23:10+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/mar/architectural-patterns/</loc>
+    <loc>/blogs/2024/mar/architectural-patterns/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/domain-driven-design/</loc>
+    <loc>/tags/domain-driven-design/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/event-driven-architecture/</loc>
+    <loc>/tags/event-driven-architecture/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/layering/</loc>
+    <loc>/tags/layering/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/maintainability/</loc>
+    <loc>/tags/maintainability/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/scalability/</loc>
+    <loc>/tags/scalability/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/software-architecture/</loc>
+    <loc>/tags/software-architecture/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/software-development/</loc>
+    <loc>/tags/software-development/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/system-design/</loc>
+    <loc>/tags/system-design/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/technology-trends/</loc>
+    <loc>/tags/technology-trends/</loc>
     <lastmod>2024-03-15T23:54:53+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/configuration-management/</loc>
+    <loc>/tags/configuration-management/</loc>
     <lastmod>2024-03-11T09:34:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/mar/configuration-management-microservices/</loc>
+    <loc>/blogs/2024/mar/configuration-management-microservices/</loc>
     <lastmod>2024-03-11T09:34:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/environment-configurations/</loc>
+    <loc>/tags/environment-configurations/</loc>
     <lastmod>2024-03-11T09:34:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/microservice/</loc>
+    <loc>/tags/microservice/</loc>
     <lastmod>2024-03-11T09:34:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/access-control/</loc>
+    <loc>/tags/access-control/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/application-security/</loc>
+    <loc>/tags/application-security/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/mar/application-security-verification-standard/</loc>
+    <loc>/blogs/2024/mar/application-security-verification-standard/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/asvs-framework/</loc>
+    <loc>/tags/asvs-framework/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/compliance/</loc>
+    <loc>/tags/compliance/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cybersecurity/</loc>
+    <loc>/tags/cybersecurity/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/data-protection/</loc>
+    <loc>/tags/data-protection/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/encryption/</loc>
+    <loc>/tags/encryption/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/owasp/</loc>
+    <loc>/tags/owasp/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/privacy-protection/</loc>
+    <loc>/tags/privacy-protection/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/secure-coding/</loc>
+    <loc>/tags/secure-coding/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/security-standards/</loc>
+    <loc>/tags/security-standards/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/threat-modelling/</loc>
+    <loc>/tags/threat-modelling/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vulnerability-management/</loc>
+    <loc>/tags/vulnerability-management/</loc>
     <lastmod>2024-03-10T10:11:38+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/feb/adaptive-authentication/</loc>
+    <loc>/blogs/2024/feb/adaptive-authentication/</loc>
     <lastmod>2024-02-17T16:25:12+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/accesscontrol/</loc>
+    <loc>/tags/accesscontrol/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/accessmanagement/</loc>
+    <loc>/tags/accessmanagement/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/applicationsecurity/</loc>
+    <loc>/tags/applicationsecurity/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/authorization/</loc>
+    <loc>/tags/authorization/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/2024/feb/broken-access-control/</loc>
+    <loc>/blogs/2024/feb/broken-access-control/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/brokenaccesscontrol/</loc>
+    <loc>/tags/brokenaccesscontrol/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/codereview/</loc>
+    <loc>/tags/codereview/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cyberthreats/</loc>
+    <loc>/tags/cyberthreats/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/databreachprevention/</loc>
+    <loc>/tags/databreachprevention/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/owasptop10/</loc>
+    <loc>/tags/owasptop10/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/secureauthentication/</loc>
+    <loc>/tags/secureauthentication/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/securityflaws/</loc>
+    <loc>/tags/securityflaws/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tokenvalidation/</loc>
+    <loc>/tags/tokenvalidation/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/userauthorization/</loc>
+    <loc>/tags/userauthorization/</loc>
     <lastmod>2024-02-12T17:37:07+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/sim-binding/</loc>
+    <loc>/blogs/sim-binding/</loc>
     <lastmod>2024-02-10T13:08:10+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/sim-binding/</loc>
+    <loc>/tags/sim-binding/</loc>
     <lastmod>2024-02-10T13:08:10+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/dev-experience/</loc>
+    <loc>/blogs/dev-experience/</loc>
     <lastmod>2024-02-03T09:16:30+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/developer-experience/</loc>
+    <loc>/tags/developer-experience/</loc>
     <lastmod>2024-02-03T09:16:30+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/quality/</loc>
+    <loc>/tags/quality/</loc>
     <lastmod>2024-02-03T09:16:30+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/multi-tenant-architecture/</loc>
+    <loc>/blogs/multi-tenant-architecture/</loc>
     <lastmod>2024-01-26T13:32:09+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/multi-tenant/</loc>
+    <loc>/tags/multi-tenant/</loc>
     <lastmod>2024-01-26T13:32:09+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/reusing-a-software/</loc>
+    <loc>/tags/reusing-a-software/</loc>
     <lastmod>2024-01-26T13:32:09+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/anti-pattern/</loc>
+    <loc>/tags/anti-pattern/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-maintainability/</loc>
+    <loc>/tags/code-maintainability/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-readability/</loc>
+    <loc>/tags/code-readability/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-scalability/</loc>
+    <loc>/tags/code-scalability/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-testability/</loc>
+    <loc>/tags/code-testability/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/fluffy-services/</loc>
+    <loc>/tags/fluffy-services/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/healthy-codebase/</loc>
+    <loc>/tags/healthy-codebase/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/kareena-kapoor-controllers/</loc>
+    <loc>/tags/kareena-kapoor-controllers/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/kareena-kapoor-controllers/</loc>
+    <loc>/blogs/kareena-kapoor-controllers/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/method-size/</loc>
+    <loc>/tags/method-size/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/modular-approach/</loc>
+    <loc>/tags/modular-approach/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/single-responsibility-principle/</loc>
+    <loc>/tags/single-responsibility-principle/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tight-coupling/</loc>
+    <loc>/tags/tight-coupling/</loc>
     <lastmod>2024-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/anecdotes/</loc>
+    <loc>/anecdotes/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/cost-of-software/</loc>
+    <loc>/blogs/cost-of-software/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cost-of-software/</loc>
+    <loc>/tags/cost-of-software/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/free-software/</loc>
+    <loc>/tags/free-software/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/freemium-model/</loc>
+    <loc>/tags/freemium-model/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/anecdotes/anecdote1/</loc>
+    <loc>/anecdotes/anecdote1/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/open-source/</loc>
+    <loc>/tags/open-source/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/solutions/self-hosted-captcha/self-hosted-captcha/</loc>
+    <loc>/solutions/self-hosted-captcha/self-hosted-captcha/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/software-maintenance/</loc>
+    <loc>/tags/software-maintenance/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/solutions/</loc>
+    <loc>/solutions/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/benefits-of-incorporating-gamification-in-education/</loc>
+    <loc>/tags/benefits-of-incorporating-gamification-in-education/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/building-an-enriching-user-experience-with-gamification/</loc>
+    <loc>/tags/building-an-enriching-user-experience-with-gamification/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/duolingo-gamification-features/</loc>
+    <loc>/tags/duolingo-gamification-features/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/engaging-with-friends-in-language-learning-quests/</loc>
+    <loc>/tags/engaging-with-friends-in-language-learning-quests/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/enhancing-user-experience-through-gamification/</loc>
+    <loc>/tags/enhancing-user-experience-through-gamification/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/gamification/</loc>
+    <loc>/blogs/gamification/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/gamification-in-education/</loc>
+    <loc>/tags/gamification-in-education/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/gamification-techniques-for-user-engagement/</loc>
+    <loc>/tags/gamification-techniques-for-user-engagement/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/language-learning-gamification/</loc>
+    <loc>/tags/language-learning-gamification/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/language-learning-milestones-and-achievements-through-gamification./</loc>
+    <loc>/tags/language-learning-milestones-and-achievements-through-gamification./</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/leaderboards-and-competition-in-language-learning-apps/</loc>
+    <loc>/tags/leaderboards-and-competition-in-language-learning-apps/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/motivation-and-progress-tracking-in-language-learning-apps/</loc>
+    <loc>/tags/motivation-and-progress-tracking-in-language-learning-apps/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/personalization-and-customization-in-gamified-language-learning/</loc>
+    <loc>/tags/personalization-and-customization-in-gamified-language-learning/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/rewards-and-achievements-in-language-learning-apps/</loc>
+    <loc>/tags/rewards-and-achievements-in-language-learning-apps/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/social-interaction-and-collaboration-in-language-learning/</loc>
+    <loc>/tags/social-interaction-and-collaboration-in-language-learning/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/streaks-and-daily-goals-in-language-learning/</loc>
+    <loc>/tags/streaks-and-daily-goals-in-language-learning/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/gift-city/</loc>
+    <loc>/blogs/gift-city/</loc>
     <lastmod>2023-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/giftcity/</loc>
+    <loc>/tags/giftcity/</loc>
     <lastmod>2023-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/continuous-improvement/</loc>
+    <loc>/tags/continuous-improvement/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/issue-resolution/</loc>
+    <loc>/tags/issue-resolution/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-agents/</loc>
+    <loc>/tags/log-agents/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-analysis/</loc>
+    <loc>/tags/log-analysis/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-analytics/</loc>
+    <loc>/tags/log-analytics/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-collection/</loc>
+    <loc>/tags/log-collection/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-data-insights/</loc>
+    <loc>/tags/log-data-insights/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-management/</loc>
+    <loc>/tags/log-management/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-monitoring/</loc>
+    <loc>/tags/log-monitoring/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-retention/</loc>
+    <loc>/tags/log-retention/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-shippers/</loc>
+    <loc>/tags/log-shippers/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/log-storage/</loc>
+    <loc>/tags/log-storage/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/logging-architecture/</loc>
+    <loc>/tags/logging-architecture/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/performance-optimization/</loc>
+    <loc>/tags/performance-optimization/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/proactive-monitoring/</loc>
+    <loc>/tags/proactive-monitoring/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/software-development-projects/</loc>
+    <loc>/tags/software-development-projects/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/structured-logging/</loc>
+    <loc>/tags/structured-logging/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/system-monitoring/</loc>
+    <loc>/tags/system-monitoring/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/troubleshooting-logs/</loc>
+    <loc>/tags/troubleshooting-logs/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/logging-architecture/</loc>
+    <loc>/blogs/logging-architecture/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/user-experience-enhancement/</loc>
+    <loc>/tags/user-experience-enhancement/</loc>
     <lastmod>2023-11-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/prompt-engineering/</loc>
+    <loc>/blogs/prompt-engineering/</loc>
     <lastmod>2023-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/working-with-global-teams/</loc>
+    <loc>/blogs/working-with-global-teams/</loc>
     <lastmod>2023-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/global-teams/</loc>
+    <loc>/tags/global-teams/</loc>
     <lastmod>2023-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/biometric-authentication/</loc>
+    <loc>/tags/biometric-authentication/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/device-based-authentication/</loc>
+    <loc>/tags/device-based-authentication/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/fido/</loc>
+    <loc>/blogs/fido/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/faceid-authentication/</loc>
+    <loc>/tags/faceid-authentication/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/fido-authentication/</loc>
+    <loc>/tags/fido-authentication/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/fingerprint-authentication/</loc>
+    <loc>/tags/fingerprint-authentication/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/passwordless/</loc>
+    <loc>/tags/passwordless/</loc>
     <lastmod>2023-11-15T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/accessibility-in-api-development/</loc>
+    <loc>/tags/accessibility-in-api-development/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/api-design-best-practices/</loc>
+    <loc>/tags/api-design-best-practices/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/api-design-creativity/</loc>
+    <loc>/tags/api-design-creativity/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/api-documentation-importance/</loc>
+    <loc>/tags/api-documentation-importance/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/api-naming-best-practices/</loc>
+    <loc>/tags/api-naming-best-practices/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/api-simplicity-and-clarity/</loc>
+    <loc>/tags/api-simplicity-and-clarity/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-collaboration-in-api-development/</loc>
+    <loc>/tags/code-collaboration-in-api-development/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-elegance-in-apis/</loc>
+    <loc>/tags/code-elegance-in-apis/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/code-harmony-in-api-design/</loc>
+    <loc>/tags/code-harmony-in-api-design/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/collaborative-api-design/</loc>
+    <loc>/tags/collaborative-api-design/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/concealing-implementation-in-apis/</loc>
+    <loc>/tags/concealing-implementation-in-apis/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/crafting-effective-apis/</loc>
+    <loc>/tags/crafting-effective-apis/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/creating-a-timeless-api/</loc>
+    <loc>/tags/creating-a-timeless-api/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cultural-harmony-in-api-conventions/</loc>
+    <loc>/tags/cultural-harmony-in-api-conventions/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/good-api-design-guidelines/</loc>
+    <loc>/tags/good-api-design-guidelines/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/immutable-apis-for-stability/</loc>
+    <loc>/tags/immutable-apis-for-stability/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/joshua-bloch-api-design-principles/</loc>
+    <loc>/tags/joshua-bloch-api-design-principles/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/omission-in-api-simplicity/</loc>
+    <loc>/tags/omission-in-api-simplicity/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/subclassing-and-inheritance-in-apis/</loc>
+    <loc>/tags/subclassing-and-inheritance-in-apis/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/crafting-api-magic/</loc>
+    <loc>/blogs/crafting-api-magic/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/writing-developer-friendly-apis/</loc>
+    <loc>/tags/writing-developer-friendly-apis/</loc>
     <lastmod>2023-11-10T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/financial-technologies/</loc>
+    <loc>/tags/financial-technologies/</loc>
     <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/fintech/</loc>
+    <loc>/tags/fintech/</loc>
     <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/innovations/</loc>
+    <loc>/tags/innovations/</loc>
     <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/technologies/</loc>
+    <loc>/tags/technologies/</loc>
     <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/the-technology-of-modern-banks/</loc>
+    <loc>/blogs/the-technology-of-modern-banks/</loc>
     <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/chatgpt/</loc>
+    <loc>/tags/chatgpt/</loc>
     <lastmod>2023-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/language-models/</loc>
+    <loc>/tags/language-models/</loc>
     <lastmod>2023-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/llm/</loc>
+    <loc>/tags/llm/</loc>
     <lastmod>2023-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/large-language-models/</loc>
+    <loc>/blogs/large-language-models/</loc>
     <lastmod>2023-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/technologies/</loc>
+    <loc>/blogs/technologies/</loc>
     <lastmod>2023-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/gallery/</loc>
+    <loc>/gallery/</loc>
     <lastmod>2022-06-25T18:35:46+05:30</lastmod>
   </url>
 </urlset>

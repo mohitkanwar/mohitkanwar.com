@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Mohit Kanwar&#39;s App : My thoughts on Life</title>
-    <link>//localhost:1313/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Mohit Kanwar&#39;s App : My thoughts on Life</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2024 09:40:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Security</title>
-      <link>//localhost:1313/categories/security/</link>
+      <link>/categories/security/</link>
       <pubDate>Mon, 15 Jul 2024 09:40:00 +0530</pubDate>
-      <guid>//localhost:1313/categories/security/</guid>
+      <guid>/categories/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Technology</title>
-      <link>//localhost:1313/categories/technology/</link>
+      <link>/categories/technology/</link>
       <pubDate>Mon, 15 Jul 2024 09:40:00 +0530</pubDate>
-      <guid>//localhost:1313/categories/technology/</guid>
+      <guid>/categories/technology/</guid>
       <description></description>
     </item>
   </channel>
