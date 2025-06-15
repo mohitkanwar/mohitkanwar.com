@@ -12,7 +12,7 @@ tags:
   - Freemium model
 
 imageBasePath: "/images/solutions/self-hosted-captcha"
-image: /images/solutions/self-hosted-captcha/coming-soon.gif
+image: /images/solutions/self-hosted-captcha/self-hosted-captcha.png
 description: "Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software."
 toc: 
 ---
