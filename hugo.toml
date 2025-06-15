@@ -315,4 +315,6 @@ disqusShortname = "mohitkanwar-com"
   articleList = "Jan 2, 2006"
   articleRecent = "Jan 2, 2006"
 
-
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
