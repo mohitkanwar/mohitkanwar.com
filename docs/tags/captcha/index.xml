@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Captcha on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/captcha/</link>
+    <description>Recent content in Captcha on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2024 10:31:41 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/captcha/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions</title>
+      <link>http://localhost:1313/blogs/2024/nov/designing-a-captcha-service/</link>
+      <pubDate>Fri, 01 Nov 2024 10:31:41 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/nov/designing-a-captcha-service/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;: What if the familiar captcha boxes we encounter daily were designed by your team, tailored specifically to your organization’s needs?&lt;br&gt;&#xA;Recently, I took on the challenge of creating a custom, self-hosted captcha service for a client. It sounded simple at first—why reinvent the wheel when solutions like Google’s reCAPTCHA already exist? But there was a twist: the client wanted full control, aiming to ensure data privacy and integrate accessibility features.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

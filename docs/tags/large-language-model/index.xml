@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Large Language Model on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/large-language-model/</link>
+    <description>Recent content in Large Language Model on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 May 2024 09:28:50 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Components in Llm Architecture</title>
+      <link>http://localhost:1313/blogs/2024/may/components-in-llm-architecture/</link>
+      <pubDate>Tue, 14 May 2024 09:28:50 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/may/components-in-llm-architecture/</guid>
+      <description>&lt;h1 id=&#34;transformer-model&#34;&gt;Transformer Model&lt;/h1&gt;&#xA;&lt;p&gt;Have you ever gotten frustrated with chatbots that just don&amp;rsquo;t seem to understand the full flow of conversation? Or maybe you&amp;rsquo;ve noticed machine translations that miss the mark completely. Well, there&amp;rsquo;s a reason for that –  until recently, computers had a tough time understanding the deeper connections between words in a sentence. But a game-changer called the Transformer model is here!&lt;/p&gt;&#xA;&lt;p&gt;The Transformer model is a deep learning architecture introduced in the paper &lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;&amp;ldquo;Attention is All You Need&amp;rdquo;&lt;/a&gt;. It revolutionized the field of natural language processing (NLP) by introducing a novel mechanism based on attention rather than recurrent or convolutional layers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

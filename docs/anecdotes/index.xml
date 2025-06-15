@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anecdotes on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/anecdotes/</link>
+    <description>Recent content in Anecdotes on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 22:53:58 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/anecdotes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Stories</title>
+      <link>http://localhost:1313/anecdotes/anecdote1/</link>
+      <pubDate>Mon, 01 Jan 2024 22:53:58 +0530</pubDate>
+      <guid>http://localhost:1313/anecdotes/anecdote1/</guid>
+      <description>&lt;h2 id=&#34;once-upon-a-time&#34;&gt;Once Upon a time&lt;/h2&gt;&#xA;&lt;p&gt;in Sriganganagar, a legend was born&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/llm/</link>
+    <description>Recent content in LLM on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unlocking the Power of Large Language Models in the World of IT</title>
+      <link>http://localhost:1313/blogs/large-language-models/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blogs/large-language-models/</guid>
+      <description>&lt;h1 id=&#34;unlocking-the-power-of-large-language-models-in-the-world-of-it-embracing-chatgpt&#34;&gt;Unlocking the Power of Large Language Models in the World of IT: Embracing ChatGPT&lt;/h1&gt;&#xA;&lt;p&gt;As technology continues to evolve, the integration of artificial intelligence has become a game-changer in both the software and banking industries. One remarkable development in this AI landscape is the advent of Large Language Models (LLMs), which are transforming the way we interact with computers and data.&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction-to-large-language-models&#34;&gt;Introduction to Large Language Models&lt;/h2&gt;&#xA;&lt;p&gt;A Large Language Model, or LLM, is more than just a fancy acronym. It represents a type of artificial intelligence algorithm, often referred to as a &amp;ldquo;model,&amp;rdquo; that undergoes extensive training on an expansive corpus of textual data. This training equips LLMs with a profound understanding of language patterns and structures, enabling them to perform a wide array of tasks, including:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

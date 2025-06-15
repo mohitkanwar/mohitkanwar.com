@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Retrieval Augmented Generation on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/retrieval-augmented-generation/</link>
+    <description>Recent content in Retrieval Augmented Generation on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2024 17:14:04 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/retrieval-augmented-generation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrieval Augmented Generation</title>
+      <link>http://localhost:1313/blogs/2024/apr/retrieval-augmented-generation/</link>
+      <pubDate>Tue, 09 Apr 2024 17:14:04 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/apr/retrieval-augmented-generation/</guid>
+      <description>&lt;h1 id=&#34;introduction-to-rag&#34;&gt;Introduction to RAG&lt;/h1&gt;&#xA;&lt;p&gt;Retrieval-Augmented Generation (RAG) is a cutting-edge technique in artificial intelligence that merges generative AI capabilities with large language models to enhance language generation tasks. By integrating both parametric memory (learned patterns) and non-parametric memory (external knowledge sources), RAG models aim to boost the specificity, diversity, and accuracy of the text they generate to new heights. Unlike traditional Large Language Models (LLMs) that rely solely on internal data, RAG allows for seamless access to external knowledge repositories like Wikipedia. This access enables RAG models to deepen their understanding of context and improve the overall quality of the text they produce.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

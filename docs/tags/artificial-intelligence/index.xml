@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artificial Intelligence on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/artificial-intelligence/</link>
+    <description>Recent content in Artificial Intelligence on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 May 2024 09:28:50 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Components in Llm Architecture</title>
+      <link>http://localhost:1313/blogs/2024/may/components-in-llm-architecture/</link>
+      <pubDate>Tue, 14 May 2024 09:28:50 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/may/components-in-llm-architecture/</guid>
+      <description>&lt;h1 id=&#34;transformer-model&#34;&gt;Transformer Model&lt;/h1&gt;&#xA;&lt;p&gt;Have you ever gotten frustrated with chatbots that just don&amp;rsquo;t seem to understand the full flow of conversation? Or maybe you&amp;rsquo;ve noticed machine translations that miss the mark completely. Well, there&amp;rsquo;s a reason for that –  until recently, computers had a tough time understanding the deeper connections between words in a sentence. But a game-changer called the Transformer model is here!&lt;/p&gt;&#xA;&lt;p&gt;The Transformer model is a deep learning architecture introduced in the paper &lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;&amp;ldquo;Attention is All You Need&amp;rdquo;&lt;/a&gt;. It revolutionized the field of natural language processing (NLP) by introducing a novel mechanism based on attention rather than recurrent or convolutional layers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Models in Artificial Intelligence</title>
+      <link>http://localhost:1313/blogs/2024/apr/models-in-artificial-intelligence/</link>
+      <pubDate>Sat, 27 Apr 2024 10:22:20 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/apr/models-in-artificial-intelligence/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Model&lt;/strong&gt; is a simplified version of a real world entity that focuses on some of the properties of the real object that are under study. Similar to the models doing a ramp walk, help us understand how the clothes developed by a designer might look, models are an integral part of software industry, that help in catering to a specific set of properties that we want to create in the soft world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Retrieval Augmented Generation</title>
+      <link>http://localhost:1313/blogs/2024/apr/retrieval-augmented-generation/</link>
+      <pubDate>Tue, 09 Apr 2024 17:14:04 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/apr/retrieval-augmented-generation/</guid>
+      <description>&lt;h1 id=&#34;introduction-to-rag&#34;&gt;Introduction to RAG&lt;/h1&gt;&#xA;&lt;p&gt;Retrieval-Augmented Generation (RAG) is a cutting-edge technique in artificial intelligence that merges generative AI capabilities with large language models to enhance language generation tasks. By integrating both parametric memory (learned patterns) and non-parametric memory (external knowledge sources), RAG models aim to boost the specificity, diversity, and accuracy of the text they generate to new heights. Unlike traditional Large Language Models (LLMs) that rely solely on internal data, RAG allows for seamless access to external knowledge repositories like Wikipedia. This access enables RAG models to deepen their understanding of context and improve the overall quality of the text they produce.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Large Language Models in the World of IT</title>
+      <link>http://localhost:1313/blogs/large-language-models/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blogs/large-language-models/</guid>
+      <description>&lt;h1 id=&#34;unlocking-the-power-of-large-language-models-in-the-world-of-it-embracing-chatgpt&#34;&gt;Unlocking the Power of Large Language Models in the World of IT: Embracing ChatGPT&lt;/h1&gt;&#xA;&lt;p&gt;As technology continues to evolve, the integration of artificial intelligence has become a game-changer in both the software and banking industries. One remarkable development in this AI landscape is the advent of Large Language Models (LLMs), which are transforming the way we interact with computers and data.&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction-to-large-language-models&#34;&gt;Introduction to Large Language Models&lt;/h2&gt;&#xA;&lt;p&gt;A Large Language Model, or LLM, is more than just a fancy acronym. It represents a type of artificial intelligence algorithm, often referred to as a &amp;ldquo;model,&amp;rdquo; that undergoes extensive training on an expansive corpus of textual data. This training equips LLMs with a profound understanding of language patterns and structures, enabling them to perform a wide array of tasks, including:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
