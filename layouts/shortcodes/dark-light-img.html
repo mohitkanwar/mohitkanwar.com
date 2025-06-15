@@ -1,0 +1,16 @@
+{{ $image := .Get "image" }}
+{{ $class := .Get "class" }}
+{{ $style := .Get "style" }}
+
+
+
+{{ if .Page.Site.Params.darkMode }}
+    {{ $dotIndex := findRE "\\.[^.]*$" $image }}
+    {{ $fileName := slice $image 0 $dotIndex }}
+    {{ $fileExtension := slice $image $dotIndex -1 }}
+    {{ $image := printf "%s-dark%s" $fileName $fileExtension }}
+{{ else }}
+    {{ $image := $image }}
+{{ end }}
+
+<img src="{{ $image | absURL }}" class="{{$class}}" style="{{$style}}">

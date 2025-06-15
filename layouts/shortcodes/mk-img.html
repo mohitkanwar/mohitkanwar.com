@@ -1,0 +1,200 @@
+<!-- Hugo Template -->
+{{ $id := .Get "id" }}
+{{ $lightimage := .Get "light" }}
+{{ $darkimage := .Get "dark" }}
+{{ $alt := .Get "alt" | default "Image description not provided" }}
+{{ $title := .Get "title" | default "Image title not provided" }}
+{{ $class := .Get "class" | default "" }}
+{{ $style := .Get "style" | default "" }}
+{{ $loading := .Get "loading" | default "lazy" }}
+{{ $width := .Get "width" | default "" }}
+{{ $height := .Get "height" | default "" }}
+
+<!-- Default Image -->
+<img 
+    id="{{ $id }}"
+    src="{{ $lightimage | absURL }}" 
+    alt="{{ $alt }}" 
+    title="{{ $title }}" 
+    class="{{ $class }} zoomable" 
+    style="{{ $style }}" 
+    loading="{{ $loading }}" 
+    {{ with $width }}width="{{ . }}"{{ end }} 
+    {{ with $height }}height="{{ . }}"{{ end }} 
+    data-light="{{ $lightimage | absURL }}"
+    data-dark="{{ $darkimage | absURL }}">
+
+<!-- Overlay for Enlarged Image -->
+<div id="image-overlay" class="hidden">
+    <div id="overlay-content">
+        <img id="overlay-image" src="">
+        <button id="close-overlay">&times;</button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+   document.addEventListener('theme-changed-event', function (event) {
+       const image = document.getElementById("{{ $id }}");
+       const selectedTheme = event.detail.theme;
+       image.src = selectedTheme === 'dark' ? image.dataset.dark : image.dataset.light;
+   });
+
+   document.addEventListener('DOMContentLoaded', function () {
+       const image = document.getElementById("{{ $id }}");
+       const isDarkMode = document.body.classList.contains("dark");
+       image.src = isDarkMode ? image.dataset.dark : image.dataset.light;
+   });
+
+   // Image Zoom Functionality with Dragging
+   document.addEventListener('DOMContentLoaded', function () {
+       const image = document.getElementById("{{ $id }}");
+       const overlay = document.getElementById("image-overlay");
+       const overlayImage = document.getElementById("overlay-image");
+       const closeButton = document.getElementById("close-overlay");
+
+       let isDragging = false;
+       let offsetX, offsetY;
+
+       // Open Enlarged Image
+       image.addEventListener("click", function () {
+           overlayImage.src = image.src;
+           overlay.classList.remove("hidden");
+           document.body.style.overflow = "hidden"; // Prevent scrolling when image is open
+       });
+
+       // Close when clicking outside the image
+       overlay.addEventListener("click", function (event) {
+           if (event.target === overlay) {
+               closeOverlay();
+           }
+       });
+
+       // Close when clicking the close button
+       closeButton.addEventListener("click", function () {
+           closeOverlay();
+       });
+
+       // Close on Escape key press
+       document.addEventListener("keydown", function (event) {
+           if (event.key === "Escape") {
+               closeOverlay();
+           }
+       });
+
+       // Close function
+       function closeOverlay() {
+           overlay.classList.add("hidden");
+           document.body.style.overflow = "auto"; // Re-enable scrolling
+       }
+
+       // Dragging functionality
+       overlayImage.addEventListener("mousedown", function (event) {
+           isDragging = true;
+           offsetX = event.clientX - overlayImage.getBoundingClientRect().left;
+           offsetY = event.clientY - overlayImage.getBoundingClientRect().top;
+           overlayImage.style.cursor = "grabbing";
+           event.preventDefault();
+       });
+
+       document.addEventListener("mousemove", function (event) {
+           if (isDragging) {
+               overlayImage.style.position = "absolute";
+               overlayImage.style.left = (event.clientX - offsetX) + "px";
+               overlayImage.style.top = (event.clientY - offsetY) + "px";
+           }
+       });
+
+       document.addEventListener("mouseup", function () {
+           isDragging = false;
+           overlayImage.style.cursor = "grab";
+       });
+   });
+</script>
+
+<!-- CSS for Image Zoom & Close Button -->
+<style>
+    /* Overlay background */
+    #image-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    /* Show overlay when active */
+    #image-overlay:not(.hidden) {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Enlarged image container */
+    #overlay-content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Smaller Enlarged Image */
+    #overlay-image {
+        max-width: 70% !important;
+        max-height: 70% !important;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        transition: transform 0.2s ease-in-out;
+        cursor: grab;
+        position: relative;
+    }
+
+    /* Close button inside image */
+    #close-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        font-size: 28px;
+        font-weight: bold;
+        color: black;
+        padding: 5px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #close-overlay:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    /* Ensure button stays inside the image */
+    #overlay-content {
+        position: relative;
+    }
+
+    #close-overlay {
+        right: -15px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    /* Initially hidden */
+    .hidden {
+        display: none;
+    }
+</style>

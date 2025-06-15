@@ -1,0 +1,318 @@
+baseURL = 'https://mohitkanwar.com/'
+languageCode = 'en-us'
+title =  "Mohit Kanwar's App : My Cents"
+theme = "hugo-profile"
+pagination.pagerSize = 9
+enableRobotsTXT = true
+disqusShortname = "mohitkanwar-com"
+
+[outputs]
+	home = ["HTML","RSS","JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+[params]
+  title = "Mohit Kanwar"
+  description = "Mohit Kanwar is a software architect, working with Xebia. He has developed solutions for banks across the globe."
+  # staticPath = ""  # The path to serve the static files from
+  favicon = "/fav.png"
+
+[params.navbar]
+  align = "ms-auto" # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+  # brandLogo = "/logo.png" # Logo for the brand | default is the favicon variable
+  # showBrandLogo = false # Show brand logo in nav bar | default is true
+  brandName = "Mohit Kanwar" # Brand name for the brand | default is the title variable
+  disableSearch = false
+  # searchPlaceholder = "Search"
+  [params.navbar.stickyNavBar]
+    enable = true
+    showOnScrollUp = true
+  [params.navbar.menus]
+    disableAbout = false
+    disableExperience = false
+    disableEducation = false
+    disableProjects = false
+    disableAchievements = false
+    disableContact = false
+
+[[Menus.main]]
+  identifier = "blog"
+  name = "Blogs"
+  title = "Blog posts"
+  url = "/blogs"
+  weight = 1
+#[[Menus.main]]
+#  identifier = "anecdotes"
+#  name = "Anecdotes"
+#  title = "My Stories"
+#  url = "/anecdotes"
+#  weight = 2
+
+[[Menus.main]]
+  identifier = "solutions"
+  name = "Solutions"
+  title = "Solutions"
+  url = "/solutions"
+  weight = 3
+
+[[Menus.main]]
+  identifier = "gallery"
+  name = "Gallery"
+  title = "Blog posts"
+  url = "/gallery"
+  weight = 4
+
+# About
+[params.about]
+  enable = true
+  title = "About Me"
+  image = "/images/me.jpeg"
+  content = "<p>As a seasoned software architect specializing in pioneering solutions tailored for the FinTech and Banking industry, I bring a unique blend of innovation, technical prowess, and a strong product mindset to the table. With a track record of crafting cutting-edge solutions, I excel in seamlessly merging my innovation skills with agile methodologies, ensuring the delivery of exceptional results.</p><p>My approach to software architecture extends beyond conventional boundaries, embracing forward-thinking strategies to address the dynamic landscape of the financial sector. In addition to my technical expertise, I am driven by a robust product mindset, recognizing the critical intersection between technology and business objectives.</p><p>Beyond my technical acumen, my leadership skills stand out as a driving force behind successful project implementations. I have a proven ability to inspire and guide teams, fostering a collaborative environment that thrives on creativity and efficiency. </p><p>Let's embark on a shared exploration to uncover the possibilities within the realm of digital transformation. Here, you'll discover insights driven by innovative thinking, a product-focused mindset, and leadership capabilities, all designed to enrich your experience on this blog.</p>"
+
+  [params.about.skills]
+    enable = true
+    title = "Here are a few technologies I've been working with recently:"
+    items = ["Gen AI", "Backbase", "Spring Cloud", "Angular", "React", "Node", "ReactNative", "Golang", "Python", "AWS", "Azure"]
+
+# Experience
+[params.experience]
+  enable = false
+  # title = "Custom Name"
+  [[params.experience.items]]
+    job = "Senior Software Developer"
+    company = "Facebook"
+    companyUrl = "https://example.com"
+    date = "Jan 2022 - present"
+    [params.experience.items.featuredLink]
+      enable = true
+      name = "View the project"
+      url = "https://example.com"
+      content = "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  [[params.experience.items]]
+    job = "Software Developer"
+    company = "Amazon"
+    companyUrl = "https://example.com"
+    date = "Sep 2020 - Dec 2021"
+    [params.experience.items.featuredLink]
+      enable = true
+      url = "https://example.com"
+    [params.experience.items.info]
+      enable = true
+        content = """
+        I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+        - Lead backend developer for a product.
+        - Created a frontend design for a product.
+        """
+
+  [[params.experience.items]]
+    job = "Junior Software Developer"
+    company = "Apple"
+    companyUrl = "https://example.com"
+    date = "Jan 2020 - Aug 2020"
+    [params.experience.items.featuredLink]
+      enable = true
+      url = "https://example.com"
+    [params.experience.items.info]
+      enable = false
+    content = """
+      I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around
+    """
+
+  [[params.experience.items]]
+    job = "UI/UX Designer"
+    company = "Netflix"
+    companyUrl = "https://example.com"
+    date = "June 2017 - Nov 2019"
+    [params.experience.items.featuredLink]
+      enable = true
+      url = "https://example.com"
+    content = """
+      I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+      - Lead backend developer for a product.
+      - Created a frontend design for a product.
+    """
+
+  [[params.experience.items]]
+    job = "Product Designer"
+    company = "Google"
+    companyUrl = "https://example.com"
+    date = "Feb 2016 - Mar 2017"
+    content = "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+# Education
+[params.education]
+  enable = false
+  # title = "Custom Name"
+  index = false
+  [[params.education.items]]
+    title = "Master of Business Administration"
+    [params.education.items.school]
+      name = "University of California, Berkeley"
+      url = "https://example.org"
+    date = "2013 - 2015"
+    GPA = "3.8 out of 5.0"
+    content = """
+      Extracurricular Activities
+        - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+    """
+
+  [[params.education.items]]
+    title = "Bachelor of Science in Computer Science"
+    [params.education.items.school]
+      name = "Massachusetts Institute of Technology"
+      url = "https://example.org"
+    date = "2009 - 2013"
+    GPA = "3.9 out of 5.0"
+    content = """
+      I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+      - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+      - Face mask detection using a single convolutional neural network.
+
+      Extracurricular Activities
+        - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+    """
+    [params.education.items.featuredLink]
+      enable = true
+      name = "My academic record"
+      url = "https://example.com"
+
+  [[params.education.items]]
+    title = "High School"
+    [params.education.items.school]
+      name = "Thomas Jefferson High School for Science and Technology."
+      url = "https://example.org"
+    GPA = "4.2 out of 5.0"
+    [params.education.items.featuredLink]
+      enable = true
+      url = "https://example.com"
+
+# Achievements
+[params.achievements]
+  enable = false
+  # title = "Custom Name"
+  [[params.achievements.items]]
+    title = "Google kickstart runner"
+    content = "I solved all problems with optimal solution."
+    url = "https://example.com"
+    image = "/images/achievment.jpg"
+
+  [[params.achievements.items]]
+    title = "Facebook Hackathon Winner"
+    content = "Developed a product using Artificial Intelligence."
+    image = "/images/achievment.jpg"
+
+  [[params.achievements.items]]
+    title = "Hugo Profile"
+    content = "Developed a theme and getting 1K+ downloads per month."
+    url = "https://github.com/gurusabarish/hugo-profile"
+    image = "/images/achievment.jpg"
+
+  [[params.achievements.items]]
+    title = "Microsoft Imagine Runner"
+    content = "We are developed a product which can help others."
+
+  [[params.achievements.items]]
+    title = "Google Summer of Code"
+    content = "Contributed to a open source project."
+    url = "https://example.com"
+
+# projects
+[params.projects]
+  enable = false
+  # title = "Custom Name"
+  [[params.projects.items]]
+    title = "Hugo Profile"
+    content = "A highly customizable and mobile first Hugo template for personal portfolio and blog."
+    image = "/images/projects/profile.png"
+    [params.projects.items.featured]
+      name = "Demo"
+      link = "https://hugo-profile.netlify.app"
+    badges = ["Hugo", "Bootstrap", "Javascript"]
+    [[params.projects.items.links]]
+      icon = "fa fa-envelope"
+      url = "mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f"
+    [[params.projects.items.links]]
+      icon = "fab fa-github"
+      url = "https://github.com/gurusabarish/hugo-profile"
+    [[params.projects.items.links]]
+      icon = "fab fa-twitter"
+      url = "https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile"
+
+  [[params.projects.items]]
+    title = "Image Converter"
+    content = "A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django."
+    image = "/images/projects/converter.jpg"
+    [params.projects.items.featured]
+      name = "Demo"
+      link = "https://django-converter.herokuapp.com"
+    badges = ["Django", "Bootstrap"]
+    [[params.projects.items.links]]
+      icon = "fab fa-github"
+      url = "https://github.com/gurusabarish/converter"
+
+  [[params.projects.items]]
+    title = "Hugo Profile V2"
+    content = "A clean and simple Hugo template for personal portfolio and blog."
+    image = "/images/projects/profile2.jpg"
+    [params.projects.items.featured]
+      name = "Demo V2"
+      link = "https://hugo-profile-2.netlify.app"
+    badges = ["Hugo", "Bootstrap", "Javascript"]
+    [[params.projects.items.links]]
+      icon = "fab fa-github"
+      url = "https://github.com/gurusabarish/HugoProfileV2"
+
+#Contact
+[params.contact]
+  enable = true
+  # title = "Custom Name"
+  content = "Feel free to connect with me on LinkedIn! Whether you have a professional question or just want to say hello, I'll do my best to respond promptly. Looking forward to connecting with you!"
+  email = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
+  btnName = "Let's Connect"
+
+[params.footer]
+  [params.footer.recentPosts]
+    path = "blogs"
+    count = 3
+    title = "Recent Posts"
+    enable = true
+    disableFeaturedImage = false
+  [params.footer.socialNetworks]
+    github = "https://github.com/mohitkanwar"
+    linkedin = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
+    twitter = "https://twitter.com/mmkanwar"
+    # instagram = "https://instagram.com"
+    # facebook = "https://facebook.com"
+    stackoverflow = "https://stackoverflow.com/users/1336558/mohit-kanwar"
+
+# List pages like blogs and posts
+[params.listPages]
+  disableFeaturedImage = false
+
+# Single pages like blog and post
+[params.singlePages]
+  [params.singlePages.readTime]
+    enable = true
+    content = "min read"
+  [params.singlePages.scrollprogress]
+    enable = true
+
+# For translations
+[params.terms]
+  read = "Read"
+  toc = "Table Of Contents"
+  copyright = "All rights reserved"
+  pageNotFound = "Page not found"
+  emailText = "Check out this site"
+
+[params.datesFormat]
+  article = "Jan 2, 2006"
+  articleList = "Jan 2, 2006"
+  articleRecent = "Jan 2, 2006"
+
+

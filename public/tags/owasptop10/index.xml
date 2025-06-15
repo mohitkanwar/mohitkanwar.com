@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OWASPTop10 on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/owasptop10/</link>
+    <description>Recent content in OWASPTop10 on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Feb 2024 17:37:07 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/owasptop10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Broken Access Control</title>
+      <link>http://localhost:1313/blogs/2024/feb/broken-access-control/</link>
+      <pubDate>Mon, 12 Feb 2024 17:37:07 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/feb/broken-access-control/</guid>
+      <description>&lt;h1 id=&#34;access-control-in-owasp-top-10&#34;&gt;Access Control in OWASP top 10&lt;/h1&gt;&#xA;&lt;p&gt;Access control is a crucial aspect of application security that ensures users can only perform actions within their authorized permissions. However, broken access control vulnerabilities can lead to unauthorized access, data breaches, and other security risks. In this blog, I want to talk about a very common observation that I have while reviewing codes. Well, not only observed by me, broken access control is the number one in &lt;a href=&#34;https://owasp.org/Top10/A01_2021-Broken_Access_Control/&#34;&gt;OWASP Top 10 2021 list&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

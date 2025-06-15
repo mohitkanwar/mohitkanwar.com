@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/blogs/cost-of-software/">
+  <meta property="og:site_name" content="Mohit Kanwar&#39;s App : My Cents">
+  <meta property="og:title" content="Cost of developing a software">
+  <meta property="og:description" content="Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2024-01-01T22:53:58+05:30">
+    <meta property="article:modified_time" content="2024-01-01T22:53:58+05:30">
+    <meta property="article:tag" content="Free Software">
+    <meta property="article:tag" content="Open Source">
+    <meta property="article:tag" content="Cost of Software">
+    <meta property="article:tag" content="Software Development">
+    <meta property="article:tag" content="Software Maintenance">
+    <meta property="article:tag" content="Freemium Model">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cost of developing a software">
+  <meta name="twitter:description" content="Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software.">
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software.">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Cost of developing a software | Mohit Kanwar&#39;s App : My Cents
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg ">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/fav.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Mohit Kanwar
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="Blog posts">
+                            
+                            Blogs
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/solutions" title="Solutions">
+                            
+                            Solutions
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/gallery" title="Blog posts">
+                            
+                            Gallery
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Cost of developing a software</h1>
+            <div class="text-center">
+              
+                Mohit Kanwar
+                <small>|</small>
+              
+              Jan 1, 2024
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/images/blogs/cost-of-software/header.png" alt="Cost of developing a software">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="trigger-for-this-blog">Trigger for this blog</h2>
+<p>I was pair programming during an interview, where the candidate had shared his screen and I was working side by side with him, trying to understand the solution he was presenting.</p>
+<p>Picture this: his computer screen flashed a message about his Windows license being expired. I couldn&rsquo;t help but ask, and what I heard surprised me. He proudly admitted to using a &ldquo;not-so-legal&rdquo; version of Windows because he wanted to stick it to Microsoft for their high prices, especially when there&rsquo;s a free alternative like Ubuntu available.
+I did not take a screenshot, but it looked something like this<br>
+<img src="/images/blogs/cost-of-software/windows.png" alt="windows license message" class="responsive-image"></p>
+<p>While I didn&rsquo;t quite agree with his rebel approach, it got me thinking about the world of free software. We often don&rsquo;t realize that even though it&rsquo;s &ldquo;free&rdquo; for us to use, it still costs a lot to make and maintain.</p>
+<p>Behind the scenes, there&rsquo;s a whole lot of work and money that goes into making software. Skilled folks spend hours building it, and there&rsquo;s ongoing work to fix bugs, make updates, and help users when things go wrong.</p>
+<p>Then there&rsquo;s the tech stuff—servers, cloud services, and all the gear needed to keep the software running smoothly. That stuff costs money too, even if the software itself doesn&rsquo;t.</p>
+<p>Let&rsquo;s not forget the unsung heroes—the folks who volunteer their time and skills to improve these programs. Their work is priceless, even though it often goes unnoticed.</p>
+<p>And there&rsquo;s more—legal things like licenses, making sure everything&rsquo;s legit, and following the rules. That&rsquo;s another part of the cost.</p>
+<h2 id="different-types-of-costs-involved">Different types of costs involved</h2>
+<p>The cost of software development can be categorized into following phases :</p>
+<ol>
+<li>Before Development: Laying the Foundation</li>
+<li>During development</li>
+<li>Execution costs</li>
+<li>Maintenance costs</li>
+</ol>
+<h3 id="before-development">Before development</h3>
+<p>It&rsquo;s not like a person wakes up on a day, and starts writing code.Before any coding begins, there&rsquo;s a lot of groundwork to be done. A lot of thinking goes before deciding if we need a software or not. We need to understand if desinging a new software solution will be cost effective and worth all the efforts put in. Let&rsquo;s take a closer look at the different phases and the expenses that come along.  Here are a few of important steps:</p>
+<h4 id="research-and-feasibility-studies">Research and feasibility studies</h4>
+<p>Research and feasibility studies play a vital role in software development by conducting market analysis and assessing the viability and potential return on investment of a project. Through thorough research, organizations can identify the target audience, understand market trends, and evaluate the demand for the proposed software solution. Cost-benefit analysis helps estimate development and maintenance costs, while assessing potential revenue streams and cost savings. Evaluating technical feasibility ensures that the project aligns with available resources and technology. Additionally, considering legal and regulatory requirements ensures compliance and mitigates risks. By conducting these studies, organizations can make informed decisions about the viability and potential success of a software project.</p>
+<img src="/images/blogs/cost-of-software/business-research.png" alt="Image" alt="Business research is the most important activity for any software development process to begin" class="responsive-image-bounded">
+<h4 id="business-analysis">Business Analysis</h4>
+<p>Business analysts observe the operations and existing processes, and understand if a software is going to help. Business Analysts define the business use cases for and against having a software system automating the existing processes.
+They define the scope of software solution.</p>
+<h4 id="ux-designs">UX designs</h4>
+<p>To save money, UX designers start by creating simple wireframe designs. These are like rough sketches that show how the final software will look and function. Stakeholders can experiment with these wireframes, making sure they meet their needs. Once everyone is happy, more detailed designs are created to give a realistic feel for the final software.</p>
+<h4 id="solutions-and-alternates">Solutions and Alternates</h4>
+<img src="/images/blogs/cost-of-software/solutions-and-alternates.png" alt="Image" alt="Designing a solution to the problems is one of the most important aspect for maintainability" class="responsive-image-bounded">
+<p>After the UX designs are approved, a solution architect steps in. They analyze different options and compare costs, efforts, and how well each solution fits the project. The architect decides on the technologies, frameworks, and quality standards to be used, setting the stage for development.</p>
+<h4 id="platform">Platform</h4>
+<p>Developers need a platform to work on, a place to store their code, test it, and build the final software. This platform also manages access and collaboration among team members. The DevOps team takes care of setting up this platform, making sure everything runs smoothly.</p>
+<h4 id="tools-and-technologies">Tools and Technologies</h4>
+<p>The different steps mentioned earlier require licenses for different tools to create and store decisions.
+e.g. Figma for storing UX designs, Confluence for storing scope and documents and many more tools. Don&rsquo;t forget the hardware (or cloud) costs for developing the platform. Operating systems, CICD pipelines setup, and other licenses have to be acquired at this stage.</p>
+<h3 id="during-development">During development</h3>
+<h4 id="software-engineering">Software Engineering</h4>
+<p>Obviously, we need software engineers to build a software. Frontend engineers who develop user facing applications (Mobile / Web or other channels), Backend engineers, the work is not directly visible, but they prepare all the required information for frontend applications by creating the APIs to be consumed. The data engineers refine and improve the data that is consumed within the application.</p>
+<h4 id="quality-assurance">Quality assurance</h4>
+<p>QAs prevent any mishaps to happen once the software is released. They check and validate the quality of the software to check if it meets the requirements.
+Different types of quality checks include : Functional testing, unit testing, integration testing, performance testing, acceptance testing, security testing etc.</p>
+<h4 id="project-management">Project Management</h4>
+<p>When there are so many different people working together we need a team to manage all the people and the product being developed. There are different roles e.g. product owners, Project Managers (or Scrum masters depending upon the way of working) to manage all the people.</p>
+<h4 id="tools-and-technologies-1">Tools and technologies</h4>
+<p>Similar to previous phase, many tools are required in the development phase that also incurr the costs. The IDEs for software enginners, Jira to keep a track for the issues, communication tools e.g. MS Teams for the team to communicate with each other.</p>
+<h3 id="after-development">After development</h3>
+<h4 id="version-updates">Version Updates</h4>
+<p>Regular maintenance is crucial for software even after its development phase. The continuous discovery of new vulnerabilities in software necessitates the need for regular updates. By updating dependencies, we can effectively mitigate the potential risks posed by these newly discovered issues in the code. Thus, maintaining and updating the software ensures its security and stability in the face of evolving threats.</p>
+<h4 id="feature-enhancement">Feature enhancement</h4>
+<p>As we begin utilizing the software, it is common to identify the need for new features or modifications to existing ones. In such cases, redevelopment becomes necessary to incorporate these changes effectively. Whether it involves adding new functionalities or altering existing ones, the redevelopment process ensures that the software aligns with evolving requirements and user expectations. By undertaking these redevelopment efforts, we can enhance the software&rsquo;s capabilities, improve user experience, and keep up with the dynamic nature of the business environment.</p>
+<h4 id="platform-1">Platform</h4>
+<p>To successfully run any web-based software, it is essential to maintain a comprehensive platform. This platform encompasses all the necessary components and infrastructure required for the software to function optimally. Some key aspects of maintaining a full-fledged platform include:</p>
+<ol>
+<li>
+<p><strong>Hardware and Networking</strong>: Adequate hardware resources, such as servers, storage, and networking equipment, need to be provisioned and maintained to support the software&rsquo;s operations. This involves ensuring proper hardware configuration, capacity planning, and monitoring to handle the software&rsquo;s workload efficiently.</p>
+</li>
+<li>
+<p><strong>Operating System and Software Dependencies</strong>: The platform must have a stable and up-to-date operating system that is compatible with the software. Additionally, any required software dependencies, such as libraries, frameworks, or runtime environments, should be installed, configured, and regularly updated to ensure compatibility and security.</p>
+</li>
+<li>
+<p><strong>Database Management</strong>: If the software relies on a database, it is crucial to maintain the database platform. This includes database installation, configuration, performance optimization, backup and recovery procedures, and ongoing monitoring to ensure data integrity and availability.</p>
+</li>
+<li>
+<p><strong>Security Measures</strong>: The platform should implement robust security measures to protect the software and its data. This involves implementing firewalls, intrusion detection systems, access controls, encryption, and regular security updates to mitigate potential vulnerabilities and safeguard against unauthorized access or data breaches.</p>
+</li>
+<li>
+<p><strong>Monitoring and Logging</strong>: Continuous monitoring of the platform is essential to identify and address any performance issues, errors, or anomalies. Logging mechanisms should be in place to capture relevant system and application logs for troubleshooting and auditing purposes.</p>
+</li>
+<li>
+<p><strong>Scalability and High Availability</strong>: The platform should be designed to handle the software&rsquo;s scalability requirements, allowing it to accommodate growing user bases and increasing workloads. Implementing redundancy, load balancing, and failover mechanisms ensures high availability and minimizes downtime.</p>
+</li>
+<li>
+<p><strong>Backup and Disaster Recovery</strong>: Regular backups of the software and its associated data should be performed to protect against data loss or system failures. A well-defined disaster recovery plan should be in place to ensure the software can be quickly restored in the event of a catastrophic failure.</p>
+</li>
+</ol>
+<p>By maintaining a full-fledged platform, organizations can ensure the smooth and reliable operation of their web-based software, providing users with a stable and secure experience.</p>
+<h2 id="why-free-and-open-source-software">Why Free and open source software</h2>
+<p>Organizations often face a fascinating dilemma: why offer free software when there are costs involved? Take Ubuntu, Google, Hotmail, or even tools like ChatGPT, Google Bard, and Microsoft Copilot as examples. The reasons behind this seemingly counterintuitive approach are captivating.</p>
+<p>By offering free software, organizations can penetrate the market and capture a vast user base. This serves as a foundation for future conversions to paid versions or enticing users with premium features. Additionally, organizations embrace open-source software to foster collaboration and innovation within the community. They invite developers from all walks of life to contribute their expertise, resulting in continuous improvement and wider adoption.</p>
+<p>Free software also serves as a gateway to valuable user data. Organizations gather insights into user behavior, preferences, and trends, fueling product refinement, targeted advertising, and the development of new offerings. While the software itself may be free, organizations find alternative revenue streams. They introduce premium versions, complementary products, or clever advertising models to monetize their offerings.</p>
+<p>Providing something valuable for free creates a bond between organizations and users. By offering tools or services at no cost, organizations establish themselves as industry leaders, building trust and loyalty among users who appreciate the value they receive. This sets organizations apart from the crowd, giving them a competitive edge and positioning them as trailblazers within their respective industries.</p>
+<p>Despite the costs related to development, maintenance, infrastructure, and support, organizations navigate this complex landscape and find innovative ways to sustain their business in the long run. The provision of free software not only benefits users but also allows organizations to thrive and make a significant impact in the digital world.</p>
+<p>When it comes to social media platforms, the puzzle of why they are offered for free becomes clearer when considering several key factors. Advertising revenue plays a significant role, as platforms generate income by providing targeted advertising opportunities to reach a broad audience. User data collection is another crucial aspect, as platforms gather vast amounts of data to understand their audience better and deliver personalized advertising experiences.</p>
+<p>Many social media platforms also offer additional services and features tailored for businesses, which often come with paid options. These services, along with partnerships with businesses, contribute to the revenue generation of social media platforms. Some platforms employ freemium models, offering a basic set of features for free while charging for premium or advanced features. Additionally, in-app purchases or virtual goods within games or applications hosted on social media platforms generate revenue through a percentage of these transactions.</p>
+<p>It&rsquo;s important to note that although social media platforms are free for users, they are not without costs. Users indirectly &ldquo;pay&rdquo; for the service by providing their personal data, which is used for targeted advertising. The availability of free social media platforms allows for widespread adoption, user engagement, and network effects, which, in turn, attract advertisers and drive revenue.</p>
+<p>In conclusion, there are many costs involved to develop and maintain a software, however many organizations give free and open source software because there are benefits to them.
+This does not mean that developing software is easy and we should not belittle the software developers, just because some free alternatives are available.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#trigger-for-this-blog">Trigger for this blog</a></li>
+    <li><a href="#different-types-of-costs-involved">Different types of costs involved</a>
+      <ul>
+        <li><a href="#before-development">Before development</a></li>
+        <li><a href="#during-development">During development</a></li>
+        <li><a href="#after-development">After development</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-free-and-open-source-software">Why Free and open source software</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/free-software"
+                target="_blank"
+              >Free Software</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/open-source"
+                target="_blank"
+              >Open Source</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/cost-of-software"
+                target="_blank"
+              >Cost of software</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/software-development"
+                target="_blank"
+              >Software Development</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/software-maintenance"
+                target="_blank"
+              >Software Maintenance</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/freemium-model"
+                target="_blank"
+              >Freemium model</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fcost-of-software%2f">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Cost%20of%20developing%20a%20software&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fcost-of-software%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Cost%20of%20developing%20a%20software: http%3a%2f%2flocalhost%3a1313%2fblogs%2fcost-of-software%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Cost%20of%20developing%20a%20software&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fblogs%2fcost-of-software%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mohitkanwar-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/">
+                        <img src="/images/blogs/2025/jan/the-test-data-dilemma/banner.png" class="card-img-top" alt="The Test Data Dilemma">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="The Test Data Dilemma">The Test Data Dilemma</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h3 id="the-test-data-dilemma-a-silent-challenge-in-software-development">The Test Data Dilemma: A Silent Challenge in Software Development</h3>
+<p>When building software, one big challenge often goes unnoticed – getting the right test data. As a software architect, I have worked with many customers to create software systems. A common issue I’ve faced is that customers don’t …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Jan 6, 2025</span>
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/">
+                        <img src="/images/blogs/2024/nov/designing-a-captcha-service/banner.png" class="card-img-top" alt="Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions">Designing a Self-Hosted …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><p><strong>Introduction</strong>: What if the familiar captcha boxes we encounter daily were designed by your team, tailored specifically to your organization’s needs?<br>
+Recently, I took on the challenge of creating a custom, self-hosted captcha service for a client. It sounded simple at first—why reinvent the wheel when …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 1, 2024</span>
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2024/aug/my-learnings-from-finacle/">
+                        <img src="/images/blogs/2024/aug/my-learnings-from-finacle/banner.png" class="card-img-top" alt="My Journey with Finacle: Lessons Learned in Banking Software Development">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2024/aug/my-learnings-from-finacle/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="My Journey with Finacle: Lessons Learned in Banking Software Development">My Journey with Finacle: …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><p>I consider myself fortunate to have been hired by Infosys right after college, and even luckier to work on a world-class banking product – Finacle. When I joined, Infosys was revamping the channel layer of Finacle, and I was given the incredible opportunity to contribute to this effort from the …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 6, 2024</span>
+                    <a href="/blogs/2024/aug/my-learnings-from-finacle/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/mohitkanwar" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/mohit-kanwar-7668a211/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <a href="https://twitter.com/mmkanwar" aria-label="twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#03a9f4"
+                d="M42,37c0,2.762-2.239,5-5,5H11c-2.762,0-5-2.238-5-5V11c0-2.762,2.238-5,5-5h26c2.761,0,5,2.238,5,5 V37z" />
+            <path fill="#fff"
+                d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12" />
+        </svg>
+    </a>
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="Mohit Kanwar&#39;s App : My Cents">
+                        <img alt="Footer logo" src="/fav.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2025  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

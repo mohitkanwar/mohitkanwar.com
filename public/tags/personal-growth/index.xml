@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal Growth on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/personal-growth/</link>
+    <description>Recent content in Personal Growth on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jul 2024 12:01:19 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/personal-growth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Engineering Skills</title>
+      <link>http://localhost:1313/blogs/2024/jul/software-engineering-skills/</link>
+      <pubDate>Sat, 13 Jul 2024 12:01:19 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2024/jul/software-engineering-skills/</guid>
+      <description>&lt;p&gt;A lot of my friends come to me and ask about the skills required to grow in the software engineering field. The primary intention behind their questions is usually to understand which latest technologies they need to learn. Should they focus on improving their Python or Java skills? Should they focus on Frontend, Backend or DevOps?&lt;/p&gt;&#xA;&lt;p&gt;While learning specific technologies or languages is certainly important, I believe that it constitutes only a small portion of what it takes to become a good software engineer.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
