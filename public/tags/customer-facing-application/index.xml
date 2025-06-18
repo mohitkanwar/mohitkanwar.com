@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customer Facing Application on Mohit Kanwar&#39;s App : My Cents</title>
+    <link>http://localhost:1313/tags/customer-facing-application/</link>
+    <description>Recent content in Customer Facing Application on Mohit Kanwar&#39;s App : My Cents</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Jun 2025 20:22:36 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/customer-facing-application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self Hosted Captcha</title>
+      <link>http://localhost:1313/solutions/channel-banking-application/channel-banking-application-architecture/</link>
+      <pubDate>Mon, 16 Jun 2025 20:22:36 +0530</pubDate>
+      <guid>http://localhost:1313/solutions/channel-banking-application/channel-banking-application-architecture/</guid>
+      <description>&lt;h1 id=&#34;objective&#34;&gt;Objective&lt;/h1&gt;&#xA;&lt;p&gt;To design and implement a microservices based architecture that caters to the development of human facing applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blogs/</loc>
-    <lastmod>2025-01-06T21:48:45+05:30</lastmod>
+    <loc>http://localhost:1313/solutions/channel-banking-project/</loc>
+    <lastmod>2025-06-18T09:58:15+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-06-18T09:58:15+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/solution/</loc>
+    <lastmod>2025-06-18T09:58:15+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/solutions/</loc>
+    <lastmod>2025-06-18T09:58:15+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-18T09:58:15+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2025-01-06T21:48:45+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/2025/jan/the-test-data-dilemma/</loc>
@@ -27,9 +39,6 @@
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/self-hosted/</loc>
-    <lastmod>2024-11-01T10:31:41+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-11-01T10:31:41+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/feba/</loc>
@@ -402,9 +411,6 @@
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/software-maintenance/</loc>
-    <lastmod>2024-01-01T22:53:58+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/solutions/</loc>
     <lastmod>2024-01-01T22:53:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/benefits-of-incorporating-gamification-in-education/</loc>

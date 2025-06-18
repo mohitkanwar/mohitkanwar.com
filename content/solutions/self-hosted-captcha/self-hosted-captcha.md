@@ -15,6 +15,7 @@ imageBasePath: "/images/solutions/self-hosted-captcha"
 image: /images/solutions/self-hosted-captcha/self-hosted-captcha.png
 description: "Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software."
 toc: 
+summary: "Design and implement a secure, self-hosted CAPTCHA service. Learn about features, accessibility, integration, and architecture for protecting applications from bots while ensuring a seamless user experience."
 ---
 
 # Objective
