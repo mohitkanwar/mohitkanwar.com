@@ -61,7 +61,9 @@ It includes:
 * Deployment and Release Process
 * Operations and Support Model
 
-[READ THE DOCUMENTATION HERE](https://mohitkanwar.github.io/channel-banking-project/)
+<a href="https://mohitkanwar.github.io/channel-banking-project/" target="_blank" rel="noopener">READ THE DOCUMENTATION HERE</a>
+
+
 
 ---
 
