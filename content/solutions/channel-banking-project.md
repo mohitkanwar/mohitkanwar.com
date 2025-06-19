@@ -7,7 +7,7 @@ tags:
   - Solution
 
 imageBasePath: "/images/solutions/channel-banking-project"
-image: /images/solutions/channel-banking-project/banner.gif
+image: /images/solutions/channel-banking-project/featured-background.jpg
 description: "Explore the comprehensive documentation for the Channel Banking Application designed to support multiple banking channels including Retail, Business, Admin, and Reporting. This guide covers all aspects of the Software Development Life Cycle (SDLC)—from project management and requirement gathering to architecture, development, testing, deployment, and support. Whether you're building mobile banking apps, web portals, APIs, or admin tools, this documentation serves as a central knowledge base for developers, architects, testers, and stakeholders involved in digital banking transformation."
 summary: "Comprehensive documentation for a Channel Banking application covering SDLC processes, mobile and web apps, APIs, admin tools, and reporting. Supports retail and business banking use cases with detailed project, architecture, and development insights."
 toc: 
