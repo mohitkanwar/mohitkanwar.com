@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Mohit Kanwar&#39;s App : My Cents</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jan 2025 21:48:45 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jul 2025 09:11:20 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pins and Passwords</title>
+      <link>http://localhost:1313/blogs/2025/jul/pins-and-passwords/</link>
+      <pubDate>Tue, 01 Jul 2025 09:11:20 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/2025/jul/pins-and-passwords/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant hurdle in securing mobile applications. During my architecture design consulting sessions, I come across this situation multiple times – and I love to build authentication systems that don’t sacrifice user experience for security.&lt;/p&gt;&#xA;&lt;p&gt;My journey into this space began over a decade ago, designing and implementing software solutions for some of the largest banks across the globe. During that time, I witnessed firsthand the critical balance between robust security measures and the ease with which users can interact with their financial data. I realized that overly complicated authentication processes often lead to user frustration, abandonment, and ultimately, a weakened security posture – users are more likely to opt for simpler, less secure methods to avoid the hassle.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Test Data Dilemma</title>
       <link>http://localhost:1313/blogs/2025/jan/the-test-data-dilemma/</link>

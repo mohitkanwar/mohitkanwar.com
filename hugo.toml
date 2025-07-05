@@ -13,7 +13,7 @@ disqusShortname = "mohitkanwar-com"
   unsafe = true
 [params]
   title = "Mohit Kanwar"
-  description = "Mohit Kanwar is a software architect, working with Xebia. He has developed solutions for banks across the globe."
+  description = "Mohit Kanw ar is a software architect, working with Xebia. He has developed solutions for banks across the globe."
   # staticPath = ""  # The path to serve the static files from
   favicon = "/fav.png"
 

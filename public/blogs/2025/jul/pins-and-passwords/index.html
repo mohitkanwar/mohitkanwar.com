@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/blogs/2025/jul/pins-and-passwords/">
+  <meta property="og:site_name" content="Mohit Kanwar&#39;s App : My Cents">
+  <meta property="og:title" content="Pins and Passwords">
+  <meta property="og:description" content="Introduction How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant hurdle in securing mobile applications. During my architecture design consulting sessions, I come across this situation multiple times – and I love to build authentication systems that don’t sacrifice user experience for security.
+My journey into this space began over a decade ago, designing and implementing software solutions for some of the largest banks across the globe. During that time, I witnessed firsthand the critical balance between robust security measures and the ease with which users can interact with their financial data. I realized that overly complicated authentication processes often lead to user frustration, abandonment, and ultimately, a weakened security posture – users are more likely to opt for simpler, less secure methods to avoid the hassle.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2025-07-01T09:11:20+05:30">
+    <meta property="article:modified_time" content="2025-07-01T09:11:20+05:30">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pins and Passwords">
+  <meta name="twitter:description" content="Introduction How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant hurdle in securing mobile applications. During my architecture design consulting sessions, I come across this situation multiple times – and I love to build authentication systems that don’t sacrifice user experience for security.
+My journey into this space began over a decade ago, designing and implementing software solutions for some of the largest banks across the globe. During that time, I witnessed firsthand the critical balance between robust security measures and the ease with which users can interact with their financial data. I realized that overly complicated authentication processes often lead to user frustration, abandonment, and ultimately, a weakened security posture – users are more likely to opt for simpler, less secure methods to avoid the hassle.">
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Pins and Passwords | Mohit Kanwar&#39;s App : My Cents
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg ">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/fav.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Mohit Kanwar
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="Blog posts">
+                            
+                            Blogs
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/solutions" title="Solutions">
+                            
+                            Solutions
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/gallery" title="Blog posts">
+                            
+                            Gallery
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Pins and Passwords</h1>
+            <div class="text-center">
+              
+                Mohit Kanwar
+                <small>|</small>
+              
+              Jul 1, 2025
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/images/blogs/2025/jul/pins-and-passwords/banner.png" alt="Pins and Passwords">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h1 id="introduction">Introduction</h1>
+<p>How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant hurdle in securing mobile applications. During my architecture design consulting sessions, I come across this situation multiple times – and I love to build authentication systems that don’t sacrifice user experience for security.</p>
+<p>My journey into this space began over a decade ago, designing and implementing software solutions for some of the largest banks across the globe. During that time, I witnessed firsthand the critical balance between robust security measures and the ease with which users can interact with their financial data. I realized that overly complicated authentication processes often lead to user frustration, abandonment, and ultimately, a weakened security posture – users are more likely to opt for simpler, less secure methods to avoid the hassle.</p>
+<p>This experience shaped my focus at one of the customer&rsquo;s solution: to create innovative authentication frameworks that prioritize both security and a seamless user experience. I believe that strong authentication shouldn’t feel like a chore; it should be intuitive, reliable, and contribute to a positive overall app experience. I try to provide solutions that meet the demanding security requirements of modern applications, while remaining user-friendly and accessible.</p>
+<h1 id="password-authentication--the-server-side-approach">Password Authentication – The Server-Side Approach</h1>
+<p>Inspite of the introduction of passwordless techniques, Password based authentication remains the most common authentication mechanism for software applications, and industry trends strongly suggest this will continue to be the case for the foreseeable future. It’s a well-established and understood process, providing a baseline level of security when implemented correctly. However, it’s crucial to recognize the inherent vulnerabilities and proactively address them.</p>
+<h2 id="what-is-password-authentication">What is Password Authentication?</h2>
+<p>Password authentication is the process of verifying a user’s identity based on a secret string of characters – their password. This process typically involves the user entering their password into the application, which is then transmitted to the server for comparison against a stored hash.</p>
+<p><img src="/images/blogs/2025/jul/pins-and-passwords/password-validation-Password_based_authentication.png" alt="Password Authentication"></p>
+<p>Storing passwords in plain text is an unacceptable security risk. Instead, passwords are ‘hashed’ – transformed into an irreversible string of characters. This hashing process significantly reduces the risk of compromise if the database is breached. Crucially, a ‘salt’ – a random string of characters – is added to the password before hashing. The salt is unique to each user and further protects against attacks where attackers can use pre-computed hash tables (rainbow tables).</p>
+<p>Beyond hashing and salting, several best practices are vital:</p>
+<p><strong>Password Complexity</strong>: Enforcing minimum password length, requiring a mix of uppercase and lowercase letters, numbers, and symbols, significantly improves security.</p>
+<p><strong>Rate Limiting</strong>: Implementing rate limiting restricts the number of login attempts within a specific timeframe. This mitigates brute-force attacks.
+Problems Associated with Passwords</p>
+<p>Despite these best practices, password-based authentication faces significant challenges:</p>
+<p><strong>Network Transmission – <em>Man-in-the-Middle Attacks</em></strong>: Passwords are inherently vulnerable when transmitted over the network. A malicious actor can intercept the password during transmission, leading to a &ldquo;man-in-the-middle&rdquo; attack, where they gain unauthorized access.</p>
+<p><strong>Database Exposures – <em>Leaked Passwords</em></strong>: If a database is compromised, sensitive passwords can be exposed, allowing attackers to gain access to user accounts.</p>
+<p><strong>Shared Passwords – <em>Cross-Device Attacks</em></strong>: Users often reuse passwords across multiple services. This creates a single point of failure; if an attacker gains access to one password, they can potentially access accounts on other software services using the same password.</p>
+<h2 id="pin-authentication--a-simpler-client-side-solution">PIN Authentication – A Simpler Client-Side Solution</h2>
+<p>PIN authentication offers a significantly simpler and potentially more secure alternative to traditional password-based authentication, particularly in mobile applications. Essentially, it involves users entering a numeric code – their PIN – to verify their identity. This approach leverages client-side cryptographic processes, minimizing the exposure of sensitive data.</p>
+<p><img src="/images/blogs/2025/jul/pins-and-passwords/pin-validation-Pin_based_authentication.png" alt="Pin authentication "></p>
+<h3 id="how-pins-are-generated--stored-client-side-token-generation">How PINs are Generated &amp; Stored (Client-Side Token Generation)</h3>
+<p>PIN authentication relies on generating a unique cryptographic token directly on the user’s device. This process begins with a securely generated KeyPair. This Keypair comprises of a private and a public key. The private key is secured and tightly bound with the mobile device. The security is such that even the software developers creating the app cannot extract the private key directly. There are wrappers apis available using which the app developers use private key to create signatures.
+The public key, which is tightly coupled with the private key can be shared safely over the network and sent to users. Since public key alone cannot be used to authenticate the user, sending it to the server is a safe process.
+Then this keypair is associated with a PIN, which is a numeric code that the user can easily remember. The PIN is not stored in plain text; instead, it is used to derive a cryptographic key through a secure hashing function. This derived key is then used to create a signature that is a one time but unique identifier of the device.</p>
+<p>Critically, this entire process occurs on the device, ensuring that the actual PIN never leaves the user’s control. Theobject that is transmitted to the server is a cryptographic signature, not the PIN itself. This signature is generated using the private key and the PIN, creating a unique token that can be verified by the server.</p>
+<p>The server by the onus of public key, can verify the signature without ever needing to know the PIN. This means that even if an attacker intercepts the communication, they cannot gain access to the PIN or the private key.</p>
+<h3 id="the-cryptographic-process-of-passwordless-architecture">The Cryptographic Process of Passwordless Architecture</h3>
+<p>This approach embodies the core principles of a passwordless architecture. The PIN alone cannot grant the access to application. The pin must be used on the specific device for the access to be granted. The security stems from the complexity of the cryptographic function and the unique random number used to generate it. The process creates a mathematically secure link between the user&rsquo;s device and the application.</p>
+<h3 id="tightly-coupled-with-a-device---what-you-have--what-you-know">Tightly Coupled with a Device - “What you have + What you know”</h3>
+<p>PIN authentication inherently creates a “what you have” security layer. Because the PIN is generated and stored solely on the user&rsquo;s device – a smartphone or tablet – it’s inextricably linked to that specific device. This creates a strong security posture, adding to the “what you have” component alongside the &ldquo;What you know&rdquo; component.</p>
+<h3 id="improved-security--no-network-transmission">Improved Security – No Network Transmission</h3>
+<p>A key advantage of PIN authentication is that the PIN itself is never transmitted over the network. This dramatically reduces the surface area of attack. Even if an attacker intercepts the communication, they cannot access the PIN or the private key. The PIN is used to generate a cryptographic signature, which is then sent to the server for verification. This means that even if an attacker gains access to the server, they cannot retrieve the PIN or compromise the user’s account.</p>
+<p>From attacker&rsquo;s perspective, a mass scale attack on a system  is almost impossible. Because now to attack the system, the attacker needs to have access to all the devices where the PIN is stored. This means that even if an attacker manages to access a device and corresponding PIN, and in effect compromise a user account, they would still not be able to compromise the entire system. The attacker would need to compromise each device individually, which is a significantly more challenging task.</p>
+<h3 id="pin-reusability-and-security">Pin Reusability and Security</h3>
+<p>While the PIN can be reused, the underlying security relies on a carefully managed system. A private key is tightly coupled with the app and device. This key is not reusable. So in effect, the pin, the app and the device are bind together. Even if one component is missing, the authentication fails.</p>
+<h3 id="memorable-pins---a-key-advantage">Memorable PINs - A Key Advantage</h3>
+<p>Furthermore, because the PIN is stored locally and doesn’t require users to memorize complex passwords, it’s inherently more memorable. This contrasts sharply with traditional password systems, where users often struggle to remember and correctly type long, complex passwords. The simplicity of a numeric PIN significantly reduces the cognitive load and improves the overall user experience, making it easier and more convenient for users to authenticate.</p>
+<h2 id="the-pitfalls-of-server-side-pin-storage">The Pitfalls of Server-Side PIN Storage</h2>
+<p>A common and incredibly dangerous pitfall is storing PINs just like passwords – on the server. This approach inherits all the vulnerabilities associated with passwords: increased susceptibility to man-in-the-middle attacks and, crucially, heightened risk of brute-force attacks. Because PINs are typically shorter, they’re far more vulnerable when stored on the server. Furthermore, passwords’ complexity provides resistance to brute-forcing, while PINs offer substantially less resistance. This approach must never be adopted. Prioritizing client-side PIN generation and storage alongside device-level authentication is paramount for robust security.</p>
+<h2 id="choosing-the-right-approach">Choosing the Right Approach</h2>
+<p>Selecting the appropriate authentication method requires careful consideration of several key factors. Ultimately, the “best” approach depends on balancing security needs with user experience and regulatory compliance.</p>
+<h3 id="factors-to-consider">Factors to Consider:</h3>
+<p>Security Requirements: High-security environments, such as financial institutions or government applications, demand robust security, potentially favoring biometric authentication or multi-factor authentication combining PINs with other methods. Lower-risk applications may be adequately secured by a well-implemented PIN system.
+User Experience: PIN authentication typically offers a smoother and more intuitive user experience than complex password systems. It’s well-suited for applications where ease of use is paramount.
+Regulatory Compliance: Certain industries (e.g., HIPAA, PCI DSS) may dictate specific authentication requirements, influencing the choice of method.</p>
+<h3 id="when-to-use-which">When to Use Which:</h3>
+<p><strong>PIN Authentication</strong>: Ideal for applications requiring moderate security and a seamless user experience, such as mobile banking apps, e-commerce platforms, and social media logins.
+<strong>Biometric Authentication</strong>: Recommended for high-security applications demanding the highest level of protection, like accessing sensitive financial data or government systems.
+<strong>Multi-Factor Authentication</strong>: Best suited for environments with stringent regulatory requirements or exceptionally valuable assets.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Password</th>
+          <th>PIN</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Memorability</strong></td>
+          <td>Often difficult to remember, leading to weak passwords or reliance on password managers.</td>
+          <td>Typically easier to remember, particularly for numeric users.</td>
+      </tr>
+      <tr>
+          <td><strong>Length</strong></td>
+          <td>Typically long (8+ characters)</td>
+          <td>Short (typically 4-6 digits)</td>
+      </tr>
+      <tr>
+          <td><strong>Character Set</strong></td>
+          <td>Supports a wide range of characters (uppercase, lowercase, numbers, symbols).</td>
+          <td>Generally limited to numeric characters only.</td>
+      </tr>
+      <tr>
+          <td><strong>Attack Surface</strong></td>
+          <td>Larger – device, network, server, database</td>
+          <td>Smaller – device only</td>
+      </tr>
+      <tr>
+          <td><strong>User Experience</strong></td>
+          <td>Can be cumbersome for users.</td>
+          <td>Simple and intuitive.</td>
+      </tr>
+      <tr>
+          <td><strong>Storage</strong></td>
+          <td>Stored on server side</td>
+          <td>Stored on device</td>
+      </tr>
+      <tr>
+          <td><strong>Phishing Vulnerability</strong></td>
+          <td>High – susceptible to being tricked into entering password on fake website.</td>
+          <td>Lower – even if PIN is leaked, it is not usable for attacker unless the attacker has access to the device as well.</td>
+      </tr>
+      <tr>
+          <td><strong>Ease of Automation</strong></td>
+          <td>Easier to automate</td>
+          <td>difficult to automate</td>
+      </tr>
+      <tr>
+          <td><strong>Non device Usage</strong></td>
+          <td>Passwords can be used even when no device is bound to the users e.g. on browsers or when user switches the device</td>
+          <td>Since the pins are bound to device, they cannot be used on browser based applications or the user is forced to reset the pin when device is changed</td>
+      </tr>
+  </tbody>
+</table>
+<p>In conclusion, Passwords are best fit when there is no device associated with the user. They are versatile and can be used on browser based applications. PIN authentication presents a compelling alternative to traditional password-based systems, offering a simplified user experience while maintaining a robust security posture, particularly when coupled with client-side devices. We’ve seen that PINs provide a significant advantage in terms of memorability, ease of use, and reduced attack surface compared to complex passwords. However, it’s crucial to recognize that no single authentication method provides absolute security.</p>
+<p>I’d be pleased to discuss PIN authentication in more detail or explore potential applications. If you’re interested in a brief consultation or simply want to share your thoughts, please don’t hesitate to contact me at <a href="https://www.linkedin.com/in/mohit-kanwar-7668a211/">LinkedIn</a>. I’m available for a discussion and would welcome the opportunity to connect.”</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-password-authentication">What is Password Authentication?</a></li>
+    <li><a href="#pin-authentication--a-simpler-client-side-solution">PIN Authentication – A Simpler Client-Side Solution</a>
+      <ul>
+        <li><a href="#how-pins-are-generated--stored-client-side-token-generation">How PINs are Generated &amp; Stored (Client-Side Token Generation)</a></li>
+        <li><a href="#the-cryptographic-process-of-passwordless-architecture">The Cryptographic Process of Passwordless Architecture</a></li>
+        <li><a href="#tightly-coupled-with-a-device---what-you-have--what-you-know">Tightly Coupled with a Device - “What you have + What you know”</a></li>
+        <li><a href="#improved-security--no-network-transmission">Improved Security – No Network Transmission</a></li>
+        <li><a href="#pin-reusability-and-security">Pin Reusability and Security</a></li>
+        <li><a href="#memorable-pins---a-key-advantage">Memorable PINs - A Key Advantage</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-pitfalls-of-server-side-pin-storage">The Pitfalls of Server-Side PIN Storage</a></li>
+    <li><a href="#choosing-the-right-approach">Choosing the Right Approach</a>
+      <ul>
+        <li><a href="#factors-to-consider">Factors to Consider:</a></li>
+        <li><a href="#when-to-use-which">When to Use Which:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2f2025%2fjul%2fpins-and-passwords%2f">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Pins%20and%20Passwords&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2f2025%2fjul%2fpins-and-passwords%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Pins%20and%20Passwords: http%3a%2f%2flocalhost%3a1313%2fblogs%2f2025%2fjul%2fpins-and-passwords%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Pins%20and%20Passwords&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fblogs%2f2025%2fjul%2fpins-and-passwords%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mohitkanwar-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2025/jul/pins-and-passwords/">
+                        <img src="/images/blogs/2025/jul/pins-and-passwords/banner.png" class="card-img-top" alt="Pins and Passwords">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2025/jul/pins-and-passwords/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Pins and Passwords">Pins and Passwords</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="introduction">Introduction</h1>
+<p>How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant hurdle in securing mobile applications. During my architecture design consulting sessions, I come across this …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Jul 1, 2025</span>
+                    <a href="/blogs/2025/jul/pins-and-passwords/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/">
+                        <img src="/images/blogs/2025/jan/the-test-data-dilemma/banner.png" class="card-img-top" alt="The Test Data Dilemma">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="The Test Data Dilemma">The Test Data Dilemma</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h3 id="the-test-data-dilemma-a-silent-challenge-in-software-development">The Test Data Dilemma: A Silent Challenge in Software Development</h3>
+<p>When building software, one big challenge often goes unnoticed – getting the right test data. As a software architect, I have worked with many customers to create software systems. A common issue I’ve faced is that customers don’t …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Jan 6, 2025</span>
+                    <a href="/blogs/2025/jan/the-test-data-dilemma/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/">
+                        <img src="/images/blogs/2024/nov/designing-a-captcha-service/banner.png" class="card-img-top" alt="Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions">Designing a Self-Hosted …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><p><strong>Introduction</strong>: What if the familiar captcha boxes we encounter daily were designed by your team, tailored specifically to your organization’s needs?<br>
+Recently, I took on the challenge of creating a custom, self-hosted captcha service for a client. It sounded simple at first—why reinvent the wheel when …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 1, 2024</span>
+                    <a href="/blogs/2024/nov/designing-a-captcha-service/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/mohitkanwar" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/mohit-kanwar-7668a211/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <a href="https://twitter.com/mmkanwar" aria-label="twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#03a9f4"
+                d="M42,37c0,2.762-2.239,5-5,5H11c-2.762,0-5-2.238-5-5V11c0-2.762,2.238-5,5-5h26c2.761,0,5,2.238,5,5 V37z" />
+            <path fill="#fff"
+                d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12" />
+        </svg>
+    </a>
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="Mohit Kanwar&#39;s App : My Cents">
+                        <img alt="Footer logo" src="/fav.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2025  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>
