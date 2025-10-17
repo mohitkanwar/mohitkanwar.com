@@ -282,7 +282,7 @@ disqusShortname = "mohitkanwar-com"
   enable = true
   # title = "Custom Name"
   content = "Feel free to connect with me on LinkedIn! Whether you have a professional question or just want to say hello, I'll do my best to respond promptly. Looking forward to connecting with you!"
-  email = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
+  linkedin = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
   btnName = "Let's Connect"
 
 [params.footer]

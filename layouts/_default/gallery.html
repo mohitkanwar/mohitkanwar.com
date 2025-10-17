@@ -1,0 +1,155 @@
+{{/* layouts/_default/gallery.html */}}
+
+{{ define "head" }}
+  <meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+  {{ if .Params.viewer | default true }}
+    <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/viewer/viewer.min.css">
+    <script src="{{ .Site.Params.staticPath }}/viewer/viewer.min.js"></script>
+  {{ end }}
+  <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/gallery.css">
+{{ end }}
+
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+  <section class="gallery">
+    <div class="gallery-grid">
+      {{ $galleryPath := "images/gallery" }}
+      {{ $fsPath := printf "static/%s" $galleryPath }}
+      {{ $files := readDir $fsPath }}
+      {{ $meta := site.Data.gallery }}
+
+      {{ if $files }}
+        {{ range sort $files "ModTime" "desc" }}
+          {{ $name := .Name | lower }}
+          {{ if or (hasSuffix $name ".jpg") (hasSuffix $name ".jpeg") (hasSuffix $name ".png") (hasSuffix $name ".gif") (hasSuffix $name ".webp") }}
+            {{ $base := replace .Name (path.Ext .Name) "" }}
+            {{ $pretty := title (replaceRE "[-_]+" " " $base) }}
+
+            {{ $entry := or (and $meta (index $meta .Name)) (and $meta (index $meta $base)) }}
+            {{ $title := cond (and $entry (isset $entry "title")) ($entry.title) $pretty }}
+            {{ $desc  := cond (and $entry (isset $entry "description")) ($entry.description) "" }}
+            {{ $date  := cond (and $entry (isset $entry "date")) ($entry.date) "" }}
+            {{ $tags  := cond (and $entry (isset $entry "tags")) ($entry.tags) (slice) }}
+
+            <figure class="gallery-item">
+              <img
+                src="/{{ $galleryPath }}/{{ .Name }}"
+                alt="{{ $title }}"
+                title="{{ $title }}"
+                loading="lazy"
+                decoding="async"
+                data-desc='{{ $desc }}'
+                data-date='{{ $date }}'
+                data-tags='{{ delimit $tags "|" }}'
+              >
+              <figcaption class="gallery-caption">
+                <strong>{{ $title }}</strong>
+                {{ if $desc }}<p>{{ $desc }}</p>{{ end }}
+                {{ if $date }}<p class="meta">📅 {{ $date }}</p>{{ end }}
+                {{ if $tags }}
+                  <p class="tags">
+                    {{ range $tags }}<span class="tag">#{{ . }}</span>{{ end }}
+                  </p>
+                {{ end }}
+              </figcaption>
+            </figure>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        <p>No images found in <code>/static/{{ $galleryPath }}</code>.</p>
+      {{ end }}
+    </div>
+  </section>
+
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      position: relative;
+    }
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: zoom-in;
+    }
+    .gallery-item img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    }
+    .gallery-caption {
+      font-size: .9rem;
+      text-align: center;
+      color: #555;
+      line-height: 1.5;
+      max-width: 90%;
+      pointer-events: none;
+    }
+    .gallery-caption p { margin: 0.25rem 0; }
+    .gallery-caption .meta { font-size: 0.8rem; color: #777; }
+    .gallery-caption .tags { margin-top: 0.25rem; }
+    .gallery-caption .tag {
+      display: inline-block;
+      background: #f2f2f2;
+      color: #555;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin: 0 3px;
+    }
+  </style>
+
+  {{ if .Params.viewer | default true }}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const grid = document.querySelector(".gallery-grid");
+      if (!grid || !window.Viewer) return;
+
+      if (grid._viewerInstance && grid._viewerInstance.destroy) {
+        grid._viewerInstance.destroy();
+      }
+
+      grid._viewerInstance = new Viewer(grid, {
+        filter(el) { return el.tagName && el.tagName.toLowerCase() === "img"; },
+        button: true,
+        navbar: false,
+        toolbar: true,
+        title: false,
+        keyboard: true,
+        backdrop: true,
+        url(image) { return image.getAttribute("src"); },
+        viewed() {
+          const img = this.image;
+          const meta = {
+            title: img.getAttribute("title") || img.alt || "",
+            desc: img.dataset.desc || "",
+            date: img.dataset.date || "",
+            tags: (img.dataset.tags || "").split("|").filter(Boolean)
+          };
+          const viewerContainer = this.viewer.querySelector('.viewer-footer');
+          if (viewerContainer) {
+            viewerContainer.innerHTML = `
+              <div style="text-align:center; line-height:1.4; color:#eee;">
+                <strong>${meta.title}</strong>
+                ${meta.desc ? `<div style=\"color:#bbb; font-weight:400; margin-top:.25rem;\">${meta.desc}</div>` : ''}
+                ${(meta.date || meta.tags.length) ? `<div style=\"margin-top:.25rem; font-size:.85em; color:#aaa;\">${meta.date ? `📅 ${meta.date}` : ''} ${meta.tags.length ? `· ${meta.tags.map(t=>`#${t}`).join(' ')}` : ''}</div>` : ''}
+              </div>`;
+          }
+        }
+      });
+    });
+  </script>
+  {{ end }}
+{{ end }}
