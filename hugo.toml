@@ -1,9 +1,10 @@
 baseURL = 'https://mohitkanwar.com/'
 languageCode = 'en-us'
-title =  "Mohit Kanwar's App : My Cents"
+title =  "Mohit Kanwar's App : My Few Cents"
 theme = "hugo-profile"
 pagination.pagerSize = 9
 enableRobotsTXT = true
+enableGitInfo = true
 disqusShortname = "mohitkanwar-com"
 
 [outputs]
