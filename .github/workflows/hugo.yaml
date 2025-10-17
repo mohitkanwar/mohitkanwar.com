@@ -63,6 +63,25 @@ jobs:
             hugo-
       - name: Configure Git
         run: git config core.quotepath false
+      - name: Generate build metadata
+        run: |
+          mkdir -p data
+          BUILD_TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            VERSION="${GITHUB_REF_NAME}"   # e.g. v1.3.0
+          else
+            VERSION="$(git rev-parse --short=7 HEAD)"
+          fi
+          BRANCH="${GITHUB_REF_NAME}"
+          cat > data/build.json <<EOF
+          {
+            "build_time": "${BUILD_TIME}",
+            "version": "${VERSION}",
+            "commit": "$(git rev-parse HEAD)",
+            "branch": "${BRANCH}",
+            "run_number": "${GITHUB_RUN_NUMBER}"
+          }
+          EOF
       - name: Build with Hugo
         run: |
           hugo \

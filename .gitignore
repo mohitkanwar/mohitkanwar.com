@@ -1,3 +1,75 @@
 .DS_Store
 static/.DS_Store
 **/.DS_Store
+public/** 
+# =========================================
+# Hugo .gitignore — Compatible with v0.129+
+# =========================================
+
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Local build cache
+/.hugo_build.lock
+/cache/
+/tmp/
+*.log
+
+# Node.js dependencies (if using npm, yarn, or pnpm for themes/plugins)
+/node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# Environment & IDE files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS / Editor junk
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# Hugo module cache (when using hugo modules)
+/_modules/
+/go.sum
+/go.mod
+
+# Build artifacts from CI/CD (e.g., GitHub Actions, Netlify)
+/data/build.json
+*.tar.gz
+*.zip
+
+# Theme submodules build output
+themes/*/exampleSite/public/
+themes/*/resources/_gen/
+themes/*/.hugo_build.lock
+
+# Optional: ignore local preview drafts
+# Uncomment if you don’t want to commit draft or future content
+# content/**/_index.md
+# content/**/drafts/
+
+# Ignore .bak or editor backups
+*.bak
+*~
+
+# If using npm scripts for Tailwind/PostCSS builds
+/public/css/
+/public/js/
+/assets/css/*.css.map
+/assets/js/*.js.map
+
+# =========================================
+# End of Hugo .gitignore
+# =========================================

@@ -1,0 +1,48 @@
+{{/* Nil-safe build meta for local + CI; hidden until footer hover */}}
+{{ $b := site.Data.build }}
+
+{{/* Timestamp priority:
+     1) data/build.json.build_time
+     2) .Site.Lastmod  (replaces deprecated .Site.LastChange)
+     3) now            (local fallback)
+*/}}
+{{ $when := now }}
+{{ if and $b (isset $b "build_time") $b.build_time }}
+  {{ with $b.build_time }}{{ $when = (time.AsTime .) }}{{ end }}
+{{ else if .Site.Lastmod }}
+  {{ $when = .Site.Lastmod }}
+{{ end }}
+
+{{/* Version priority:
+     1) data/build.json.version
+     2) .GitInfo.Hash (page-scoped, if available)
+     3) "dev"
+*/}}
+{{ $version := "dev" }}
+{{ if and $b (isset $b "version") $b.version }}
+  {{ $version = $b.version }}
+{{ else }}
+  {{ with .GitInfo }}{{ with .Hash }}{{ $version = (substr . 0 7) }}{{ end }}{{ end }}
+{{ end }}
+
+<div class="mk-build-meta">
+  <span class="mk-build-chip">
+    build {{ $when | time.Format "02 Jan 2006, 15:04 UTC" }} · v{{ $version }}
+  </span>
+</div>
+
+<style>
+  /* Hide by default; reveal when the FOOTER is hovered */
+  footer .mk-build-meta { position: relative; }
+  footer .mk-build-chip {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 0.75rem;
+    color: #999;
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none; /* keep footer links clickable */
+  }
+  footer:hover .mk-build-chip { opacity: .55; }
+</style>
