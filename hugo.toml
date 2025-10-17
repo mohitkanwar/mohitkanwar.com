@@ -69,12 +69,20 @@ disqusShortname = "mohitkanwar-com"
   enable = true
   title = "About Me"
   image = "/images/me.jpeg"
-  content = "<p>As a seasoned software architect specializing in pioneering solutions tailored for the FinTech and Banking industry, I bring a unique blend of innovation, technical prowess, and a strong product mindset to the table. With a track record of crafting cutting-edge solutions, I excel in seamlessly merging my innovation skills with agile methodologies, ensuring the delivery of exceptional results.</p><p>My approach to software architecture extends beyond conventional boundaries, embracing forward-thinking strategies to address the dynamic landscape of the financial sector. In addition to my technical expertise, I am driven by a robust product mindset, recognizing the critical intersection between technology and business objectives.</p><p>Beyond my technical acumen, my leadership skills stand out as a driving force behind successful project implementations. I have a proven ability to inspire and guide teams, fostering a collaborative environment that thrives on creativity and efficiency. </p><p>Let's embark on a shared exploration to uncover the possibilities within the realm of digital transformation. Here, you'll discover insights driven by innovative thinking, a product-focused mindset, and leadership capabilities, all designed to enrich your experience on this blog.</p>"
+  content = "<p><strong>I’m a Software Architect</strong> passionate about shaping the future of <strong>FinTech and Banking</strong> through technology, innovation, and purposeful design.</p><p>My work centers on building <strong>scalable, cloud-native digital platforms</strong> that help financial institutions adapt to change — <em>faster, safer, and smarter</em>.</p><p>I believe architecture goes beyond technical diagrams — it’s about <strong>bridging business vision with engineering excellence</strong>, transforming ambitious ideas into sustainable, real-world solutions.</p><p>In recent years, my focus has been on driving <strong>AI-powered digital experiences</strong> and <strong>modern banking ecosystems</strong> that deliver measurable business value.</p><p>I thrive at the intersection of <strong>technology, product strategy, and organizational transformation</strong> — helping teams evolve from simply delivering software to delivering lasting impact.</p>"
 
   [params.about.skills]
     enable = true
-    title = "Here are a few technologies I've been working with recently:"
-    items = ["Gen AI", "Backbase", "Spring Cloud", "Angular", "React", "Node", "ReactNative", "Golang", "Python", "AWS", "Azure"]
+    title = "Focus Areas:"
+    items = [
+    "Applied AI in Financial Services",
+    "Cloud-Native Architecture & Microservices",
+    "Digital Banking Transformation",
+    "Product & Platform Engineering Strategy",
+    "Data-Driven Decision Systems",
+    "Modern Frontend Experiences",
+    "Developer Experience & Engineering Excellence"
+  ]
 
 # Experience
 [params.experience]
