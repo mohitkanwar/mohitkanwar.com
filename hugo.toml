@@ -5,6 +5,7 @@ theme = "hugo-profile"
 pagination.pagerSize = 9
 enableRobotsTXT = true
 enableGitInfo = true
+
 disqusShortname = "mohitkanwar-com"
 
 [outputs]
