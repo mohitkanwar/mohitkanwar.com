@@ -1,0 +1,5 @@
+{{ $id := lower (replaceRE "[^a-zA-Z0-9]+" "-" (.Get "name")) }}
+<li><a href="#{{ $id }}">{{ .Get "name" }}</a></li>
+<div id="{{ $id }}" class="tab-panel">
+  {{ .Inner | markdownify }}
+</div>

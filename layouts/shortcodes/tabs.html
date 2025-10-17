@@ -1,0 +1,50 @@
+<div class="tabs">
+    <ul class="tab-list">
+      {{ range sort .Page.Pages "Weight" }}
+        <li><a href="#{{ .File.BaseFileName }}">{{ .Params.tab }}</a></li>
+      {{ end }}
+    </ul>
+  
+    <div class="tab-content">
+      {{ range sort .Page.Pages "Weight" }}
+        <div id="{{ .File.BaseFileName }}" class="tab-panel">
+          {{ .Content }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  
+  <style>
+  .tabs { margin-top: 1rem; }
+  .tab-list { list-style: none; display: flex; gap: 1rem; padding: 0; border-bottom: 1px solid #ddd; }
+  .tab-list li { margin: 0; }
+  .tab-list a { padding: 0.5rem 1rem; text-decoration: none; background: #eee; border-radius: 4px 4px 0 0; }
+  .tab-list a.active { background: #fff; border-bottom: 2px solid #000; }
+  .tab-panel { display: none; padding: 1rem; border: 1px solid #ddd; border-top: none; }
+  .tab-panel.active { display: block; }
+  </style>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll(".tab-list a");
+    const panels = document.querySelectorAll(".tab-panel");
+  
+    function activateTab(tab) {
+      tabs.forEach(t => t.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.querySelector(tab.getAttribute("href")).classList.add("active");
+    }
+  
+    tabs.forEach(tab => {
+      tab.addEventListener("click", function(e) {
+        e.preventDefault();
+        activateTab(tab);
+      });
+    });
+  
+    // Activate first tab by default
+    if (tabs.length) activateTab(tabs[0]);
+  });
+  </script>
+  
