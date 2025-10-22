@@ -1,0 +1,147 @@
+{{ define "main" }}
+  <style>
+    /* Scoped styles for the videos list — safe to add here (keeps theme files untouched) */
+    :root{
+      --max-width:1100px;
+      --gap:1.25rem;
+      --card-radius:12px;
+      --muted:#6b7280;
+      --bg: #fff;
+      --surface-shadow: 0 8px 24px rgba(11,22,39,0.06);
+      --accent: linear-gradient(90deg,#0ea5a4,#06b6d4);
+      --transition: 220ms cubic-bezier(.2,.9,.2,1);
+    }
+    .videos-page { max-width:var(--max-width); margin:1.75rem auto; padding:0 1rem; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #0f172a; }
+    .videos-header{ display:flex; flex-direction:column; gap:.25rem; margin-bottom:1rem }
+    .videos-header h1{ margin:0; font-size:clamp(1.4rem, 2.4vw, 2rem); letter-spacing:-0.01em }
+    .videos-header .intro { color:var(--muted); font-size:0.95rem }
+
+    .gallery {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:var(--gap);
+      margin-top:1.25rem;
+    }
+
+    .card {
+      background:var(--bg);
+      border-radius:var(--card-radius);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:220px;
+      box-shadow: var(--surface-shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      will-change: transform;
+      border: 1px solid rgba(15,23,42,0.04);
+    }
+    .card:focus-within, .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11,22,39,0.08); }
+
+    /* thumbnail area */
+    .thumb {
+      position:relative;
+      width:100%;
+      aspect-ratio: 16 / 9;
+      background:#000;
+      display:block;
+      overflow:hidden;
+      cursor:pointer;
+      text-decoration:none;
+      color:inherit;
+    }
+    .thumb img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1); transition: transform 420ms cubic-bezier(.2,.9,.2,1); }
+    .card:hover .thumb img { transform: scale(1.06); }
+
+    /* gradient overlay + play button */
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 70%, rgba(0,0,0,0.36) 100%);
+      pointer-events:none;
+    }
+    .play-btn {
+      position:absolute;
+      left:50%; top:50%;
+      transform:translate(-50%,-50%);
+      width:64px; height:64px;
+      border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.14);
+    }
+    .card:hover .play-btn { transform:translate(-50%,-50%) scale(1.06); box-shadow: 0 14px 36px rgba(2,6,23,0.16); }
+    .play-icon {
+      width:0;height:0;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px;
+    }
+
+    .card-body {
+      padding:0.9rem 1rem 1.1rem;
+      display:flex; flex-direction:column; gap:.45rem; flex:1;
+    }
+    .card-title { margin:0; font-size:1rem; line-height:1.25; color: #071233; text-decoration:none }
+    .meta { color:var(--muted); font-size:0.86rem; margin-top:0.15rem }
+    .summary { margin-top:auto; color:#334155; font-size:0.95rem; }
+
+    /* accessible focus */
+    .thumb:focus, .card:focus-within { outline: 3px solid rgba(6,182,212,0.15); outline-offset:3px; }
+
+    /* responsive tweaks */
+    @media (max-width:520px){
+      .play-btn { width:52px;height:52px }
+      .card { min-height:200px }
+    }
+  </style>
+
+  <div class="videos-page">
+    <header class="videos-header">
+      <h1>{{ .Title }}</h1>
+      <div class="intro">{{ .Summary }}</div>
+    </header>
+
+    <!-- intro content from _index.md (shortcodes will render) -->
+    <section class="intro">{{ .Content }}</section>
+
+    <!-- gallery -->
+    <section aria-label="Video gallery">
+      <div class="gallery">
+        {{ range .Pages.ByDate.Reverse }}
+          {{ $id := .Params.youtube_id }}
+          <article class="card" tabindex="0">
+            <a class="thumb" href="{{ .RelPermalink }}" data-video-id="{{ $id }}" role="link" aria-label="Open {{ .Title }}">
+              {{ if $id }}
+                <img src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" alt="{{ .Title }} thumbnail" loading="lazy" />
+              {{ else }}
+                <img src="/images/placeholder-video.jpg" alt="{{ .Title }} thumbnail" loading="lazy" />
+              {{ end }}
+              <div class="play-btn" aria-hidden="true">
+                <span class="play-icon" />
+              </div>
+            </a>
+
+            <div class="card-body">
+              <a href="{{ .RelPermalink }}" style="text-decoration:none;color:inherit;"><h3 class="card-title">{{ .Title }}</h3></a>
+              <div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
+              <div class="summary">{{ .Summary }}</div>
+            </div>
+          </article>
+        {{ else }}
+          <p>No videos found yet.</p>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Keep small: clicking thumbnail navigates to the single page (SEO & analytics friendly).
+    document.addEventListener('click', function (e) {
+      const t = e.target.closest('.thumb');
+      if (!t) return;
+      const href = t.getAttribute('href');
+      // Use normal navigation for accessibility; if you prefer SPA-like behavior we can inject iframe instead.
+      window.location.href = href;
+      e.preventDefault();
+    });
+  </script>
+{{ end }}
