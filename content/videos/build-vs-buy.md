@@ -2,6 +2,7 @@
 title: "Build vs Buy"
 date: 2025-10-22
 youtube_id: "96e8Q616hRg"
+summary: "When advising customers on digital transformation, the central question is: **should we build a custom solution or buy an off‑the‑shelf product?**  <br> The tradeoff is between *customization and control* (build) and *speed and proven capability* (buy)."
 ---
 
 ## Build vs Buy — Overview
