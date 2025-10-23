@@ -295,8 +295,8 @@ disqusShortname = "mohitkanwar-com"
     path = "blogs"
     count = 3
     title = "Recent Posts"
-    enable = true
-    disableFeaturedImage = false
+    enable = false
+    disableFeaturedImage = true
   [params.footer.socialNetworks]
     github = "https://github.com/mohitkanwar"
     linkedin = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
