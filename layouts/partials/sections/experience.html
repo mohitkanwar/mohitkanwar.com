@@ -1,0 +1,24 @@
+{{ if .Site.Params.experience.enable | default false }}
+<section id="experience" class="mk-section mk-section-muted">
+  <div class="container">
+    <div class="mk-section-heading">
+      <p class="mk-section-eyebrow">Experience</p>
+      <h3>From engineering execution to architecture leadership</h3>
+    </div>
+    <div class="mk-timeline">
+      {{ range .Site.Params.experience.items }}
+      <article class="mk-timeline-item">
+        <div class="mk-timeline-meta">
+          <span>{{ .date }}</span>
+          <a href="{{ .companyUrl }}" target="_blank" rel="noopener noreferrer">{{ .company }}</a>
+        </div>
+        <div class="mk-timeline-body">
+          <h4>{{ .job }}</h4>
+          {{ .content | markdownify }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

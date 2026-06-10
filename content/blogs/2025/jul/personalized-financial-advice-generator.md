@@ -4,9 +4,13 @@ slug: "personalized-financial-advice-generator"
 date: 2025-07-30T09:29:59+05:30
 draft: false
 author: "Mohit Kanwar"
-tags: []
+tags:
+  - Artificial Intelligence
+  - FinTech
+  - Domain Driven Design
+  - Personal Finance
 image: "/images/blogs/2025/jul/personalized-financial-advice-generator/banner.png"
-description: "PFM DDD"
+description: "A domain-driven architecture for an AI-powered personalized financial advice generator, including context aggregation, guardrails, auditability, and LLM integration."
 toc: true
 ---
 
@@ -151,3 +155,8 @@ Our team primarily consists of Java developers, and the application where this n
 
 
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

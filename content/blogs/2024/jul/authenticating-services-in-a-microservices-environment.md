@@ -10,7 +10,7 @@ tags:
   - Microservices
   - Code
 image: /images/blogs/2024/jul/authenticating-services-in-a-microservices-environment/banner.png
-description:
+description: "A practical guide to authenticating service-to-service calls in a microservices environment using identity providers, token validation, discovery, and gateway patterns."
 toc:
 ---
 > It is easier to edit a draft than to create a new. I   understand that this blog is not upto the mark that I want it to be, however, I am still publishing it, so that I can keep on improving it.
@@ -603,3 +603,7 @@ curl --location 'http://localhost:8080/calculator/fd/interest' \
 ```
 
 Authentication should be successful.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

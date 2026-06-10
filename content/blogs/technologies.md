@@ -29,3 +29,7 @@ When it comes to server-side technologies and services, our toolkit boasts a dyn
 DevOps practices have revolutionized the way we approach software development and deployment. At Xebia IT Architects, we turn to Kubernetes to orchestrate and manage containerized applications at scale. Its capabilities for automation, scalability, and resilience have made it an essential part of our tech stack. Docker, the containerization technology, simplifies the packaging and deployment of applications across diverse environments. It streamlines the development process, allowing teams to focus on building, testing, and deploying software without the headache of compatibility issues.
 
 In conclusion, our approach to software development is a testament to our commitment to excellence and innovation. The technologies we embrace, including Angular, React, Kotlin, Swift, Java, Node.js, GoLang, Kubernetes, and Docker, reflect our dedication to providing robust, scalable, and efficient solutions for our clients. In the ever-evolving world of technology, staying at the forefront of these advancements is not just a goal but a necessity. As a tech enthusiast with Indian roots at Xebia IT Architects, I'm thrilled to lead our team into a future where software remains the driving force behind industries' success and transformation. Together, we'll continue shaping the technology landscape of tomorrow.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

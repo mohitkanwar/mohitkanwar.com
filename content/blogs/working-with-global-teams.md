@@ -61,3 +61,8 @@ In essence, the journey through global diversity is a pilgrimage through the tap
 
 The realization that despite our diverse backgrounds, aspirations, and traditions, we share a common desire for understanding, respect, and unity is the true essence of embracing global diversity.
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

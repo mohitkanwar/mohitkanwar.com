@@ -4,9 +4,12 @@ date: 2024-02-17T16:25:12+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
+  - Authentication
+  - Security
+  - Risk Based Authentication
 image: /images/blogs/2024/feb/adaptive-authentication/banner.png
-description:
-toc:
+description: "Adaptive authentication evaluates context such as device, location, behavior, and access time to decide when users need extra verification."
+toc: true
 ---
 # Motivation behind this blog
 During a visit to my friend's house, I needed to check my email on his laptop. Upon entering my credentials, I encountered a captcha prompt unexpectedly. After successfully navigating through the captcha challenge, I was then required to enter an additional layer of OTP. It was only after overcoming both obstacles that I finally gained access to my emails.
@@ -87,3 +90,7 @@ So any single factor cannot be trusted 100% but by the <cite>concepts of probabi
 ```
 P(A ∩ B) = P(A) . P(B)
 ```
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

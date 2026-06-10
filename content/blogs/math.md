@@ -36,3 +36,8 @@ Write in-line equations with `\\( ... \\)` , like \\( x^n / y \\) . It's easy!
 Write in-line equations with `\\( ... \\)` , like \\( x^n / y \\) . It's easy!
 ```
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

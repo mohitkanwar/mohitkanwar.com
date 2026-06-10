@@ -21,3 +21,16 @@ The learnings that I got from this project were drastically different from my fi
 1. Have different databases for read and write operations
 1. Be flexible and don't stick to a technology
 1. Be vocal. Share your learnings with your team mates.
+
+---
+
+## Related Reading
+
+- [Digital Banking Modernization Case Study](/solutions/digital-banking-modernization-case-study/) — a full transformation narrative covering strategy, architecture, and delivery
+- [The Technology of Modern Banks](/blogs/the-technology-of-modern-banks/) — the technology stack underpinning platforms like Backbase
+- [My Journey with Finacle](/blogs/2024/aug/my-learnings-from-finacle/) — parallel lessons from a core banking platform implementation
+- [Unveiling the Art and Essentials of API Design](/blogs/crafting-api-magic/) — the BFF and API patterns referenced in Backbase implementations
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

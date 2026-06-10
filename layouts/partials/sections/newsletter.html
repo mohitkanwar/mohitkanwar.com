@@ -1,0 +1,29 @@
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+{{ if $subscribeEnabled }}
+{{ $separator := "?" }}
+{{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+{{ $trackedUrl := printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ("mohitkanwar.com" | urlquery) ("website" | urlquery) ("home-section" | urlquery) ("homepage-newsletter" | urlquery) }}
+<section id="newsletter" class="py-5">
+  <div class="container">
+    <div class="mk-home-subscribe" data-subscribe-surface="home-section">
+      <p class="mk-home-subscribe-eyebrow">Stay Updated</p>
+      <h3 class="mk-home-subscribe-title" data-subscribe-title>Get practical architecture notes in your inbox</h3>
+      <p class="mk-home-subscribe-copy" data-subscribe-copy>High-signal writing on FinTech architecture, AI in financial services, engineering leadership, and platform modernization. Written from delivery experience, not theory.</p>
+      <div class="mk-home-subscribe-actions">
+        <a class="mk-subscribe-btn"
+           href="{{ $trackedUrl }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-cta-event="cta_newsletter_click"
+           data-cta-source="home-newsletter-section"
+           data-cta-campaign="home-section"
+           data-cta-content="homepage-newsletter">
+          Subscribe
+        </a>
+        <a class="mk-home-subscribe-secondary" href="/newsletter">See what you'll get</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

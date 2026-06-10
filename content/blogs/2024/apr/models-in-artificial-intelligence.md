@@ -11,7 +11,7 @@ tags:
     - Generative AI
 
 image: /images/blogs/2024/apr/models-in-artificial-intelligence/banner.png
-description:
+description: "A clear overview of major artificial intelligence model types, how they differ, and where they fit in practical software and business use cases."
 toc:
 ---
 **Model** is a simplified version of a real world entity that focuses on some of the properties of the real object that are under study. Similar to the models doing a ramp walk, help us understand how the clothes developed by a designer might look, models are an integral part of software industry, that help in catering to a specific set of properties that we want to create in the soft world.
@@ -197,3 +197,8 @@ graph LR
     H --> I[Decoder Layer N]
     I --> J[Output Sequence]
 ```
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

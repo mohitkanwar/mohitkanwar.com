@@ -5,7 +5,7 @@ draft: false
 author: "Mohit Kanwar"
 tags:
 image: /images/blogs/2024/may/apis-are-forever/banner.png
-description:
+description: "API design choices live for a long time. This article explains how naming, compatibility, documentation, and governance help teams build APIs that remain useful and maintainable."
 toc:
 ---
 # APIs, like diamonds are forever.
@@ -21,3 +21,7 @@ The problem is visible across layers. multiple versions of db tables create conf
 Half of the data is present in one table, the other half in another table.
 
 On the cost of speeding up now, we are eating up time from future.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

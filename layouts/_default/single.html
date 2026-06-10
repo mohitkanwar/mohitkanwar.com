@@ -1,0 +1,206 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Description | default .Params.summary | default .Summary | default .Site.Params.description | plainify | truncate 160 }}">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+
+<!-- fontawesome -->
+<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">{{ .Title }}</h1>
+            <div class="text-center">
+              {{ if .Params.author }}
+                {{ .Params.author }}
+                <small>|</small>
+              {{ end }}
+              {{ .Date.Format (.Site.Params.datesFormat.article | default "Jan 2, 2006") }}
+
+              {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
+              <span id="readingTime">
+                {{ .Site.Params.singlePages.readTime.content | default "min read" }}
+              </span>
+              {{ end }}
+            </div>
+          </div>
+          {{ if .Params.image }}
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="{{ .Params.image }}" alt="{{ .Title }}">
+          </div>
+          {{ end }}
+          {{ with .Description | default .Params.summary }}
+          <p class="mk-article-dek">{{ . | plainify }}</p>
+          {{ end }}
+          <article class="page-content p-2">
+          {{ .Content | emojify }}
+          </article>
+
+          {{ if eq .Type "blogs" }}
+          {{ partial "mk-article-footer-cta.html" . }}
+          {{ end }}
+
+          {{ if eq .Type "blogs" }}
+          {{ $related := first 3 (where (.Site.RegularPages.Related .) "Type" "blogs") }}
+          {{ if gt (len $related) 0 }}
+          <section class="mk-related">
+            <h4 class="mk-related-title">Related Articles</h4>
+            <div class="mk-related-grid">
+              {{ range $related }}
+              <article class="mk-related-item">
+                <a class="mk-related-link" href="{{ .RelPermalink }}" data-cta-event="cta_related_article_click" data-cta-source="related-articles" data-cta-campaign="related-articles" data-cta-content="{{ printf "related-%s" .File.TranslationBaseName }}">{{ .Title }}</a>
+                <p class="mk-related-summary">{{ partial "mk-card-summary.html" (dict "page" . "limit" 130) }}</p>
+              </article>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+          {{ end }}
+
+          {{ if eq .Type "videos" }}
+          {{ $relatedVideos := first 3 (where (.Site.RegularPages.Related .) "Type" "videos") }}
+          {{ if lt (len $relatedVideos) 2 }}
+            {{ $recentVideos := first 3 (where (where .Site.RegularPages "Type" "videos") "RelPermalink" "ne" .RelPermalink) }}
+            {{ $relatedVideos = $recentVideos }}
+          {{ end }}
+          {{ if gt (len $relatedVideos) 0 }}
+          <section class="mk-related">
+            <h4 class="mk-related-title">Related Videos</h4>
+            <div class="mk-related-grid">
+              {{ range $relatedVideos }}
+              <article class="mk-related-item">
+                <a class="mk-related-link" href="{{ .RelPermalink }}" data-cta-event="cta_related_video_click" data-cta-source="related-videos" data-cta-campaign="related-videos" data-cta-content="{{ printf "related-%s" .File.TranslationBaseName }}">{{ .Title }}</a>
+                <p class="mk-related-summary">{{ partial "mk-card-summary.html" (dict "page" . "limit" 130) | default "Watch this related perspective on digital platforms, banking outcomes, and technology strategy." }}</p>
+              </article>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          {{ if .Params.toc | default true}}
+          <aside class="toc">
+              <h5>
+                {{ .Site.Params.terms.toc | default "Table Of Contents" }}
+              </h5>
+              <div class="toc-content">
+                {{.TableOfContents}}
+              </div>
+          </aside>
+          {{ end }}
+
+          {{ if .Params.tags }}
+          <aside class="tags">
+            <h5>{{ .Site.Params.terms.tags | default "Tags" }}</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              {{range .Params.tags}}
+              <li class="list-inline-item"><a href="{{`tags` | absURL}}/{{.| urlize}}"
+                {{ if site.Params.singlePages.tags.openInNewTab | default true }}target="_blank"{{ end }}
+              >{{.}}</a></li>
+              {{end}}
+            </ul>
+          </aside>
+          {{end}}
+
+          {{ if .Params.socialShare | default .Site.Params.singlePages.socialShare | default true }}
+          {{ $shareURL := .Permalink }}
+          {{ $shareText := .Title }}
+          <aside class="social">
+            <h5>{{ .Site.Params.terms.social | default "Social" }}</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/shareArticle?mini=true&url={{ $shareURL | urlquery }}" data-cta-event="cta_share_linkedin_click" data-cta-source="single-social" data-cta-campaign="social-share" data-cta-content="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/share?text={{ $shareText | urlquery }}&url={{ $shareURL | urlquery }}" data-cta-event="cta_share_twitter_click" data-cta-source="single-social" data-cta-campaign="social-share" data-cta-content="twitter">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?text={{ printf "%s: %s" $shareText $shareURL | urlquery }}" data-cta-event="cta_share_whatsapp_click" data-cta-source="single-social" data-cta-campaign="social-share" data-cta-content="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" rel="noopener noreferrer" href='mailto:?subject={{ $shareText | urlquery }}&amp;body={{ printf "%s %s" (.Site.Params.terms.emailText | default "Check out this site") $shareURL | urlquery }}' data-cta-event="cta_share_email_click" data-cta-source="single-social" data-cta-campaign="social-share" data-cta-content="email">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <button type="button" class="mk-share-copy" data-copy-url="{{ $shareURL }}" data-cta-event="cta_share_copy_click" data-cta-source="single-social" data-cta-campaign="social-share" data-cta-content="copy" aria-label="Copy link">
+                    <i class="fa fa-link"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        {{ template "_internal/disqus.html" . }}
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+{{ if or (.Site.Params.singlePages.scrollprogress.enable | default true) (.Params.enableScrollProgress) }}
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="{{.Site.Params.staticPath}}/js/scrollProgressBar.js"></script>
+{{ end }}
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // To set height of sticky sidebar dynamically
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar = {{ .Site.Params.navbar.stickyNavBar.enable | default false }};
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+{{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
+<script src="{{.Site.Params.staticPath}}/js/readingTime.js"></script>
+{{end}}
+
+{{ end }}

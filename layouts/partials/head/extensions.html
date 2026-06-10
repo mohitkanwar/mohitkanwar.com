@@ -3,3 +3,136 @@
     appear in <head>.
 */}}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+<script defer src="{{ "js/cta-tracking.js" | relURL }}"></script>
+<script defer src="{{ "js/mk-content-filters.js" | relURL }}"></script>
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* Open Graph / Social Meta Tags */}}
+{{ $ogTitle := .Title | default .Site.Title }}
+{{ $ogDescription := .Description | default .Params.summary | default .Summary | default .Site.Params.description }}
+{{ $ogURL := .Permalink }}
+{{ $ogImage := "" }}
+{{ if .Params.image }}{{ $ogImage = .Params.image | absURL }}{{ else }}{{ $ogImage = "/images/global/default-og.jpg" | absURL }}{{ end }}
+{{ $ogType := "website" }}
+{{ if .IsPage }}{{ $ogType = "article" }}{{ end }}
+
+<meta property="og:type" content="{{ $ogType }}">
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDescription | plainify | truncate 160 }}">
+<meta property="og:url" content="{{ $ogURL }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{ if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ range .Params.tags }}<meta property="article:tag" content="{{ . }}">{{ end }}
+{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $ogDescription | plainify | truncate 160 }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+{{/* Breadcrumb JSON-LD for all non-home pages */}}
+{{ if and .IsPage (not .IsHome) }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ .Site.BaseURL }}"
+        }{{ if .Section }},
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ .Section | title }}",
+            "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ .Title }}",
+            "item": "{{ .Permalink }}"
+        }{{ else }},
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ .Title }}",
+            "item": "{{ .Permalink }}"
+        }{{ end }}
+    ]
+}
+</script>
+{{ end }}
+
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohit Kanwar",
+    "url": "{{ .Site.BaseURL }}",
+    "jobTitle": "Software Architect",
+    "description": "{{ .Site.Params.description }}",
+    "sameAs": [
+        "https://www.linkedin.com/in/mohit-kanwar-7668a211/",
+        "https://github.com/mohitkanwar",
+        "https://stackoverflow.com/users/1336558/mohit-kanwar"
+    ]
+}
+</script>
+{{ else if and .IsPage (eq .Type "solutions") (strings.HasSuffix .File.Path "digital-banking-modernization-case-study.md") }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is this based on a real engagement?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is an anonymized account of a real transformation programme. Details and names have been changed to protect client confidentiality." }
+        },
+        {
+            "@type": "Question",
+            "name": "What size of team and platform is this relevant for?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The patterns apply to teams of 20–200+ engineers working on customer-facing banking platforms across multiple channels." }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does a transformation like this take?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The architecture framing and initial operating model can be established within the first 8–12 weeks. Full platform outcomes unfold over 12–24 months depending on scope, org readiness, and delivery capacity." }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you help us apply this to our specific context?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The engagement starts with a structured conversation to map your current state. Visit https://mohitkanwar.com/work-with-me to explore the options." }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you work with banks outside India?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The patterns in this case study are applicable across markets. I have worked with teams operating in international contexts including GIFT City and Gulf-region digital finance programmes." }
+        }
+    ]
+}
+</script>
+{{ else if and .IsPage (eq .Type "blogs") }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ .Title | jsonify }},
+    "author": {
+        "@type": "Person",
+        "name": {{ .Params.author | default "Mohit Kanwar" | jsonify }}
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "description": {{ .Description | default .Params.summary | default .Summary | plainify | truncate 160 | jsonify }},
+    "mainEntityOfPage": "{{ .Permalink }}",
+    "image": ["{{ .Params.image | absURL }}"]
+}
+</script>
+{{ end }}

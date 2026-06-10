@@ -7,7 +7,7 @@ tags:
   - Multi-tenant
   - Reusing a software
 image: /images/blogs/multi-tenant-architecture/banner.png
-description: "Multi tenancy in a software architecture"
+description: "A practical walkthrough of converting a single-tenant banking platform into a multi-tenant architecture, covering tenant IDs, configuration, data, and code extension points."
 toc: 
 ---
 
@@ -87,3 +87,23 @@ Once the multi-tenant platform was fully prepared, we introduced the second tena
 After addressing the initial bugs and incorporating the necessary enhancements, we proceeded to launch the platform for both tenants. Over time, any remaining minor bugs were diligently resolved, ensuring a stable and reliable experience for both tenants.
 
 Today, our multi-tenant platform runs strong with numerous tenants, reducing the bank's running and maintenance costs. By leveraging a single software platform for multiple tenants, the bank achieves economies of scale, optimizing resource utilization and streamlining processes. Updates and enhancements benefit all tenants simultaneously, saving time and costs. The multi-tenant architecture offers cost efficiency, scalability, and streamlined operations, driving greater savings while providing a reliable solution for clients.
+
+---
+
+## Related Reading
+
+- [The Technology of Modern Banks](/blogs/the-technology-of-modern-banks/) — how the full banking technology stack fits together
+- [Digital Banking Modernization Case Study](/solutions/digital-banking-modernization-case-study/) — multi-tenant patterns applied in a real transformation programme
+- [Understanding the Logging Architecture](/blogs/logging-architecture/) — observability across tenant boundaries
+- [Authenticating Services in a Microservices Environment](/blogs/2024/jul/authenticating-services-in-a-microservices-environment/) — securing inter-service calls in a shared platform
+
+{{< mk-subscribe >}}
+
+{{< mk-cta
+title="Designing or scaling a multi-tenant banking platform?"
+description="I can help your team plan tenant isolation, governance, and rollout strategy without slowing delivery."
+primaryLabel="Work With Me"
+primaryUrl="/work-with-me"
+secondaryLabel="Invite Me To Speak"
+secondaryUrl="/speaking"
+>}}

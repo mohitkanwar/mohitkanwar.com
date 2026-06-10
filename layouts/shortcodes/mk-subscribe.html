@@ -1,0 +1,39 @@
+{{/* mk-subscribe shortcode — newsletter capture block
+     Params (all optional):
+       title        — heading text
+       description  — supporting copy
+       source       — utm_source value
+       medium       — utm_medium value
+       campaign     — utm_campaign value
+       content      — utm_content value
+     Requires .Site.Params.subscribeEnabled = true and .Site.Params.subscribeUrl in hugo.toml.
+*/}}
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+{{ if $subscribeEnabled }}
+{{ $title := .Get "title" | default "Get new articles in your inbox" }}
+{{ $description := .Get "description" | default "Practical writing on FinTech architecture, AI in financial services, and engineering leadership. No spam — unsubscribe any time." }}
+{{ $source := .Get "source" | default "mohitkanwar.com" }}
+{{ $medium := .Get "medium" | default "website" }}
+{{ $campaign := .Get "campaign" | default (printf "subscribe-%s" .Page.Type) }}
+{{ $content := .Get "content" | default .Page.File.TranslationBaseName }}
+{{ $separator := "?" }}
+{{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+{{ $trackedUrl := printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ($source | urlquery) ($medium | urlquery) ($campaign | urlquery) ($content | urlquery) }}
+<div class="mk-subscribe">
+  <div class="mk-subscribe-inner">
+    <p class="mk-subscribe-title">{{ $title }}</p>
+    <p class="mk-subscribe-description">{{ $description }}</p>
+    <a class="mk-subscribe-btn"
+       href="{{ $trackedUrl }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-cta-event="cta_newsletter_click"
+       data-cta-source="mk-subscribe"
+       data-cta-campaign="{{ $campaign }}"
+       data-cta-content="{{ $content }}">
+      Subscribe
+    </a>
+  </div>
+</div>
+{{ end }}

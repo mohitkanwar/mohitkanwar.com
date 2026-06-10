@@ -1,92 +1,132 @@
 {{ define "head" }}
-<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<meta name="description" content="Short architecture videos by {{ .Site.Params.title | default .Site.Title }}">
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
 {{ end }}
 
 {{ define "title" }}
-{{.Title }} | {{ .Site.Title }}
+{{ .Title }} | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
-<div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">{{.Title}}</h2>
-    <div class="row">
-        {{ range .Paginator.Pages }}
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    {{/* Determine whether this page is a video */}}
-                    {{ $isYouTube := .Params.youtube_id }}
-                    {{ $isVideoURL := .Params.video_url }}
-                    {{ $hasImage := .Params.image }}
-                    {{ $showFeatured := not (.Site.Params.listPages.disableFeaturedImage | default false) }}
+{{ $videos := sort (where .Site.RegularPages "Type" "videos") "Date" "desc" }}
+{{ $featured := index $videos 0 }}
+{{ with where $videos "File.TranslationBaseName" "build-vs-buy" }}
+  {{ $featured = index . 0 }}
+{{ end }}
+{{ $remainingVideos := where $videos "RelPermalink" "ne" $featured.RelPermalink }}
+{{ $dateFormat := .Site.Params.datesFormat.articleList | default "Jan 2, 2006" }}
 
-                    {{ if and $showFeatured (or $isYouTube $isVideoURL $hasImage) }}
-                    <div class="card-header position-relative">
-                        <a href="{{ .RelPermalink }}">
-                            {{ if $isYouTube }}
-                                <!-- YouTube thumbnail -->
-                                <img src="https://img.youtube.com/vi/{{ $isYouTube }}/hqdefault.jpg" class="card-img-top" alt="{{ .Title }}">
-                            {{ else if $hasImage }}
-                                <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
-                            {{ else if $isVideoURL }}
-                                <!-- Generic video: if user provided a poster/thumbnail param, it will be used; else fallback to image placeholder -->
-                                {{ if .Params.video_poster }}
-                                    <img src="{{ .Params.video_poster }}" class="card-img-top" alt="{{ .Title }}">
-                                {{ else }}
-                                    <img src="{{ .Site.Params.staticPath }}/images/video-placeholder.png" class="card-img-top" alt="{{ .Title }}">
-                                {{ end }}
-                            {{ end }}
-                            {{/* Play overlay for video types */}}
-                            {{ if or $isYouTube $isVideoURL }}
-                            <span class="play-overlay" aria-hidden="true">
-                                <!-- simple play icon -->
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
-                                    <path d="M5 3v18l15-9L5 3z" fill="currentColor"/>
-                                </svg>
-                            </span>
-                            {{ end }}
-                        </a>
-                    </div>
-                    {{ end }}
+<main class="mk-video-hub" id="list-page" data-filter-scope>
+  <section class="mk-video-hub-hero">
+    <div class="container">
+      <div class="mk-video-hero-layout">
+        <div class="mk-video-hub-copy">
+          <p class="mk-blog-eyebrow">Short architecture videos</p>
+          <h1>Practical video briefings for platform and banking decisions.</h1>
+          <p>
+            Short, focused explanations for build-vs-buy choices, digital payments, customer experience, and secure platform design.
+          </p>
 
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="{{ .RelPermalink }}" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="{{ .Title }}">{{ .Title | truncate 25 }}</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            {{/* Prefer explicit description for videos, else use Summary */}}
-                            {{ if $isYouTube }}
-                                {{ with .Params.video_description }}<p>{{ . | truncate 300 }}</p>{{ else }}<p>{{ .Summary | truncate 300 }}</p>{{ end }}
-                            {{ else if $isVideoURL }}
-                                {{ with .Params.video_description }}<p>{{ . | truncate 300 }}</p>{{ else }}<p>{{ .Summary | truncate 300 }}</p>{{ end }}
-                            {{ else }}
-                                <p>{{ .Summary | truncate 300 }}</p>
-                            {{ end }}
-                        </div>
-                    </div>
-
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">{{ .Date.Format (.Site.Params.datesFormat.articleList | default "January 2, 2006") }}</span>
-                        {{/* Keep same Read button — you may change label for videos via params if you want */}}
-                        <a href="{{ .RelPermalink }}" class="float-end btn btn-outline-info btn-sm">
-                            {{ if or $isYouTube $isVideoURL }}
-                                {{ .Site.Params.terms.watch | default "Watch" }}
-                            {{ else }}
-                                {{ .Site.Params.terms.read | default "Read" }}
-                            {{ end }}
-                        </a>
-                    </div>
-                </div>
+          <section class="mk-video-control-panel" aria-label="Filter videos">
+            <div class="mk-filter-toolbar" role="toolbar" aria-label="Video topics">
+              <button type="button" class="mk-filter-chip is-active" data-filter-button data-filter-value="all" aria-pressed="true">All <span data-filter-count-badge></span></button>
+              <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="platform" data-filter-match="platform strategy|digital transformation|architecture decision|build vs buy">Platform <span data-filter-count-badge></span></button>
+              <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="banking" data-filter-match="banking|customer experience|customer delight|product strategy">Banking CX <span data-filter-count-badge></span></button>
+              <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="payments" data-filter-match="payments|digital currency|currency|e-rupee|fintech">Payments <span data-filter-count-badge></span></button>
+              <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="security" data-filter-match="security|sensitive data|data protection|trust">Security <span data-filter-count-badge></span></button>
             </div>
+            <label class="mk-filter-search">
+              <span>Search videos</span>
+              <input type="search" data-filter-search placeholder="Try payments, security, build vs buy" autocomplete="off">
+            </label>
+            <p class="mk-filter-status" aria-live="polite"><span data-filter-visible-count></span> videos shown</p>
+          </section>
         </div>
+
+        {{ with $featured }}
+        {{ $youtube := .Params.youtube_id }}
+        {{ $poster := .Params.video_poster | default .Params.image }}
+        {{ $description := .Description | default .Params.video_description | default (partial "mk-card-summary.html" (dict "page" . "limit" 220)) }}
+        {{ $tags := "" }}{{ with .Params.tags }}{{ $tags = delimit . " " }}{{ end }}
+        {{ $filterText := lower (plainify (printf "%s %s %s" .Title $tags $description)) }}
+        <article class="mk-video-feature-card" data-filter-item data-filter-feature data-filter-text="{{ $filterText }}">
+          <a class="mk-video-thumb mk-video-feature-thumb" href="{{ .RelPermalink }}" aria-label="Watch {{ .Title }}">
+            {{ if $youtube }}
+              <img src="https://img.youtube.com/vi/{{ $youtube }}/hqdefault.jpg" alt="{{ .Title }}" loading="eager">
+            {{ else if $poster }}
+              <img src="{{ $poster }}" alt="{{ .Title }}" loading="eager">
+            {{ else }}
+              <img src="{{ "/images/global/default-og.jpg" | relURL }}" alt="{{ .Title }}" loading="eager">
+            {{ end }}
+            <span class="mk-video-play" aria-hidden="true"></span>
+          </a>
+          <div class="mk-video-feature-copy">
+            <div class="mk-video-card-meta">
+              <span>Start here</span>
+              {{ with .Params.video_duration }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ $description | plainify | truncate 210 }}</p>
+            <a class="mk-video-feature-cta" href="{{ .RelPermalink }}" data-cta-event="cta_video_feature_click" data-cta-source="video-hub" data-cta-campaign="video-hub" data-cta-content="{{ .File.TranslationBaseName }}">Watch now</a>
+          </div>
+        </article>
         {{ end }}
-
-        <div class="row justify-content-center">
-            <div class="col-auto m-3">
-                {{ template "_internal/pagination.html" . }}
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </section>
+
+  <section class="mk-video-hub-stream">
+    <div class="container">
+      <div class="mk-video-section-heading">
+        <div>
+          <p class="mk-blog-eyebrow">Video library</p>
+          <h2>Browse by decision or topic</h2>
+        </div>
+      </div>
+
+      <div class="mk-video-grid">
+        {{ range $remainingVideos }}
+        {{ $youtube := .Params.youtube_id }}
+        {{ $poster := .Params.video_poster | default .Params.image }}
+        {{ $description := .Description | default .Params.video_description | default (partial "mk-card-summary.html" (dict "page" . "limit" 220)) }}
+        {{ $tags := "" }}{{ with .Params.tags }}{{ $tags = delimit . " " }}{{ end }}
+        {{ $filterText := lower (plainify (printf "%s %s %s" .Title $tags $description)) }}
+        <article class="mk-video-card" data-filter-item data-filter-text="{{ $filterText }}">
+          <a class="mk-video-thumb" href="{{ .RelPermalink }}" aria-label="Watch {{ .Title }}">
+            {{ if $youtube }}
+              <img src="https://img.youtube.com/vi/{{ $youtube }}/hqdefault.jpg" alt="{{ .Title }}" loading="lazy">
+            {{ else if $poster }}
+              <img src="{{ $poster }}" alt="{{ .Title }}" loading="lazy">
+            {{ else }}
+              <img src="{{ "/images/global/default-og.jpg" | relURL }}" alt="{{ .Title }}" loading="lazy">
+            {{ end }}
+            <span class="mk-video-play" aria-hidden="true"></span>
+          </a>
+          <div class="mk-video-card-body">
+            <div class="mk-video-card-meta">
+              <span>Video</span>
+              <span>{{ .Date.Format $dateFormat }}</span>
+              {{ with .Params.video_duration }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ $description | plainify | truncate 190 }}</p>
+            {{ with .Params.tags }}
+            <div class="mk-video-tags" aria-label="Video topics">
+              {{ range first 3 . }}
+                <a href="{{ "tags" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <div class="mk-video-card-footer">
+            <a href="{{ .RelPermalink }}" data-cta-event="cta_video_card_click" data-cta-source="video-hub" data-cta-campaign="video-hub" data-cta-content="{{ .File.TranslationBaseName }}">Watch video</a>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+
+      <p class="mk-filter-empty" data-filter-empty hidden>No videos match that selection.</p>
+    </div>
+  </section>
+</main>
 {{ end }}

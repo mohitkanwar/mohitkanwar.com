@@ -147,3 +147,8 @@ In this blog post, we explored the importance of configuration management in a m
 By effectively managing configurations, you can ensure consistency across your microservices architecture, simplify the deployment process, and improve the scalability and maintainability of your applications.
 
 Feel free to explore the provided GitHub repository for more examples and hands-on experience with Spring Cloud Config. Happy configuring!
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

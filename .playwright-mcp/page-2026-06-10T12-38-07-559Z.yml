@@ -1,0 +1,164 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Mohit Kanwar" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - text: Mohit Kanwar
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Insights" [ref=e10] [cursor=pointer]:
+              - /url: /blogs
+          - listitem [ref=e11]:
+            - link "Videos" [ref=e12] [cursor=pointer]:
+              - /url: /videos
+          - listitem [ref=e13]:
+            - link "Case Study" [ref=e14] [cursor=pointer]:
+              - /url: /solutions/digital-banking-modernization-case-study
+          - listitem [ref=e15]:
+            - link "Work With Me" [ref=e16] [cursor=pointer]:
+              - /url: /work-with-me
+          - listitem [ref=e17]:
+            - button [ref=e19] [cursor=pointer]:
+              - img [ref=e20]
+  - main [ref=e27]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - paragraph [ref=e32]: Short architecture videos
+        - heading "Practical video briefings for platform and banking decisions." [level=1] [ref=e33]
+        - paragraph [ref=e34]: Short, focused explanations for build-vs-buy choices, digital payments, customer experience, and secure platform design.
+        - region "Filter videos" [ref=e35]:
+          - toolbar "Video topics" [ref=e36]:
+            - button "All (5)" [pressed] [ref=e37] [cursor=pointer]
+            - button "Platform (1)" [ref=e38] [cursor=pointer]
+            - button "Banking CX (3)" [ref=e39] [cursor=pointer]
+            - button "Payments (2)" [ref=e40] [cursor=pointer]
+            - button "Security (2)" [ref=e41] [cursor=pointer]
+          - generic [ref=e42]:
+            - generic [ref=e43]: Search videos
+            - searchbox "Search videos" [ref=e44]
+          - paragraph [ref=e45]: 5 videos shown
+      - article [ref=e46]:
+        - link "Watch Build vs Buy" [ref=e47] [cursor=pointer]:
+          - /url: /videos/build-vs-buy/
+          - img "Build vs Buy" [ref=e48]
+        - generic [ref=e50]:
+          - generic [ref=e52]: Start here
+          - heading "Build vs Buy" [level=2] [ref=e53]:
+            - link "Build vs Buy" [ref=e54] [cursor=pointer]:
+              - /url: /videos/build-vs-buy/
+          - paragraph [ref=e55]: A concise build-vs-buy decision framework for digital transformation, covering strategic fit, cost, time to market, flexibility, and operational risk.
+          - link "Watch now" [ref=e56] [cursor=pointer]:
+            - /url: /videos/build-vs-buy/
+    - generic [ref=e58]:
+      - generic [ref=e60]:
+        - paragraph [ref=e61]: Video library
+        - heading "Browse by decision or topic" [level=2] [ref=e62]
+      - generic [ref=e63]:
+        - article [ref=e64]:
+          - link "Watch Creating Customer Delight in Banking" [ref=e65] [cursor=pointer]:
+            - /url: /videos/customers-love-the-bank/
+            - img "Creating Customer Delight in Banking" [ref=e66]
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: Video
+              - generic [ref=e71]: Oct 22, 2025
+            - heading "Creating Customer Delight in Banking" [level=2] [ref=e72]:
+              - link "Creating Customer Delight in Banking" [ref=e73] [cursor=pointer]:
+                - /url: /videos/customers-love-the-bank/
+            - paragraph [ref=e74]: A short perspective on why customers love banks that combine reliable digital journeys, thoughtful product design, and trustworthy platform execution.
+            - generic "Video topics" [ref=e75]:
+              - link "Customer Experience" [ref=e76] [cursor=pointer]:
+                - /url: /tags/customer-experience/
+              - link "Banking" [ref=e77] [cursor=pointer]:
+                - /url: /tags/banking/
+              - link "Product Strategy" [ref=e78] [cursor=pointer]:
+                - /url: /tags/product-strategy/
+          - link "Watch video" [ref=e80] [cursor=pointer]:
+            - /url: /videos/customers-love-the-bank/
+        - article [ref=e81]:
+          - link "Watch Different Types of Currencies" [ref=e82] [cursor=pointer]:
+            - /url: /videos/different-types-of-currencies/
+            - img "Different Types of Currencies" [ref=e83]
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: Video
+              - generic [ref=e88]: Oct 22, 2025
+            - heading "Different Types of Currencies" [level=2] [ref=e89]:
+              - link "Different Types of Currencies" [ref=e90] [cursor=pointer]:
+                - /url: /videos/different-types-of-currencies/
+            - paragraph [ref=e91]: A simple map of currency types, including cash, digital balances, crypto assets, and central bank digital currencies.
+            - generic "Video topics" [ref=e92]:
+              - link "Digital Currency" [ref=e93] [cursor=pointer]:
+                - /url: /tags/digital-currency/
+              - link "Payments" [ref=e94] [cursor=pointer]:
+                - /url: /tags/payments/
+              - link "FinTech" [ref=e95] [cursor=pointer]:
+                - /url: /tags/fintech/
+          - link "Watch video" [ref=e97] [cursor=pointer]:
+            - /url: /videos/different-types-of-currencies/
+        - article [ref=e98]:
+          - link "Watch Securing Sensitive Data" [ref=e99] [cursor=pointer]:
+            - /url: /videos/securing-sensitive-data/
+            - img "Securing Sensitive Data" [ref=e100]
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]: Video
+              - generic [ref=e105]: Oct 22, 2025
+            - heading "Securing Sensitive Data" [level=2] [ref=e106]:
+              - link "Securing Sensitive Data" [ref=e107] [cursor=pointer]:
+                - /url: /videos/securing-sensitive-data/
+            - paragraph [ref=e108]: A concise overview of securing sensitive data in digital platforms, with emphasis on trust, controls, and responsible engineering practices.
+            - generic "Video topics" [ref=e109]:
+              - link "Security" [ref=e110] [cursor=pointer]:
+                - /url: /tags/security/
+              - link "Data Protection" [ref=e111] [cursor=pointer]:
+                - /url: /tags/data-protection/
+              - link "Banking" [ref=e112] [cursor=pointer]:
+                - /url: /tags/banking/
+          - link "Watch video" [ref=e114] [cursor=pointer]:
+            - /url: /videos/securing-sensitive-data/
+        - article [ref=e115]:
+          - link "Watch The Future of Digital Payments" [ref=e116] [cursor=pointer]:
+            - /url: /videos/indias-e-rupee/
+            - img "The Future of Digital Payments" [ref=e117]
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Video
+              - generic [ref=e122]: Oct 22, 2025
+            - heading "The Future of Digital Payments" [level=2] [ref=e123]:
+              - link "The Future of Digital Payments" [ref=e124] [cursor=pointer]:
+                - /url: /videos/indias-e-rupee/
+            - paragraph [ref=e125]: A practical introduction to India's e-Rupee and what digital currency changes for payments, banking platforms, adoption, and customer experience.
+            - generic "Video topics" [ref=e126]:
+              - link "Digital Currency" [ref=e127] [cursor=pointer]:
+                - /url: /tags/digital-currency/
+              - link "FinTech" [ref=e128] [cursor=pointer]:
+                - /url: /tags/fintech/
+              - link "Payments" [ref=e129] [cursor=pointer]:
+                - /url: /tags/payments/
+          - link "Watch video" [ref=e131] [cursor=pointer]:
+            - /url: /videos/indias-e-rupee/
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - link "github" [ref=e135] [cursor=pointer]:
+        - /url: https://github.com/mohitkanwar
+        - img [ref=e136]
+      - link "linkedin" [ref=e139] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/mohit-kanwar-7668a211/
+        - img "LinkedIn" [ref=e140]
+      - link "twitter" [ref=e145] [cursor=pointer]:
+        - /url: https://twitter.com/mmkanwar
+        - img [ref=e146]
+    - generic [ref=e151]:
+      - link "Footer logo" [ref=e153] [cursor=pointer]:
+        - /url: https://mohitkanwar.com/
+        - img "Footer logo" [ref=e154]
+      - text: © 2026 All rights reserved
+      - generic [ref=e155]:
+        - text: Made with ❤ and
+        - link "Hugo Profile" [ref=e156] [cursor=pointer]:
+          - /url: https://github.com/gurusabarish/hugo-profile
+    - generic:
+      - generic: build 31 Mar 2026, 10:00 IST · vdev

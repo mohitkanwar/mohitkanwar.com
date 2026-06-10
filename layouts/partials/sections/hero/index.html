@@ -1,0 +1,34 @@
+{{ if .Site.Params.hero.enable | default false }}
+<section id="hero" class="mk-hero">
+  <div class="container">
+    <div class="mk-hero-shell">
+      <div class="mk-hero-copy">
+        <p class="mk-hero-eyebrow">FinTech Architecture / AI Platforms / Engineering Leadership</p>
+        <h1>{{ .Site.Params.hero.title }}</h1>
+        <h2>I help banks and fintech teams turn complex platform strategy into secure delivery.</h2>
+        <p class="mk-hero-intro">
+          Practical architecture leadership for digital banking modernization, AI adoption, and high-confidence engineering execution in regulated environments.
+        </p>
+        <div class="mk-hero-actions">
+          <a class="mk-hero-btn mk-hero-btn-primary" href="/work-with-me/" data-cta-event="cta_work_with_me_click" data-cta-source="hero" data-cta-campaign="home-hero">
+            Work With Me
+          </a>
+          <a class="mk-hero-btn mk-hero-btn-secondary" href="/solutions/digital-banking-modernization-case-study/" data-cta-event="cta_case_study_click" data-cta-source="hero" data-cta-campaign="home-hero">
+            View Case Study
+          </a>
+        </div>
+        <div class="mk-hero-proof" aria-label="Credibility signals">
+          <span>15+ years in FinTech architecture</span>
+          <span>Banking platforms at enterprise scale</span>
+          <span>AI adoption in regulated teams</span>
+        </div>
+      </div>
+      {{ with .Site.Params.hero.image }}
+      <div class="mk-hero-portrait" aria-label="Mohit Kanwar portrait">
+        <img src="{{ . }}" alt="Mohit Kanwar">
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

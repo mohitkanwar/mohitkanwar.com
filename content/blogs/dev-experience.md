@@ -116,3 +116,23 @@ A question culture is vital for fostering a learning environment and driving con
 
 
 [^1]:  [Richard Branson: Put Your Staff 1st, Customers 2nd, & Shareholders 3rd | Inc. Magazine](https://www.youtube.com/watch?v=NPiCYoX-S_I) 
+
+---
+
+## Related Reading
+
+- [Cost of Developing a Software](/blogs/cost-of-software/) — how developer experience directly drives the economics of software delivery
+- [Understanding the Logging Architecture](/blogs/logging-architecture/) — one of the highest-leverage tooling investments for engineering teams
+- [Software Engineering Skills](/blogs/2024/jul/software-engineering-skills/) — the skills that make individual developers and teams more effective
+- [The Test Data Dilemma](/blogs/2025/jan/the-test-data-dilemma/) — a developer experience pain point in regulated environments
+
+{{< mk-subscribe >}}
+
+{{< mk-cta
+title="Want to improve developer experience in your organization?"
+description="I help leadership teams improve engineering productivity, standards, and delivery quality in regulated environments."
+primaryLabel="Work With Me"
+primaryUrl="/work-with-me"
+secondaryLabel="Invite Me To Speak"
+secondaryUrl="/speaking"
+>}}

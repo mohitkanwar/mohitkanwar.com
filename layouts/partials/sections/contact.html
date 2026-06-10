@@ -1,3 +1,5 @@
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
 {{ if .Site.Params.contact.enable | default false }}
 <section id="contact" class="py-5">
     <div class="container">
@@ -45,9 +47,26 @@
                                   {{ end }}'
                             target="_blank"
                             class="btn"
+                                                        data-cta-source="contact-section"
+                                                        data-cta-event='{{ if .Site.Params.contact.btnLink }}cta_work_with_me_click{{ else }}cta_linkedin_click{{ end }}'
                         >
                             {{ .Site.Params.contact.btnName | default "Get in Touch" }}
                         </a>
+                        {{ if $subscribeEnabled }}
+                        {{ $separator := "?" }}
+                        {{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+                        {{ $homeSubscribeUrl := printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ("mohitkanwar.com" | urlquery) ("website" | urlquery) ("home-contact" | urlquery) ("contact-section" | urlquery) }}
+                        <a
+                            href='{{ $homeSubscribeUrl }}'
+                            target="_blank"
+                            class="btn ms-2"
+                            data-cta-source="contact-section"
+                            data-cta-event="cta_newsletter_click"
+                            data-cta-campaign="home-contact"
+                        >
+                            Subscribe
+                        </a>
+                        {{ end }}
                     </div>
                     {{ end }}
                 </div>

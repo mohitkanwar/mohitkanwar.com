@@ -138,3 +138,17 @@ Failing fast enhances the efficiency of the debugging process. When errors are d
 Compile-Time Validation:
 
 Leverage compile-time validation to catch errors before runtime. This approach shifts error identification to an earlier stage in the development lifecycle, reducing the likelihood of issues reaching production. Compile-time validation promotes code correctness and enhances the overall reliability of the API.
+
+
+---
+
+## Related Reading
+
+- [APIs Are Forever](/blogs/2024/may/apis-are-forever/) — why API design decisions have long-lasting consequences
+- [Kareena Kapoor Controllers and the Fluffy Services](/blogs/kareena-kapoor-controllers/) — a practical take on controller and service design in APIs
+- [Multi-Tenant Architecture](/blogs/multi-tenant-architecture/) — how APIs must adapt when serving multiple tenants from a shared platform
+- [Authenticating Services in a Microservices Environment](/blogs/2024/jul/authenticating-services-in-a-microservices-environment/) — securing the APIs you design
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

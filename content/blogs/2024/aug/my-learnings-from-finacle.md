@@ -69,3 +69,15 @@ Infosys is synonymous with standardization, which was evident throughout our wor
 One of my colleagues even automated the generation of code from requirement specifications, illustrating the potential for efficiency through structured thinking. Imagine the possibilities if we combined such structured thinking with today's AI advancements!
 ## Automate Repetitive Tasks
 We embraced automation to reduce human error dramatically. From build and testing processes to documentation and analytics, we automated as much as possible, resulting in smoother releases and enhanced product reliability.
+
+---
+
+## Related Reading
+
+- [Digital Banking Modernization Case Study](/solutions/digital-banking-modernization-case-study/) — a broader transformation narrative that builds on lessons like these
+- [The Technology of Modern Banks](/blogs/the-technology-of-modern-banks/) — how the technology layers of modern banks fit together
+- [My Learnings From Implementing Backbase](/blogs/2024/aug/my-learnings-from-implementing-backbase/) — lessons from another major banking platform implementation
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

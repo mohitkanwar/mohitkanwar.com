@@ -1,0 +1,51 @@
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+{{ $trackedUrl := "" }}
+{{ if $subscribeEnabled }}
+  {{ $separator := "?" }}
+  {{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+  {{ $trackedUrl = printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ("mohitkanwar.com" | urlquery) ("website" | urlquery) ("blog-hub" | urlquery) ("most-read-block" | urlquery) }}
+{{ end }}
+
+<div class="mk-hub-promo">
+  <h3 class="mk-hub-promo-title">Start Here: Most Read{{ if $subscribeEnabled }} + Subscribe{{ end }}</h3>
+  <p class="mk-hub-promo-copy">
+    {{ if $subscribeEnabled }}
+      If you're new here, these are the best entry points into the site: banking architecture, platform design, AI, and engineering leadership. Subscribe if you want new pieces in your inbox.
+    {{ else }}
+      If you're new here, these are the best entry points into the site: banking architecture, platform design, AI, and engineering leadership.
+    {{ end }}
+  </p>
+  <div class="mk-hub-promo-grid{{ if not $subscribeEnabled }} mk-hub-promo-grid-single{{ end }}">
+    <div>
+      <ol class="mk-hub-promo-list">
+        <li><a href="/blogs/the-technology-of-modern-banks/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-hub-promo" data-cta-campaign="blog-hub" data-cta-content="rec-technology-of-modern-banks">The Technology of Modern Banks</a> — a clear walkthrough of the platform layers behind modern banking.</li>
+        <li><a href="/blogs/multi-tenant-architecture/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-hub-promo" data-cta-campaign="blog-hub" data-cta-content="rec-multi-tenant-architecture">Multi-Tenant Architecture</a> — practical design trade-offs for shared platforms at scale.</li>
+        <li><a href="/blogs/large-language-models/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-hub-promo" data-cta-campaign="blog-hub" data-cta-content="rec-large-language-models">Unlocking the Power of Large Language Models</a> — the business and technical framing for LLM adoption.</li>
+        <li><a href="/blogs/dev-experience/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-hub-promo" data-cta-campaign="blog-hub" data-cta-content="rec-dev-experience">Dev Experience</a> — why engineering productivity is an architecture concern, not just a tooling concern.</li>
+        <li><a href="/solutions/digital-banking-modernization-case-study/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-hub-promo" data-cta-campaign="blog-hub" data-cta-content="rec-case-study">Digital Banking Modernization Case Study</a> — a proof-first transformation narrative grounded in delivery reality.</li>
+      </ol>
+    </div>
+    {{ if $subscribeEnabled }}
+      <div class="mk-hub-promo-subscribe">
+        <p><strong>Want the next article directly?</strong></p>
+        <div class="mk-subscribe">
+          <div class="mk-subscribe-inner" data-subscribe-surface="blog-hub">
+            <p class="mk-subscribe-title" data-subscribe-title>Subscribe for high-signal architecture notes</p>
+            <p class="mk-subscribe-description" data-subscribe-copy>Practical insights on FinTech architecture, AI in financial services, and engineering leadership.</p>
+            <a class="mk-subscribe-btn"
+               href="{{ $trackedUrl }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-event="cta_newsletter_click"
+               data-cta-source="mk-hub-promo"
+               data-cta-campaign="blog-hub"
+               data-cta-content="most-read-block">
+              Subscribe
+            </a>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>

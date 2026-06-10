@@ -1,0 +1,25 @@
+{{ if .Site.Params.achievements.enable | default false }}
+<section id="achievements" class="mk-section">
+  <div class="container">
+    <div class="mk-section-heading">
+      <p class="mk-section-eyebrow">Proof Points</p>
+      <h3>{{ .Site.Params.achievements.title | default "Why Work With Me" }}</h3>
+    </div>
+    <div class="mk-proof-grid">
+      {{ range .Site.Params.achievements.items }}
+      {{ if .url }}
+      <a class="mk-proof-card" href="{{ .url }}" title="{{ .title }}" data-cta-event="cta_home_proof_click" data-cta-source="home-proof-points">
+        <h4>{{ .title }}</h4>
+        <p>{{ .content }}</p>
+      </a>
+      {{ else }}
+      <article class="mk-proof-card">
+        <h4>{{ .title }}</h4>
+        <p>{{ .content }}</p>
+      </article>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

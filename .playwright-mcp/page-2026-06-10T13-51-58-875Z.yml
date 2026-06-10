@@ -1,0 +1,714 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Mohit Kanwar" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - text: Mohit Kanwar
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Insights" [ref=e10] [cursor=pointer]:
+              - /url: /blogs
+          - listitem [ref=e11]:
+            - link "Videos" [ref=e12] [cursor=pointer]:
+              - /url: /videos
+          - listitem [ref=e13]:
+            - link "Case Study" [ref=e14] [cursor=pointer]:
+              - /url: /solutions/digital-banking-modernization-case-study
+          - listitem [ref=e15]:
+            - link "Work With Me" [ref=e16] [cursor=pointer]:
+              - /url: /work-with-me
+          - listitem [ref=e17]:
+            - button [ref=e19] [cursor=pointer]:
+              - img [ref=e20]
+  - main [ref=e27]:
+    - generic [ref=e29]:
+      - generic [ref=e31]:
+        - paragraph [ref=e32]: Architecture writing
+        - heading "FinTech, AI, and engineering leadership insights." [level=1] [ref=e33]
+        - paragraph [ref=e34]: "Practical notes from delivery work: banking platforms, architecture tradeoffs, AI adoption, security, developer experience, and modernization decisions."
+      - region "Filter articles" [ref=e35]:
+        - toolbar "Article topics" [ref=e36]:
+          - button "All (35)" [pressed] [ref=e37] [cursor=pointer]
+          - button "FinTech & Banking (7)" [ref=e38] [cursor=pointer]
+          - button "AI (9)" [ref=e39] [cursor=pointer]
+          - button "Architecture (9)" [ref=e40] [cursor=pointer]
+          - button "Security (10)" [ref=e41] [cursor=pointer]
+          - button "Engineering (15)" [ref=e42] [cursor=pointer]
+          - button "Leadership (7)" [ref=e43] [cursor=pointer]
+        - generic [ref=e44]:
+          - generic [ref=e45]: Search articles
+          - searchbox "Search articles" [ref=e46]
+        - paragraph [ref=e47]: 35 articles shown
+    - generic [ref=e49]:
+      - article [ref=e50]:
+        - link "Read Personalized Financial Advice Generator" [ref=e51] [cursor=pointer]:
+          - /url: /blogs/2025/jul/personalized-financial-advice-generator/
+          - img "Personalized Financial Advice Generator" [ref=e52]
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: Latest article
+          - heading "Personalized Financial Advice Generator" [level=2] [ref=e55]:
+            - link "Personalized Financial Advice Generator" [ref=e56] [cursor=pointer]:
+              - /url: /blogs/2025/jul/personalized-financial-advice-generator/
+          - paragraph [ref=e57]: In the rapidly evolving FinTech industry, customers expect tailored financial guidance that aligns with their unique goals, spending habits, and risk profiles. Traditional one-size-fits-all advisory models often fall short in delivering meaningful value, …
+          - generic [ref=e58]:
+            - generic [ref=e59]: Jul 30, 2025
+            - generic [ref=e60]: 7 min read
+            - link "Artificial Intelligence" [ref=e61] [cursor=pointer]:
+              - /url: /tags/artificial-intelligence/
+            - link "FinTech" [ref=e62] [cursor=pointer]:
+              - /url: /tags/fintech/
+            - link "Domain Driven Design" [ref=e63] [cursor=pointer]:
+              - /url: /tags/domain-driven-design/
+          - link "Read latest article" [ref=e64] [cursor=pointer]:
+            - /url: /blogs/2025/jul/personalized-financial-advice-generator/
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - paragraph [ref=e67]: Article library
+          - heading "Browse recent writing" [level=2] [ref=e68]
+        - paragraph [ref=e69]: Filter by topic or search across titles, tags, and summaries.
+      - generic [ref=e70]:
+        - article [ref=e71]:
+          - link "Read Pins and Passwords" [ref=e72] [cursor=pointer]:
+            - /url: /blogs/2025/jul/pins-and-passwords/
+            - img "Pins and Passwords" [ref=e73]
+          - generic [ref=e74]:
+            - heading "Pins and Passwords" [level=3] [ref=e75]:
+              - link "Pins and Passwords" [ref=e76] [cursor=pointer]:
+                - /url: /blogs/2025/jul/pins-and-passwords/
+            - generic [ref=e77]:
+              - generic [ref=e78]: Jul 1, 2025
+              - generic [ref=e79]: 10 min read
+              - link "Authentication" [ref=e80] [cursor=pointer]:
+                - /url: /tags/authentication/
+              - link "Passwordless" [ref=e81] [cursor=pointer]:
+                - /url: /tags/passwordless/
+            - paragraph [ref=e82]: Introduction How many of us have stared blankly at a login screen, desperately trying to recall that complex password? It’s a frustratingly common experience, and a surprisingly significant …
+          - link "Read" [ref=e84] [cursor=pointer]:
+            - /url: /blogs/2025/jul/pins-and-passwords/
+        - article [ref=e85]:
+          - link "Read The Test Data Dilemma" [ref=e86] [cursor=pointer]:
+            - /url: /blogs/2025/jan/the-test-data-dilemma/
+            - img "The Test Data Dilemma" [ref=e87]
+          - generic [ref=e88]:
+            - heading "The Test Data Dilemma" [level=3] [ref=e89]:
+              - link "The Test Data Dilemma" [ref=e90] [cursor=pointer]:
+                - /url: /blogs/2025/jan/the-test-data-dilemma/
+            - generic [ref=e91]:
+              - generic [ref=e92]: Jan 6, 2025
+              - generic [ref=e93]: 7 min read
+              - link "Test Data" [ref=e94] [cursor=pointer]:
+                - /url: /tags/test-data/
+              - link "Data Privacy" [ref=e95] [cursor=pointer]:
+                - /url: /tags/data-privacy/
+            - paragraph [ref=e96]: A Silent Challenge in Software Development When building software, one big challenge often goes unnoticed – getting the right test data. As a software architect, I have worked with many …
+          - link "Read" [ref=e98] [cursor=pointer]:
+            - /url: /blogs/2025/jan/the-test-data-dilemma/
+        - article [ref=e99]:
+          - 'link "Read Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions" [ref=e100] [cursor=pointer]':
+            - /url: /blogs/2024/nov/designing-a-captcha-service/
+            - 'img "Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions" [ref=e101]'
+          - generic [ref=e102]:
+            - 'heading "Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions" [level=3] [ref=e103]':
+              - 'link "Designing a Self-Hosted Captcha Service: Challenges, Insights, and Solutions" [ref=e104] [cursor=pointer]':
+                - /url: /blogs/2024/nov/designing-a-captcha-service/
+            - generic [ref=e105]:
+              - generic [ref=e106]: Nov 1, 2024
+              - generic [ref=e107]: 6 min read
+              - link "captcha" [ref=e108] [cursor=pointer]:
+                - /url: /tags/captcha/
+              - link "self-hosted" [ref=e109] [cursor=pointer]:
+                - /url: /tags/self-hosted/
+            - paragraph [ref=e110]: "Introduction: What if the familiar captcha boxes we encounter daily were designed by your team, tailored specifically to your organization’s needs? Recently, I took on the challenge of …"
+          - link "Read" [ref=e112] [cursor=pointer]:
+            - /url: /blogs/2024/nov/designing-a-captcha-service/
+        - article [ref=e113]:
+          - 'link "Read My Journey with Finacle: Lessons Learned in Banking Software Development" [ref=e114] [cursor=pointer]':
+            - /url: /blogs/2024/aug/my-learnings-from-finacle/
+            - 'img "My Journey with Finacle: Lessons Learned in Banking Software Development" [ref=e115]'
+          - generic [ref=e116]:
+            - 'heading "My Journey with Finacle: Lessons Learned in Banking Software Development" [level=3] [ref=e117]':
+              - 'link "My Journey with Finacle: Lessons Learned in Banking Software Development" [ref=e118] [cursor=pointer]':
+                - /url: /blogs/2024/aug/my-learnings-from-finacle/
+            - generic [ref=e119]:
+              - generic [ref=e120]: Aug 6, 2024
+              - generic [ref=e121]: 3 min read
+              - link "Finacle" [ref=e122] [cursor=pointer]:
+                - /url: /tags/finacle/
+              - link "FEBA" [ref=e123] [cursor=pointer]:
+                - /url: /tags/feba/
+            - paragraph [ref=e124]: I consider myself fortunate to have been hired by Infosys right after college, and even luckier to work on a world-class banking product – Finacle. When I joined, Infosys was revamping the …
+          - link "Read" [ref=e126] [cursor=pointer]:
+            - /url: /blogs/2024/aug/my-learnings-from-finacle/
+        - article [ref=e127]:
+          - link "Read Authenticating Services in a Microservices Environment" [ref=e128] [cursor=pointer]:
+            - /url: /blogs/2024/jul/authenticating-services-in-a-microservices-environment/
+            - img "Authenticating Services in a Microservices Environment" [ref=e129]
+          - generic [ref=e130]:
+            - heading "Authenticating Services in a Microservices Environment" [level=3] [ref=e131]:
+              - link "Authenticating Services in a Microservices Environment" [ref=e132] [cursor=pointer]:
+                - /url: /blogs/2024/jul/authenticating-services-in-a-microservices-environment/
+            - generic [ref=e133]:
+              - generic [ref=e134]: Jul 17, 2024
+              - generic [ref=e135]: 7 min read
+              - link "Needs Improvement" [ref=e136] [cursor=pointer]:
+                - /url: /tags/needs-improvement/
+              - link "WIP" [ref=e137] [cursor=pointer]:
+                - /url: /tags/wip/
+            - paragraph [ref=e138]: It is easier to edit a draft than to create a new. I understand that this blog is not upto the mark that I want it to be, however, I am still publishing it, so that I can keep on improving …
+          - link "Read" [ref=e140] [cursor=pointer]:
+            - /url: /blogs/2024/jul/authenticating-services-in-a-microservices-environment/
+        - article [ref=e141]:
+          - link "Read Time Based Otp" [ref=e142] [cursor=pointer]:
+            - /url: /blogs/2024/jul/time-based-otp/
+            - img "Time Based Otp" [ref=e143]
+          - generic [ref=e144]:
+            - heading "Time Based Otp" [level=3] [ref=e145]:
+              - link "Time Based Otp" [ref=e146] [cursor=pointer]:
+                - /url: /blogs/2024/jul/time-based-otp/
+            - generic [ref=e147]:
+              - generic [ref=e148]: Jul 15, 2024
+              - generic [ref=e149]: 6 min read
+              - link "Two-Factor Authentication" [ref=e150] [cursor=pointer]:
+                - /url: /tags/two-factor-authentication/
+              - link "TOTP" [ref=e151] [cursor=pointer]:
+                - /url: /tags/totp/
+            - paragraph [ref=e152]: While using any corporate application that is secured by Two Factor Authentication (TFA), we get an option to scan a QR code via an authenticator app. And then after, the number generated by …
+          - link "Read" [ref=e154] [cursor=pointer]:
+            - /url: /blogs/2024/jul/time-based-otp/
+        - article [ref=e155]:
+          - link "Read Software Engineering Skills" [ref=e156] [cursor=pointer]:
+            - /url: /blogs/2024/jul/software-engineering-skills/
+            - img "Software Engineering Skills" [ref=e157]
+          - generic [ref=e158]:
+            - heading "Software Engineering Skills" [level=3] [ref=e159]:
+              - link "Software Engineering Skills" [ref=e160] [cursor=pointer]:
+                - /url: /blogs/2024/jul/software-engineering-skills/
+            - generic [ref=e161]:
+              - generic [ref=e162]: Jul 13, 2024
+              - generic [ref=e163]: 9 min read
+              - link "Skills to be a better software developer" [ref=e164] [cursor=pointer]:
+                - /url: /tags/skills-to-be-a-better-software-developer/
+              - link "Continuous Learning in Tech" [ref=e165] [cursor=pointer]:
+                - /url: /tags/continuous-learning-in-tech/
+            - paragraph [ref=e166]: A lot of my friends come to me and ask about the skills required to grow in the software engineering field. The primary intention behind their questions is usually to understand which latest …
+          - link "Read" [ref=e168] [cursor=pointer]:
+            - /url: /blogs/2024/jul/software-engineering-skills/
+        - article [ref=e169]:
+          - link "Read Apis Are Forever" [ref=e170] [cursor=pointer]:
+            - /url: /blogs/2024/may/apis-are-forever/
+            - img "Apis Are Forever" [ref=e171]
+          - generic [ref=e172]:
+            - heading "Apis Are Forever" [level=3] [ref=e173]:
+              - link "Apis Are Forever" [ref=e174] [cursor=pointer]:
+                - /url: /blogs/2024/may/apis-are-forever/
+            - generic [ref=e175]:
+              - generic [ref=e176]: May 26, 2024
+              - generic [ref=e177]: 1 min read
+            - paragraph [ref=e178]: APIs, like diamonds are forever. APIs are expensive to build and maintain, and once developed they have little resale value. As an architect, we have to give full attention to the APIs being …
+          - link "Read" [ref=e180] [cursor=pointer]:
+            - /url: /blogs/2024/may/apis-are-forever/
+        - article [ref=e181]:
+          - link "Read Components in Llm Architecture" [ref=e182] [cursor=pointer]:
+            - /url: /blogs/2024/may/components-in-llm-architecture/
+            - img "Components in Llm Architecture" [ref=e183]
+          - generic [ref=e184]:
+            - heading "Components in Llm Architecture" [level=3] [ref=e185]:
+              - link "Components in Llm Architecture" [ref=e186] [cursor=pointer]:
+                - /url: /blogs/2024/may/components-in-llm-architecture/
+            - generic [ref=e187]:
+              - generic [ref=e188]: May 14, 2024
+              - generic [ref=e189]: 10 min read
+              - link "Artificial intelligence" [ref=e190] [cursor=pointer]:
+                - /url: /tags/artificial-intelligence/
+              - link "Transformer" [ref=e191] [cursor=pointer]:
+                - /url: /tags/transformer/
+            - paragraph [ref=e192]: Transformer Model Have you ever gotten frustrated with chatbots that just don’t seem to understand the full flow of conversation? Or maybe you’ve noticed machine translations that miss the …
+          - link "Read" [ref=e194] [cursor=pointer]:
+            - /url: /blogs/2024/may/components-in-llm-architecture/
+        - article [ref=e195]:
+          - link "Read Artificial Intelligence Applications in Fintech" [ref=e196] [cursor=pointer]:
+            - /url: /blogs/2024/apr/artificial-intelligence-applications-in-fintech/
+            - img "Artificial Intelligence Applications in Fintech" [ref=e197]
+          - generic [ref=e198]:
+            - heading "Artificial Intelligence Applications in Fintech" [level=3] [ref=e199]:
+              - link "Artificial Intelligence Applications in Fintech" [ref=e200] [cursor=pointer]:
+                - /url: /blogs/2024/apr/artificial-intelligence-applications-in-fintech/
+            - generic [ref=e201]:
+              - generic [ref=e202]: Apr 29, 2024
+              - generic [ref=e203]: 6 min read
+              - link "Artificial Intelligence" [ref=e204] [cursor=pointer]:
+                - /url: /tags/artificial-intelligence/
+              - link "FinTech" [ref=e205] [cursor=pointer]:
+                - /url: /tags/fintech/
+            - paragraph [ref=e206]: Artificial Intelligence stands out as a powerful and versatile technology that holds the potential to revolutionize various industries. Among these industries, FinTech emerges as a domain …
+          - link "Read" [ref=e208] [cursor=pointer]:
+            - /url: /blogs/2024/apr/artificial-intelligence-applications-in-fintech/
+        - article [ref=e209]:
+          - link "Read Models in Artificial Intelligence" [ref=e210] [cursor=pointer]:
+            - /url: /blogs/2024/apr/models-in-artificial-intelligence/
+            - img "Models in Artificial Intelligence" [ref=e211]
+          - generic [ref=e212]:
+            - heading "Models in Artificial Intelligence" [level=3] [ref=e213]:
+              - link "Models in Artificial Intelligence" [ref=e214] [cursor=pointer]:
+                - /url: /blogs/2024/apr/models-in-artificial-intelligence/
+            - generic [ref=e215]:
+              - generic [ref=e216]: Apr 27, 2024
+              - generic [ref=e217]: 11 min read
+              - link "Models" [ref=e218] [cursor=pointer]:
+                - /url: /tags/models/
+              - link "Artificial Intelligence" [ref=e219] [cursor=pointer]:
+                - /url: /tags/artificial-intelligence/
+            - paragraph [ref=e220]: Model is a simplified version of a real world entity that focuses on some of the properties of the real object that are under study. Similar to the models doing a ramp walk, help us …
+          - link "Read" [ref=e222] [cursor=pointer]:
+            - /url: /blogs/2024/apr/models-in-artificial-intelligence/
+        - article [ref=e223]:
+          - link "Read Retrieval Augmented Generation" [ref=e224] [cursor=pointer]:
+            - /url: /blogs/2024/apr/retrieval-augmented-generation/
+            - img "Retrieval Augmented Generation" [ref=e225]
+          - generic [ref=e226]:
+            - heading "Retrieval Augmented Generation" [level=3] [ref=e227]:
+              - link "Retrieval Augmented Generation" [ref=e228] [cursor=pointer]:
+                - /url: /blogs/2024/apr/retrieval-augmented-generation/
+            - generic [ref=e229]:
+              - generic [ref=e230]: Apr 9, 2024
+              - generic [ref=e231]: 8 min read
+              - link "Retrieval Augmented Generation" [ref=e232] [cursor=pointer]:
+                - /url: /tags/retrieval-augmented-generation/
+              - link "Artificial Intelligence" [ref=e233] [cursor=pointer]:
+                - /url: /tags/artificial-intelligence/
+            - paragraph [ref=e234]: Introduction to RAG Retrieval-Augmented Generation (RAG) is a cutting-edge technique in artificial intelligence that merges generative AI capabilities with large language models to enhance …
+          - link "Read" [ref=e236] [cursor=pointer]:
+            - /url: /blogs/2024/apr/retrieval-augmented-generation/
+        - article [ref=e237]:
+          - link "Read Sequence Diagrams using Mermaid" [ref=e238] [cursor=pointer]:
+            - /url: /blogs/2024/apr/sequence-diag-mermaid/
+            - img "Sequence Diagrams using Mermaid" [ref=e239]
+          - generic [ref=e240]:
+            - heading "Sequence Diagrams using Mermaid" [level=3] [ref=e241]:
+              - link "Sequence Diagrams using Mermaid" [ref=e242] [cursor=pointer]:
+                - /url: /blogs/2024/apr/sequence-diag-mermaid/
+            - generic [ref=e243]:
+              - generic [ref=e244]: Apr 6, 2024
+              - generic [ref=e245]: 11 min read
+              - link "Mermaid.js" [ref=e246] [cursor=pointer]:
+                - /url: /tags/mermaid.js/
+              - link "Diagrams" [ref=e247] [cursor=pointer]:
+                - /url: /tags/diagrams/
+            - paragraph [ref=e248]: I have been creating designs for software solutions for quite some time now. A picture is worth a thousand words and hence the different diagrams really help in expressing the software …
+          - link "Read" [ref=e250] [cursor=pointer]:
+            - /url: /blogs/2024/apr/sequence-diag-mermaid/
+        - article [ref=e251]:
+          - link "Read Data Reconciliation Patterns in an Event driven AWS Ecosystem" [ref=e252] [cursor=pointer]:
+            - /url: /blogs/2024/mar/data-recon-aws/
+            - img "Data Reconciliation Patterns in an Event driven AWS Ecosystem" [ref=e253]
+          - generic [ref=e254]:
+            - heading "Data Reconciliation Patterns in an Event driven AWS Ecosystem" [level=3] [ref=e255]:
+              - link "Data Reconciliation Patterns in an Event driven AWS Ecosystem" [ref=e256] [cursor=pointer]:
+                - /url: /blogs/2024/mar/data-recon-aws/
+            - generic [ref=e257]:
+              - generic [ref=e258]: Mar 30, 2024
+              - generic [ref=e259]: 4 min read
+            - paragraph [ref=e260]: I recently attended an XKE (Xebia’s Knowledge Exchange) session delivered by Mr. Chandan Kumar and Mr. Himanshu Jain. In this session they talked about the Data Reconciliation Patterns in an …
+          - link "Read" [ref=e262] [cursor=pointer]:
+            - /url: /blogs/2024/mar/data-recon-aws/
+        - article [ref=e263]:
+          - link "Read Approaches to Software Architecture" [ref=e264] [cursor=pointer]:
+            - /url: /blogs/2024/mar/architectural-patterns/
+            - img "Approaches to Software Architecture" [ref=e265]
+          - generic [ref=e266]:
+            - heading "Approaches to Software Architecture" [level=3] [ref=e267]:
+              - link "Approaches to Software Architecture" [ref=e268] [cursor=pointer]:
+                - /url: /blogs/2024/mar/architectural-patterns/
+            - generic [ref=e269]:
+              - generic [ref=e270]: Mar 15, 2024
+              - generic [ref=e271]: 10 min read
+              - link "Software Architecture" [ref=e272] [cursor=pointer]:
+                - /url: /tags/software-architecture/
+              - link "Layering" [ref=e273] [cursor=pointer]:
+                - /url: /tags/layering/
+            - paragraph [ref=e274]: The architecture of a building plays a critical role in its usability and longevity. Similarly, the architecture of a software application is vital for ensuring scalability, maintainability, …
+          - link "Read" [ref=e276] [cursor=pointer]:
+            - /url: /blogs/2024/mar/architectural-patterns/
+        - article [ref=e277]:
+          - link "Read Configuration Management Microservice" [ref=e278] [cursor=pointer]:
+            - /url: /blogs/2024/mar/configuration-management-microservices/
+            - img "Configuration Management Microservice" [ref=e279]
+          - generic [ref=e280]:
+            - heading "Configuration Management Microservice" [level=3] [ref=e281]:
+              - link "Configuration Management Microservice" [ref=e282] [cursor=pointer]:
+                - /url: /blogs/2024/mar/configuration-management-microservices/
+            - generic [ref=e283]:
+              - generic [ref=e284]: Mar 11, 2024
+              - generic [ref=e285]: 5 min read
+              - link "configuration management" [ref=e286] [cursor=pointer]:
+                - /url: /tags/configuration-management/
+              - link "microservice" [ref=e287] [cursor=pointer]:
+                - /url: /tags/microservice/
+            - paragraph [ref=e288]: Configuration management is a crucial yet often overlooked aspect of working with microservices. In a microservices environment, managing various configurations, including those related to …
+          - link "Read" [ref=e290] [cursor=pointer]:
+            - /url: /blogs/2024/mar/configuration-management-microservices/
+        - article [ref=e291]:
+          - link "Read Application Security Verification Standard" [ref=e292] [cursor=pointer]:
+            - /url: /blogs/2024/mar/application-security-verification-standard/
+            - img "Application Security Verification Standard" [ref=e293]
+          - generic [ref=e294]:
+            - heading "Application Security Verification Standard" [level=3] [ref=e295]:
+              - link "Application Security Verification Standard" [ref=e296] [cursor=pointer]:
+                - /url: /blogs/2024/mar/application-security-verification-standard/
+            - generic [ref=e297]:
+              - generic [ref=e298]: Mar 10, 2024
+              - generic [ref=e299]: 7 min read
+              - link "Application Security" [ref=e300] [cursor=pointer]:
+                - /url: /tags/application-security/
+              - link "OWASP" [ref=e301] [cursor=pointer]:
+                - /url: /tags/owasp/
+            - paragraph [ref=e302]: s Ensuring the security of an application is a complex task. To simplify this process, OWASP (Open Web Application Security Project) has developed a standardized approach1 aimed at gauging …
+          - link "Read" [ref=e304] [cursor=pointer]:
+            - /url: /blogs/2024/mar/application-security-verification-standard/
+        - article [ref=e305]:
+          - link "Read Adaptive Authentication" [ref=e306] [cursor=pointer]:
+            - /url: /blogs/2024/feb/adaptive-authentication/
+            - img "Adaptive Authentication" [ref=e307]
+          - generic [ref=e308]:
+            - heading "Adaptive Authentication" [level=3] [ref=e309]:
+              - link "Adaptive Authentication" [ref=e310] [cursor=pointer]:
+                - /url: /blogs/2024/feb/adaptive-authentication/
+            - generic [ref=e311]:
+              - generic [ref=e312]: Feb 17, 2024
+              - generic [ref=e313]: 6 min read
+              - link "Authentication" [ref=e314] [cursor=pointer]:
+                - /url: /tags/authentication/
+              - link "Security" [ref=e315] [cursor=pointer]:
+                - /url: /tags/security/
+            - paragraph [ref=e316]: Motivation behind this blog During a visit to my friend’s house, I needed to check my email on his laptop. Upon entering my credentials, I encountered a captcha prompt unexpectedly. After …
+          - link "Read" [ref=e318] [cursor=pointer]:
+            - /url: /blogs/2024/feb/adaptive-authentication/
+        - article [ref=e319]:
+          - link "Read Broken Access Control" [ref=e320] [cursor=pointer]:
+            - /url: /blogs/2024/feb/broken-access-control/
+            - img "Broken Access Control" [ref=e321]
+          - generic [ref=e322]:
+            - heading "Broken Access Control" [level=3] [ref=e323]:
+              - link "Broken Access Control" [ref=e324] [cursor=pointer]:
+                - /url: /blogs/2024/feb/broken-access-control/
+            - generic [ref=e325]:
+              - generic [ref=e326]: Feb 12, 2024
+              - generic [ref=e327]: 6 min read
+              - link "AccessControl" [ref=e328] [cursor=pointer]:
+                - /url: /tags/accesscontrol/
+              - link "ApplicationSecurity" [ref=e329] [cursor=pointer]:
+                - /url: /tags/applicationsecurity/
+            - paragraph [ref=e330]: Access Control in OWASP top 10 Access control is a crucial aspect of application security that ensures users can only perform actions within their authorized permissions. However, broken …
+          - link "Read" [ref=e332] [cursor=pointer]:
+            - /url: /blogs/2024/feb/broken-access-control/
+        - article [ref=e333]:
+          - link "Read Sim Binding" [ref=e334] [cursor=pointer]:
+            - /url: /blogs/sim-binding/
+            - img "Sim Binding" [ref=e335]
+          - generic [ref=e336]:
+            - heading "Sim Binding" [level=3] [ref=e337]:
+              - link "Sim Binding" [ref=e338] [cursor=pointer]:
+                - /url: /blogs/sim-binding/
+            - generic [ref=e339]:
+              - generic [ref=e340]: Feb 10, 2024
+              - generic [ref=e341]: 11 min read
+              - link "Sim Binding" [ref=e342] [cursor=pointer]:
+                - /url: /tags/sim-binding/
+              - link "Security" [ref=e343] [cursor=pointer]:
+                - /url: /tags/security/
+            - paragraph [ref=e344]: Sim binding is a process requirement by RBI to provide secure mobile applications. The RBI has issued the Master Direction on Digital Payment Security Controls to ensure the security of …
+          - link "Read" [ref=e346] [cursor=pointer]:
+            - /url: /blogs/sim-binding/
+        - article [ref=e347]:
+          - link "Read Dev Experience" [ref=e348] [cursor=pointer]:
+            - /url: /blogs/dev-experience/
+            - img "Dev Experience" [ref=e349]
+          - generic [ref=e350]:
+            - heading "Dev Experience" [level=3] [ref=e351]:
+              - link "Dev Experience" [ref=e352] [cursor=pointer]:
+                - /url: /blogs/dev-experience/
+            - generic [ref=e353]:
+              - generic [ref=e354]: Feb 3, 2024
+              - generic [ref=e355]: 9 min read
+              - link "Developer Experience" [ref=e356] [cursor=pointer]:
+                - /url: /tags/developer-experience/
+              - link "Collaboration" [ref=e357] [cursor=pointer]:
+                - /url: /tags/collaboration/
+            - paragraph [ref=e358]: I recently came across this article on the GitHub blog that discusses how GitHub’s Developer Experience (DX) team improved innerloop development. While reading the article I was reminded of …
+          - link "Read" [ref=e360] [cursor=pointer]:
+            - /url: /blogs/dev-experience/
+        - article [ref=e361]:
+          - link "Read Multi Tenant Architecture" [ref=e362] [cursor=pointer]:
+            - /url: /blogs/multi-tenant-architecture/
+            - img "Multi Tenant Architecture" [ref=e363]
+          - generic [ref=e364]:
+            - heading "Multi Tenant Architecture" [level=3] [ref=e365]:
+              - link "Multi Tenant Architecture" [ref=e366] [cursor=pointer]:
+                - /url: /blogs/multi-tenant-architecture/
+            - generic [ref=e367]:
+              - generic [ref=e368]: Jan 26, 2024
+              - generic [ref=e369]: 7 min read
+              - link "Multi-tenant" [ref=e370] [cursor=pointer]:
+                - /url: /tags/multi-tenant/
+              - link "Reusing a software" [ref=e371] [cursor=pointer]:
+                - /url: /tags/reusing-a-software/
+            - paragraph [ref=e372]: Working for a bank, we developed a highly successful platform for their retail users. It boasted modern features, robust security practices, and an exceptional user experience. However, we …
+          - link "Read" [ref=e374] [cursor=pointer]:
+            - /url: /blogs/multi-tenant-architecture/
+        - article [ref=e375]:
+          - link "Read Kareena Kapoor Controllers and the Fluffy Services" [ref=e376] [cursor=pointer]:
+            - /url: /blogs/kareena-kapoor-controllers/
+            - img "Kareena Kapoor Controllers and the Fluffy Services" [ref=e377]
+          - generic [ref=e378]:
+            - heading "Kareena Kapoor Controllers and the Fluffy Services" [level=3] [ref=e379]:
+              - link "Kareena Kapoor Controllers and the Fluffy Services" [ref=e380] [cursor=pointer]:
+                - /url: /blogs/kareena-kapoor-controllers/
+            - generic [ref=e381]:
+              - generic [ref=e382]: Jan 19, 2024
+              - generic [ref=e383]: 12 min read
+              - link "Kareena Kapoor Controllers" [ref=e384] [cursor=pointer]:
+                - /url: /tags/kareena-kapoor-controllers/
+              - link "Fluffy Services" [ref=e385] [cursor=pointer]:
+                - /url: /tags/fluffy-services/
+            - paragraph [ref=e386]: A microservice is a small, independent application that is designed to perform a specific business functionality. It is a software architectural style that structures an application as a …
+          - link "Read" [ref=e388] [cursor=pointer]:
+            - /url: /blogs/kareena-kapoor-controllers/
+        - article [ref=e389]:
+          - link "Read Cost of developing a software" [ref=e390] [cursor=pointer]:
+            - /url: /blogs/cost-of-software/
+            - img "Cost of developing a software" [ref=e391]
+          - generic [ref=e392]:
+            - heading "Cost of developing a software" [level=3] [ref=e393]:
+              - link "Cost of developing a software" [ref=e394] [cursor=pointer]:
+                - /url: /blogs/cost-of-software/
+            - generic [ref=e395]:
+              - generic [ref=e396]: Jan 1, 2024
+              - generic [ref=e397]: 10 min read
+              - link "Free Software" [ref=e398] [cursor=pointer]:
+                - /url: /tags/free-software/
+              - link "Open Source" [ref=e399] [cursor=pointer]:
+                - /url: /tags/open-source/
+            - paragraph [ref=e400]: Trigger for this blog I was pair programming during an interview, where the candidate had shared his screen and I was working side by side with him, trying to understand the solution he was …
+          - link "Read" [ref=e402] [cursor=pointer]:
+            - /url: /blogs/cost-of-software/
+        - article [ref=e403]:
+          - link "Read Gamification - Make it interesting" [ref=e404] [cursor=pointer]:
+            - /url: /blogs/gamification/
+            - img "Gamification - Make it interesting" [ref=e405]
+          - generic [ref=e406]:
+            - heading "Gamification - Make it interesting" [level=3] [ref=e407]:
+              - link "Gamification - Make it interesting" [ref=e408] [cursor=pointer]:
+                - /url: /blogs/gamification/
+            - generic [ref=e409]:
+              - generic [ref=e410]: Dec 30, 2023
+              - generic [ref=e411]: 11 min read
+              - link "Gamification in education" [ref=e412] [cursor=pointer]:
+                - /url: /tags/gamification-in-education/
+              - link "Language learning gamification" [ref=e413] [cursor=pointer]:
+                - /url: /tags/language-learning-gamification/
+            - paragraph [ref=e414]: Learning by Gamification If you have ever taught a child who is just starting school, you may have noticed that concepts that seem simple to you can be quite complex for them. This is due to …
+          - link "Read" [ref=e416] [cursor=pointer]:
+            - /url: /blogs/gamification/
+        - article [ref=e417]:
+          - link "Read GIFT City- India's Gateway to Global Business Excellence" [ref=e418] [cursor=pointer]:
+            - /url: /blogs/gift-city/
+            - img "GIFT City- India's Gateway to Global Business Excellence" [ref=e419]
+          - generic [ref=e420]:
+            - heading "GIFT City- India's Gateway to Global Business Excellence" [level=3] [ref=e421]:
+              - link "GIFT City- India's Gateway to Global Business Excellence" [ref=e422] [cursor=pointer]:
+                - /url: /blogs/gift-city/
+            - generic [ref=e423]:
+              - generic [ref=e424]: Dec 5, 2023
+              - generic [ref=e425]: 5 min read
+              - link "giftcity" [ref=e426] [cursor=pointer]:
+                - /url: /tags/giftcity/
+            - paragraph [ref=e427]: Situated between Ahmedabad and Gandhinagar, along the Sabarmati river, GIFT City (Gujarat International Finance Tec-City) emerges as India’s beacon of global business excellence. The city’s …
+          - link "Read" [ref=e429] [cursor=pointer]:
+            - /url: /blogs/gift-city/
+        - article [ref=e430]:
+          - link "Read Understanding the logging architecture" [ref=e431] [cursor=pointer]:
+            - /url: /blogs/logging-architecture/
+            - img "Understanding the logging architecture" [ref=e432]
+          - generic [ref=e433]:
+            - heading "Understanding the logging architecture" [level=3] [ref=e434]:
+              - link "Understanding the logging architecture" [ref=e435] [cursor=pointer]:
+                - /url: /blogs/logging-architecture/
+            - generic [ref=e436]:
+              - generic [ref=e437]: Nov 26, 2023
+              - generic [ref=e438]: 9 min read
+              - link "Logging architecture" [ref=e439] [cursor=pointer]:
+                - /url: /tags/logging-architecture/
+              - link "Log collection" [ref=e440] [cursor=pointer]:
+                - /url: /tags/log-collection/
+            - paragraph [ref=e441]: In any software development project, logging plays a vital role in understanding and troubleshooting the behavior of applications. Imagine you are working on a web application that consists …
+          - link "Read" [ref=e443] [cursor=pointer]:
+            - /url: /blogs/logging-architecture/
+        - article [ref=e444]:
+          - link "Read The Art and Science of Prompt Engineering" [ref=e445] [cursor=pointer]:
+            - /url: /blogs/prompt-engineering/
+            - img "The Art and Science of Prompt Engineering" [ref=e446]
+          - generic [ref=e447]:
+            - heading "The Art and Science of Prompt Engineering" [level=3] [ref=e448]:
+              - link "The Art and Science of Prompt Engineering" [ref=e449] [cursor=pointer]:
+                - /url: /blogs/prompt-engineering/
+            - generic [ref=e450]:
+              - generic [ref=e451]: Nov 19, 2023
+              - generic [ref=e452]: 5 min read
+            - paragraph [ref=e453]: content With the rise of conversational and generative AI systems like ChatGPT, Bard etc., the way of working is being disrupted. To not be afraid of AI snatching jobs, we must embrace AI …
+          - link "Read" [ref=e455] [cursor=pointer]:
+            - /url: /blogs/prompt-engineering/
+        - article [ref=e456]:
+          - link "Read Embracing Global Diversity" [ref=e457] [cursor=pointer]:
+            - /url: /blogs/working-with-global-teams/
+            - img "Embracing Global Diversity" [ref=e458]
+          - generic [ref=e459]:
+            - heading "Embracing Global Diversity" [level=3] [ref=e460]:
+              - link "Embracing Global Diversity" [ref=e461] [cursor=pointer]:
+                - /url: /blogs/working-with-global-teams/
+            - generic [ref=e462]:
+              - generic [ref=e463]: Nov 17, 2023
+              - generic [ref=e464]: 4 min read
+              - link "global teams" [ref=e465] [cursor=pointer]:
+                - /url: /tags/global-teams/
+            - paragraph [ref=e466]: Insights from a World of Experiences At the onset of my career, the allure of working “On-Site” was a shared aspiration among my peers and me. The prospect of immersing ourselves in diverse …
+          - link "Read" [ref=e468] [cursor=pointer]:
+            - /url: /blogs/working-with-global-teams/
+        - article [ref=e469]:
+          - link "Read Embracing Passwordless Authentication with FIDO" [ref=e470] [cursor=pointer]:
+            - /url: /blogs/fido/
+            - img "Embracing Passwordless Authentication with FIDO" [ref=e471]
+          - generic [ref=e472]:
+            - heading "Embracing Passwordless Authentication with FIDO" [level=3] [ref=e473]:
+              - link "Embracing Passwordless Authentication with FIDO" [ref=e474] [cursor=pointer]:
+                - /url: /blogs/fido/
+            - generic [ref=e475]:
+              - generic [ref=e476]: Nov 15, 2023
+              - generic [ref=e477]: 12 min read
+              - link "Passwordless" [ref=e478] [cursor=pointer]:
+                - /url: /tags/passwordless/
+              - link "Fingerprint authentication" [ref=e479] [cursor=pointer]:
+                - /url: /tags/fingerprint-authentication/
+            - paragraph [ref=e480]: Sometime back, I created this post on linked-in on explainig how passwords are not a good fit for authentication. In continuation to that, I would like to talk about FIDO Alliance. In the …
+          - link "Read" [ref=e482] [cursor=pointer]:
+            - /url: /blogs/fido/
+        - article [ref=e483]:
+          - link "Read Unveiling the Art and Essentials of API Design" [ref=e484] [cursor=pointer]:
+            - /url: /blogs/crafting-api-magic/
+            - img "Unveiling the Art and Essentials of API Design" [ref=e485]
+          - generic [ref=e486]:
+            - heading "Unveiling the Art and Essentials of API Design" [level=3] [ref=e487]:
+              - link "Unveiling the Art and Essentials of API Design" [ref=e488] [cursor=pointer]:
+                - /url: /blogs/crafting-api-magic/
+            - generic [ref=e489]:
+              - generic [ref=e490]: Nov 10, 2023
+              - generic [ref=e491]: 9 min read
+              - link "API design best practices" [ref=e492] [cursor=pointer]:
+                - /url: /tags/api-design-best-practices/
+              - link "Joshua Bloch API design principles" [ref=e493] [cursor=pointer]:
+                - /url: /tags/joshua-bloch-api-design-principles/
+            - paragraph [ref=e494]: Unveiling the Elegance of API Design In the intricate world of software architecture, API design emerges as a symphony, a composition that can either elevate a system to greatness or …
+          - link "Read" [ref=e496] [cursor=pointer]:
+            - /url: /blogs/crafting-api-magic/
+        - article [ref=e497]:
+          - link "Read The technology of modern banks" [ref=e498] [cursor=pointer]:
+            - /url: /blogs/the-technology-of-modern-banks/
+            - img "The technology of modern banks" [ref=e499]
+          - generic [ref=e500]:
+            - heading "The technology of modern banks" [level=3] [ref=e501]:
+              - link "The technology of modern banks" [ref=e502] [cursor=pointer]:
+                - /url: /blogs/the-technology-of-modern-banks/
+            - generic [ref=e503]:
+              - generic [ref=e504]: Nov 8, 2023
+              - generic [ref=e505]: 6 min read
+              - link "FinTech" [ref=e506] [cursor=pointer]:
+                - /url: /tags/fintech/
+              - link "Technologies" [ref=e507] [cursor=pointer]:
+                - /url: /tags/technologies/
+            - paragraph [ref=e508]: Innovations Shaping the Financial Landscape The banking industry, a traditionally conservative sector, has witnessed a radical transformation driven by technological advancements. In the …
+          - link "Read" [ref=e510] [cursor=pointer]:
+            - /url: /blogs/the-technology-of-modern-banks/
+        - article [ref=e511]:
+          - link "Read Unlocking the Power of Large Language Models in the World of IT" [ref=e512] [cursor=pointer]:
+            - /url: /blogs/large-language-models/
+            - img "Unlocking the Power of Large Language Models in the World of IT" [ref=e513]
+          - generic [ref=e514]:
+            - heading "Unlocking the Power of Large Language Models in the World of IT" [level=3] [ref=e515]:
+              - link "Unlocking the Power of Large Language Models in the World of IT" [ref=e516] [cursor=pointer]:
+                - /url: /blogs/large-language-models/
+            - generic [ref=e517]:
+              - generic [ref=e518]: Nov 5, 2023
+              - generic [ref=e519]: 5 min read
+              - link "FinTech" [ref=e520] [cursor=pointer]:
+                - /url: /tags/fintech/
+              - link "Language Models" [ref=e521] [cursor=pointer]:
+                - /url: /tags/language-models/
+            - paragraph [ref=e522]: Embracing ChatGPT As technology continues to evolve, the integration of artificial intelligence has become a game-changer in both the software and banking industries. One remarkable …
+          - link "Read" [ref=e524] [cursor=pointer]:
+            - /url: /blogs/large-language-models/
+        - article [ref=e525]:
+          - link "Read Unveiling the Tech Ecosystem - A Techie's Take on Software Development" [ref=e526] [cursor=pointer]:
+            - /url: /blogs/technologies/
+            - img "Unveiling the Tech Ecosystem - A Techie's Take on Software Development" [ref=e527]
+          - generic [ref=e528]:
+            - heading "Unveiling the Tech Ecosystem - A Techie's Take on Software Development" [level=3] [ref=e529]:
+              - link "Unveiling the Tech Ecosystem - A Techie's Take on Software Development" [ref=e530] [cursor=pointer]:
+                - /url: /blogs/technologies/
+            - generic [ref=e531]:
+              - generic [ref=e532]: Nov 1, 2023
+              - generic [ref=e533]: 3 min read
+              - link "software development" [ref=e534] [cursor=pointer]:
+                - /url: /tags/software-development/
+              - link "technologies" [ref=e535] [cursor=pointer]:
+                - /url: /tags/technologies/
+            - paragraph [ref=e536]: As a technology enthusiast, I’ve had the honor of witnessing the ever-evolving landscape of software development. In today’s world, software is the beating heart of virtually every industry. …
+          - link "Read" [ref=e538] [cursor=pointer]:
+            - /url: /blogs/technologies/
+      - region "Recommended reading" [ref=e539]:
+        - generic [ref=e540]:
+          - 'heading "Start Here: Most Read" [level=3] [ref=e541]'
+          - paragraph [ref=e542]: "If you're new here, these are the best entry points into the site: banking architecture, platform design, AI, and engineering leadership."
+          - list [ref=e545]:
+            - listitem [ref=e546]:
+              - link "The Technology of Modern Banks" [ref=e547] [cursor=pointer]:
+                - /url: /blogs/the-technology-of-modern-banks/
+              - text: — a clear walkthrough of the platform layers behind modern banking.
+            - listitem [ref=e548]:
+              - link "Multi-Tenant Architecture" [ref=e549] [cursor=pointer]:
+                - /url: /blogs/multi-tenant-architecture/
+              - text: — practical design trade-offs for shared platforms at scale.
+            - listitem [ref=e550]:
+              - link "Unlocking the Power of Large Language Models" [ref=e551] [cursor=pointer]:
+                - /url: /blogs/large-language-models/
+              - text: — the business and technical framing for LLM adoption.
+            - listitem [ref=e552]:
+              - link "Dev Experience" [ref=e553] [cursor=pointer]:
+                - /url: /blogs/dev-experience/
+              - text: — why engineering productivity is an architecture concern, not just a tooling concern.
+            - listitem [ref=e554]:
+              - link "Digital Banking Modernization Case Study" [ref=e555] [cursor=pointer]:
+                - /url: /solutions/digital-banking-modernization-case-study/
+              - text: — a proof-first transformation narrative grounded in delivery reality.
+  - contentinfo [ref=e556]:
+    - generic [ref=e557]:
+      - link "github" [ref=e559] [cursor=pointer]:
+        - /url: https://github.com/mohitkanwar
+        - img [ref=e560]
+      - link "linkedin" [ref=e563] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/mohit-kanwar-7668a211/
+        - img "LinkedIn" [ref=e564]
+      - link "twitter" [ref=e569] [cursor=pointer]:
+        - /url: https://twitter.com/mmkanwar
+        - img [ref=e570]
+    - generic [ref=e575]:
+      - link "Footer logo" [ref=e577] [cursor=pointer]:
+        - /url: https://mohitkanwar.com/
+        - img "Footer logo" [ref=e578]
+      - text: © 2026 All rights reserved
+      - generic [ref=e579]:
+        - text: Made with ❤ and
+        - link "Hugo Profile" [ref=e580] [cursor=pointer]:
+          - /url: https://github.com/gurusabarish/hugo-profile
+    - generic:
+      - generic: build 31 Mar 2026, 10:00 IST · vdev

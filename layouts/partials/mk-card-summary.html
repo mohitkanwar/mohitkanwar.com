@@ -1,0 +1,9 @@
+{{ $page := .page }}
+{{ $limit := .limit | default 220 }}
+{{ $text := $page.Plain | htmlUnescape | replaceRE "\\s+" " " | replaceRE "^\\s+|\\s+$" "" }}
+{{ $title := $page.Title | default "" }}
+{{ if and $title (hasPrefix (lower $text) (lower $title)) }}
+  {{ $text = slicestr $text (len $title) }}
+  {{ $text = replaceRE "^[\\s:,-]+" "" $text }}
+{{ end }}
+{{ $text | truncate $limit }}

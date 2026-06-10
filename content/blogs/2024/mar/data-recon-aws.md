@@ -102,3 +102,8 @@ Compensation events serve as a critical mechanism in event-driven systems to add
 **Fault Tolerance**: By enabling systems to recover from failures and errors, compensation events enhance the fault tolerance of event-driven architectures and ensure the reliability of data processing operations.
 
 **Consistency Maintenance**: Compensation events help maintain data consistency across systems by addressing discrepancies and ensuring that data remains accurate and up to date.
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

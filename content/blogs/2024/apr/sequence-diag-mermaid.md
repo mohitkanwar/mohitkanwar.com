@@ -622,3 +622,8 @@ Although mermaid has it's own limitations e.g. it comes with limited shapes, and
  I hope to see more evolutions happening in mermaid js .
  You can read more about Mermaid sequence diagram on the following link : https://mermaid.js.org/syntax/sequenceDiagram.html
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

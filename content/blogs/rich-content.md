@@ -73,3 +73,8 @@ Optionally, you can customize the general CSS styles for the image:
 ```
 {{</* dynamic-img src="/my/image/on/cloudinary" title="A title for the image" style="max-width:60%" */>}}
 ```
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

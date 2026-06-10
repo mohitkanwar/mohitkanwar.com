@@ -107,3 +107,7 @@ All APIs, whether REST, SOAP, GraphQL, or any other mechanism, must enforce auth
 Configurations should be securely stored, especially as they may contain sensitive information such as licenses. Access to or modification of configurations should require the involvement of more than one individual for added security.
 
 [^1]: https://owasp.org/www-project-application-security-verification-standard/  
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

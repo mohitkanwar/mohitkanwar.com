@@ -117,3 +117,8 @@ Balancing the development of technical and soft skills is essential for career g
 
 By integrating these practices into your routine, you can achieve a well-rounded skill set that enhances both your technical prowess and your ability to work effectively with others.
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

@@ -124,3 +124,8 @@ The irony of CAPTCHA is that, while designed to separate humans from bots, it of
 This project taught me that security is a journey, not a destination. Bots may never go away, but we can make their lives a lot harder.
 
 Have you had any CAPTCHA adventures? What solutions or challenges have you encountered? I’d love to hear your thoughts—share your stories, insights, or questions in the comments, and let’s keep the conversation going.
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

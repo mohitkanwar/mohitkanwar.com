@@ -98,3 +98,16 @@ As a user, you must control and sanitize the information that you are sharing wi
 [Open AI](https://platform.openai.com/docs/guides/prompt-engineering)
 [Google Prompt Engineering Course](https://developers.google.com/machine-learning/resources/prompt-eng)
 -->
+
+---
+
+## Related Reading
+
+- [Unlocking the Power of Large Language Models](/blogs/large-language-models/) — understanding the models you are prompting
+- [Retrieval Augmented Generation](/blogs/2024/apr/retrieval-augmented-generation/) — combining prompts with enterprise knowledge retrieval
+- [Artificial Intelligence Applications in Fintech](/blogs/2024/apr/artificial-intelligence-applications-in-fintech/) — applied AI patterns in financial services
+- [Personalized Financial Advice Generator](/blogs/2025/jul/personalized-financial-advice-generator/) — prompt engineering in a real fintech use case
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

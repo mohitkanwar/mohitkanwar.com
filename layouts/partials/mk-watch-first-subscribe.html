@@ -1,0 +1,51 @@
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+{{ $trackedUrl := "" }}
+{{ if $subscribeEnabled }}
+  {{ $separator := "?" }}
+  {{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+  {{ $trackedUrl = printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ("mohitkanwar.com" | urlquery) ("website" | urlquery) ("video-hub" | urlquery) ("watch-first-block" | urlquery) }}
+{{ end }}
+
+<div class="mk-hub-promo">
+  <h3 class="mk-hub-promo-title">Watch First{{ if $subscribeEnabled }} + Subscribe{{ end }}</h3>
+  <p class="mk-hub-promo-copy">
+    {{ if $subscribeEnabled }}
+      If you prefer ideas in a faster format, start with these videos on platform strategy, customer outcomes, digital currency, and secure systems. Subscribe if you want the next article or video directly.
+    {{ else }}
+      If you prefer ideas in a faster format, start with these videos on platform strategy, customer outcomes, digital currency, and secure systems.
+    {{ end }}
+  </p>
+  <div class="mk-hub-promo-grid{{ if not $subscribeEnabled }} mk-hub-promo-grid-single{{ end }}">
+    <div>
+      <ol class="mk-hub-promo-list">
+        <li><a href="/videos/build-vs-buy/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-video-hub-promo" data-cta-campaign="video-hub" data-cta-content="rec-build-vs-buy">Build vs Buy</a> — a concise decision framework for platform strategy and transformation trade-offs.</li>
+        <li><a href="/videos/customers-love-the-bank/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-video-hub-promo" data-cta-campaign="video-hub" data-cta-content="rec-customers-love-the-bank">Customers Love the Bank</a> — why customer experience and architecture quality are inseparable.</li>
+        <li><a href="/videos/indias-e-rupee/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-video-hub-promo" data-cta-campaign="video-hub" data-cta-content="rec-indias-e-rupee">India's e-Rupee</a> — what digital currency changes for product, platforms, and adoption.</li>
+        <li><a href="/videos/different-types-of-currencies/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-video-hub-promo" data-cta-campaign="video-hub" data-cta-content="rec-different-types-of-currencies">Different Types of Currencies</a> — a simple map of the currency landscape and where digital fits.</li>
+        <li><a href="/videos/securing-sensitive-data/" data-cta-event="cta_hub_recommendation_click" data-cta-source="mk-video-hub-promo" data-cta-campaign="video-hub" data-cta-content="rec-securing-sensitive-data">Securing Sensitive Data</a> — a practical lens on security and platform trust.</li>
+      </ol>
+    </div>
+    {{ if $subscribeEnabled }}
+      <div class="mk-hub-promo-subscribe">
+        <p><strong>Want the next article or video directly?</strong></p>
+        <div class="mk-subscribe">
+          <div class="mk-subscribe-inner" data-subscribe-surface="video-hub">
+            <p class="mk-subscribe-title" data-subscribe-title>Subscribe for practical architecture and product notes</p>
+            <p class="mk-subscribe-description" data-subscribe-copy>Short, useful updates on FinTech architecture, AI, engineering leadership, and digital platform decisions.</p>
+            <a class="mk-subscribe-btn"
+               href="{{ $trackedUrl }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-event="cta_newsletter_click"
+               data-cta-source="mk-video-hub-promo"
+               data-cta-campaign="video-hub"
+               data-cta-content="watch-first-block">
+              Subscribe
+            </a>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>

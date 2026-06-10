@@ -140,3 +140,7 @@ DuoLingo incorporates social elements by allowing users to connect with friends 
 As an application developer, I use duolingo as an inspiration for gamification apps. I am constantly seeking ways to create an enriching experience for my users.
 
  Incorporating gamification tools into my application is a powerful strategy to enhance user engagement and satisfaction. By implementing streaks and daily goals, rewards and achievements, social interaction and collaboration, progress tracking and visualization, as well as personalization and customization, I can create an application that not only meets users' needs but also keeps them motivated and excited to interact with it. With these gamification elements in place, I can foster a sense of progress, recognition, community, and personalization, making the user experience more enjoyable and meaningful. By leveraging gamification, I can create an application that users love and want to return to, driving long-term usage and loyalty. So, as I embark on this development journey, I am excited to build an application that incorporates these gamification tools, ensuring an engaging and rewarding experience for my users.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

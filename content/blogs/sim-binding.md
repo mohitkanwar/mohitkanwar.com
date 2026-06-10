@@ -228,3 +228,8 @@ With the availability of new types of devices supporting virtual sim cards, ther
 - Older sim cards
 While the operating systems may allow the access to sim details, it is dependent upon the sim itself to provide the details. The older sim cards do not have the capability to provide such an information to the operating systems, and hence even though the OS allows, the sim card becomes the bottleneck for Sim based authentications.
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

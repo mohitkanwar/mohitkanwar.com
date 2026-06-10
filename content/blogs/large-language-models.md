@@ -80,3 +80,18 @@ What's truly fascinating is the system's extensibility. By integrating plugins, 
 In summation, the system draws its strength from a highly proficient LLM, trained on an extensive corpus of text data. It elevates human-computer interaction to a more natural level, offering the potential for enhanced versatility through task-specific plugins.
 
 As we navigate the ever-evolving landscape of AI and technology, Large Language Models like GPT continue to reshape the way we work and engage with data. These models empower innovation in both the software and banking industries, opening doors to new possibilities and more intuitive human-computer interactions. Embracing the potential of LLMs is not just an option; it's a strategic advantage in the IT world.
+
+
+---
+
+## Related Reading
+
+- [The Art and Science of Prompt Engineering](/blogs/prompt-engineering/) — how to communicate effectively with LLMs to get reliable outputs
+- [Artificial Intelligence Applications in Fintech](/blogs/2024/apr/artificial-intelligence-applications-in-fintech/) — where LLMs create real leverage in financial services
+- [Models in Artificial Intelligence](/blogs/2024/apr/models-in-artificial-intelligence/) — the broader landscape of AI model types beyond language models
+- [Components in LLM Architecture](/blogs/2024/may/components-in-llm-architecture/) — a deeper look at what makes up an LLM-powered system
+- [Retrieval Augmented Generation](/blogs/2024/apr/retrieval-augmented-generation/) — extending LLMs with enterprise knowledge without retraining
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

@@ -12,8 +12,8 @@ tags:
   - Freemium model
 
 imageBasePath: "/images/solutions/self-hosted-captcha"
-image: /images/solutions/self-hosted-captcha/self-hosted-captcha.png
-description: "Discover the costs of developing free software, beyond monetary investments. Explore freemium models, user data value, and benefits of contributing to free software."
+image: /images/solutions/self-hosted-captcha/banner.jpg
+description: "A solution design for a secure, accessible, self-hosted CAPTCHA service with functional requirements, threat controls, integration guidance, and C4-style architecture."
 toc: 
 summary: "Design and implement a secure, self-hosted CAPTCHA service. Learn about features, accessibility, integration, and architecture for protecting applications from bots while ensuring a seamless user experience."
 ---

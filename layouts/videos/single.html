@@ -1,66 +1,7 @@
 {{ define "head" }}
-<meta name="description" content="{{ .Params.description }}">
-<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
-
-<!-- small inline styles for video layout (move to single.css if preferred) -->
-<style>
-  .video-hero { position: relative; margin-bottom: 1.5rem; }
-  .video-wrapper {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 */
-    background: #000;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-
-  /* fill wrapper, preserve aspect ratio */
-  .video-poster,
-  .video-iframe,
-  .video-element {
-    position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-    object-fit: cover; /* prevents stretching (fills and crops if needed) */
-    background: #000;
-  }
-
-  /* (optional) use contain for letterbox behavior instead of crop:
-     .video-element { object-fit: contain; } */
-
-  .video-play-btn {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    background: rgba(0,0,0,0.5);
-    border-radius: 999px;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 0;
-  }
-
-  .video-meta { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; color: #6b7280; font-size:0.95rem; margin-top:0.75rem; }
-  .video-badge { background: #ef4444; color: #fff; padding: 4px 8px; border-radius: 999px; font-size:0.75rem; font-weight:600; }
-  .video-info { margin-top: 1rem; }
-
-  .video-wrapper { position: relative; }
-.video-poster { z-index: 900; }       /* poster under play button, above background */
-.video-iframe { z-index: 0; }       /* iframe sits above poster */
-.video-play-btn { z-index: 999; }     /* play button sits on top before click */
-  @media (max-width: 576px) {
-    .video-meta { font-size:0.85rem; gap:.5rem; }
-  }
-</style>
-
-<!-- fontawesome -->
-<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+{{ $description := .Description | default .Params.video_description | default .Params.summary | default .Summary | default .Site.Params.description }}
+<meta name="description" content="{{ $description | plainify | truncate 160 }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/single.css">
 {{ end }}
 
 {{ define "title" }}
@@ -68,287 +9,135 @@
 {{ end }}
 
 {{ define "main" }}
-<section id="single">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-12 col-lg-9">
-        <div class="pr-lg-4">
-          <div class="title mb-4">
-            <h1 class="text-center mb-3">{{ .Title }}</h1>
-            <div class="text-center">
-              {{ if .Params.author }}
-                {{ .Params.author }} <small>|</small>
-              {{ end }}
-              {{ .Date.Format (.Site.Params.datesFormat.article | default "Jan 2, 2006") }}
-            </div>
-          </div>
+{{ $youtube := .Params.youtube_id }}
+{{ $videoURL := .Params.video_url }}
+{{ $poster := .Params.video_poster | default .Params.image }}
+{{ $description := .Description | default .Params.video_description | default .Params.summary | default .Summary }}
+{{ $dateFormat := .Site.Params.datesFormat.article | default "Jan 2, 2006" }}
 
-          {{/* ---------- Video Hero: YouTube or Generic Video ---------- */}}
-          <div class="video-hero">
-            {{ $youtube := .Params.youtube_id }}
-            {{ $videoURL := .Params.video_url }}
-            {{ $poster := cond .Params.video_poster .Params.video_poster .Params.image }}
-            <div class="video-wrapper" id="video-wrapper-{{ .File.UniqueID }}">
-              {{ if $youtube }}
-                <!-- button + poster (YouTube) -->
-                <button class="video-play-btn" aria-label="Play video"
-                        onclick="loadYouTube('{{ .File.UniqueID }}','{{ $youtube }}')">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 3v18l15-9L5 3z" fill="white"/></svg>
-                </button>
+<main class="mk-video-detail" id="single">
+  <section class="mk-video-detail-hero">
+    <div class="container">
+      <a class="mk-video-back" href="{{ "videos" | relURL }}" data-cta-event="cta_video_back_click" data-cta-source="video-detail" data-cta-campaign="video-detail">Back to videos</a>
 
-                <img class="video-poster"
-                     src="https://img.youtube.com/vi/{{ $youtube }}/hqdefault.jpg"
-                     alt="{{ .Title }}"
-                     loading="lazy"
-                     onclick="loadYouTube('{{ .File.UniqueID }}','{{ $youtube }}')">
-
-                <!-- placeholder for iframe -->
-                <div id="yt-placeholder-{{ .File.UniqueID }}" class="video-iframe" aria-hidden="true"></div>
-
-              {{ else if $videoURL }}
-                {{ if $poster }}
-                  <button class="video-play-btn" aria-label="Play video"
-                          onclick="playHTML5('{{ .File.UniqueID }}')">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 3v18l15-9L5 3z" fill="white"/></svg>
-                  </button>
-
-                  <img class="video-poster"
-                       src="{{ $poster }}"
-                       alt="{{ .Title }}"
-                       loading="lazy"
-                       onclick="playHTML5('{{ .File.UniqueID }}')">
-
-                  <video id="html5-video-{{ .File.UniqueID }}" class="video-element" controls preload="metadata" style="display:none;">
-                    <source src="{{ $videoURL }}">
-                    Your browser does not support the video tag.
-                  </video>
-                {{ else }}
-                  <!-- no poster provided — show video directly -->
-                  <video class="video-element" controls preload="metadata">
-                    <source src="{{ $videoURL }}">
-                    Your browser does not support the video tag.
-                  </video>
-                {{ end }}
-
-              {{ else if .Params.image }}
-                <!-- Fallback to image if no video params -->
-                <img class="video-poster" src="{{ .Params.image }}" alt="{{ .Title }}">
-              {{ end }}
-            </div>
-
-            {{/* Video metadata row */}}
-            <div class="video-meta">
-              <span class="video-badge">Video</span>
-              {{ with .Params.video_duration }}<span class="video-duration"><i class="far fa-clock"></i> {{ . }}</span>{{ end }}
-              {{ with .Params.video_views }}<span class="video-views"><i class="fas fa-eye"></i> {{ . }}</span>{{ end }}
-              {{ with .Params.video_channel }}<span class="video-channel"><i class="fab fa-youtube"></i> {{ . }}</span>{{ end }}
-            </div>
-          </div>
-
-          {{/* ---------- Video Description / Content ---------- */}}
-          <div class="video-info">
-            {{ if .Params.video_description }}
-              <div class="lead mb-3">{{ .Params.video_description }}</div>
+      <div class="mk-video-player-shell">
+        <div class="mk-video-player" id="video-wrapper-{{ .File.UniqueID }}">
+          {{ if $youtube }}
+            <button class="mk-video-player-button" type="button" aria-label="Play video" onclick="loadYouTube('{{ .File.UniqueID }}','{{ $youtube }}')"></button>
+            <img class="mk-video-player-poster"
+                 src="https://img.youtube.com/vi/{{ $youtube }}/hqdefault.jpg"
+                 alt="{{ .Title }}"
+                 loading="eager"
+                 onclick="loadYouTube('{{ .File.UniqueID }}','{{ $youtube }}')">
+            <div id="yt-placeholder-{{ .File.UniqueID }}" class="mk-video-embed" aria-hidden="true"></div>
+          {{ else if $videoURL }}
+            {{ if $poster }}
+              <button class="mk-video-player-button" type="button" aria-label="Play video" onclick="playHTML5('{{ .File.UniqueID }}')"></button>
+              <img class="mk-video-player-poster"
+                   src="{{ $poster }}"
+                   alt="{{ .Title }}"
+                   loading="eager"
+                   onclick="playHTML5('{{ .File.UniqueID }}')">
+              <video id="html5-video-{{ .File.UniqueID }}" class="mk-video-element" controls preload="metadata" hidden>
+                <source src="{{ $videoURL }}">
+                Your browser does not support the video tag.
+              </video>
+            {{ else }}
+              <video class="mk-video-element" controls preload="metadata">
+                <source src="{{ $videoURL }}">
+                Your browser does not support the video tag.
+              </video>
             {{ end }}
+          {{ else if $poster }}
+            <img class="mk-video-player-poster" src="{{ $poster }}" alt="{{ .Title }}">
+          {{ end }}
+        </div>
+      </div>
 
-            <article class="page-content p-2">
-              {{ .Content | emojify }}
-            </article>
+      <div class="mk-video-detail-heading">
+        <p class="mk-blog-eyebrow">Video briefing</p>
+        <h1>{{ .Title }}</h1>
+        {{ with $description }}
+          <p>{{ . | plainify }}</p>
+        {{ end }}
+        <div class="mk-video-detail-meta">
+          <span>{{ .Date.Format $dateFormat }}</span>
+          {{ with .Params.video_duration }}<span>{{ . }}</span>{{ end }}
+          {{ with .Params.tags }}
+            {{ range first 4 . }}<a href="{{ "tags" | relURL }}/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-video-detail-content">
+    <div class="container">
+      <div class="mk-video-detail-grid">
+        <article class="mk-video-notes page-content">
+          <div class="mk-video-section-title">
+            <p class="mk-blog-eyebrow">Briefing notes</p>
+            <h2>Key ideas from the video</h2>
           </div>
+          {{ .Content | emojify }}
+        </article>
 
-        </div>
-      </div>
-
-      {{/* ---------- Sidebar (same as blog single) ---------- */}}
-      <div class="col-sm-12 col-md-12 col-lg-3">
-        <div id="stickySideBar" class="sticky-sidebar">
-          {{ if .Params.toc | default true}}
-          <aside class="toc">
-            <h5>{{ .Site.Params.terms.toc | default "Table Of Contents" }}</h5>
-            <div class="toc-content">{{ .TableOfContents }}</div>
-          </aside>
-          {{ end }}
-
-          {{ if .Params.tags }}
-          <aside class="tags">
-            <h5>{{ .Site.Params.terms.tags | default "Tags" }}</h5>
-            <ul class="tags-ul list-unstyled list-inline">
-              {{range .Params.tags}}
-              <li class="list-inline-item"><a href="{{`tags` | absURL}}/{{.| urlize}}"
-                {{ if site.Params.singlePages.tags.openInNewTab | default true }}target="_blank"{{ end }}
-              >{{.}}</a></li>
-              {{end}}
-            </ul>
-          </aside>
-          {{end}}
-
-          {{ if .Params.socialShare | default .Site.Params.singlePages.socialShare | default true }}
-          <aside class="social">
-            <h5>{{ .Site.Params.terms.social | default "Social" }}</h5>
-            <div class="social-content">
-              <ul class="list-inline">
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Site.Params.hostName }}{{ .Permalink | absURL }}">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://twitter.com/share?text={{ .Title }}&url={{ .Site.Params.hostName }}{{ .Permalink | absURL }}">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text={{ .Title }}: {{ .Site.Params.hostName }}{{ .Permalink | absURL }}">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject={{ .Title }}&amp;body={{ .Site.Params.terms.emailText | default "Check out this site" }} {{ .Site.Params.hostName }}{{ .Permalink | absURL }}'>
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </aside>
-          {{ end }}
-        </div>
+        <aside class="mk-video-side-panel" aria-label="Related videos">
+          <h2>Continue watching</h2>
+          {{ $relatedVideos := first 3 (where (where .Site.RegularPages "Type" "videos") "RelPermalink" "ne" .RelPermalink) }}
+          <div class="mk-video-related-list">
+            {{ range $relatedVideos }}
+            <a class="mk-video-related-link" href="{{ .RelPermalink }}" data-cta-event="cta_related_video_click" data-cta-source="video-detail" data-cta-campaign="related-videos" data-cta-content="{{ .File.TranslationBaseName }}">
+              <span>{{ .Title }}</span>
+              <small>{{ .Description | default .Params.video_description | default .Summary | plainify | truncate 90 }}</small>
+            </a>
+            {{ end }}
+          </div>
+          <a class="mk-video-side-cta" href="{{ "work-with-me" | relURL }}" data-cta-event="cta_work_with_me_click" data-cta-source="video-detail" data-cta-campaign="video-detail">Discuss a similar decision</a>
+        </aside>
       </div>
     </div>
-
-    {{/* Comments area */}}
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
-        {{ template "_internal/disqus.html" . }}
-      </div>
-    </div>
-  </div>
-
-  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
-    <i class="fas fa-angle-up"></i>
-  </button>
-</section>
-
-{{ if or (.Site.Params.singlePages.scrollprogress.enable | default true) (.Params.enableScrollProgress) }}
-<div class="progress">
-  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<script src="{{.Site.Params.staticPath}}/js/scrollProgressBar.js"></script>
-{{ end }}
+  </section>
+</main>
 
 <script>
-  /* top scroll button */
-  var topScroll = document.getElementById("topScroll");
-  window.onscroll = function() { scrollFunction(); };
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topScroll.style.display = "block";
-    } else {
-      topScroll.style.display = "none";
-    }
-  }
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+  function playHTML5(uniqueId) {
+    var video = document.getElementById("html5-video-" + uniqueId);
+    var wrapper = document.getElementById("video-wrapper-" + uniqueId);
+    if (!video || !wrapper) return;
 
-  /* Sticky sidebar top calc */
-  let stickySideBarElem = document.getElementById("stickySideBar");
-  {{/* emit boolean safely */}}
-  let stickyNavBar = {{ if .Site.Params.navbar.stickyNavBar.enable }}true{{ else }}false{{ end }};
-  if (stickySideBarElem) {
-    if(stickyNavBar) {
-      let headerElem = document.getElementById("profileHeader");
-      let headerHeight = headerElem ? (headerElem.offsetHeight + 15) : 50;
-      stickySideBarElem.style.top = headerHeight + "px";
-    } else {
-      stickySideBarElem.style.top = "50px";
-    }
-  }
+    var poster = wrapper.querySelector(".mk-video-player-poster");
+    var button = wrapper.querySelector(".mk-video-player-button");
+    if (poster) poster.hidden = true;
+    if (button) button.hidden = true;
 
-  /* ---------- Generic lazy-load functions (safe) ---------- */
-  function getVideoWrapper(id) {
-    return document.getElementById("video-wrapper-" + id);
+    video.hidden = false;
+    var playback = video.play();
+    if (playback && playback.catch) playback.catch(function () {});
   }
 
   function loadYouTube(uniqueId, youtubeId) {
-    if (!uniqueId || !youtubeId) return;
+    var wrapper = document.getElementById("video-wrapper-" + uniqueId);
     var placeholder = document.getElementById("yt-placeholder-" + uniqueId);
-    var wrapper = getVideoWrapper(uniqueId);
-    if (!wrapper) return;
+    if (!wrapper || !youtubeId) return;
+
+    var poster = wrapper.querySelector(".mk-video-player-poster");
+    var button = wrapper.querySelector(".mk-video-player-button");
+    if (poster) poster.hidden = true;
+    if (button) button.hidden = true;
 
     var iframe = document.createElement("iframe");
-    iframe.setAttribute("src", "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1&rel=0&modestbranding=1");
-    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-    iframe.setAttribute("allowfullscreen", "");
-    iframe.className = "video-iframe";
+    iframe.className = "mk-video-embed";
+    iframe.src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1&rel=0&modestbranding=1";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.title = "YouTube video player";
 
     if (placeholder) {
       placeholder.replaceWith(iframe);
     } else {
       wrapper.appendChild(iframe);
     }
-
-    var btn = wrapper.querySelector(".video-play-btn");
-    if (btn) btn.style.display = "none";
   }
-
-  function playHTML5(uniqueId) {
-    if (!uniqueId) return;
-    var v = document.getElementById("html5-video-" + uniqueId);
-    var wrapper = getVideoWrapper(uniqueId);
-    if (!v || !wrapper) return;
-
-    var poster = wrapper.querySelector(".video-poster");
-    var btn = wrapper.querySelector(".video-play-btn");
-
-    if (poster) poster.style.display = "none";
-    if (btn) btn.style.display = "none";
-
-    v.style.display = 'block';
-    var p = v.play();
-    if (p !== undefined) {
-      p.catch(function(err){
-        // autoplay may be blocked — user can then press native controls
-      });
-    }
-  }
-
-  function loadYouTube(uniqueId, youtubeId) {
-  if (!uniqueId || !youtubeId) return;
-  var placeholder = document.getElementById("yt-placeholder-" + uniqueId);
-  var wrapper = document.getElementById("video-wrapper-" + uniqueId);
-  if (!wrapper) return;
-
-  // hide poster and play button first (so iframe won't be covered)
-  var poster = wrapper.querySelector(".video-poster");
-  var btn = wrapper.querySelector(".video-play-btn");
-  if (poster) poster.style.display = "none";
-  if (btn) btn.style.display = "none";
-
-  // create iframe
-  var iframe = document.createElement("iframe");
-  iframe.setAttribute("src", "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1&rel=0&modestbranding=1");
-  iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-  iframe.setAttribute("allowfullscreen", "");
-  iframe.className = "video-iframe";
-
-  // ensure iframe sits above remaining elements
-  iframe.style.zIndex = "995";
-
-  if (placeholder) {
-    // replace placeholder (keeps DOM order predictable)
-    placeholder.replaceWith(iframe);
-  } else {
-    wrapper.appendChild(iframe);
-  }
-
-  // as a safety, also set wrapper overflow and background
-  wrapper.style.background = "#000";
-}
 </script>
-
-{{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
-<script src="{{.Site.Params.staticPath}}/js/readingTime.js"></script>
-{{ end }}
-
 {{ end }}

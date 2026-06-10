@@ -1,0 +1,41 @@
+{{ $variant := .Get "variant" | default "general" }}
+
+{{ $defaultTitle := "Want to discuss this for your organization?" }}
+{{ $defaultDescription := "If this topic is relevant to your fintech or banking roadmap, let us connect." }}
+
+{{ if eq $variant "blog" }}
+  {{ $defaultTitle = "Want to apply these ideas in your organization?" }}
+  {{ $defaultDescription = "I help fintech and banking teams turn architecture insights into practical execution plans." }}
+{{ else if eq $variant "video" }}
+  {{ $defaultTitle = "Need a walkthrough for your leadership team?" }}
+  {{ $defaultDescription = "I can support with speaking sessions and focused architecture strategy discussions." }}
+{{ else if eq $variant "leadership" }}
+  {{ $defaultTitle = "Exploring architecture leadership collaboration?" }}
+  {{ $defaultDescription = "Let us discuss leadership opportunities, platform strategy, or modernization priorities." }}
+{{ end }}
+
+{{ $title := .Get "title" | default $defaultTitle }}
+{{ $description := .Get "description" | default $defaultDescription }}
+{{ $primaryLabel := .Get "primaryLabel" | default "Work With Me" }}
+{{ $primaryUrl := .Get "primaryUrl" | default "/work-with-me" }}
+{{ $secondaryLabel := .Get "secondaryLabel" | default "Invite Me To Speak" }}
+{{ $secondaryUrl := .Get "secondaryUrl" | default "/speaking" }}
+
+<section class="mk-cta" role="note" aria-label="Call to action">
+  <h3 class="mk-cta-title">{{ $title }}</h3>
+  <p class="mk-cta-description">{{ $description }}</p>
+  <div class="mk-cta-actions">
+    <a
+      class="mk-cta-btn mk-cta-btn-primary"
+      href="{{ $primaryUrl }}"
+      data-cta-source="mk-cta"
+      data-cta-event="cta_work_with_me_click"
+    >{{ $primaryLabel }}</a>
+    <a
+      class="mk-cta-btn mk-cta-btn-secondary"
+      href="{{ $secondaryUrl }}"
+      data-cta-source="mk-cta"
+      data-cta-event="cta_speaking_click"
+    >{{ $secondaryLabel }}</a>
+  </div>
+</section>

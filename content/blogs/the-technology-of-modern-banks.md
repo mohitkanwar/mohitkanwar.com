@@ -81,3 +81,24 @@ The technology of modern banks is a testament to the rapid evolution of the fina
 Open banking and blockchain technology are reshaping the financial ecosystem, fostering innovation and collaboration. The adoption of cryptocurrencies and the rise of CBDCs demonstrate the industry's readiness to embrace change.
 
 In this era of constant innovation, modern banks must stay ahead of the technological curve, continually improving the services they offer to remain competitive and meet the ever-evolving needs of their customers. The future holds endless possibilities as the banking industry continues to harness technology to redefine the financial experience for all.
+
+---
+
+## Related Reading
+
+- [Digital Banking Modernization Case Study](/solutions/digital-banking-modernization-case-study/) — a real-world transformation narrative across channels, APIs, and platform layers
+- [Multi-Tenant Architecture](/blogs/multi-tenant-architecture/) — how banking platforms serve multiple segments from a shared core
+- [Understanding the Logging Architecture](/blogs/logging-architecture/) — observability as a first-class concern in modern banking systems
+- [My Journey with Finacle](/blogs/2024/aug/my-learnings-from-finacle/) — lessons from implementing a core banking platform at scale
+- [My Learnings From Implementing Backbase](/blogs/2024/aug/my-learnings-from-implementing-backbase/) — front-to-back architecture lessons from a digital banking programme
+
+{{< mk-subscribe >}}
+
+{{< mk-cta
+title="Planning modernization for a digital banking platform?"
+description="I work with fintech and banking teams on architecture, platform strategy, and execution models that scale." 
+primaryLabel="Work With Me"
+primaryUrl="/work-with-me"
+secondaryLabel="Invite Me To Speak"
+secondaryUrl="/speaking"
+>}}

@@ -242,3 +242,17 @@ User-Centric Approach: FIDO's emphasis on user experience is a game-changer. It 
 The Future of Authentication: As industries and users recognize the limitations of traditional passwords, FIDO stands as the beacon for a passwordless future. Its standards, like FIDO U2F, FIDO2, and WebAuthn, provide a roadmap for a secure, convenient, and standardized authentication method.
 
 In essence, FIDO isn't merely an alternative authentication mechanism; it's a transformative force reshaping how we approach digital security. Embracing FIDO isn't just a choice; it's a strategic step towards fortifying digital identities and ensuring a safer online ecosystem for businesses and users alike.
+
+---
+
+## Related Reading
+
+- [Adaptive Authentication](/blogs/2024/feb/adaptive-authentication/) — when and how to apply step-up authentication beyond passwords
+- [Time Based OTP](/blogs/2024/jul/time-based-otp/) — a complementary MFA factor and how it works
+- [SIM Binding](/blogs/sim-binding/) — device-binding as an authentication layer in mobile banking
+- [Broken Access Control](/blogs/2024/feb/broken-access-control/) — the most critical authentication failure mode to guard against
+- [Application Security Verification Standard](/blogs/2024/mar/application-security-verification-standard/) — the framework that governs authentication requirements end-to-end
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

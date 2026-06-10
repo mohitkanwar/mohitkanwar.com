@@ -2,7 +2,12 @@
 title: "Build vs Buy"
 date: 2025-10-22
 youtube_id: "96e8Q616hRg"
-summary: "When advising customers on digital transformation, the central question is: **should we build a custom solution or buy an off‑the‑shelf product?**  <br> The tradeoff is between *customization and control* (build) and *speed and proven capability* (buy)."
+tags:
+  - Platform Strategy
+  - Digital Transformation
+  - Architecture Decision
+description: "A concise build-vs-buy decision framework for digital transformation, covering strategic fit, cost, time to market, flexibility, and operational risk."
+summary: "When advising customers on digital transformation, the central question is: **should we build a custom solution or buy an off‑the-shelf product?**  <br> The tradeoff is between *customization and control* (build) and *speed and proven capability* (buy)."
 ---
 
 ## Build vs Buy — Overview
@@ -52,4 +57,8 @@ Most organizations adopt a **hybrid** strategy: *build the differentiating, stra
 ---
 
 ## Takeaway
-Use a structured checklist to evaluate each dimension above. I provide an <a href="https://docs.google.com/spreadsheets/d/19fAW-0sDqdky_EUKGTvvgnxoN43O9_YN/edit?usp=sharing&ouid=114097697284288872054&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Excel checklist</a> with the questions we use — check the description below to download it. Reach out if you want help applying the checklist to your specific scenario.
+Use a structured checklist to evaluate each dimension above. I provide an <a href="https://docs.google.com/spreadsheets/d/19fAW-0sDqdky_EUKGTvvgnxoN43O9_YN/edit?usp=sharing&ouid=114097697284288872054&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Excel checklist</a> with the questions we use.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="video" title="Need a build-vs-buy review for your context?" description="If your leadership team is evaluating platform strategy, I can support with a structured decision workshop or a tailored architecture review." >}}

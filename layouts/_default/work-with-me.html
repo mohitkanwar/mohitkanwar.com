@@ -1,0 +1,233 @@
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $linkedin := .Site.Params.contact.linkedin | default "https://www.linkedin.com/in/mohit-kanwar-7668a211/" }}
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+{{ $subscribeHref := "" }}
+{{ if $subscribeEnabled }}
+  {{ $subscribeHref = printf "%s?utm_source=mohitkanwar.com&utm_medium=website&utm_campaign=work-with-me-page&utm_content=final-cta" $subscribeUrl }}
+{{ end }}
+
+<main class="mk-work-page">
+  <section class="mk-work-hero">
+    <div class="container">
+      <div class="mk-work-hero-grid">
+        <div class="mk-work-hero-copy">
+          <p class="mk-work-eyebrow">Architecture leadership for financial platforms</p>
+          <h1>Move from platform uncertainty to confident delivery.</h1>
+          <p class="mk-work-lede">
+            I help banks, fintech teams, and engineering leaders clarify architecture direction, reduce delivery risk, and align teams around practical modernization decisions.
+          </p>
+          <div class="mk-work-actions">
+            <a class="mk-work-btn mk-work-btn-primary"
+               href="{{ $linkedin }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-event="cta_linkedin_click"
+               data-cta-source="work-with-me-hero"
+               data-cta-campaign="work-with-me">
+              Start a conversation
+            </a>
+            <a class="mk-work-btn mk-work-btn-secondary"
+               href="/solutions/digital-banking-modernization-case-study/"
+               data-cta-event="cta_case_study_click"
+               data-cta-source="work-with-me-hero"
+               data-cta-campaign="work-with-me">
+              View case study
+            </a>
+          </div>
+          <div class="mk-work-proof-row" aria-label="Credibility signals">
+            <span>15+ years in FinTech and banking</span>
+            <span>Enterprise digital platform delivery</span>
+            <span>Architecture, product, and engineering alignment</span>
+          </div>
+        </div>
+
+        <aside class="mk-work-board" aria-label="Engagement focus map">
+          <div class="mk-work-board-persona">
+            <img src="/images/me.jpeg" alt="Mohit Kanwar">
+            <div>
+              <strong>Mohit Kanwar</strong>
+              <span>Software Architect, FinTech and banking platforms</span>
+            </div>
+          </div>
+          <p class="mk-work-board-label">Engagement focus</p>
+          <div class="mk-work-board-flow">
+            <span>Current state</span>
+            <span>Target direction</span>
+            <span>Execution model</span>
+            <span>Leadership alignment</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-work-section">
+    <div class="container">
+      <div class="mk-work-section-heading">
+        <p class="mk-work-eyebrow">Where I help</p>
+        <h2>Focused support for high-stakes architecture decisions</h2>
+        <p>
+          The work is most useful when the team already has urgency, complexity, and a need to convert strategy into decisions people can execute.
+        </p>
+      </div>
+
+      <div class="mk-work-card-grid">
+        <article class="mk-work-card">
+          <span class="mk-work-card-kicker">01</span>
+          <h3>Modernization strategy</h3>
+          <p>Clarify target architecture, sequencing, integration boundaries, governance, and the tradeoffs behind cloud-native or platform modernization decisions.</p>
+          <ul>
+            <li>Digital banking and channel modernization</li>
+            <li>Microservices and platform decomposition</li>
+            <li>Security, scale, and compliance tradeoffs</li>
+          </ul>
+        </article>
+
+        <article class="mk-work-card">
+          <span class="mk-work-card-kicker">02</span>
+          <h3>Architecture review</h3>
+          <p>Pressure-test important technical choices before they become expensive delivery constraints or long-running organizational friction.</p>
+          <ul>
+            <li>Build-vs-buy decision support</li>
+            <li>AI adoption in regulated environments</li>
+            <li>Delivery risks and operating model gaps</li>
+          </ul>
+        </article>
+
+        <article class="mk-work-card">
+          <span class="mk-work-card-kicker">03</span>
+          <h3>Leadership and speaking</h3>
+          <p>Support leadership forums, internal architecture sessions, and senior role conversations where technical depth and business context both matter.</p>
+          <ul>
+            <li>Executive and engineering leadership sessions</li>
+            <li>Conference talks and panel discussions</li>
+            <li>Senior architecture leadership conversations</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-work-section mk-work-section-muted">
+    <div class="container">
+      <div class="mk-work-split">
+        <div>
+          <p class="mk-work-eyebrow">Best fit</p>
+          <h2>When this collaboration is useful</h2>
+        </div>
+        <div class="mk-work-checklist">
+          <p>Your roadmap has strategic importance, but the architecture path is still unclear.</p>
+          <p>Teams are debating platform direction, vendor choices, AI adoption, or modernization sequence.</p>
+          <p>Leadership needs a sharper view of risk, tradeoffs, and the execution model required to deliver.</p>
+          <p>You need practical recommendations that respect regulation, security, timelines, and team capability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-work-section">
+    <div class="container">
+      <div class="mk-work-section-heading">
+        <p class="mk-work-eyebrow">How it works</p>
+        <h2>A simple, structured conversation path</h2>
+      </div>
+
+      <div class="mk-work-steps">
+        <article>
+          <span>1</span>
+          <h3>Context</h3>
+          <p>We map the business goal, technical landscape, constraints, and current decision pressure.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Diagnosis</h3>
+          <p>We identify architecture risks, delivery bottlenecks, alignment gaps, and realistic options.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Direction</h3>
+          <p>You get a clear recommendation path with tradeoffs, next decisions, and execution priorities.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>Follow-through</h3>
+          <p>For deeper work, we can shape review sessions, leadership briefings, or ongoing advisory support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-work-section mk-work-proof-section">
+    <div class="container">
+      <div class="mk-work-proof-layout">
+        <div>
+          <p class="mk-work-eyebrow">Proof in action</p>
+          <h2>See how the thinking translates into delivery outcomes</h2>
+          <p>
+            The digital banking modernization case study shows the kind of architecture leadership, team alignment, and execution framing I bring to complex financial platforms.
+          </p>
+        </div>
+        <div class="mk-work-proof-links">
+          <a href="/solutions/digital-banking-modernization-case-study/"
+             data-cta-event="cta_case_study_click"
+             data-cta-source="work-with-me-proof"
+             data-cta-campaign="work-with-me">
+            Digital banking modernization case study
+          </a>
+          <a href="/videos/build-vs-buy/"
+             data-cta-event="cta_video_click"
+             data-cta-source="work-with-me-proof"
+             data-cta-campaign="work-with-me">
+            Build-vs-buy decision framework
+          </a>
+          <a href="/speaking/"
+             data-cta-event="cta_speaking_click"
+             data-cta-source="work-with-me-proof"
+             data-cta-campaign="work-with-me">
+            Speaking topics and session formats
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-work-final">
+    <div class="container">
+      <div class="mk-work-final-inner">
+        <div>
+          <p class="mk-work-eyebrow">Start here</p>
+          <h2>Have a platform decision or leadership conversation worth clarifying?</h2>
+          <p>Send a short note with the context, the decision you are facing, and what would make the conversation useful.</p>
+        </div>
+        <div class="mk-work-final-actions">
+          <a class="mk-work-btn mk-work-btn-primary"
+             href="{{ $linkedin }}"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-cta-event="cta_linkedin_click"
+             data-cta-source="work-with-me-final"
+             data-cta-campaign="work-with-me">
+            Connect on LinkedIn
+          </a>
+          {{ if $subscribeEnabled }}
+            <a class="mk-work-btn mk-work-btn-secondary"
+               href="{{ $subscribeHref }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-event="cta_newsletter_click"
+               data-cta-source="work-with-me-final"
+               data-cta-campaign="work-with-me">
+              Get architecture notes
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

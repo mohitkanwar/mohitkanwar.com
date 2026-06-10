@@ -7,7 +7,7 @@ tags:
   - Solution
 
 imageBasePath: "/images/solutions/url-shortner"
-image: /images/global/coming-soon.gif
+image: /images/solutions/url-shortner/banner.jpg
 description: "A scalable and reliable web service that converts long URLs into short, easy-to-share links. It provides fast redirection, optional custom aliases, expiration settings, and analytics for tracking link usage. Built with high availability, caching, and secure validations, the service ensures quick response times and prevents abuse. Future enhancements include QR code generation, bulk link creation, and an intuitive dashboard for managing and analyzing URLs."
 toc: 
 ---

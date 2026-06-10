@@ -141,3 +141,7 @@ This sequence diagram depicts a user selecting an account and attempting to retr
  This extra step ensures an additional layer of security by verifying the association between the requested account and the user's token before granting access to sensitive account details.
 
  Have you came across any such problem in access control mechanisms? Please share your comments below!
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

@@ -1,0 +1,25 @@
+<section id="latest-proof" class="mk-section mk-section-muted">
+  <div class="container">
+    <div class="mk-section-heading">
+      <p class="mk-section-eyebrow">Recent Work</p>
+      <h3>Architecture thinking with delivery context</h3>
+      <p>Selected writing and videos for teams working through banking modernization, AI adoption, and platform decisions.</p>
+    </div>
+    <div class="mk-proof-strip">
+      {{ range first 2 (where (where .Site.RegularPages "Type" "blogs") "Draft" false) }}
+      <article class="mk-proof-item">
+        <span>Article</span>
+        <h4><a href="{{ .RelPermalink }}" data-cta-event="cta_latest_proof_click" data-cta-source="latest-proof-section" data-cta-campaign="home-latest-proof" data-cta-content="blog-{{ .File.TranslationBaseName }}">{{ .Title }}</a></h4>
+        <p>{{ partial "mk-card-summary.html" (dict "page" . "limit" 120) }}</p>
+      </article>
+      {{ end }}
+      {{ range first 1 (where (where .Site.RegularPages "Type" "videos") "Draft" false) }}
+      <article class="mk-proof-item">
+        <span>Video</span>
+        <h4><a href="{{ .RelPermalink }}" data-cta-event="cta_latest_proof_click" data-cta-source="latest-proof-section" data-cta-campaign="home-latest-proof" data-cta-content="video-{{ .File.TranslationBaseName }}">{{ .Title }}</a></h4>
+        <p>{{ .Description | default .Params.summary | default "A concise perspective on digital platforms, banking outcomes, and technology strategy." | plainify | truncate 120 }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

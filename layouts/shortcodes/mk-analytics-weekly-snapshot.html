@@ -1,0 +1,77 @@
+<div id="mk-analytics-snapshot" class="mk-analytics-snapshot">
+  <div class="mk-analytics-card">
+    <p><strong>Weekly analytics snapshot loads in the browser.</strong></p>
+    <p>If this page is empty, browse the site locally first so events are written to localStorage.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  function renderList(items, emptyMessage, formatter) {
+    if (!items || items.length === 0) return '<li>' + emptyMessage + '</li>';
+    return items.map(function (item) {
+      return '<li>' + formatter(item) + '</li>';
+    }).join('');
+  }
+
+  function formatDelta(item) {
+    var sign = item.delta > 0 ? '+' : '';
+    return '<strong>' + item.name + '</strong>: ' + item.current + ' (' + sign + item.delta + ' vs prev)';
+  }
+
+  function formatTop(item) {
+    return '<strong>' + item[0] + '</strong>: ' + item[1];
+  }
+
+  function renderSnapshot() {
+    var root = document.getElementById('mk-analytics-snapshot');
+    if (!root) return;
+
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      root.innerHTML = '<div class="mk-analytics-card"><p><strong>Local-only view:</strong> open this page on localhost to inspect browser-stored analytics.</p></div>';
+      return;
+    }
+
+    if (typeof window.mkAnalyticsWeeklySnapshot !== 'function') {
+      root.innerHTML = '<div class="mk-analytics-card"><p>Analytics snapshot API not available yet.</p></div>';
+      return;
+    }
+
+    var snapshot = window.mkAnalyticsWeeklySnapshot(7);
+    root.innerHTML = '' +
+      '<div class="mk-analytics-grid">' +
+        '<div class="mk-analytics-card">' +
+          '<h3>This Week</h3>' +
+          '<p><strong>Total events:</strong> ' + snapshot.current.totalEvents + '</p>' +
+          '<p><strong>Generated:</strong> ' + snapshot.generatedAt + '</p>' +
+        '</div>' +
+        '<div class="mk-analytics-card">' +
+          '<h3>Wins</h3>' +
+          '<ul>' + renderList(snapshot.wins, 'No positive movement yet.', formatDelta) + '</ul>' +
+        '</div>' +
+        '<div class="mk-analytics-card">' +
+          '<h3>Drops</h3>' +
+          '<ul>' + renderList(snapshot.drops, 'No drops detected.', formatDelta) + '</ul>' +
+        '</div>' +
+        '<div class="mk-analytics-card">' +
+          '<h3>Top Events</h3>' +
+          '<ul>' + renderList(snapshot.topEvents, 'No event data yet.', formatTop) + '</ul>' +
+        '</div>' +
+        '<div class="mk-analytics-card">' +
+          '<h3>Top Groups</h3>' +
+          '<ul>' + renderList(snapshot.topGroups, 'No grouped data yet.', formatTop) + '</ul>' +
+        '</div>' +
+        '<div class="mk-analytics-card">' +
+          '<h3>Recommended Actions</h3>' +
+          '<ul>' + renderList(snapshot.actions, 'No actions available.', function (item) { return item; }) + '</ul>' +
+        '</div>' +
+      '</div>';
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderSnapshot);
+  } else {
+    renderSnapshot();
+  }
+})();
+</script>

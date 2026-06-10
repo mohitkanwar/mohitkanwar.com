@@ -4,9 +4,13 @@ date: 2024-04-29T17:12:49+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
+  - Artificial Intelligence
+  - FinTech
+  - Banking
+  - Customer Experience
 image: /images/blogs/2024/apr/artificial-intelligence-applications-in-fintech/banner.gif
-description:
-toc:
+description: "Explore practical AI applications in FinTech, including conversational banking, behavioral analysis, customer assistance, tax support, and identity verification."
+toc: true
 ---
 
 Artificial Intelligence stands out as a powerful and versatile technology that holds the potential to revolutionize various industries. Among these industries, FinTech emerges as a domain where AI can truly shine and deliver impactful results. The intersection of finance and technology presents a fertile ground for AI applications to streamline processes, enhance customer experiences, and drive innovation.
@@ -117,3 +121,8 @@ The incorporation of multiple parameters such as voice recognition, facial biome
 </picture>
 
 The more parameters involved in the identity verification process, the higher the level of security and accuracy achieved. AI-driven identity verification not only enhances security measures but also streamlines the user authentication process, offering a seamless and reliable experience for users accessing banking applications and financial services.
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

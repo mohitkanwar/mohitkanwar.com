@@ -4,9 +4,13 @@ date: 2025-07-01T09:11:20+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
+  - Authentication
+  - Passwordless
+  - Mobile Security
+  - PIN
 image: /images/blogs/2025/jul/pins-and-passwords/banner.png
-description:
-toc:
+description: "A practical comparison of passwords and mobile PIN authentication, covering server-side password risks, device-bound keys, and user experience trade-offs."
+toc: true
 ---
 
 # Introduction
@@ -121,3 +125,7 @@ Regulatory Compliance: Certain industries (e.g., HIPAA, PCI DSS) may dictate spe
 In conclusion, Passwords are best fit when there is no device associated with the user. They are versatile and can be used on browser based applications. PIN authentication presents a compelling alternative to traditional password-based systems, offering a simplified user experience while maintaining a robust security posture, particularly when coupled with client-side devices. We’ve seen that PINs provide a significant advantage in terms of memorability, ease of use, and reduced attack surface compared to complex passwords. However, it’s crucial to recognize that no single authentication method provides absolute security. 
 
 I’d be pleased to discuss PIN authentication in more detail or explore potential applications. If you’re interested in a brief consultation or simply want to share your thoughts, please don’t hesitate to contact me at [LinkedIn](https://www.linkedin.com/in/mohit-kanwar-7668a211/). I’m available for a discussion and would welcome the opportunity to connect.”
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

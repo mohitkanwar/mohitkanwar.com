@@ -104,5 +104,25 @@ In conclusion, a well-designed logging architecture is essential for effective s
 
 By adopting a comprehensive logging architecture, organizations can leverage the power of log data to troubleshoot issues, optimize performance, and enhance the user experience. The insights gained from logs enable proactive monitoring, efficient issue resolution, and continuous improvement of software systems. With the ability to capture, analyze, and act upon log data effectively, organizations can ensure the smooth operation of their applications and provide a seamless experience to their users. Logging is not just a technical necessity but a valuable tool for enhancing the reliability, performance, and overall success of software development projects.
 
+---
+
+## Related Reading
+
+- [Multi-Tenant Architecture](/blogs/multi-tenant-architecture/) — observability requirements compound when a platform serves multiple tenants
+- [Dev Experience](/blogs/dev-experience/) — how logging and tooling choices directly affect developer productivity
+- [Configuration Management Microservice](/blogs/2024/mar/configuration-management-microservices/) — managing per-environment log levels and routing config at scale
+- [The Technology of Modern Banks](/blogs/the-technology-of-modern-banks/) — where logging and observability fit in the broader banking platform picture
+
+{{< mk-subscribe >}}
+
+{{< mk-cta
+title="Need a practical logging and observability strategy?"
+description="I help engineering leaders design logging architectures that improve reliability, incident response, and platform visibility."
+primaryLabel="Work With Me"
+primaryUrl="/work-with-me"
+secondaryLabel="Invite Me To Speak"
+secondaryUrl="/speaking"
+>}}
+
 
 

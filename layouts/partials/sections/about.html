@@ -1,0 +1,25 @@
+{{ if .Site.Params.about.enable | default false }}
+<section id="about" class="mk-section">
+  <div class="container">
+    <div class="mk-about-layout">
+      <div class="mk-section-heading mk-section-heading-left">
+        <p class="mk-section-eyebrow">About</p>
+        <h3>Architecture leadership for regulated digital platforms</h3>
+      </div>
+      <div class="mk-about-copy">
+        {{ .Site.Params.about.content | markdownify }}
+        {{ if .Site.Params.about.skills.enable }}
+        <div class="mk-focus-panel">
+          <p class="mk-focus-title">{{ .Site.Params.about.skills.title }}</p>
+          <div class="mk-focus-list">
+            {{ range .Site.Params.about.skills.items }}
+            <span>{{ . | markdownify }}</span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

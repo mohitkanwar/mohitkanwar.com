@@ -141,3 +141,8 @@ While the **Retrieval-Augmented Generation (RAG)** approach offers significant a
 **Challenges in Multilingual Settings**:
    RAG's effectiveness may vary across languages. Retrieving external knowledge in languages other than English can be challenging.
 
+
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

@@ -7,7 +7,7 @@ tags:
   - Solution
 
 imageBasePath: "/images/solutions/{{.File.ContentBaseName}}"
-image: /images/global/coming-soon.gif
+image: /images/global/default-og.jpg
 description: ""
 toc: 
 ---

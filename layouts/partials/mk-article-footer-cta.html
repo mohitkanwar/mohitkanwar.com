@@ -1,0 +1,18 @@
+{{ $subscribeUrl := .Site.Params.subscribeUrl }}
+{{ $subscribeEnabled := and (eq .Site.Params.subscribeEnabled true) $subscribeUrl }}
+<section class="mk-article-footer-cta" aria-label="Article next steps">
+  <div>
+    <p class="mk-article-footer-eyebrow">Next step</p>
+    <h3 class="mk-article-footer-title">Use this in a real architecture conversation</h3>
+    <p class="mk-article-footer-copy">If this topic maps to a platform, banking, or AI decision your team is making, I can help turn it into a practical execution path.</p>
+  </div>
+  <div class="mk-article-footer-actions">
+    <a class="mk-cta-btn mk-cta-btn-primary" href="/work-with-me/" data-cta-event="cta_work_with_me_click" data-cta-source="article-footer" data-cta-campaign="article-next-step">Work With Me</a>
+    {{ if $subscribeEnabled }}
+    {{ $separator := "?" }}
+    {{ if strings.Contains $subscribeUrl "?" }}{{ $separator = "&" }}{{ end }}
+    {{ $trackedUrl := printf "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s&utm_content=%s" $subscribeUrl $separator ("mohitkanwar.com" | urlquery) ("website" | urlquery) ("article-footer" | urlquery) (.File.TranslationBaseName | urlquery) }}
+    <a class="mk-cta-btn mk-cta-btn-secondary" href="{{ $trackedUrl }}" target="_blank" rel="noopener noreferrer" data-cta-event="cta_newsletter_click" data-cta-source="article-footer" data-cta-campaign="article-footer" data-cta-content="{{ .File.TranslationBaseName }}">Subscribe</a>
+    {{ end }}
+  </div>
+</section>

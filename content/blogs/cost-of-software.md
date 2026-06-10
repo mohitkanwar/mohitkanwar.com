@@ -133,7 +133,18 @@ Many social media platforms also offer additional services and features tailored
 It's important to note that although social media platforms are free for users, they are not without costs. Users indirectly "pay" for the service by providing their personal data, which is used for targeted advertising. The availability of free social media platforms allows for widespread adoption, user engagement, and network effects, which, in turn, attract advertisers and drive revenue.
 
 In conclusion, there are many costs involved to develop and maintain a software, however many organizations give free and open source software because there are benefits to them.
-This does not mean that developing software is easy and we should not belittle the software developers, just because some free alternatives are available. 
+This does not mean that developing software is easy and we should not belittle the software developers, just because some free alternatives are available.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta
+title="Need help balancing software cost, speed, and maintainability?"
+description="I work with fintech and banking teams to evaluate platform trade-offs and build practical execution roadmaps."
+primaryLabel="Work With Me"
+primaryUrl="/work-with-me"
+secondaryLabel="Invite Me To Speak"
+secondaryUrl="/speaking"
+>}}
 
 
 

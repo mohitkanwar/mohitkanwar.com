@@ -1,11 +1,77 @@
-<footer>
-    <!-- Recent blog posts -->
-    {{- partial "sections/footer/recentBlogPosts.html" . -}}
+{{ $brandName := .Site.Params.navbar.brandName | default .Site.Params.title | default .Site.Title }}
+{{ $favicon := .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}
+{{ $social := .Site.Params.footer.socialNetworks }}
 
-    <!-- Social Icons -->
-    {{- partial "sections/footer/socialNetwork.html" . -}}
+<footer class="mk-site-footer">
+    <div class="container">
+        <div class="mk-footer-main">
+            <section class="mk-footer-brand" aria-label="About {{ $brandName }}">
+                <a class="mk-footer-logo" href="{{ "/" | relURL }}" aria-label="{{ $brandName }} home">
+                    {{ with $favicon }}
+                        <img src="{{ . }}" alt="" width="44" height="44">
+                    {{ end }}
+                    <span>{{ $brandName }}</span>
+                </a>
+                <p>
+                    FinTech architecture, AI adoption, and engineering leadership notes for teams building secure digital platforms.
+                </p>
+                <div class="mk-footer-actions">
+                    <a class="mk-footer-primary" href="{{ "work-with-me" | relURL }}">Work with me</a>
+                    <a class="mk-footer-secondary" href="{{ "speaking" | relURL }}">Invite me to speak</a>
+                </div>
+            </section>
 
-    <!-- Copyright -->
-    {{- partial "sections/footer/copyright.html" . -}}
+            <nav class="mk-footer-links" aria-label="Footer navigation">
+                <h2>Explore</h2>
+                <a href="{{ "blogs" | relURL }}">Insights</a>
+                <a href="{{ "videos" | relURL }}">Videos</a>
+                <a href="{{ "solutions/digital-banking-modernization-case-study" | relURL }}">Case study</a>
+                <a href="{{ "work-with-me" | relURL }}">Work with me</a>
+                <a href="{{ "speaking" | relURL }}">Speaking</a>
+            </nav>
+
+            <nav class="mk-footer-links" aria-label="Core topics">
+                <h2>Topics</h2>
+                <a href="{{ "tags/fintech" | relURL }}">FinTech architecture</a>
+                <a href="{{ "tags/artificial-intelligence" | relURL }}">AI in finance</a>
+                <a href="{{ "tags/security" | relURL }}">Security</a>
+                <a href="{{ "tags/microservices" | relURL }}">Microservices</a>
+                <a href="{{ "tags/software-development" | relURL }}">Engineering quality</a>
+            </nav>
+
+            <section class="mk-footer-connect" aria-label="Connect">
+                <h2>Connect</h2>
+                <p>For architecture conversations, speaking invitations, or senior engineering leadership discussions.</p>
+                <div class="mk-footer-socials">
+                    {{ with $social.linkedin }}
+                        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <img src="{{ "fontawesome-6/svgs/brands/linkedin.svg" | relURL }}" alt="" width="18" height="18" loading="lazy">
+                        </a>
+                    {{ end }}
+                    {{ with $social.github }}
+                        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <img src="{{ "fontawesome-6/svgs/brands/github.svg" | relURL }}" alt="" width="18" height="18" loading="lazy">
+                        </a>
+                    {{ end }}
+                    {{ with $social.stackoverflow }}
+                        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Stack Overflow">
+                            <img src="{{ "fontawesome-6/svgs/brands/stack-overflow.svg" | relURL }}" alt="" width="18" height="18" loading="lazy">
+                        </a>
+                    {{ end }}
+                    {{ with $social.twitter }}
+                        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                            <img src="{{ "fontawesome-6/svgs/brands/x-twitter.svg" | relURL }}" alt="" width="18" height="18" loading="lazy">
+                        </a>
+                    {{ end }}
+                </div>
+            </section>
+        </div>
+
+        <div class="mk-footer-bottom">
+            <p>&copy; {{ now.Format "2006" }} {{ $brandName }}. {{ .Site.Params.terms.copyright | default "All rights reserved" }}.</p>
+            <a href="{{ "/" | relURL }}#contact">Contact</a>
+        </div>
+    </div>
+
     {{- partial "sections/footer/build-meta.html" . -}}
 </footer>

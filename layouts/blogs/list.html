@@ -1,0 +1,123 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $blogs := sort (where .Site.RegularPages "Type" "blogs") "Date" "desc" }}
+{{ $readTimeLabel := .Site.Params.singlePages.readTime.content | default "min read" }}
+{{ $dateFormat := .Site.Params.datesFormat.articleList | default "Jan 2, 2006" }}
+
+<main class="mk-blog-hub" id="list-page" data-filter-scope data-show-more-limit="36" data-show-more-step="12">
+    <section class="mk-blog-hero">
+        <div class="container">
+            <div class="mk-blog-hero-grid mk-blog-hero-grid-single">
+                <div class="mk-blog-hero-copy">
+                    <p class="mk-blog-eyebrow">Architecture writing</p>
+                    <h1>FinTech, AI, and engineering leadership insights.</h1>
+                    <p class="mk-blog-lede">
+                        Practical notes from delivery work: banking platforms, architecture tradeoffs, AI adoption, security, developer experience, and modernization decisions.
+                    </p>
+                </div>
+            </div>
+
+            <section class="mk-filter-panel" aria-label="Filter articles">
+                <div class="mk-filter-toolbar" role="toolbar" aria-label="Article topics">
+                    <button type="button" class="mk-filter-chip is-active" data-filter-button data-filter-value="all" aria-pressed="true">All <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="fintech" data-filter-match="fintech|banking|payments|digital payment|digital banking|gift city|financial">FinTech & Banking <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="ai" data-filter-match="artificial intelligence|generative ai|machine learning|language model|llm|chatgpt|prompt|rag|retrieval augmented generation">AI <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="architecture" data-filter-match="architecture|microservice|domain driven|event-driven|system design|platform|multi-tenant|configuration management">Architecture <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="security" data-filter-match="security|authentication|authorization|owasp|fido|captcha|totp|data protection|asvs|access control">Security <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="engineering" data-filter-match="software development|developer experience|quality|testing|test data|api|logging|mermaid|maintenance|collaboration">Engineering <span data-filter-count-badge></span></button>
+                    <button type="button" class="mk-filter-chip" data-filter-button data-filter-value="leadership" data-filter-match="leadership|global teams|product strategy|customer experience|collaboration|strategy">Leadership <span data-filter-count-badge></span></button>
+                </div>
+                <label class="mk-filter-search">
+                    <span>Search articles</span>
+                    <input type="search" data-filter-search placeholder="Search by title, topic, or summary" autocomplete="off">
+                </label>
+                <p class="mk-filter-status" aria-live="polite"><span data-filter-visible-count></span><span data-filter-total-wrap hidden> of <span data-filter-total-count></span></span> articles shown</p>
+            </section>
+        </div>
+    </section>
+
+    <section class="mk-blog-stream">
+        <div class="container">
+            {{ range first 1 $blogs }}
+            {{ $tags := "" }}{{ with .Params.tags }}{{ $tags = delimit . " " }}{{ end }}
+            {{ $summary := partial "mk-card-summary.html" (dict "page" . "limit" 260) }}
+            {{ $filterText := lower (plainify (printf "%s %s %s" .Title $tags $summary)) }}
+            <article class="mk-blog-featured" data-filter-item data-filter-text="{{ $filterText }}">
+                {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
+                <a class="mk-blog-featured-media" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                </a>
+                {{ end }}
+                <div class="mk-blog-featured-copy">
+                    <p class="mk-blog-eyebrow">Latest article</p>
+                    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                    <p>{{ $summary }}</p>
+                    <div class="mk-card-meta">
+                        <span>{{ .Date.Format $dateFormat }}</span>
+                        <span>{{ .ReadingTime }} {{ $readTimeLabel }}</span>
+                        {{ with .Params.tags }}
+                            {{ range first 3 . }}<a href="{{ "tags" | relURL }}/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+                        {{ end }}
+                    </div>
+                    <a class="mk-blog-read-link" href="{{ .RelPermalink }}" data-cta-event="cta_blog_featured_click" data-cta-source="blog-hub" data-cta-campaign="blog-hub">Read latest article</a>
+                </div>
+            </article>
+            {{ end }}
+
+            <div class="mk-blog-section-heading">
+                <div>
+                    <p class="mk-blog-eyebrow">Article library</p>
+                    <h2>Browse recent writing</h2>
+                </div>
+                <p>Filter by topic or search across titles, tags, and summaries.</p>
+            </div>
+
+            <div class="mk-blog-grid">
+                {{ range after 1 $blogs }}
+                {{ $tags := "" }}{{ with .Params.tags }}{{ $tags = delimit . " " }}{{ end }}
+                {{ $summary := partial "mk-card-summary.html" (dict "page" . "limit" 190) }}
+                {{ $filterText := lower (plainify (printf "%s %s %s" .Title $tags $summary)) }}
+                <article class="mk-blog-card" data-filter-item data-filter-text="{{ $filterText }}">
+                    {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
+                    <a class="mk-blog-card-media" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </a>
+                    {{ end }}
+                    <div class="mk-blog-card-body">
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <div class="mk-card-meta">
+                            <span>{{ .Date.Format $dateFormat }}</span>
+                            <span>{{ .ReadingTime }} {{ $readTimeLabel }}</span>
+                            {{ with .Params.tags }}
+                                {{ range first 2 . }}<a href="{{ "tags" | relURL }}/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+                            {{ end }}
+                        </div>
+                        <p>{{ $summary }}</p>
+                    </div>
+                    <div class="mk-blog-card-footer">
+                        <a href="{{ .RelPermalink }}" data-cta-event="cta_blog_card_click" data-cta-source="blog-hub" data-cta-campaign="blog-hub">{{ .Site.Params.terms.read | default "Read" }}</a>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+
+            <p class="mk-filter-empty" data-filter-empty hidden>No articles match that selection.</p>
+            <div class="mk-show-more-wrap">
+                <button type="button" class="mk-show-more-btn" data-show-more hidden>Show more articles</button>
+            </div>
+
+            <section class="mk-blog-recommendations" aria-label="Recommended reading">
+                {{ partial "mk-most-read-subscribe.html" . }}
+            </section>
+        </div>
+    </section>
+</main>
+{{ end }}

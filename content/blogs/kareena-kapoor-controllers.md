@@ -137,3 +137,7 @@ By aiming for methods of fair size, we achieve a balance between readability, ma
 Fair-sized methods also facilitate effective testing. With a clear understanding of the method's functionality, it becomes easier to define test cases and ensure comprehensive coverage. Additionally, maintaining and modifying fair-sized methods is more manageable, as they are less prone to hidden bugs and allow for targeted modifications without affecting unrelated parts of the codebase.
 
 In conclusion, striving for fair-sized methods contributes to a healthier codebase. It promotes readability, maintainability, and testability, enabling developers to efficiently understand, modify, and test the code. By finding the right balance, we can achieve a codebase that is not too thin or too fat, but rather healthy and robust.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}

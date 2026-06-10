@@ -91,3 +91,7 @@ SoftMax isn't a simple on/off switch. It considers the probability of each token
 So, how does SoftMax use these probabilities to pick a word? It performs a weighted random selection based on the assigned probabilities.  Think of it like a lottery where each token has a number of tickets corresponding to its probability score. The higher the score, the more tickets a token has in the basket. SoftMax randomly picks a ticket, and the word on that ticket becomes the chosen token for the response.
 
 SoftMax plays a crucial role in ensuring the Transformer model generates the most relevant and fitting words for the situation. It takes the possibilities presented by the decoder and selects the one with the highest chance of success, adding a layer of refinement and making the Transformer's responses more natural and accurate.
+
+{{< mk-subscribe >}}
+
+{{< mk-cta variant="blog" >}}
