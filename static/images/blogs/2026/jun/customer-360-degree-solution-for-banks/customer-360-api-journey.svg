@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Customer 360 API journey</title>
+  <desc id="desc">Sequence-style view showing how a banking channel requests customer profile data through BFF, profile API, consent policy, cache, profile store, audit, and fallback systems.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fcfdfc"/>
+      <stop offset="100%" stop-color="#eef8f8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#06313a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#527d85"/>
+    </marker>
+    <symbol id="mkLogo" viewBox="0 0 100 100">
+      <polygon points="50 4 64 26 91 24 77 49 97 70 70 76 64 97 50 81 36 97 30 76 3 70 23 49 9 24 36 26" fill="#111111" stroke="#a5aaad" stroke-width="8" stroke-linejoin="round"/>
+      <polygon points="50 13 61 31 82 29 70 49 86 66 65 70 60 87 50 73 40 87 35 70 14 66 30 49 18 29 39 31" fill="#050505" stroke="#3f4447" stroke-width="3" stroke-linejoin="round"/>
+      <ellipse cx="37" cy="42" rx="17" ry="13" fill="#ffffff"/>
+      <ellipse cx="63" cy="42" rx="17" ry="13" fill="#ffffff"/>
+      <circle cx="37" cy="42" r="5.8" fill="#000000"/>
+      <circle cx="63" cy="42" r="5.8" fill="#000000"/>
+      <rect x="31" y="55" width="5" height="22" rx="2.5" fill="#ffffff"/>
+      <rect x="64" y="55" width="5" height="22" rx="2.5" fill="#ffffff"/>
+      <rect x="47" y="48" width="6" height="20" rx="3" fill="#ffffff"/>
+    </symbol>
+    <style>
+      .title{font-family:Inter,Arial,sans-serif;font-size:30px;font-weight:800;fill:#17313a}
+      .head{font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:800;fill:#17313a}
+      .small{font-family:Inter,Arial,sans-serif;font-size:13px;fill:#526c74}
+      .lane{fill:#ffffff;stroke:#c6d9dc;stroke-width:1.4;rx:18;filter:url(#shadow)}
+      .step{fill:#f2fbfa;stroke:#98c7c5;stroke-width:1.2;rx:13}
+      .policy{fill:#fff6dc;stroke:#e0bc55;stroke-width:1.3;rx:13}
+      .line{stroke:#527d85;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#c29a2d;stroke-width:2;stroke-dasharray:7 7;fill:none;marker-end:url(#arrow)}
+      .brandText{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:800;fill:#17313a}
+    </style>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg)"/>
+  <text x="54" y="62" class="title">Customer Profile API Journey</text>
+  <text x="54" y="90" class="small">One profile request has to do more than fetch data. It must check purpose, filter fields, audit access, and degrade gracefully.</text>
+
+  <g aria-label="Mohit Kanwar logo">
+    <rect x="1034" y="24" width="190" height="54" rx="27" fill="#ffffff" stroke="#c7d9dc" filter="url(#shadow)"/>
+    <use href="#mkLogo" x="1046" y="32" width="38" height="38"/>
+    <text x="1094" y="56" class="brandText">mohitkanwar.com</text>
+  </g>
+
+  <rect x="62" y="144" width="158" height="470" class="lane"/>
+  <text x="94" y="178" class="head">Channel</text>
+  <text x="92" y="204" class="small">Mobile, web,</text>
+  <text x="92" y="226" class="small">branch, RM</text>
+
+  <rect x="260" y="144" width="158" height="470" class="lane"/>
+  <text x="302" y="178" class="head">BFF</text>
+  <text x="292" y="204" class="small">Journey view</text>
+
+  <rect x="458" y="144" width="158" height="470" class="lane"/>
+  <text x="492" y="178" class="head">Profile API</text>
+  <text x="486" y="204" class="small">Contract and</text>
+  <text x="486" y="226" class="small">field filtering</text>
+
+  <rect x="656" y="144" width="158" height="470" class="lane"/>
+  <text x="694" y="178" class="head">Policy</text>
+  <text x="684" y="204" class="small">Consent and</text>
+  <text x="684" y="226" class="small">purpose check</text>
+
+  <rect x="854" y="144" width="158" height="470" class="lane"/>
+  <text x="902" y="178" class="head">Cache</text>
+  <text x="884" y="204" class="small">Fresh enough</text>
+  <text x="884" y="226" class="small">read model</text>
+
+  <rect x="1052" y="144" width="158" height="470" class="lane"/>
+  <text x="1080" y="178" class="head">Profile Store</text>
+  <text x="1084" y="204" class="small">Golden record</text>
+
+  <rect x="92" y="288" width="98" height="48" class="step"/><text x="112" y="317" class="small">Open page</text>
+  <path d="M190 312 L260 312" class="line"/>
+  <rect x="286" y="288" width="106" height="48" class="step"/><text x="306" y="317" class="small">Ask view</text>
+  <path d="M392 312 L458 312" class="line"/>
+  <rect x="480" y="288" width="114" height="48" class="step"/><text x="496" y="317" class="small">Validate API</text>
+
+  <path d="M594 348 C628 348, 628 276, 656 276" class="dash"/>
+  <rect x="678" y="252" width="114" height="48" class="policy"/><text x="692" y="282" class="small">Allowed?</text>
+  <path d="M594 384 C720 384, 732 388, 854 388" class="line"/>
+  <rect x="876" y="364" width="114" height="48" class="step"/><text x="894" y="394" class="small">Check cache</text>
+  <path d="M990 388 L1052 388" class="line"/>
+  <rect x="1074" y="364" width="114" height="48" class="step"/><text x="1092" y="394" class="small">Read profile</text>
+
+  <path d="M1052 458 C848 458, 788 482, 594 482" class="line"/>
+  <rect x="480" y="458" width="114" height="48" class="step"/><text x="500" y="488" class="small">Filter fields</text>
+  <path d="M480 532 C392 532, 380 532, 286 532" class="line"/>
+  <rect x="286" y="508" width="106" height="48" class="step"/><text x="310" y="538" class="small">Compose</text>
+  <path d="M286 532 C236 532, 236 532, 190 532" class="line"/>
+  <rect x="92" y="508" width="98" height="48" class="step"/><text x="113" y="538" class="small">Render</text>
+
+  <rect x="360" y="644" width="560" height="62" rx="18" fill="#17313a"/>
+  <text x="400" y="671" style="font-family:Inter,Arial,sans-serif;font-size:14px;fill:#d9f1ef">Every call writes an audit event: user, role, purpose,</text>
+  <text x="400" y="693" style="font-family:Inter,Arial,sans-serif;font-size:14px;fill:#d9f1ef">attributes returned, and correlation id.</text>
+</svg>

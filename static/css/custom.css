@@ -76,6 +76,30 @@
   background: #0a58ca;
 }
 
+body *::selection {
+  background-color: #0b5ed7 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+body *::-moz-selection {
+  background-color: #0b5ed7 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+body.dark *::selection {
+  background-color: #9ec5fe !important;
+  color: #07111f !important;
+  text-shadow: none !important;
+}
+
+body.dark *::-moz-selection {
+  background-color: #9ec5fe !important;
+  color: #07111f !important;
+  text-shadow: none !important;
+}
+
 .mk-hero {
   min-height: min(620px, calc(100vh - 90px));
   display: flex;

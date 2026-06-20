@@ -31,6 +31,13 @@
   - Video template customizations: `layouts/videos/single.html`
   - Head/footer extensions: `layouts/partials/head/extensions.html`, `layouts/partials/sections/footer/build-meta.html`
 
+## Visual Branding
+- Whenever creating or updating diagrams, architecture visuals, infographics, blog cover images, or other shareable visual assets for this site, subtly include Mohit Kanwar's site icon or logo.
+- Preferred source asset: `static/fav.png`.
+- For SVG diagrams, embed or recreate a small logo mark inside the SVG so the branding travels with the diagram if it is copied independently.
+- Keep branding understated: place it in a corner or side rail, avoid covering content, and pair it with `mohitkanwar.com` only when there is enough space.
+- Do not add the logo to tiny UI icons, favicons, or decorative inline elements where it would reduce clarity.
+
 ## Pitfalls
 - CI generates `data/build.json` during build for footer metadata; local builds may rely on fallback values.
 - Avoid broad changes in `themes/hugo-profile/` unless requested, because upstream/theme updates can overwrite local theme edits.
