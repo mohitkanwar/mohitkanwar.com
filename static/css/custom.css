@@ -1340,6 +1340,18 @@ body.dark .mk-related-summary {
   max-height: none;
 }
 
+#single .page-content pre code.language-http,
+#single .page-content pre code.language-http span {
+  background: transparent !important;
+  color: #1f2937 !important;
+}
+
+body.dark #single .page-content pre code.language-http,
+body.dark #single .page-content pre code.language-http span {
+  background: transparent !important;
+  color: #edf2f7 !important;
+}
+
 #single .page-content :not(pre) > code {
   background: color-mix(in oklab, var(--secondary-color), var(--primary-color) 10%);
   border-radius: 0.35rem;
