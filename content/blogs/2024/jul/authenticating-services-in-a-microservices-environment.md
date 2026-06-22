@@ -4,515 +4,152 @@ date: 2024-07-17T14:31:54+05:30
 draft: false
 author: "Mohit Kanwar"
 tags:
-  - Needs Improvement
-  - WIP
   - Authentication
   - Microservices
-  - Code
+  - OAuth2
+  - OpenID Connect
+  - Spring Security
+  - Keycloak
+  - API Gateway
+imageBasePath: "/images/blogs/2024/jul/authenticating-services-in-a-microservices-environment"
 image: /images/blogs/2024/jul/authenticating-services-in-a-microservices-environment/banner.png
-description: "A practical guide to authenticating service-to-service calls in a microservices environment using identity providers, token validation, discovery, and gateway patterns."
-toc:
+description: "A practical guide to authenticating users and services in a microservices environment using an identity provider, API gateway, token validation, service-level authorization, and safe identity propagation."
+summary: "A production-minded approach to microservice authentication: where the gateway helps, where each service must still protect itself, and how to use OAuth2, OIDC, Keycloak, and Spring Security without turning the gateway into the only security boundary."
+toc: true
 ---
-> It is easier to edit a draft than to create a new. I   understand that this blog is not upto the mark that I want it to be, however, I am still publishing it, so that I can keep on improving it.
 
-> The code for this blog is checked-in at https://github.com/mohitkanwar/spring-microservices-framework
+## Why this problem is easy to underestimate
 
-While developing a microservices setup, one of the prime aspect is taking care of the security of the APIs.
+When we start building microservices, the first security question usually sounds simple:
 
-Today, we are going to talk about setting up our application infrastructure to authenticate the APIs.
+> "Can we protect this API?"
 
+The first answer is also usually simple. Put a gateway in front of the services. Add Keycloak or another identity provider. Validate the token at the gateway. Route the request to the downstream service.
 
-# Architecture
+That setup is useful, but it is not the complete answer.
 
-This system involves
-1. Gateway
-2. Discovery
-3. Authentication Service
-4. Secured Downstream Services e.g. Accounts Service
-5. Public Downstream Services e.g. Interest Calculator Service
+The real question is:
 
-```mermaid
-block-beta
-columns 5
-  user(("User")):5
-  space:5
-  block:InfraBlock:5
-    srv_gateway["Gateway"]
-  end
-  space:5
-  block:InfraSupportBlock:5
-    srv_discovery["Discovery"]:1
-    srv_auth["Authentication Service"]:1
-    space
-    space
-    space
-  end
-  space:5
-  block:ServicesBlock:5
-    space
-    space
-    srv_public["Public Service"]
-    srv_secured["Secured Service"]
-  end
-  user --"Access"--> srv_gateway
-  srv_gateway --"Find available<br> services"--> srv_discovery
-  srv_discovery --> srv_gateway
-  srv_gateway --"Authenticate"--> srv_auth
-  srv_gateway --"Publically accessible"--> srv_public
-  srv_gateway --"Validate Access<br> before invoking"--> srv_secured
+> "Can every service trust the request it has received, understand who or what is calling it, and decide whether that caller should be allowed to perform this action?"
 
+That question changes the architecture.
+
+I originally treated this topic like a setup tutorial: create Eureka, create a gateway, add Keycloak, create one public API and one protected API, then test with curl. It proved that authentication worked, but it did not explain the design decisions properly. This rewrite is closer to how I would discuss the same topic in a real implementation review.
+
+## The reference architecture
+
+The basic building blocks are still familiar:
+
+1. **Identity provider** - Keycloak, Okta, Azure AD, Auth0, Cognito, or another OpenID Connect provider.
+1. **API gateway** - the public entry point for routing, coarse authorization, throttling, and request normalization.
+1. **Discovery or service registry** - useful for routing and resilience, but not a security boundary.
+1. **Downstream services** - accounts, payments, customer profile, limits, notifications, calculators, and other business services.
+1. **Observability layer** - audit logs, traces, correlation IDs, metrics, and alerts.
+
+<figure>
+  <img src="/images/blogs/2024/jul/authenticating-services-in-a-microservices-environment/service-authentication-architecture.svg" alt="Service authentication architecture for microservices" class="responsive-image-bounded">
+  <figcaption>Gateway authentication is useful, but services should still enforce the authorization decisions that belong to their business domain.</figcaption>
+</figure>
+
+The important point is this:
+
+> The gateway is an enforcement point. It should not become the only enforcement point.
+
+In a small internal system, gateway-only authorization may look acceptable for a while. In a banking, fintech, or enterprise environment, it becomes risky quickly. Services get reused. New channels appear. Batch jobs and schedulers start calling APIs. Partner integrations arrive. Someone exposes an internal route by mistake. If the downstream service blindly trusts the network, the blast radius becomes bigger than expected.
+
+## Gateway responsibility versus service responsibility
+
+I like to split the responsibility this way:
+
+| Layer | Good responsibility | Bad responsibility |
+| --- | --- | --- |
+| Identity provider | Authenticate users and clients, issue tokens, publish signing keys, manage claims and scopes | Carrying business-specific authorization logic for every API |
+| API gateway | Validate token shape, issuer, expiry, audience, route-level scopes, rate limits, and public/protected routes | Making every fine-grained business decision |
+| Downstream service | Validate the token or trusted internal identity, enforce ownership, consent, limits, and business policy | Trusting headers just because they came from inside the network |
+| Observability | Audit who called what, why the call was allowed or denied, and which policy was applied | Logging full tokens, secrets, or personal data |
+
+This separation keeps the system understandable. The gateway can reject obvious bad requests early. The service still protects the business action.
+
+For example:
+
+1. The gateway can decide that `/accounts/**` requires an authenticated caller with `accounts.read`.
+1. The accounts service must still decide whether this user can read this specific account.
+1. The payments service must still decide whether a payment requires step-up authentication, maker-checker approval, velocity checks, or fraud review.
+1. The customer profile service must still decide which fields are visible for a role, purpose, and consent state.
+
+## The request flow
+
+A normal external request looks like this:
+
+```http
+GET /accounts/123456/transactions?from=2024-07-01
+Authorization: Bearer <access-token>
+X-Correlation-Id: 7e9c2f0d
 ```
 
-### Gateway
-The Gateway service is the entry point of the application. It exposes all the APIs from downstream services.
+The gateway should perform coarse checks:
 
-Since this is the entry point of the application, it takes care of the following 
-1. APIs Exposure
-1. Load Balancing
-1. Circuit Breaking
-1. Token Validation
+1. Is the token present?
+1. Is the token signature valid?
+1. Is the issuer trusted?
+1. Has the token expired?
+1. Is the token intended for this API audience?
+1. Does the token have the route-level scope?
+1. Is the caller within rate and abuse limits?
 
+If these checks pass, the request can move forward. That does not mean the business action is automatically allowed.
 
-### Discovery
-The Discovery service is the service responsible to discover the instances of running microservices and inform gateway about the same.
+The downstream service should then perform business checks:
 
-### Authentication Service
-This service is responsible for authenticating an incoming request by either generating an authentication token, or by validating an existing token. In today's exercise, we are going to use Keycloak as our authentication service.
+1. Does the caller have access to account `123456`?
+1. Is the caller acting as a customer, employee, partner, or system?
+1. Is the requested action allowed for this role?
+1. Is there a consent, purpose, region, or data classification rule?
+1. Does the service need step-up authentication?
+1. Should this action be audited?
 
-### Secured Services
-The secured downstream services (or APIs) are the endpoints that need security. Such endpoints are user specific, and a user accessing these APIs must authenticate and authorize himself before accessing these functionalities.
+This is the difference between authentication and authorization. Authentication tells us who or what is calling. Authorization decides whether the caller can perform the action.
 
-### Public Services
-The public services or APIs are the endpoints that are developed for general consumption. No authentication is necessary for such APIs.
+## Using Keycloak as the identity provider
 
+Keycloak is a good local and self-hosted option for this kind of setup. In production, the same architecture applies even if the identity provider is different.
 
-# Tech-Stack
-For this solution, we are going to use Spring based technologies.
-There may be additional techs added as part of services development
-
-| S.NO | Technology | Version |
-|----------|----------|----------:|
-| 1 | Java | 21 |
-| 2 | SpringBoot | 3.3.1 |
-| 3 | Gradle |  |
-| 4 | springCloudVersion| 2023.0.3|
-
-## Code Structure
-
-Create a software system as follows
-
-### Discovery
-
-Create a SpringBoot application with the following dependency
-
-```xml
-       <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-
-```
-
-Add the following annotation on your main class
-
-```java
-@EnableEurekaServer
-```
-
-Add the following properties
+For a Spring Boot resource server, the cleanest configuration is usually to point the application to the issuer:
 
 ```yaml
 spring:
-  application:
-    name: discovery
-server:
-  port: 8761
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    wait-time-in-ms-when-sync-empty: 0
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://idp.example.com/realms/bank
 ```
 
-Start the service and check if it is running on <a href="http://localhost:8761/" target="_blank">http://localhost:8761/</a>.
+With this approach, Spring Security can use the provider metadata and JWKS endpoint to validate JWT signatures and token claims. The application should not hard-code public keys unless there is a strong reason. Let the platform handle key rotation.
 
-### Gateway
-Setup the Gateway service by adding following dependencies
+For local Keycloak development, the issuer may look like this:
 
-```xml
-          <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-oauth2-resource-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-oauth2-jose</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
-            <version>1.1.1.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-```
-
-Enable the eureka client
-
-```java
-@EnableDiscoveryClient
-```
-Add the following configurations in application.yml
-
-```yml
-server:
-  port: 8080
-
-spring:
-  application:
-    name: gateway
-  cloud:
-    gateway:
-      routes:
-        - id: eureka-client
-          uri: lb://EUREKA-CLIENT
-          predicates:
-            - Path=/eureka-client/**
-```
-### Services
-For demonstration, I have created a microservice called calculators-service.
-
-It is a springboot application. It exposes two end points. 
-One is supposed to be public, and another one is supposed to be protected.
-
-```java
-package com.mk.calculatorsservice.controller;
-
-
-import com.mk.calculatorsservice.domain.request.FDRequest;
-import com.mk.calculatorsservice.domain.response.FDResponse;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/calculator")
-public class FDController {
-
-    @PostMapping("/fd/interest")
-    public FDResponse calculateFD(@RequestBody FDRequest fdRequest) {
-        // Example interest rates for different schemes
-        double interestRate = switch (fdRequest.getSchemeCode()) {
-            case "SCHEME_A" -> 5.0;
-            case "SCHEME_B" -> 6.0;
-            case "SCHEME_C" -> 7.0;
-            default -> throw new IllegalArgumentException("Invalid scheme code");
-        };
-
-        double interest = (fdRequest.getAmount() * interestRate * fdRequest.getDuration()) / 100;
-        double maturityAmount = fdRequest.getAmount() + interest;
-
-        FDResponse fdResponse = new FDResponse();
-        fdResponse.setInterestRate(interestRate);
-        fdResponse.setMaturityAmount(maturityAmount);
-
-        return fdResponse;
-    }
-    // should be public
-    @PostMapping("/fd/interest/p")
-    public FDResponse calculatePublicFD(@RequestBody FDRequest fdRequest) {
-        // Example interest rates for different schemes
-        double interestRate = switch (fdRequest.getSchemeCode()) {
-            case "SCHEME_A" -> 5.0;
-            case "SCHEME_B" -> 6.0;
-            case "SCHEME_C" -> 7.0;
-            default -> throw new IllegalArgumentException("Invalid scheme code");
-        };
-
-        double interest = (fdRequest.getAmount() * interestRate * fdRequest.getDuration()) / 100;
-        double maturityAmount = fdRequest.getAmount() + interest;
-
-        FDResponse fdResponse = new FDResponse();
-        fdResponse.setInterestRate(interestRate);
-        fdResponse.setMaturityAmount(maturityAmount);
-
-        return fdResponse;
-    }
-}
-
-```
-
-### Authentication Service
-
-For simplicity, we are going to use Keycloak as our authentication service. Practically, I would like to create a wrapper surrounding Keycloak and then use it as authentication service. 
-
-For now, let's use Keycloak itself.
-
-We can make use of docker-compose.yml to spin up a Keycloak instance.
-
-```yml
-version: '3.8'
-
-services:
-  keycloak:
-    image: quay.io/keycloak/keycloak:25.0.2
-    container_name: mkbank-keycloak-container
-    environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_LOG_LEVEL: INFO
-    ports:
-      - "8082:8080"  # Map host port 8082 to container port 8080
-    command: start-dev  # Use the start-dev command for development mode
-    restart: unless-stopped  # Restart the container unless it's explicitly stopped
-    tty: true  # Allocate a pseudo-TTY for better log display in console
-    volumes:
-      - ./keycloak_data:/opt/keycloak/data
-
-```
-
-Then we need to setup a new Realm : Customers
-Create a client and User within the client for authentication.
-
-### Gateway - revisited
-Let's go back to Gateway to configure the routes and security steps.
-
-Update the configuration to add Keycloak configurations
-```yml
+```yaml
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8082/realms/customers
-      client:
-        registration:
-          keycloak:
-            client-id: gateway-client
-            client-secret: HPSzCoP0Q96xqm77vEhaigkMhmn4vZ1B
-            scope: openid,profile,email
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-        provider:
-          keycloak:
-            authorization-uri: http://localhost:8082/realms/customers/protocol/openid-connect/auth
-            token-uri: http://localhost:8082/realms/customers/protocol/openid-connect/token
-            user-info-uri: http://localhost:8082/realms/customers/protocol/openid-connect/userinfo
-            jwk-set-uri: http://localhost:8082/realms/customers/protocol/openid-connect/certs
-            user-name-attribute: preferred_username
 ```
 
-Create a new configuration to specify public and protected routes :
+That is fine for local development. Production should use HTTPS, proper realm/client configuration, managed secrets, and stricter token lifetimes.
 
-```yml
-application:
-  routes:
-    publicRoutes:
-      - name: eureka_route
-        path: /eureka/**
-        uri: http://localhost:8761/eureka/
-      - name: fd_interest_calculator_route
-        path: /calculator/fd/interest/p
-        uri: lb://CALCULATORS-SERVICE
+## Gateway security configuration
 
-    authenticatedRoutes:
-      - name: fd_interest_calculator_route
-        path: /calculator/fd/interest
-        uri: lb://CALCULATORS-SERVICE
-```
-
-The complete yml now looks like : 
-```yml
-server:
-  port: 8080
-
-spring:
-  application:
-    name: gateway
-  cloud:
-    gateway:
-      routes:
-        - id: eureka-client
-          uri: lb://EUREKA-CLIENT
-          predicates:
-            - Path=/eureka-client/**
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8082/realms/customers
-      client:
-        registration:
-          keycloak:
-            client-id: gateway-client
-            client-secret: HPSzCoP0Q96xqm77vEhaigkMhmn4vZ1B
-            scope: openid,profile,email
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-        provider:
-          keycloak:
-            authorization-uri: http://localhost:8082/realms/customers/protocol/openid-connect/auth
-            token-uri: http://localhost:8082/realms/customers/protocol/openid-connect/token
-            user-info-uri: http://localhost:8082/realms/customers/protocol/openid-connect/userinfo
-            jwk-set-uri: http://localhost:8082/realms/customers/protocol/openid-connect/certs
-            user-name-attribute: preferred_username
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-application:
-  routes:
-    publicRoutes:
-      - name: eureka_route
-        path: /eureka/**
-        uri: http://localhost:8761/eureka/
-      - name: fd_interest_calculator_route
-        path: /calculator/fd/interest/p
-        uri: lb://CALCULATORS-SERVICE
-
-    authenticatedRoutes:
-      - name: fd_interest_calculator_route
-        path: /calculator/fd/interest
-        uri: lb://CALCULATORS-SERVICE
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
-
-```
-
-Create a domain model to read this configuration : 
-
-```java
-package com.mk.gateway.domains;
-
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
-public class AppRoute {
-        private String name;
-        private String path;
-        private String uri;
-}
-
-```
-
-Create a configuration reading class
+A simplified Spring Cloud Gateway security configuration can look like this:
 
 ```java
 package com.mk.gateway.configs;
 
-import com.mk.gateway.domains.AppRoute;
-import lombok.Setter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-
-import java.util.ArrayList;
-import java.util.List;
-
-@Setter
-@Configuration
-@ConfigurationProperties(prefix = "application.routes")
-public class RouteConfigProperties {
-    private List<AppRoute> publicAppRoutes;
-    private List<AppRoute> authenticatedAppRoutes;
-
-    public List<AppRoute> getPublicAppRoutes() {
-        if (publicAppRoutes == null) {
-            publicAppRoutes = new ArrayList<>();
-        }
-        return publicAppRoutes;
-    }
-
-    public List<AppRoute> getAuthenticatedAppRoutes() {
-        if (authenticatedAppRoutes == null) {
-            authenticatedAppRoutes = new ArrayList<>();
-        }
-        return authenticatedAppRoutes;
-    }
-
-}
-
-```
-
-
-Define the App routes
-
-```java
-package com.mk.gateway.routes;
-
-import com.mk.gateway.configs.RouteConfigProperties;
-import com.mk.gateway.domains.AppRoute;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class CustomRouteConfig {
-    @Autowired
-    private RouteConfigProperties routeConfigProperties;
-    @Bean
-    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-        RouteLocatorBuilder.Builder routesBuilder = builder.routes();
-
-        for (AppRoute appRoute : routeConfigProperties.getPublicAppRoutes()) {
-            routesBuilder.route(appRoute.getName(), r -> r.path(appRoute.getPath())
-                    .uri(appRoute.getUri()));
-        }
-        for (AppRoute appRoute : routeConfigProperties.getAuthenticatedAppRoutes()) {
-            routesBuilder.route(appRoute.getName(), r -> r.path(appRoute.getPath())
-                    .uri(appRoute.getUri()));
-        }
-
-        return routesBuilder.build();
-    }
-}
-
-
-```
-
-
-Create the security config
-
-```java
-package com.mk.gateway.configs;
-
-import com.mk.gateway.domains.AppRoute;
-import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
@@ -521,89 +158,229 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebFluxSecurity
-@Log
 public class SecurityConfig {
 
-    @Autowired
-    private RouteConfigProperties routeConfigProperties;
-
-    @Order(Ordered.HIGHEST_PRECEDENCE)
     @Bean
-    public SecurityWebFilterChain apiHttpSecurity(ServerHttpSecurity http) {
-        http.csrf(ServerHttpSecurity.CsrfSpec::disable)
-                .authorizeExchange(exchanges -> {
-                    for (AppRoute appRoute : routeConfigProperties.getPublicAppRoutes()) {
-                        exchanges.pathMatchers(appRoute.getPath()).permitAll();
-                    }
-                    for (AppRoute appRoute : routeConfigProperties.getAuthenticatedAppRoutes()) {
-                        exchanges.pathMatchers(appRoute.getPath()).authenticated();
-                    }
-                    exchanges.anyExchange().denyAll();
-                })
-                .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
-
-        return http.build();
+    SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
+        return http
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
+                .authorizeExchange(exchanges -> exchanges
+                        .pathMatchers("/actuator/health").permitAll()
+                        .pathMatchers(HttpMethod.POST, "/calculator/fd/interest/public").permitAll()
+                        .pathMatchers("/accounts/**").hasAuthority("SCOPE_accounts.read")
+                        .pathMatchers("/payments/**").hasAuthority("SCOPE_payments.write")
+                        .anyExchange().authenticated()
+                )
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()))
+                .build();
     }
 }
-
 ```
 
-Start all the services.
+This is intentionally boring. Boring security configuration is usually better than clever security configuration.
 
+The gateway should reject requests that are clearly not allowed. But I would not put all business rules here. The gateway does not know enough about account ownership, transaction state, consent, purpose, and product rules.
 
-Hit the public API via gateway.
+## Service-level authorization
 
-```curl
-curl --location 'http://localhost:8080/calculator/fd/interest/p' \
---header 'Content-Type: application/json' \
---data '{
-    "schemeCode": "SCHEME_A",
-    "amount" : 20,
-    "duration" : 12
-}'
-```
-Hit the protected API via gateway
+The accounts service should not only rely on the gateway. It should also run as a resource server and protect its own endpoints.
 
-```curl
-curl --location 'http://localhost:8080/calculator/fd/interest' \
---header 'Content-Type: application/json' \
---data '{
-    "schemeCode": "SCHEME_A",
-    "amount" : 20,
-    "duration" : 12
-}'
-```
-You ger unauthenticated exception. Generate the auth token : 
-Get an authentication token from Keycloak
-
-```curl
-
-curl --location 'http://localhost:8082/realms/customers/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'client_id=gateway-client' \
---data-urlencode 'username=m.m.kanwar@gmail.com' \
---data-urlencode 'password=password' \
---data-urlencode 'grant_type=password' \
---data-urlencode 'client_secret=HPSzCoP0Q96xqm77vEhaigkMhmn4vZ1B'
+```yaml
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://idp.example.com/realms/bank
 ```
 
-Then hit the API with generated token : 
+Then the service can enforce coarse method-level rules:
 
-```curl
+```java
+package com.mk.accounts.controller;
 
-curl --location 'http://localhost:8080/calculator/fd/interest' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1eUxDU2tTMmxKNVZFbGZYWV9QYmpUVm5FOXZQMkJPdXNXODhTTGVKai00In0.eyJleHAiOjE3MjE4MTUyODEsImlhdCI6MTcyMTgxNDk4MSwianRpIjoiOTkyZjY4MjItYTkyOS00ZTI5LThjM2YtMmQ1YTQxNWJkMDc0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9jdXN0b21lcnMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNzI5ZDYyYmQtMTk2NC00YzY3LWFmZTQtNTAxMTBmMmI2NTEzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZ2F0ZXdheS1jbGllbnQiLCJzaWQiOiJjNTkwZThhYS1iMmU1LTQwMjUtOGJiMC0wOTgxMzY2OGE4YjkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWN1c3RvbWVycyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6Ik1vaGl0IEthbndhciIsInByZWZlcnJlZF91c2VybmFtZSI6Im0ubS5rYW53YXJAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6Ik1vaGl0IiwiZmFtaWx5X25hbWUiOiJLYW53YXIiLCJlbWFpbCI6Im0ubS5rYW53YXJAZ21haWwuY29tIn0.g7bicpI5LS3OryxgvBpcNkt3OWH-KpwWDaJo8C3f1vS6qXlA5sfEHNPSSaD8O33qgSenOK4i1LaeQsFKooBskXWo4GbyfWg4YXX5m4FlgJmJ5mFCX0TLdnTRV7RpeJ3bRHK43g64sQMmfRfqx8wxmFEBN0sez0vww4h7CobJs9ig3svsc0APItpTk4Aq1CP6LY-zyYslSw_Zs2HbTIKSeQlTVoMVAnUc7rYANRgyPapSdVEhYKVo4IXExHpxpN8jAaDUWApHKUX91Rjt8JNY-5FjO7lGIvw8Utd4dzhH5ekobefO8P4xMC8mbxQqcRee0ZYJpKu2_S7Kwn7eqTf5Yg' \
---data '{
-    "schemeCode": "SCHEME_A",
-    "amount" : 20,
-    "duration" : 12
-}'
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/accounts")
+public class AccountController {
+
+    @GetMapping("/{accountId}/transactions")
+    @PreAuthorize("hasAuthority('SCOPE_accounts.read')")
+    public TransactionSummary getTransactions(@PathVariable String accountId) {
+        return accountService.getTransactionsForAllowedCaller(accountId);
+    }
+}
 ```
 
-Authentication should be successful.
+The important part is hidden inside `getTransactionsForAllowedCaller`. That is where the service checks whether the caller can read this particular account.
 
-{{< mk-subscribe >}}
+Scope checks are not enough for many real systems. A user may have `accounts.read`, but that does not mean the user can read every account. The service needs resource-level authorization.
+
+## Service-to-service calls
+
+User-facing calls are not the only calls in a microservices system. Services also call each other.
+
+For example:
+
+1. The payments service calls the limits service.
+1. The statement service calls the accounts service.
+1. The customer service calls the consent service.
+1. A scheduler calls the notification service.
+
+For these cases, avoid passing usernames and passwords around. Also avoid using the OAuth resource owner password grant for modern applications. It exposes user credentials to the client and does not fit well with MFA or modern authentication flows.
+
+For machine-to-machine calls, use one of these patterns:
+
+1. **Client credentials** - the calling service gets a token as itself.
+1. **mTLS** - the calling service proves its identity with a client certificate.
+1. **Private key JWT** - the service authenticates to the token endpoint using asymmetric keys.
+1. **Workload identity** - common in Kubernetes and cloud-native platforms.
+
+A client credentials request looks like this:
+
+```http
+POST /realms/bank/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=statement-service
+client_secret=${STATEMENT_SERVICE_SECRET}
+grant_type=client_credentials
+scope=accounts.read
+```
+
+The service receiving this call should know that the caller is `statement-service`, not Mohit, not a random user, and not just "internal traffic".
+
+That distinction matters. A user token represents a user. A service token represents a service. Mixing them casually creates audit and authorization problems.
+
+## Propagating user context
+
+Sometimes a downstream service needs to know the end user behind the request. There are multiple ways to do this:
+
+1. Forward the original access token.
+1. Exchange the external token for an internal token.
+1. Create a signed internal identity context at the edge.
+1. Use a service mesh or identity-aware proxy pattern.
+
+Forwarding the original access token is simple, but it is not always the best design. It increases the number of services that need to understand external tokens and increases the impact if that token leaks.
+
+For larger systems, I prefer creating an internal representation of the caller after the edge has validated the external token. That internal representation should be signed, short-lived, and never exposed back to the browser or external client.
+
+The internal context may include:
+
+```json
+{
+  "subject": "user-78231",
+  "actorType": "customer",
+  "channel": "mobile",
+  "roles": ["retail_customer"],
+  "scopes": ["accounts.read"],
+  "purpose": "self_service",
+  "correlationId": "7e9c2f0d"
+}
+```
+
+Do not pass identity as plain headers such as `X-User-Id` unless every receiving service can cryptographically verify who created that header. Plain headers are too easy to spoof when a service is accidentally exposed or when an internal caller is compromised.
+
+## Public APIs are not unmanaged APIs
+
+In the old version of this post, I used a fixed deposit calculator as the public API. That example is still useful.
+
+A public endpoint may not need login:
+
+```http
+POST /calculator/fd/interest/public
+Content-Type: application/json
+
+{
+  "schemeCode": "SCHEME_A",
+  "amount": 20000,
+  "durationInMonths": 12
+}
+```
+
+But "public" does not mean "unprotected".
+
+Public APIs still need:
+
+1. Input validation
+1. Rate limiting
+1. Abuse detection
+1. Request size limits
+1. Bot controls where needed
+1. Logging and correlation IDs
+1. A clear decision on whether the result can be cached
+
+Many incidents start with public endpoints that were considered harmless.
+
+## Token validation checklist
+
+For every service that accepts a bearer token, I check at least the following:
+
+| Check | Why it matters |
+| --- | --- |
+| Signature | Confirms the token was issued by the trusted issuer |
+| Issuer | Prevents accepting tokens from the wrong realm or environment |
+| Expiry and not-before | Rejects stale or not-yet-valid tokens |
+| Audience | Prevents a token meant for one API from being replayed against another API |
+| Scope or permission | Confirms route-level authorization |
+| Subject or client ID | Identifies whether the caller is a user or a service |
+| Token type | Avoids accidentally accepting ID tokens where access tokens are expected |
+| Correlation ID | Supports audit and troubleshooting |
+
+The audience check is worth calling out. I have seen systems validate signature and expiry but ignore audience. That means a token issued for one API may work against another API. In a microservices environment, that is a serious design gap.
+
+## What I would avoid
+
+These are the patterns I would avoid in a production setup:
+
+1. Validating tokens only at the gateway and leaving sensitive services open internally.
+1. Passing `X-User-Id` or `X-Role` headers without signing or trusted infrastructure controls.
+1. Logging full access tokens.
+1. Storing client secrets in `application.yml`.
+1. Using the resource owner password grant for user login.
+1. Treating service discovery as a security mechanism.
+1. Giving one broad scope such as `api.access` to every client.
+1. Using long-lived access tokens because refresh logic is inconvenient.
+1. Mixing user tokens and service tokens without an audit model.
+1. Relying on network location as the proof of identity.
+
+Each of these choices may look convenient during development. Most of them become expensive later.
+
+## A practical delivery sequence
+
+If I had to implement this in phases, I would do it like this:
+
+1. Set up the identity provider and define realms, clients, scopes, roles, and token lifetimes.
+1. Configure the gateway as a resource server and reject unauthenticated traffic by default.
+1. Mark public routes explicitly. Everything else should require authentication.
+1. Add route-level scope checks at the gateway.
+1. Configure sensitive downstream services as resource servers too.
+1. Add resource-level authorization inside the business services.
+1. Add service-to-service authentication using client credentials, mTLS, or workload identity.
+1. Add correlation IDs, audit events, and authorization decision logs.
+1. Review token contents and remove claims that do not need to travel.
+1. Run negative tests: wrong issuer, wrong audience, expired token, missing scope, spoofed header, direct service access.
+
+The negative tests are important. Security is not proven by one happy curl command. It is proven when the wrong requests fail for the right reasons.
+
+## Final thought
+
+The gateway is a good place to start, but it is not where the security design ends.
+
+In a microservices system, every service is a small boundary. The service should understand the caller, validate the trust material it receives, and enforce the rules that belong to its own domain.
+
+That is the difference between "we added authentication" and "the system is designed to survive real usage".
+
+## References I keep handy
+
+1. [OAuth 2.0 Security Best Current Practice, RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html)
+1. [OWASP Microservices Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html)
+1. [Spring Security OAuth2 Resource Server JWT documentation](https://docs.spring.io/spring-security/reference/reactive/oauth2/resource-server/jwt.html)
+1. [Keycloak OpenID Connect endpoints documentation](https://www.keycloak.org/securing-apps/oidc-layers)
 
 {{< mk-cta variant="blog" >}}

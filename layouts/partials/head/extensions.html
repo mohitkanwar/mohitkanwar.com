@@ -3,6 +3,7 @@
     appear in <head>.
 */}}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+{{ partial "head/analytics.html" . }}
 <script defer src="{{ "js/cta-tracking.js" | relURL }}"></script>
 <script defer src="{{ "js/mk-content-filters.js" | relURL }}"></script>
 <link rel="canonical" href="{{ .Permalink }}">

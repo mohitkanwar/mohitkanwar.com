@@ -1,0 +1,77 @@
+{{- $analytics := .Site.Params.analytics | default dict -}}
+{{- $measurementID := index $analytics "google_analytics_measurement_id" | default "" | printf "%v" | replaceRE "[^A-Za-z0-9-]" "" -}}
+{{- $enabled := false -}}
+{{- $loadInDevelopment := false -}}
+{{- $respectDoNotTrack := true -}}
+{{- $allowGoogleSignals := false -}}
+{{- $allowAdPersonalizationSignals := false -}}
+{{- $debug := false -}}
+
+{{- if isset $analytics "enabled" -}}
+  {{- $enabled = eq (index $analytics "enabled" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $analytics "load_in_development" -}}
+  {{- $loadInDevelopment = eq (index $analytics "load_in_development" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $analytics "respect_do_not_track" -}}
+  {{- $respectDoNotTrack = eq (index $analytics "respect_do_not_track" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $analytics "allow_google_signals" -}}
+  {{- $allowGoogleSignals = eq (index $analytics "allow_google_signals" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $analytics "allow_ad_personalization_signals" -}}
+  {{- $allowAdPersonalizationSignals = eq (index $analytics "allow_ad_personalization_signals" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $analytics "debug" -}}
+  {{- $debug = eq (index $analytics "debug" | printf "%v" | lower) "true" -}}
+{{- end -}}
+
+{{- if and $enabled $measurementID (or hugo.IsProduction $loadInDevelopment) -}}
+<script>
+  (function () {
+    var measurementId = "{{ $measurementID }}";
+    var respectDoNotTrack = {{ $respectDoNotTrack }};
+    var debug = {{ $debug }};
+    var doNotTrack =
+      navigator.doNotTrack === "1" ||
+      window.doNotTrack === "1" ||
+      navigator.msDoNotTrack === "1";
+
+    window.mkAnalyticsSettings = {
+      provider: "google-analytics",
+      enabled: !(respectDoNotTrack && doNotTrack),
+      measurementId: measurementId,
+      respectDoNotTrack: respectDoNotTrack
+    };
+
+    if (respectDoNotTrack && doNotTrack) {
+      if (debug && window.console && typeof window.console.info === "function") {
+        window.console.info("[mk-analytics] disabled because Do Not Track is enabled");
+      }
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, {
+      send_page_view: true,
+      transport_type: "beacon",
+      allow_google_signals: {{ $allowGoogleSignals }},
+      allow_ad_personalization_signals: {{ $allowAdPersonalizationSignals }}
+    });
+
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+
+    if (debug && window.console && typeof window.console.info === "function") {
+      window.console.info("[mk-analytics] Google Analytics 4 enabled");
+    }
+  })();
+</script>
+{{- end -}}

@@ -16,3 +16,17 @@ We use the following command:
 ## Creating a new solution
 
 `hugo new content --kind solution solutions/<title-of-solution>.md`
+
+## Analytics
+
+The site uses Google Analytics 4 for production visitor tracking.
+
+Current stream:
+
+```toml
+[params.analytics]
+  enabled = true
+  google_analytics_measurement_id = "G-GS17GYSGLC"
+```
+
+The implementation respects browser Do Not Track by default and does not load during local development unless `load_in_development = true`.
