@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850" role="img" aria-labelledby="title desc">
+  <title id="title">Digital banking modernization rollout roadmap</title>
+  <desc id="desc">A phased roadmap for current-state discovery, target-state guardrails, journey migration, operational hardening, and platform-scale modernization.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 800 34px Inter, Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 17px Inter, Arial, sans-serif; fill: #475569; }
+      .phase-num { font: 900 24px Inter, Arial, sans-serif; fill: #ffffff; }
+      .phase-title { font: 800 17px Inter, Arial, sans-serif; fill: #0f172a; }
+      .phase-time { font: 750 13px Inter, Arial, sans-serif; fill: #2563eb; }
+      .phase-text { font: 500 12.5px Inter, Arial, sans-serif; fill: #475569; }
+      .label { font: 800 14px Inter, Arial, sans-serif; fill: #0f172a; }
+      .note { font: 600 12.5px Inter, Arial, sans-serif; fill: #475569; }
+      .brand { font: 800 13px Inter, Arial, sans-serif; fill: #334155; }
+      .card { fill: #ffffff; stroke: #dbeafe; stroke-width: 1.5; rx: 16; filter: url(#shadow); }
+      .num { fill: #2563eb; }
+      .line { stroke: #94a3b8; stroke-width: 4; stroke-linecap: round; }
+      .dot { fill: #2563eb; stroke: #ffffff; stroke-width: 5; }
+      .guard { fill: #0f172a; opacity: 0.94; }
+      .guard-title { font: 800 15px Inter, Arial, sans-serif; fill: #ffffff; }
+      .guard-note { font: 600 12px Inter, Arial, sans-serif; fill: #cbd5e1; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="850" fill="url(#bg)"/>
+  <text x="48" y="58" class="title">Digital Banking Modernization Roadmap</text>
+  <text x="48" y="88" class="subtitle">A journey-led rollout model that reduces risk while moving the platform toward a cleaner target state.</text>
+
+  <g transform="translate(1260 28) scale(0.14)" opacity="0.9">
+    <polygon points="250,12 318,92 423,86 416,196 488,250 416,304 423,414 318,408 250,488 182,408 77,414 84,304 12,250 84,196 77,86 182,92" fill="#050505" stroke="#a3a3a3" stroke-width="30" stroke-linejoin="round"/>
+    <polygon points="250,32 308,108 404,104 396,202 462,250 396,298 404,396 308,392 250,468 192,392 96,396 104,298 38,250 104,202 96,104 192,108" fill="none" stroke="#525252" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="185" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <ellipse cx="315" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <circle cx="185" cy="195" r="26" fill="#000"/>
+    <circle cx="315" cy="195" r="26" fill="#000"/>
+    <rect x="225" y="210" width="24" height="118" rx="12" fill="#fff"/>
+    <rect x="150" y="240" width="24" height="132" rx="12" fill="#fff"/>
+    <rect x="350" y="240" width="24" height="132" rx="12" fill="#fff"/>
+  </g>
+  <text x="1242" y="118" class="brand">mohitkanwar.com</text>
+
+  <line x1="145" y1="220" x2="1255" y2="220" class="line"/>
+  <circle cx="145" cy="220" r="13" class="dot"/>
+  <circle cx="422" cy="220" r="13" class="dot"/>
+  <circle cx="700" cy="220" r="13" class="dot"/>
+  <circle cx="978" cy="220" r="13" class="dot"/>
+  <circle cx="1255" cy="220" r="13" class="dot"/>
+
+  <g transform="translate(50 270)">
+    <rect class="card" width="230" height="250"/>
+    <circle class="num" cx="35" cy="38" r="24"/>
+    <text x="28" y="47" class="phase-num">1</text>
+    <text x="72" y="35" class="phase-title">Baseline</text>
+    <text x="72" y="58" class="phase-time">Weeks 1-8</text>
+    <text x="24" y="96" class="phase-text">Journey inventory</text>
+    <text x="24" y="121" class="phase-text">Integration mapping</text>
+    <text x="24" y="146" class="phase-text">API ownership view</text>
+    <text x="24" y="171" class="phase-text">Incident and release review</text>
+    <text x="24" y="196" class="phase-text">Prioritized risk backlog</text>
+  </g>
+
+  <g transform="translate(328 270)">
+    <rect class="card" width="230" height="250"/>
+    <circle class="num" cx="35" cy="38" r="24"/>
+    <text x="28" y="47" class="phase-num">2</text>
+    <text x="72" y="35" class="phase-title">Guardrails</text>
+    <text x="72" y="58" class="phase-time">Months 2-4</text>
+    <text x="24" y="96" class="phase-text">Target architecture</text>
+    <text x="24" y="121" class="phase-text">API standards</text>
+    <text x="24" y="146" class="phase-text">Security and consent model</text>
+    <text x="24" y="171" class="phase-text">Release readiness checklist</text>
+    <text x="24" y="196" class="phase-text">Decision records</text>
+  </g>
+
+  <g transform="translate(606 270)">
+    <rect class="card" width="230" height="250"/>
+    <circle class="num" cx="35" cy="38" r="24"/>
+    <text x="28" y="47" class="phase-num">3</text>
+    <text x="72" y="35" class="phase-title">Journey Migration</text>
+    <text x="72" y="58" class="phase-time">Months 4-10</text>
+    <text x="24" y="96" class="phase-text">Login and account views</text>
+    <text x="24" y="121" class="phase-text">Transfers and limits</text>
+    <text x="24" y="146" class="phase-text">Service requests</text>
+    <text x="24" y="171" class="phase-text">Admin support flows</text>
+    <text x="24" y="196" class="phase-text">Controlled rollout</text>
+  </g>
+
+  <g transform="translate(884 270)">
+    <rect class="card" width="230" height="250"/>
+    <circle class="num" cx="35" cy="38" r="24"/>
+    <text x="28" y="47" class="phase-num">4</text>
+    <text x="72" y="35" class="phase-title">Hardening</text>
+    <text x="72" y="58" class="phase-time">Months 8-14</text>
+    <text x="24" y="96" class="phase-text">Dashboards and alerts</text>
+    <text x="24" y="121" class="phase-text">Runbooks and support</text>
+    <text x="24" y="146" class="phase-text">Performance baselines</text>
+    <text x="24" y="171" class="phase-text">API retirement</text>
+    <text x="24" y="196" class="phase-text">Release simplification</text>
+  </g>
+
+  <g transform="translate(1162 270)">
+    <rect class="card" width="230" height="250"/>
+    <circle class="num" cx="35" cy="38" r="24"/>
+    <text x="28" y="47" class="phase-num">5</text>
+    <text x="72" y="35" class="phase-title">Platform Scale</text>
+    <text x="72" y="58" class="phase-time">Months 12-24</text>
+    <text x="24" y="96" class="phase-text">Reusable capabilities</text>
+    <text x="24" y="121" class="phase-text">Partner APIs</text>
+    <text x="24" y="146" class="phase-text">Selective events</text>
+    <text x="24" y="171" class="phase-text">Analytics foundation</text>
+    <text x="24" y="196" class="phase-text">AI-ready operations</text>
+  </g>
+
+  <g transform="translate(50 575)">
+    <rect class="guard" width="1342" height="150" rx="18"/>
+    <text x="28" y="38" class="guard-title">Continuous Controls Across The Roadmap</text>
+    <text x="28" y="72" class="guard-note">Security review</text>
+    <text x="205" y="72" class="guard-note">Consent and audit</text>
+    <text x="405" y="72" class="guard-note">Architecture decisions</text>
+    <text x="640" y="72" class="guard-note">Release governance</text>
+    <text x="865" y="72" class="guard-note">Observability</text>
+    <text x="1035" y="72" class="guard-note">Operational readiness</text>
+    <text x="28" y="112" class="guard-note">The sequence protects live banking journeys while replacing fragile implementation paths with reusable platform capabilities.</text>
+  </g>
+</svg>

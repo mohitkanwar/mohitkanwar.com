@@ -1372,6 +1372,23 @@ body.dark #single .page-content pre code.language-http span {
   margin: 0.65rem 0 1rem;
 }
 
+#single .page-content figure.mk-wide-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+#single .page-content figure.mk-wide-diagram img {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  max-width: none;
+}
+
+#single .page-content figure.mk-wide-diagram figcaption {
+  min-width: min(760px, 100%);
+}
+
 @media (max-width: 991px) {
   #single {
     padding: 42px 0;

@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Digital banking modernization target architecture</title>
+  <desc id="desc">Target architecture showing channels, experience APIs, domain services, integration, core systems, and platform controls for a modern digital banking platform.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef6f3"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title { font: 800 34px Inter, Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 17px Inter, Arial, sans-serif; fill: #475569; }
+      .lane-title { font: 800 17px Inter, Arial, sans-serif; fill: #0f172a; }
+      .box-title { font: 750 15px Inter, Arial, sans-serif; fill: #0f172a; }
+      .box-note { font: 500 12px Inter, Arial, sans-serif; fill: #64748b; }
+      .small { font: 650 12px Inter, Arial, sans-serif; fill: #475569; }
+      .brand { font: 800 13px Inter, Arial, sans-serif; fill: #334155; }
+      .lane { fill: rgba(255,255,255,0.76); stroke: #dbeafe; stroke-width: 1.5; }
+      .box { fill: #ffffff; stroke: #bfd7ff; stroke-width: 1.5; rx: 12; filter: url(#shadow); }
+      .box-green { fill: #f0fdf4; stroke: #bbf7d0; }
+      .box-amber { fill: #fffbeb; stroke: #fde68a; }
+      .box-blue { fill: #eff6ff; stroke: #bfdbfe; }
+      .box-slate { fill: #f8fafc; stroke: #cbd5e1; }
+      .control { fill: #0f172a; opacity: 0.94; }
+      .control-title { font: 800 15px Inter, Arial, sans-serif; fill: #ffffff; }
+      .control-note { font: 600 12px Inter, Arial, sans-serif; fill: #cbd5e1; }
+      .arrow { stroke: #2563eb; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="48" y="58" class="title">Digital Banking Modernization Target Architecture</text>
+  <text x="48" y="88" class="subtitle">A layered model for modernizing customer journeys while protecting core banking operations.</text>
+
+  <g transform="translate(1260 28) scale(0.14)" opacity="0.9">
+    <polygon points="250,12 318,92 423,86 416,196 488,250 416,304 423,414 318,408 250,488 182,408 77,414 84,304 12,250 84,196 77,86 182,92" fill="#050505" stroke="#a3a3a3" stroke-width="30" stroke-linejoin="round"/>
+    <polygon points="250,32 308,108 404,104 396,202 462,250 396,298 404,396 308,392 250,468 192,392 96,396 104,298 38,250 104,202 96,104 192,108" fill="none" stroke="#525252" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="185" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <ellipse cx="315" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <circle cx="185" cy="195" r="26" fill="#000"/>
+    <circle cx="315" cy="195" r="26" fill="#000"/>
+    <rect x="225" y="210" width="24" height="118" rx="12" fill="#fff"/>
+    <rect x="150" y="240" width="24" height="132" rx="12" fill="#fff"/>
+    <rect x="350" y="240" width="24" height="132" rx="12" fill="#fff"/>
+  </g>
+  <text x="1242" y="118" class="brand">mohitkanwar.com</text>
+
+  <g transform="translate(40 130)">
+    <rect class="lane" x="0" y="0" width="210" height="550" rx="18"/>
+    <text x="24" y="36" class="lane-title">Channels</text>
+    <g transform="translate(22 66)">
+      <rect class="box box-blue" width="166" height="62"/>
+      <text x="16" y="25" class="box-title">Retail Mobile</text>
+      <text x="16" y="45" class="box-note">High-volume app</text>
+    </g>
+    <g transform="translate(22 144)">
+      <rect class="box box-blue" width="166" height="62"/>
+      <text x="16" y="25" class="box-title">Internet Banking</text>
+      <text x="16" y="45" class="box-note">Web journeys</text>
+    </g>
+    <g transform="translate(22 222)">
+      <rect class="box box-blue" width="166" height="62"/>
+      <text x="16" y="25" class="box-title">Business Banking</text>
+      <text x="16" y="45" class="box-note">Maker-checker flows</text>
+    </g>
+    <g transform="translate(22 300)">
+      <rect class="box box-blue" width="166" height="62"/>
+      <text x="16" y="25" class="box-title">Admin Portal</text>
+      <text x="16" y="45" class="box-note">Ops and support</text>
+    </g>
+    <g transform="translate(22 378)">
+      <rect class="box box-blue" width="166" height="62"/>
+      <text x="16" y="25" class="box-title">Partner APIs</text>
+      <text x="16" y="45" class="box-note">Open ecosystem</text>
+    </g>
+  </g>
+
+  <g transform="translate(290 130)">
+    <rect class="lane" x="0" y="0" width="210" height="550" rx="18"/>
+    <text x="24" y="36" class="lane-title">Edge And Experience</text>
+    <g transform="translate(22 86)">
+      <rect class="box box-green" width="166" height="74"/>
+      <text x="16" y="28" class="box-title">WAF / CDN</text>
+      <text x="16" y="50" class="box-note">Edge protection</text>
+    </g>
+    <g transform="translate(22 192)">
+      <rect class="box box-green" width="166" height="86"/>
+      <text x="16" y="28" class="box-title">API Gateway</text>
+      <text x="16" y="50" class="box-note">Routing, throttling,</text>
+      <text x="16" y="68" class="box-note">policy enforcement</text>
+    </g>
+    <g transform="translate(22 316)">
+      <rect class="box box-green" width="166" height="86"/>
+      <text x="16" y="28" class="box-title">BFF Layer</text>
+      <text x="16" y="50" class="box-note">Channel-specific</text>
+      <text x="16" y="68" class="box-note">journey shaping</text>
+    </g>
+  </g>
+
+  <g transform="translate(540 130)">
+    <rect class="lane" x="0" y="0" width="270" height="550" rx="18"/>
+    <text x="24" y="36" class="lane-title">Domain Capabilities</text>
+    <g transform="translate(22 64)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Customer Profile</text>
+      <text x="16" y="43" class="box-note">Identity, preferences, consent</text>
+    </g>
+    <g transform="translate(22 136)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Accounts And Balances</text>
+      <text x="16" y="43" class="box-note">Product relationship APIs</text>
+    </g>
+    <g transform="translate(22 208)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Payments And Transfers</text>
+      <text x="16" y="43" class="box-note">Limits, validation, posting</text>
+    </g>
+    <g transform="translate(22 280)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Service Requests</text>
+      <text x="16" y="43" class="box-note">Complaints, cards, forms</text>
+    </g>
+    <g transform="translate(22 352)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Notifications</text>
+      <text x="16" y="43" class="box-note">Alerts, messaging, events</text>
+    </g>
+    <g transform="translate(22 424)">
+      <rect class="box" width="226" height="58"/>
+      <text x="16" y="25" class="box-title">Documents And Content</text>
+      <text x="16" y="43" class="box-note">Statements, templates, CMS</text>
+    </g>
+  </g>
+
+  <g transform="translate(850 130)">
+    <rect class="lane" x="0" y="0" width="210" height="550" rx="18"/>
+    <text x="24" y="36" class="lane-title">Integration</text>
+    <g transform="translate(22 90)">
+      <rect class="box box-amber" width="166" height="82"/>
+      <text x="16" y="28" class="box-title">Service Adapters</text>
+      <text x="16" y="50" class="box-note">Protocol and error</text>
+      <text x="16" y="68" class="box-note">translation</text>
+    </g>
+    <g transform="translate(22 218)">
+      <rect class="box box-amber" width="166" height="82"/>
+      <text x="16" y="28" class="box-title">Event Backbone</text>
+      <text x="16" y="50" class="box-note">Selected async</text>
+      <text x="16" y="68" class="box-note">updates</text>
+    </g>
+    <g transform="translate(22 346)">
+      <rect class="box box-amber" width="166" height="82"/>
+      <text x="16" y="28" class="box-title">Batch Bridge</text>
+      <text x="16" y="50" class="box-note">Legacy extracts</text>
+      <text x="16" y="68" class="box-note">and reconciliation</text>
+    </g>
+  </g>
+
+  <g transform="translate(1100 130)">
+    <rect class="lane" x="0" y="0" width="250" height="550" rx="18"/>
+    <text x="24" y="36" class="lane-title">Systems Of Record</text>
+    <g transform="translate(22 64)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Core Banking</text>
+      <text x="16" y="43" class="box-note">Accounts, balances, GL</text>
+    </g>
+    <g transform="translate(22 136)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Cards And Payments</text>
+      <text x="16" y="43" class="box-note">Authorization and disputes</text>
+    </g>
+    <g transform="translate(22 208)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Loans And Deposits</text>
+      <text x="16" y="43" class="box-note">Product servicing</text>
+    </g>
+    <g transform="translate(22 280)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">KYC / CRM</text>
+      <text x="16" y="43" class="box-note">Customer data and cases</text>
+    </g>
+    <g transform="translate(22 352)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Data And Reporting</text>
+      <text x="16" y="43" class="box-note">MI, regulatory, analytics</text>
+    </g>
+    <g transform="translate(22 424)">
+      <rect class="box box-slate" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Third Parties</text>
+      <text x="16" y="43" class="box-note">Bureaus, billers, partners</text>
+    </g>
+  </g>
+
+  <path class="arrow" d="M250 405 C270 405, 270 405, 290 405"/>
+  <path class="arrow" d="M500 405 C520 405, 520 405, 540 405"/>
+  <path class="arrow" d="M810 405 C830 405, 830 405, 850 405"/>
+  <path class="arrow" d="M1060 405 C1080 405, 1080 405, 1100 405"/>
+
+  <g transform="translate(40 720)">
+    <rect class="control" width="1310" height="112" rx="18"/>
+    <text x="26" y="34" class="control-title">Control Plane Across All Layers</text>
+    <g transform="translate(26 56)">
+      <text x="0" y="0" class="control-note">Identity and access</text>
+      <text x="190" y="0" class="control-note">Consent and audit</text>
+      <text x="380" y="0" class="control-note">Logging and correlation</text>
+      <text x="610" y="0" class="control-note">Monitoring and SLOs</text>
+      <text x="815" y="0" class="control-note">Release governance</text>
+      <text x="1025" y="0" class="control-note">Security review</text>
+      <text x="1185" y="0" class="control-note">Runbooks</text>
+    </g>
+    <text x="26" y="88" class="control-note">Modernization succeeds when these controls are designed into journeys instead of added during release pressure.</text>
+  </g>
+</svg>
