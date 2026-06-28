@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">Production AI reference architecture</title>
+  <desc id="desc">Reference architecture for production AI systems with use cases, AI APIs, orchestration, model gateway, RAG, tool integration, legacy systems, evaluation, policy, and observability.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef6f3"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title { font: 800 34px Inter, Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 17px Inter, Arial, sans-serif; fill: #475569; }
+      .lane-title { font: 800 17px Inter, Arial, sans-serif; fill: #0f172a; }
+      .box-title { font: 750 15px Inter, Arial, sans-serif; fill: #0f172a; }
+      .box-note { font: 500 12px Inter, Arial, sans-serif; fill: #64748b; }
+      .brand { font: 800 13px Inter, Arial, sans-serif; fill: #334155; }
+      .lane { fill: rgba(255,255,255,0.78); stroke: #dbeafe; stroke-width: 1.5; }
+      .box { fill: #ffffff; stroke: #bfd7ff; stroke-width: 1.5; rx: 12; filter: url(#shadow); }
+      .box-green { fill: #f0fdf4; stroke: #bbf7d0; }
+      .box-amber { fill: #fffbeb; stroke: #fde68a; }
+      .box-blue { fill: #eff6ff; stroke: #bfdbfe; }
+      .box-rose { fill: #fff1f2; stroke: #fecdd3; }
+      .control { fill: #0f172a; opacity: 0.94; }
+      .control-title { font: 800 15px Inter, Arial, sans-serif; fill: #ffffff; }
+      .control-note { font: 600 12px Inter, Arial, sans-serif; fill: #cbd5e1; }
+      .arrow { stroke: #2563eb; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1500" height="980" fill="url(#bg)"/>
+  <text x="48" y="58" class="title">Production AI Reference Architecture</text>
+  <text x="48" y="88" class="subtitle">Separate AI experience, orchestration, retrieval, model routing, legacy integration, evaluation, and controls.</text>
+
+  <g transform="translate(1364 28) scale(0.13)" opacity="0.9">
+    <polygon points="250,12 318,92 423,86 416,196 488,250 416,304 423,414 318,408 250,488 182,408 77,414 84,304 12,250 84,196 77,86 182,92" fill="#050505" stroke="#a3a3a3" stroke-width="30" stroke-linejoin="round"/>
+    <polygon points="250,32 308,108 404,104 396,202 462,250 396,298 404,396 308,392 250,468 192,392 96,396 104,298 38,250 104,202 96,104 192,108" fill="none" stroke="#525252" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="185" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <ellipse cx="315" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <circle cx="185" cy="195" r="26" fill="#000"/>
+    <circle cx="315" cy="195" r="26" fill="#000"/>
+    <rect x="225" y="210" width="24" height="118" rx="12" fill="#fff"/>
+    <rect x="150" y="240" width="24" height="132" rx="12" fill="#fff"/>
+    <rect x="350" y="240" width="24" height="132" rx="12" fill="#fff"/>
+  </g>
+  <text x="1346" y="112" class="brand">mohitkanwar.com</text>
+
+  <g transform="translate(40 130)">
+    <rect class="lane" width="210" height="590" rx="18"/>
+    <text x="24" y="36" class="lane-title">Use Cases</text>
+    <g transform="translate(22 72)">
+      <rect class="box box-blue" width="166" height="64"/>
+      <text x="16" y="25" class="box-title">Knowledge Q&amp;A</text>
+      <text x="16" y="46" class="box-note">Policies, SOPs, manuals</text>
+    </g>
+    <g transform="translate(22 154)">
+      <rect class="box box-blue" width="166" height="64"/>
+      <text x="16" y="25" class="box-title">Summarization</text>
+      <text x="16" y="46" class="box-note">Cases, calls, documents</text>
+    </g>
+    <g transform="translate(22 236)">
+      <rect class="box box-blue" width="166" height="64"/>
+      <text x="16" y="25" class="box-title">Extraction</text>
+      <text x="16" y="46" class="box-note">Forms, emails, PDFs</text>
+    </g>
+    <g transform="translate(22 318)">
+      <rect class="box box-blue" width="166" height="64"/>
+      <text x="16" y="25" class="box-title">Decision Support</text>
+      <text x="16" y="46" class="box-note">Signals, recommendations</text>
+    </g>
+    <g transform="translate(22 400)">
+      <rect class="box box-blue" width="166" height="64"/>
+      <text x="16" y="25" class="box-title">Agentic Action</text>
+      <text x="16" y="46" class="box-note">Tools, approvals, tasks</text>
+    </g>
+  </g>
+
+  <g transform="translate(286 130)">
+    <rect class="lane" width="210" height="590" rx="18"/>
+    <text x="24" y="36" class="lane-title">AI Experience APIs</text>
+    <g transform="translate(22 104)">
+      <rect class="box box-green" width="166" height="84"/>
+      <text x="16" y="28" class="box-title">Capability APIs</text>
+      <text x="16" y="50" class="box-note">Stable product-facing</text>
+      <text x="16" y="68" class="box-note">contracts</text>
+    </g>
+    <g transform="translate(22 232)">
+      <rect class="box box-green" width="166" height="84"/>
+      <text x="16" y="28" class="box-title">Prompt Contracts</text>
+      <text x="16" y="50" class="box-note">Inputs, outputs,</text>
+      <text x="16" y="68" class="box-note">validation rules</text>
+    </g>
+    <g transform="translate(22 360)">
+      <rect class="box box-green" width="166" height="84"/>
+      <text x="16" y="28" class="box-title">Journey Context</text>
+      <text x="16" y="50" class="box-note">Role, purpose,</text>
+      <text x="16" y="68" class="box-note">customer, channel</text>
+    </g>
+  </g>
+
+  <g transform="translate(532 130)">
+    <rect class="lane" width="250" height="590" rx="18"/>
+    <text x="24" y="36" class="lane-title">AI Platform Core</text>
+    <g transform="translate(22 64)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Model Gateway</text>
+      <text x="16" y="43" class="box-note">Routing, budget, fallback</text>
+    </g>
+    <g transform="translate(22 136)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Orchestration</text>
+      <text x="16" y="43" class="box-note">Workflows, agents, state</text>
+    </g>
+    <g transform="translate(22 208)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Retrieval Service</text>
+      <text x="16" y="43" class="box-note">Search, rank, cite</text>
+    </g>
+    <g transform="translate(22 280)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Tool Registry</text>
+      <text x="16" y="43" class="box-note">Contracts and permissions</text>
+    </g>
+    <g transform="translate(22 352)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Evaluation Harness</text>
+      <text x="16" y="43" class="box-note">Golden tests, regressions</text>
+    </g>
+    <g transform="translate(22 424)">
+      <rect class="box" width="206" height="58"/>
+      <text x="16" y="25" class="box-title">Policy Engine</text>
+      <text x="16" y="43" class="box-note">PII, safety, entitlement</text>
+    </g>
+  </g>
+
+  <g transform="translate(818 130)">
+    <rect class="lane" width="250" height="590" rx="18"/>
+    <text x="24" y="36" class="lane-title">Data And Knowledge</text>
+    <g transform="translate(22 92)">
+      <rect class="box box-amber" width="206" height="74"/>
+      <text x="16" y="28" class="box-title">Source Connectors</text>
+      <text x="16" y="50" class="box-note">Docs, tickets, CRM,</text>
+      <text x="16" y="66" class="box-note">core data</text>
+    </g>
+    <g transform="translate(22 198)">
+      <rect class="box box-amber" width="206" height="74"/>
+      <text x="16" y="28" class="box-title">Knowledge Index</text>
+      <text x="16" y="50" class="box-note">Chunks, metadata,</text>
+      <text x="16" y="66" class="box-note">embeddings</text>
+    </g>
+    <g transform="translate(22 304)">
+      <rect class="box box-amber" width="206" height="74"/>
+      <text x="16" y="28" class="box-title">Entitlements</text>
+      <text x="16" y="50" class="box-note">Who can retrieve</text>
+      <text x="16" y="66" class="box-note">which context</text>
+    </g>
+    <g transform="translate(22 410)">
+      <rect class="box box-amber" width="206" height="74"/>
+      <text x="16" y="28" class="box-title">Freshness And Lineage</text>
+      <text x="16" y="50" class="box-note">Ownership, age,</text>
+      <text x="16" y="66" class="box-note">source trace</text>
+    </g>
+  </g>
+
+  <g transform="translate(1104 130)">
+    <rect class="lane" width="250" height="590" rx="18"/>
+    <text x="24" y="36" class="lane-title">Enterprise Integration</text>
+    <g transform="translate(22 76)">
+      <rect class="box box-rose" width="206" height="62"/>
+      <text x="16" y="25" class="box-title">Legacy Adapters</text>
+      <text x="16" y="45" class="box-note">SOAP, batch, old APIs</text>
+    </g>
+    <g transform="translate(22 154)">
+      <rect class="box box-rose" width="206" height="62"/>
+      <text x="16" y="25" class="box-title">Systems Of Record</text>
+      <text x="16" y="45" class="box-note">Core apps and databases</text>
+    </g>
+    <g transform="translate(22 232)">
+      <rect class="box box-rose" width="206" height="62"/>
+      <text x="16" y="25" class="box-title">Workflow Systems</text>
+      <text x="16" y="45" class="box-note">Cases, approvals, tasks</text>
+    </g>
+    <g transform="translate(22 310)">
+      <rect class="box box-rose" width="206" height="62"/>
+      <text x="16" y="25" class="box-title">Human Approval</text>
+      <text x="16" y="45" class="box-note">Controlled action gates</text>
+    </g>
+    <g transform="translate(22 388)">
+      <rect class="box box-rose" width="206" height="62"/>
+      <text x="16" y="25" class="box-title">Audit Store</text>
+      <text x="16" y="45" class="box-note">Evidence and trace</text>
+    </g>
+  </g>
+
+  <path class="arrow" d="M250 425 C266 425, 270 425, 286 425"/>
+  <path class="arrow" d="M496 425 C512 425, 516 425, 532 425"/>
+  <path class="arrow" d="M782 425 C798 425, 802 425, 818 425"/>
+  <path class="arrow" d="M1068 425 C1084 425, 1088 425, 1104 425"/>
+
+  <g transform="translate(40 770)">
+    <rect class="control" width="1314" height="128" rx="18"/>
+    <text x="26" y="36" class="control-title">Operational Control Plane</text>
+    <text x="26" y="70" class="control-note">Prompt and model versions</text>
+    <text x="250" y="70" class="control-note">RAG context trace</text>
+    <text x="438" y="70" class="control-note">Tool calls and approvals</text>
+    <text x="660" y="70" class="control-note">Cost and latency budgets</text>
+    <text x="895" y="70" class="control-note">Security decisions</text>
+    <text x="1095" y="70" class="control-note">Quality feedback</text>
+    <text x="26" y="102" class="control-note">If this layer is missing, a working AI demo becomes an expensive and hard-to-debug production system.</text>
+  </g>
+</svg>
