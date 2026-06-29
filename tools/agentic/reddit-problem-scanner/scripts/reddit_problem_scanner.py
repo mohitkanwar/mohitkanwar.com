@@ -18,6 +18,7 @@ import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
@@ -35,6 +36,7 @@ DEFAULT_SUBREDDITS = [
 ]
 
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom"}
+REDDIT_FEED_HOSTS = ["old.reddit.com", "www.reddit.com"]
 
 
 THEMES = {
@@ -142,6 +144,12 @@ def fetch_url_with_curl(url: str) -> tuple[str, str]:
     return f"curl-exit:{completed.returncode}", output
 
 
+def compact_exception(exc: BaseException) -> str:
+    if isinstance(exc, urllib.error.URLError) and getattr(exc, "reason", None):
+        return f"{type(exc).__name__}:{exc.reason}"
+    return type(exc).__name__
+
+
 def fetch_url(url: str) -> tuple[str, str]:
     request = urllib.request.Request(
         url,
@@ -158,11 +166,28 @@ def fetch_url(url: str) -> tuple[str, str]:
     except urllib.error.HTTPError as exc:
         status = str(exc.code)
         curl_status, curl_body = fetch_url_with_curl(url)
-        return (curl_status, curl_body) if curl_body else (status, "")
+        return (curl_status, curl_body) if curl_status else (status, "")
     except Exception as exc:  # Network failures are part of the report.
-        status = f"error:{type(exc).__name__}"
+        status = f"error:{compact_exception(exc)}"
         curl_status, curl_body = fetch_url_with_curl(url)
-        return (curl_status, curl_body) if curl_body else (status, "")
+        return (curl_status, curl_body) if curl_status else (status, "")
+
+
+def feed_urls(subreddit: str) -> list[str]:
+    return [f"https://{host}/r/{subreddit}/.rss" for host in REDDIT_FEED_HOSTS]
+
+
+def feed_label(url: str) -> str:
+    parsed = urllib.parse.urlparse(url)
+    return parsed.netloc or url
+
+
+def attempt_status(attempts: list[tuple[str, str]]) -> str:
+    return "; ".join(f"{feed_label(url)}={status}" for url, status in attempts)
+
+
+def looks_like_feed(body: str) -> bool:
+    return bool(body and body.lstrip().startswith("<?xml"))
 
 
 def clean_html(value: str) -> str:
@@ -238,17 +263,23 @@ def collect(subreddits: Iterable[str], days: int, limit: int, delay: float) -> t
     for index, subreddit in enumerate(subreddits):
         if index:
             time.sleep(delay)
-        url = f"https://old.reddit.com/r/{subreddit}/.rss"
-        status, body = fetch_url(url)
-        if not body or not body.lstrip().startswith("<?xml"):
-            statuses.append(FeedStatus(subreddit, url, False, status, 0))
-            continue
-        try:
-            subreddit_posts = parse_feed(subreddit, body, cutoff, limit)
+        attempts: list[tuple[str, str]] = []
+        candidate_urls = feed_urls(subreddit)
+        for url in candidate_urls:
+            status, body = fetch_url(url)
+            attempts.append((url, status))
+            if not looks_like_feed(body):
+                continue
+            try:
+                subreddit_posts = parse_feed(subreddit, body, cutoff, limit)
+            except Exception as exc:
+                attempts[-1] = (url, f"{status}, parse:{compact_exception(exc)}")
+                continue
             posts.extend(subreddit_posts)
-            statuses.append(FeedStatus(subreddit, url, True, status, len(subreddit_posts)))
-        except Exception as exc:
-            statuses.append(FeedStatus(subreddit, url, False, f"parse:{type(exc).__name__}", 0))
+            statuses.append(FeedStatus(subreddit, url, True, attempt_status(attempts), len(subreddit_posts)))
+            break
+        else:
+            statuses.append(FeedStatus(subreddit, ", ".join(candidate_urls), False, attempt_status(attempts), 0))
     return posts, statuses
 
 
@@ -289,7 +320,7 @@ def markdown_report(posts: list[RedditPost], statuses: list[FeedStatus], days: i
         "| --- | --- | ---: | --- |",
     ]
     for status in statuses:
-        ok = "ok" if status.ok else f"blocked/failed ({status.status})"
+        ok = f"ok ({status.status})" if status.ok else f"blocked/failed ({status.status})"
         lines.append(f"| r/{status.subreddit} | {ok} | {status.entries} | {status.url} |")
 
     lines.extend(["", "## Problem Themes", ""])

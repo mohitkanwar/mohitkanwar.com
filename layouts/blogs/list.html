@@ -114,6 +114,8 @@
                 <button type="button" class="mk-show-more-btn" data-show-more hidden>Show more articles</button>
             </div>
 
+            {{ partial "mk-question-form.html" (dict "page" . "source" "blog-hub") }}
+
             <section class="mk-blog-recommendations" aria-label="Recommended reading">
                 {{ partial "mk-most-read-subscribe.html" . }}
             </section>

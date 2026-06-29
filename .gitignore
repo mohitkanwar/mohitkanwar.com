@@ -16,6 +16,8 @@ public/**
 /cache/
 /tmp/
 *.log
+__pycache__/
+*.py[cod]
 
 # Node.js dependencies (if using npm, yarn, or pnpm for themes/plugins)
 /node_modules/

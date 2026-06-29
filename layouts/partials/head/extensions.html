@@ -6,6 +6,13 @@
 {{ partial "head/analytics.html" . }}
 <script defer src="{{ "js/cta-tracking.js" | relURL }}"></script>
 <script defer src="{{ "js/mk-content-filters.js" | relURL }}"></script>
+{{ $questionForm := .Site.Params.blogQuestionForm }}
+{{ $recaptchaSiteKey := $questionForm.recaptchaSiteKey | default "" }}
+{{ $loadsQuestionForm := or (eq .Type "blogs") (eq .Layout "question-form") }}
+{{ if and ($questionForm.enable | default true) $recaptchaSiteKey $loadsQuestionForm }}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+{{ end }}
+<script defer src="{{ "js/mk-question-form.js" | relURL }}"></script>
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{/* Open Graph / Social Meta Tags */}}

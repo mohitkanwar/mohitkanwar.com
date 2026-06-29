@@ -7,13 +7,25 @@ description: Scan Reddit for current software developer, DevOps, SRE, and softwa
 
 Use this repo-local agentic tool to identify current problems software developers, DevOps engineers, SREs, and software architects are discussing on Reddit.
 
+## LangGraph Ollama Agent
+
+Use `scripts/reddit_research_agent.py` when you need a readable AI-generated research brief for blog ideation.
+
+```bash
+python3 tools/agentic/reddit-problem-scanner/scripts/reddit_research_agent.py \
+  --config tools/agentic/reddit-problem-scanner/configs/default.json \
+  --output /tmp/reddit-research-report.md
+```
+
+The LangGraph agent scans configured public Reddit RSS feeds, shows progress, analyzes posts with a local Ollama model, and writes a prioritized markdown report with important news, major user issues, and blog opportunities.
+
 ## Workflow
 
 1. Run `scripts/reddit_problem_scanner.py` with relevant subreddits and a short recency window.
-2. Prefer `old.reddit.com/r/<subreddit>/.rss`; it is less fragile than the JSON endpoint.
+2. The scanner tries `old.reddit.com/r/<subreddit>/.rss` first, then falls back to `www.reddit.com/r/<subreddit>/.rss` when old Reddit is rate-limited or empty.
 3. Use the generated markdown report as the working summary.
 4. Cite Reddit post URLs from the report when presenting findings.
-5. If feeds return `429`, empty bodies, or network-security pages, report the access limitation and use the partial evidence rather than bypassing controls.
+5. If both RSS feeds return `429`, empty bodies, or network-security pages, report the access limitation and use the partial evidence rather than bypassing controls.
 
 ## Typical Commands
 

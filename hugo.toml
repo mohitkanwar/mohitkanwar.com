@@ -39,6 +39,19 @@ disqusShortname = "mohitkanwar-com"
   subscribeEnabled = false
   subscribeUrl = "https://mohitkanwar.substack.com/subscribe"
 
+[params.blogQuestionForm]
+  enable = true
+  title = "Ask a BFSI, FinTech, or architecture question"
+  description = "Share the decision, constraint, or tradeoff you are working through. I use reader questions to respond directly where possible and shape future practical articles."
+  # Add a Formspree form id to receive submissions directly, for example: formspreeFormId = "abcdefgh"
+  formspreeFormId = "xkolzoag"
+  formspreeSubmitMode = "native"
+  recaptchaSiteKey = "6LdQuTstAAAAAB62bKhcjTMA8xzxMEAB5mY0awzh"
+  recaptchaAction = "submit"
+  # Optional mailto fallback if you prefer email delivery instead of Formspree.
+  recipientEmail = ""
+  linkedinUrl = "https://www.linkedin.com/in/mohit-kanwar-7668a211/"
+
 [params.analytics]
   # Google Analytics 4 is enabled for production builds. It remains disabled in local development unless load_in_development is true.
   enabled = true

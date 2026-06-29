@@ -1,0 +1,130 @@
+{{ $page := .page }}
+{{ $site := $page.Site }}
+{{ $source := .source | default "blog" }}
+{{ $config := $site.Params.blogQuestionForm }}
+{{ $enabled := $config.enable | default true }}
+{{ if $enabled }}
+{{ $formspreeId := $config.formspreeFormId | default "" }}
+{{ if and (not $formspreeId) ($site.Params.contact.formspree.enable | default false) }}
+  {{ $formspreeId = $site.Params.contact.formspree.formId | default "" }}
+{{ end }}
+{{ $endpoint := "" }}
+{{ if $formspreeId }}
+  {{ $endpoint = printf "https://formspree.io/f/%s" $formspreeId }}
+{{ end }}
+{{ $recipientEmail := $config.recipientEmail | default "" }}
+{{ $linkedinUrl := $config.linkedinUrl | default $site.Params.contact.linkedin | default "" }}
+{{ $formspreeSubmitMode := $config.formspreeSubmitMode | default "ajax" }}
+{{ $nativeSubmit := and $endpoint (eq $formspreeSubmitMode "native") }}
+{{ $recaptchaSiteKey := $config.recaptchaSiteKey | default "" }}
+{{ $recaptchaAction := $config.recaptchaAction | default "submit" }}
+{{ $recaptchaEnabled := and $endpoint $recaptchaSiteKey }}
+{{ $title := $config.title | default "Ask a BFSI, FinTech, or architecture question" }}
+{{ $description := $config.description | default "Share the decision, constraint, or tradeoff you are working through. I use these questions to respond directly where possible and shape future practical articles." }}
+{{ $formId := printf "mk-question-form-%s" $source }}
+{{ $subject := printf "BFSI / FinTech architecture query from %s" $site.Title }}
+<section id="ask-question" class="mk-question-section" aria-labelledby="{{ $formId }}-title">
+  <div class="mk-question-panel">
+    <div class="mk-question-copy">
+      <p class="mk-blog-eyebrow">Reader questions</p>
+      <h2 id="{{ $formId }}-title">{{ $title }}</h2>
+      <p>{{ $description }}</p>
+      <div class="mk-question-tags" aria-label="Question topics">
+        <span>BFSI</span>
+        <span>FinTech</span>
+        <span>Architecture</span>
+        <span>AI in banking</span>
+      </div>
+    </div>
+    <form
+      id="{{ $formId }}"
+      class="mk-question-form"
+      data-question-form
+      data-source="{{ $source }}"
+      data-endpoint="{{ $endpoint }}"
+      data-recipient-email="{{ $recipientEmail }}"
+      data-linkedin-url="{{ $linkedinUrl }}"
+      data-native-submit="{{ if $nativeSubmit }}true{{ else }}false{{ end }}"
+      data-recaptcha-v3="{{ if $recaptchaEnabled }}true{{ else }}false{{ end }}"
+      data-recaptcha-sitekey="{{ $recaptchaSiteKey }}"
+      data-recaptcha-action="{{ $recaptchaAction }}"
+      {{ if $endpoint }}action="{{ $endpoint }}" method="POST"{{ else }}method="POST"{{ end }}
+    >
+      <input type="hidden" name="_subject" value="{{ $subject }}">
+      <input type="hidden" name="page_title" value="{{ $page.Title }}">
+      <input type="hidden" name="page_url" value="{{ $page.Permalink }}">
+      <input type="hidden" name="message" value="">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div class="mk-question-row">
+        <label class="mk-question-field" for="{{ $formId }}-name">
+          <span>Name</span>
+          <input id="{{ $formId }}-name" type="text" name="name" autocomplete="name" placeholder="Your name">
+        </label>
+        <label class="mk-question-field" for="{{ $formId }}-email">
+          <span>Email</span>
+          <input id="{{ $formId }}-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+        </label>
+      </div>
+
+      <div class="mk-question-row">
+        <label class="mk-question-field" for="{{ $formId }}-topic">
+          <span>Topic</span>
+          <select id="{{ $formId }}-topic" name="topic" required>
+            <option value="">Select a topic</option>
+            <option value="BFSI">BFSI</option>
+            <option value="FinTech">FinTech</option>
+            <option value="Architecture">Architecture</option>
+            <option value="AI in financial services">AI in financial services</option>
+            <option value="Security and compliance">Security and compliance</option>
+            <option value="Platform modernization">Platform modernization</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label class="mk-question-field" for="{{ $formId }}-role">
+          <span>Role or organization</span>
+          <input id="{{ $formId }}-role" type="text" name="role" autocomplete="organization-title" placeholder="Optional">
+        </label>
+      </div>
+
+      <label class="mk-question-field" for="{{ $formId }}-question">
+        <span>Question</span>
+        <textarea id="{{ $formId }}-question" name="question" rows="5" placeholder="What are you trying to decide, design, or troubleshoot?" required></textarea>
+      </label>
+
+      <label class="mk-question-field" for="{{ $formId }}-context">
+        <span>Useful context</span>
+        <textarea id="{{ $formId }}-context" name="context" rows="3" placeholder="Constraints, scale, domain, technology choices, or timelines"></textarea>
+      </label>
+
+      <label class="mk-question-consent" for="{{ $formId }}-consent">
+        <input id="{{ $formId }}-consent" type="checkbox" name="consent" value="yes" required>
+        <span>I agree to be contacted about this question.</span>
+      </label>
+
+      <div class="mk-question-actions">
+        <button
+          type="{{ if $recaptchaEnabled }}button{{ else }}submit{{ end }}"
+          class="mk-question-submit{{ if $recaptchaEnabled }} g-recaptcha{{ end }}"
+          data-question-submit
+          {{ if $recaptchaEnabled }}
+          data-question-recaptcha-submit
+          data-sitekey="{{ $recaptchaSiteKey }}"
+          data-callback="mkQuestionFormRecaptchaSubmit"
+          data-action="{{ $recaptchaAction }}"
+          {{ end }}
+        >Send question</button>
+        {{ if and (not $endpoint) (not $recipientEmail) $linkedinUrl }}
+        <a class="mk-question-fallback-link" href="{{ $linkedinUrl }}" target="_blank" rel="noopener noreferrer" data-cta-event="cta_linkedin_click" data-cta-source="{{ $source }}-question-form" data-cta-campaign="reader-question">LinkedIn</a>
+        {{ end }}
+      </div>
+      <div class="mk-question-status" data-question-status aria-live="polite"></div>
+      {{ if and (not $endpoint) (not $recipientEmail) $linkedinUrl }}
+      <noscript>
+        <p class="mk-question-noscript">JavaScript is required for this form. You can still send the question on <a href="{{ $linkedinUrl }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+      </noscript>
+      {{ end }}
+    </form>
+  </div>
+</section>
+{{ end }}

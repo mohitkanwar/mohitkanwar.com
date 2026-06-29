@@ -1,0 +1,59 @@
+{
+  "name": "Software Architecture Research",
+  "reddit": {
+    "sources": [
+      {
+        "name": "Software Architecture",
+        "url": "https://old.reddit.com/r/softwarearchitecture/"
+      },
+      {
+        "name": "Experienced Developers",
+        "url": "https://old.reddit.com/r/ExperiencedDevs/"
+      },
+      {
+        "name": "DevOps",
+        "url": "https://old.reddit.com/r/devops/"
+      },
+      {
+        "name": "SRE",
+        "url": "https://old.reddit.com/r/sre/"
+      },
+      {
+        "name": "Programming",
+        "url": "https://old.reddit.com/r/programming/"
+      }
+    ],
+    "days": 14,
+    "per_source_limit": 30,
+    "request_delay_seconds": 1.25,
+    "rate_limit_pause_seconds": 20,
+    "feed_hosts": [
+      "old.reddit.com",
+      "www.reddit.com"
+    ],
+    "skip_title_keywords": [
+      "weekly self promotion",
+      "self-promotion thread",
+      "meme monday",
+      "who's hiring"
+    ]
+  },
+  "analysis": {
+    "focus": "architecture trade-offs, technical debt, modernization, distributed systems, platform engineering, DevOps operating model, reliability, observability, and AI engineering workflows",
+    "audience": "software architects, principal engineers, engineering managers, and platform leads",
+    "max_posts_for_ai": 45,
+    "batch_size": 8,
+    "priority_threshold": 14
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "model": "qwen2.5-coder:7b",
+    "temperature": 0.1,
+    "timeout_seconds": 120
+  },
+  "report": {
+    "title": "Software Architecture Reddit Research Brief",
+    "max_items_per_section": 12,
+    "include_evidence_appendix": true
+  }
+}

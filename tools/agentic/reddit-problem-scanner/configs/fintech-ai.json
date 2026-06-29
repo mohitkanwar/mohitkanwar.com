@@ -1,0 +1,58 @@
+{
+  "name": "FinTech and AI Research",
+  "reddit": {
+    "sources": [
+      {
+        "name": "FinTech",
+        "url": "https://old.reddit.com/r/fintech/"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "url": "https://old.reddit.com/r/ArtificialInteligence/"
+      },
+      {
+        "name": "Artificial",
+        "url": "https://old.reddit.com/r/artificial/"
+      },
+      {
+        "name": "Local LLaMA",
+        "url": "https://old.reddit.com/r/LocalLLaMA/"
+      },
+      {
+        "name": "Software Architecture",
+        "url": "https://old.reddit.com/r/softwarearchitecture/"
+      }
+    ],
+    "days": 14,
+    "per_source_limit": 30,
+    "request_delay_seconds": 1.25,
+    "rate_limit_pause_seconds": 20,
+    "feed_hosts": [
+      "old.reddit.com",
+      "www.reddit.com"
+    ],
+    "skip_title_keywords": [
+      "weekly self promotion",
+      "self-promotion thread",
+      "meme monday"
+    ]
+  },
+  "analysis": {
+    "focus": "AI adoption in financial services, fintech regulation, banking modernization, AI agents, local models, compliance, customer experience, fraud, risk, security, and product engineering",
+    "audience": "fintech architects, digital banking leaders, product engineering leaders, and AI platform teams",
+    "max_posts_for_ai": 45,
+    "batch_size": 8,
+    "priority_threshold": 14
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "model": "qwen2.5-coder:7b",
+    "temperature": 0.1,
+    "timeout_seconds": 120
+  },
+  "report": {
+    "title": "FinTech and AI Reddit Research Brief",
+    "max_items_per_section": 12,
+    "include_evidence_appendix": true
+  }
+}

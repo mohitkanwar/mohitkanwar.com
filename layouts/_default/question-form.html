@@ -1,0 +1,43 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Description | default .Site.Params.description | plainify | truncate 160 }}">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<main class="mk-question-page">
+  <section class="mk-question-page-hero">
+    <div class="container">
+      <div class="mk-question-page-grid">
+        <div class="mk-question-page-copy">
+          <p class="mk-blog-eyebrow">Ask Mohit</p>
+          <h1>Ask a BFSI, FinTech, or architecture question.</h1>
+          <p>
+            Use this page for banking technology, platform modernization, AI in financial services, security, or software architecture decisions where a practical outside perspective can help.
+          </p>
+          <div class="mk-question-page-proof" aria-label="Focus areas">
+            <span>Digital banking</span>
+            <span>FinTech platforms</span>
+            <span>Architecture reviews</span>
+          </div>
+        </div>
+        <aside class="mk-question-page-profile" aria-label="Profile">
+          <img src="/images/me.jpeg" alt="Mohit Kanwar">
+          <div>
+            <strong>Mohit Kanwar</strong>
+            <span>Software Architect focused on FinTech, AI, and platform engineering</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="mk-question-page-form">
+    <div class="container">
+      {{ partial "mk-question-form.html" (dict "page" . "source" "email-signature") }}
+    </div>
+  </section>
+</main>
+{{ end }}

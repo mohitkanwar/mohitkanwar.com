@@ -1,0 +1,68 @@
+{
+  "name": "Default Reddit Architecture Research",
+  "reddit": {
+    "sources": [
+      {
+        "name": "Artificial Intelligence",
+        "url": "https://old.reddit.com/r/ArtificialInteligence/"
+      },
+      {
+        "name": "Software Architecture",
+        "url": "https://old.reddit.com/r/softwarearchitecture/"
+      },
+      {
+        "name": "FinTech",
+        "url": "https://old.reddit.com/r/fintech/"
+      },
+      {
+        "name": "Software",
+        "url": "https://www.reddit.com/r/software/"
+      },
+      {
+        "name": "CS Career Questions",
+        "url": "https://www.reddit.com/r/cscareerquestions/"
+      },
+      {
+        "name": "DevOps",
+        "url": "https://old.reddit.com/r/devops/"
+      },
+      {
+        "name": "Experienced Developers",
+        "url": "https://old.reddit.com/r/ExperiencedDevs/"
+      }
+    ],
+    "days": 7,
+    "per_source_limit": 25,
+    "request_delay_seconds": 1.25,
+    "rate_limit_pause_seconds": 20,
+    "feed_hosts": [
+      "old.reddit.com",
+      "www.reddit.com"
+    ],
+    "skip_title_keywords": [
+      "weekly self promotion",
+      "self-promotion thread",
+      "meme monday",
+      "who's hiring",
+      "monthly getting started"
+    ]
+  },
+  "analysis": {
+    "focus": "software architecture, AI adoption, fintech platforms, engineering leadership, developer pain points, reliability, security, governance, and modernization",
+    "audience": "software architects, fintech engineering leaders, platform teams, and senior developers",
+    "max_posts_for_ai": 40,
+    "batch_size": 8,
+    "priority_threshold": 14
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "model": "qwen2.5-coder:7b",
+    "temperature": 0.1,
+    "timeout_seconds": 120
+  },
+  "report": {
+    "title": "Reddit Research Brief for Blog Ideation",
+    "max_items_per_section": 10,
+    "include_evidence_appendix": true
+  }
+}

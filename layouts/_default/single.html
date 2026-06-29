@@ -46,6 +46,7 @@
 
           {{ if eq .Type "blogs" }}
           {{ partial "mk-article-footer-cta.html" . }}
+          {{ partial "mk-question-form.html" (dict "page" . "source" "blog-article") }}
           {{ end }}
 
           {{ if eq .Type "blogs" }}
