@@ -30,3 +30,21 @@ Current stream:
 ```
 
 The implementation respects browser Do Not Track by default and does not load during local development unless `load_in_development = true`.
+
+## Ads
+
+Blog articles support subtle Google AdSense placements at the article footer and in the sidebar. They are disabled until the AdSense publisher id and ad unit slot ids are added:
+
+```toml
+[params.ads]
+  enabled = true
+  adsense_client = "ca-pub-..."
+
+[params.ads.slots.article_footer]
+  slot = "..."
+
+[params.ads.slots.sidebar]
+  slot = "..."
+```
+
+Set `disableAds = true` in a page's front matter to suppress ads on a specific article.

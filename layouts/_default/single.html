@@ -45,6 +45,7 @@
           </article>
 
           {{ if eq .Type "blogs" }}
+          {{ partial "mk-ad-slot.html" (dict "page" . "placement" "article_footer" "class" "mk-ad-article-footer") }}
           {{ partial "mk-article-footer-cta.html" . }}
           {{ partial "mk-question-form.html" (dict "page" . "source" "blog-article") }}
           {{ end }}
@@ -149,6 +150,10 @@
               </ul>
             </div>
           </aside>
+          {{ end }}
+
+          {{ if eq .Type "blogs" }}
+          {{ partial "mk-ad-slot.html" (dict "page" . "placement" "sidebar" "class" "mk-ad-sidebar") }}
           {{ end }}
         </div>
       </div>

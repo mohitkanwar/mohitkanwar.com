@@ -1,0 +1,13 @@
+{{- $ads := .Site.Params.ads | default dict -}}
+{{- $enabled := false -}}
+{{- $loadInDevelopment := false -}}
+{{- if isset $ads "enabled" -}}
+  {{- $enabled = eq (index $ads "enabled" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $ads "load_in_development" -}}
+  {{- $loadInDevelopment = eq (index $ads "load_in_development" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- $client := index $ads "adsense_client" | default "" | printf "%v" | replaceRE "[^A-Za-z0-9-]" "" -}}
+{{- if and $enabled $client (or (not hugo.IsDevelopment) $loadInDevelopment) -}}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $client }}" crossorigin="anonymous"></script>
+{{- end -}}

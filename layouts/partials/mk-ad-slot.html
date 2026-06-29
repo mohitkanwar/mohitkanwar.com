@@ -1,0 +1,43 @@
+{{- $page := .page -}}
+{{- $placement := .placement | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $ads := $page.Site.Params.ads | default dict -}}
+{{- $slots := index $ads "slots" | default dict -}}
+{{- $slot := index $slots $placement | default dict -}}
+{{- $enabled := false -}}
+{{- $loadInDevelopment := false -}}
+{{- $slotEnabled := true -}}
+{{- $fullWidthResponsive := true -}}
+{{- $pageAdsDisabled := false -}}
+{{- if isset $ads "enabled" -}}
+  {{- $enabled = eq (index $ads "enabled" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $ads "load_in_development" -}}
+  {{- $loadInDevelopment = eq (index $ads "load_in_development" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $slot "enabled" -}}
+  {{- $slotEnabled = eq (index $slot "enabled" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- if isset $slot "full_width_responsive" -}}
+  {{- $fullWidthResponsive = eq (index $slot "full_width_responsive" | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- with $page.Param "disableAds" -}}
+  {{- $pageAdsDisabled = eq (. | printf "%v" | lower) "true" -}}
+{{- end -}}
+{{- $client := index $ads "adsense_client" | default "" | printf "%v" | replaceRE "[^A-Za-z0-9-]" "" -}}
+{{- $slotID := index $slot "slot" | default "" | printf "%v" | replaceRE "[^0-9]" "" -}}
+{{- $format := index $slot "format" | default "auto" | printf "%v" -}}
+{{- if and $enabled $slotEnabled (not $pageAdsDisabled) $client $slotID (or (not hugo.IsDevelopment) $loadInDevelopment) -}}
+<aside class="{{ printf "mk-ad mk-ad-%s %s" $placement $class | strings.TrimSpace }}" aria-label="Advertisement">
+  <span class="mk-ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ $client }}"
+       data-ad-slot="{{ $slotID }}"
+       data-ad-format="{{ $format }}"
+       data-full-width-responsive="{{ $fullWidthResponsive }}"></ins>
+</aside>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{{- end -}}

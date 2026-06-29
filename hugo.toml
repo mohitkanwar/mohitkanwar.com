@@ -63,6 +63,25 @@ disqusShortname = "mohitkanwar-com"
   allow_ad_personalization_signals = false
   debug = false
 
+[params.ads]
+  # Google AdSense is wired into blog articles but remains disabled until a publisher id and ad unit slots are configured.
+  enabled = false
+  provider = "google-adsense"
+  adsense_client = "" # Example: ca-pub-1234567890123456
+  load_in_development = false
+
+[params.ads.slots.article_footer]
+  enabled = true
+  slot = "" # AdSense ad unit slot id
+  format = "auto"
+  full_width_responsive = true
+
+[params.ads.slots.sidebar]
+  enabled = true
+  slot = "" # AdSense ad unit slot id
+  format = "auto"
+  full_width_responsive = true
+
 [params.hero]
   enable = true
   intro = "Hi, I am"

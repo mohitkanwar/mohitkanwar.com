@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Is it still worth being a software engineer?</title>
+  <desc id="desc">A cover image showing the evolution of software engineering from punch cards and IDEs to AI agents and business problem solving.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset="0.52" stop-color="#13233f"/>
+      <stop offset="1" stop-color="#12342c"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eefdf7"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#67e8f9"/>
+    </marker>
+    <style>
+      .title { font: 900 62px Inter, Arial, sans-serif; fill: #f8fafc; letter-spacing: 0; }
+      .subtitle { font: 500 25px Inter, Arial, sans-serif; fill: #cbd5e1; }
+      .card { fill: #ffffff; stroke: rgba(191,219,254,0.9); stroke-width: 2; rx: 18; filter: url(#shadow); }
+      .core { fill: url(#panel); stroke: #99f6e4; }
+      .card-title { font: 850 22px Inter, Arial, sans-serif; fill: #0f172a; }
+      .card-note { font: 600 16px Inter, Arial, sans-serif; fill: #475569; }
+      .chip { fill: rgba(255,255,255,0.11); stroke: rgba(148,163,184,0.4); stroke-width: 1.5; }
+      .chip-text { font: 700 17px Inter, Arial, sans-serif; fill: #dbeafe; }
+      .line { stroke: #67e8f9; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .brand { font: 800 15px Inter, Arial, sans-serif; fill: #dbeafe; }
+      .code { font: 700 18px SFMono-Regular, Consolas, monospace; fill: #0f172a; }
+      .muted { opacity: 0.8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.2">
+    <circle cx="1380" cy="155" r="230" fill="#2563eb"/>
+    <circle cx="230" cy="745" r="270" fill="#10b981"/>
+  </g>
+
+  <text x="84" y="132" class="title">Is It Still Worth Being</text>
+  <text x="84" y="204" class="title">a Software Engineer?</text>
+  <text x="88" y="255" class="subtitle">AI makes code easier to produce. It does not remove the need to solve hard problems.</text>
+
+  <g transform="translate(92 314)">
+    <rect class="chip" width="178" height="52" rx="26"/>
+    <text x="27" y="34" class="chip-text">Punch cards</text>
+    <rect class="chip" x="202" width="166" height="52" rx="26"/>
+    <text x="231" y="34" class="chip-text">Compilers</text>
+    <rect class="chip" x="392" width="118" height="52" rx="26"/>
+    <text x="421" y="34" class="chip-text">IDEs</text>
+    <rect class="chip" x="534" width="172" height="52" rx="26"/>
+    <text x="563" y="34" class="chip-text">AI agents</text>
+  </g>
+
+  <g transform="translate(90 440)">
+    <rect class="card" width="235" height="150"/>
+    <text x="28" y="48" class="card-title">Old friction</text>
+    <text x="28" y="84" class="card-note">Syntax, memory,</text>
+    <text x="28" y="110" class="card-note">manual debugging</text>
+    <g transform="translate(162 44)">
+      <rect x="0" y="0" width="54" height="76" rx="5" fill="#e2e8f0" stroke="#64748b"/>
+      <circle cx="14" cy="16" r="4" fill="#64748b"/>
+      <circle cx="34" cy="16" r="4" fill="#64748b"/>
+      <circle cx="14" cy="36" r="4" fill="#64748b"/>
+      <circle cx="34" cy="56" r="4" fill="#64748b"/>
+    </g>
+
+    <path class="line" d="M263 75 C310 75, 325 75, 349 75"/>
+
+    <rect class="card" x="375" width="235" height="150"/>
+    <text x="403" y="48" class="card-title">IDE era</text>
+    <text x="403" y="84" class="card-note">Auto-complete,</text>
+    <text x="403" y="110" class="card-note">navigation, colors</text>
+    <rect x="524" y="42" width="54" height="56" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="534" y="76" class="code">.</text>
+    <rect x="542" y="72" width="72" height="42" rx="8" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="554" y="98" class="card-note">find()</text>
+
+    <path class="line" d="M638 75 C685 75, 700 75, 724 75"/>
+
+    <rect class="card" x="750" width="235" height="150"/>
+    <text x="778" y="48" class="card-title">AI era</text>
+    <text x="778" y="84" class="card-note">Agents, tests,</text>
+    <text x="778" y="110" class="card-note">tools, refactors</text>
+    <circle cx="934" cy="69" r="32" fill="url(#accent)"/>
+    <path d="M918 68 L931 81 L952 53" fill="none" stroke="#052e2b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path class="line" d="M1013 75 C1060 75, 1075 75, 1099 75"/>
+
+    <rect class="card core" x="1125" width="260" height="150"/>
+    <text x="1153" y="48" class="card-title">Real value</text>
+    <text x="1153" y="84" class="card-note">Business problems,</text>
+    <text x="1153" y="110" class="card-note">architecture, outcomes</text>
+  </g>
+
+  <g transform="translate(142 682)">
+    <rect width="1316" height="90" rx="28" fill="rgba(15,23,42,0.58)" stroke="rgba(148,163,184,0.32)"/>
+    <text x="36" y="55" class="subtitle">The value moves upward: from typing code, to designing systems, to solving business problems.</text>
+  </g>
+
+  <g transform="translate(1354 52) scale(0.12)" opacity="0.92">
+    <polygon points="250,12 318,92 423,86 416,196 488,250 416,304 423,414 318,408 250,488 182,408 77,414 84,304 12,250 84,196 77,86 182,92" fill="#050505" stroke="#a3a3a3" stroke-width="30" stroke-linejoin="round"/>
+    <polygon points="250,32 308,108 404,104 396,202 462,250 396,298 404,396 308,392 250,468 192,392 96,396 104,298 38,250 104,202 96,104 192,108" fill="none" stroke="#525252" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="185" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <ellipse cx="315" cy="195" rx="72" ry="58" fill="#fff" stroke="#111827" stroke-width="6"/>
+    <circle cx="185" cy="195" r="26" fill="#000"/>
+    <circle cx="315" cy="195" r="26" fill="#000"/>
+    <rect x="225" y="210" width="24" height="118" rx="12" fill="#fff"/>
+    <rect x="150" y="240" width="24" height="132" rx="12" fill="#fff"/>
+    <rect x="350" y="240" width="24" height="132" rx="12" fill="#fff"/>
+  </g>
+  <text x="1340" y="138" class="brand">mohitkanwar.com</text>
+</svg>
